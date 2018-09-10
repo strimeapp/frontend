@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_base_meta_title">
+                <source>front.base.meta.title</source>
+                <target>Suivi de projets vidéos</target>
+            </trans-unit>
+            <trans-unit id="front_base_meta_keywords">
+                <source>front.base.meta.keywords</source>
+                <target>strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle</target>
+            </trans-unit>
+            <trans-unit id="front_base_title_keep_posted">
+                <source>front.base.title.keep_posted</source>
+                <target><![CDATA[Restez à l'écoute<br />de notre actualité]]></target>
+            </trans-unit>
+            <trans-unit id="front_base_button_close_window">
+                <source>front.base.button.close_window</source>
+                <target>Fermer la fenêtre</target>
+            </trans-unit>
+            <trans-unit id="front_base_mailchimp_first_name">
+                <source>front.base.mailchimp.first_name</source>
+                <target>Prénom</target>
+            </trans-unit>
+            <trans-unit id="front_base_mailchimp_name">
+                <source>front.base.mailchimp.name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="front_base_mailchimp_email">
+                <source>front.base.mailchimp.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="front_base_mailchimp_subscribe">
+                <source>front.base.mailchimp.subscribe</source>
+                <target>S'inscrire à la newsletter</target>
+            </trans-unit>
+            <trans-unit id="front_base_footer_trust_badge">
+                <source>front.base.footer.trust_badge</source>
+                <target>Badge de confiance</target>
+            </trans-unit>
+            <trans-unit id="front_base_item_who_are_we">
+                <source>front.base.item.who_are_we</source>
+                <target>Qui sommes-nous ?</target>
+            </trans-unit>
+            <trans-unit id="front_base_item_faq">
+                <source>front.base.item.faq</source>
+                <target>FAQ</target>
+            </trans-unit>
+            <trans-unit id="front_base_item_blog">
+                <source>front.base.item.blog</source>
+                <target>Blog</target>
+            </trans-unit>
+            <trans-unit id="front_base_item_shop">
+                <source>front.base.item.shop</source>
+                <target>Boutique</target>
+            </trans-unit>
+            <trans-unit id="front_base_item_contact">
+                <source>front.base.item.contact</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="front_base_item_tos">
+                <source>front.base.item.tos</source>
+                <target>CGU</target>
+            </trans-unit>
+            <trans-unit id="front_base_item_terms_of_services">
+                <source>front.base.item.terms_of_services</source>
+                <target>Conditions Générales d'Utilisation</target>
+            </trans-unit>
+            <trans-unit id="front_base_modal_free_signup">
+                <source>front.base.modal.free_signup</source>
+                <target>Inscription gratuite</target>
+            </trans-unit>
+            <trans-unit id="front_base_modal_accept_tos">
+                <source>front.base.modal.accept_tos</source>
+                <target>En créant un compte, vous acceptez les %link_start%conditions générales d'utilisation%link_end% de Strime</target>
+            </trans-unit>
+            <trans-unit id="front_base_button_signup">
+                <source>front.base.button.signup</source>
+                <target>S'inscrire</target>
+            </trans-unit>
+            <trans-unit id="front_base_loader_loading">
+                <source>front.base.loader.loading</source>
+                <target>Chargement...</target>
+            </trans-unit>
+            <trans-unit id="front_base_modal_already_have_account">
+                <source>front.base.modal.already_have_account</source>
+                <target>Vous avez déjà un compte ?</target>
+            </trans-unit>
+            <trans-unit id="front_base_modal_signin">
+                <source>front.base.modal.signin</source>
+                <target>Connectez-vous</target>
+            </trans-unit>
+            <trans-unit id="front_base_modal_strime_will_stop">
+                <source>front.base.modal.strime_will_stop</source>
+                <target>Strime arrêtera définitivement son service le 10 septembre 2018.</target>
+            </trans-unit>
+            <trans-unit id="front_base_modal_after_three_years_we_are_stopping">
+                <source>front.base.modal.after_three_years_we_are_stopping</source>
+                <target>Après trois ans d'activité, nous avons le regret de vous annoncer la fermeture progressive de Strime.</target>
+            </trans-unit>
+            <trans-unit id="front_base_modal_why_did_we_create_strime">
+                <source>front.base.modal.why_did_we_create_strime</source>
+                <target>Nous avons créé Strime en 2015, avec la volonté de développer un outil de feedback vidéo aussi simple que possible, avec une réelle préoccupation pour nos utilisateurs. Notre objectif était de rendre la collaboration avec vos clients plus accessibles, agréable et qualitative. Aujourd'hui Strime est gratuit et nous n'avons pas réussi à trouver le modèle économique qui nous permettrait d'avoir un revenu suffisant pour maintenir notre infrastructure et développer notre produit. Nous sommes donc contraints de faire ce choix difficile d'arrêter Strime.</target>
+            </trans-unit>
+            <trans-unit id="front_base_modal_any_question_contact_us">
+                <source>front.base.modal.any_question_contact_us</source>
+                <target><![CDATA[Si vous avez des questions, contactez-nous via <a href="/contact" title="Contactez-nous">notre formulaire</a>.]]></target>
+            </trans-unit>
+            <trans-unit id="front_base_modal_learn_more_end_of_strime">
+                <source>front.base.modal.learn_more_end_of_strime</source>
+                <target><![CDATA[Si vous souhaitez <a href="https://blog.strime.io/la-fin-dune-belle-histoire/" title="La fin de Strime" target="_blank">en savoir plus</a> sur la fin de Strime.]]></target>
+            </trans-unit>
+            <trans-unit id="front_base_modal_thanks_for_using_strime">
+                <source>front.base.modal.thanks_for_using_strime</source>
+                <target>Merci d'avoir utilisé Strime,</target>
+            </trans-unit>
+            <trans-unit id="front_base_modal_we_were_honored">
+                <source>front.base.modal.we_were_honored</source>
+                <target>Nous sommes honorés de vous avoir eu parmi nos utilisateurs.</target>
+            </trans-unit>
+            <trans-unit id="front_base_modal_frank_romain_jp">
+                <source>front.base.modal.frank_romain_jp</source>
+                <target>Franck, Romain et Jean-Philippe</target>
+            </trans-unit>
+            <trans-unit id="front_base_text_language">
+                <source>front.base.text.language</source>
+                <target>Langue :</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_user_account_with_same_email">
+                <source>front.js.text.user_account_with_same_email</source>
+                <target>Un compte utilisateur utilisant cet email existe déjà.</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_missing_data">
+                <source>front.js.text.missing_data</source>
+                <target>Tous les champs n'ont pas été remplis.</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_invalid_email_address">
+                <source>front.js.text.invalid_email_address</source>
+                <target>L'adresse email fournie n'est pas valide.</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_account_created">
+                <source>front.js.text.account_created</source>
+                <target>Votre compte a bien été créé.</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_email_or_pwd_invalid">
+                <source>front.js.text.email_or_pwd_invalid</source>
+                <target>Email ou mot de passe incorrect</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_your_account_has_been_deactivated">
+                <source>front.js.text.your_account_has_been_deactivated</source>
+                <target>Votre compte a été désactivé.</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_error_occured_while_logging_you_in">
+                <source>front.js.text.error_occured_while_logging_you_in</source>
+                <target>Une erreur est survenue lors de votre identification.</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_you_are_now_logged_in">
+                <source>front.js.text.you_are_now_logged_in</source>
+                <target>Vous êtes désormais connecté.</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_error_occured_while_sending_the_request">
+                <source>front.js.text.error_occured_while_sending_the_request</source>
+                <target>Une erreur s'est produite lors de l'envoi de la requête.</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_email_address_doesnt_exist">
+                <source>front.js.text.email_address_doesnt_exist</source>
+                <target>Cette adresse email n'existe pas.</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_error_while_saving_new_password">
+                <source>front.js.text.error_while_saving_new_password</source>
+                <target>Erreur lors de l'enregistrement du nouveau mot de passe.</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_new_password_has_been_send_by_email">
+                <source>front.js.text.new_password_has_been_send_by_email</source>
+                <target>Votre nouveau mot de passe vient de vous être envoyé par email.</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_request_being_processed">
+                <source>front.js.text.request_being_processed</source>
+                <target>Votre demande est en cours de traitement...</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_an_error_occured">
+                <source>front.js.text.an_error_occured</source>
+                <target>Une erreur s'est produite :</target>
+            </trans-unit>
+            <trans-unit id="front_js_text_one_last_thing_click_on_link">
+                <source>front.js.text.one_last_thing_click_on_link</source>
+                <target><![CDATA[Merci !<br />Une dernière chose :<br />Veuillez cliquer sur le lien contenu dans le message que vous venez de recevoir.]]></target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

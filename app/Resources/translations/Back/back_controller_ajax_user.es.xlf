@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_controller_ajax_user_resend_email_confirmation_confirm_email_address">
+                <source>back.controller_ajax_user.resend_email_confirmation.confirm_email_address</source>
+                <target>Confirme su dirección de correo electrónico.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_user_mark_new_feature_feature_not_found">
+                <source>back.controller_ajax_user.mark_new_feature.feature_not_found</source>
+                <target>Funcionalidad no encontrada.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_user_mark_new_feature_user_not_found">
+                <source>back.controller_ajax_user.mark_new_feature.user_not_found</source>
+                <target>No encontramos este usuario</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

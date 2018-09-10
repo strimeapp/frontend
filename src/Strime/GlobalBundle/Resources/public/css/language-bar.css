@@ -1,0 +1,36 @@
+/* Languages styles
+-------------------------------------------------- */
+
+#languages-bar {
+	background-color: #D5D5D5;
+	text-align: right;
+	font-size: 14px;
+	color: #595959;
+	padding: 5px;
+}
+#languages-bar a,
+#languages-bar a:hover,
+#languages-bar a:visited {
+	text-decoration: none;
+	color: #595959;
+}
+#languages-bar span {
+	display: inline-block;
+	margin-left: 7px;
+}
+#languages-bar span.current {
+	font-family: 'UbuntuBold', sans-serif;
+}
+body.project #languages-bar,
+body.asset #languages-bar {
+	background-color: #303031;
+	color: #898B8E;
+}
+body.project #languages-bar a,
+body.project #languages-bar a:hover,
+body.project #languages-bar a:visited,
+body.asset #languages-bar a,
+body.asset #languages-bar a:hover,
+body.asset #languages-bar a:visited {
+	color: #595959;
+}

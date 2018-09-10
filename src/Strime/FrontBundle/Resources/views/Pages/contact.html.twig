@@ -1,0 +1,131 @@
+{% trans_default_domain 'front_contact' %}
+{% extends '::front_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('home') }}contact" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="{{ 'front.contact.meta.description'|trans }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'front.contact.meta.keywords'|trans }}">
+{% endblock %}
+
+{% block title %}Strime | {{ 'front.contact.meta.title'|trans }}{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'front_header.html.twig' %}
+
+	<div class="wrapper">
+		<h1>{{ 'front.contact.title.contact_us'|trans }}</h1>
+
+		<p class="excerpt">
+			{{ 'front.contact.text.use_form_below'|trans }}
+		</p>
+
+		<div id="contact-form-container">
+			<div class="row">
+				<div class="col-sm-8 col-xs-12 col-sm-push-4">
+
+		            {% for flash_message in app.session.flashbag.get('success') %}
+		                <div class="alert alert-success" role="alert">
+		                    {{ flash_message }}
+		                </div>
+		            {% endfor %}
+
+		            {% for flash_message in app.session.flashbag.get('error') %}
+		                <div class="alert alert-danger" role="alert">
+		                    {{ flash_message }}
+		                </div>
+		            {% endfor %}
+
+					{{ form_start(contact_form, {'action': path('contact'), 'attr': {'id': 'contact-form', 'novalidate': true} }) }}
+
+                        {{ form_widget(contact_form.name, {'translation_domain': 'front_controller_pages'}) }}
+                        {{ form_widget(contact_form.email, {'translation_domain': 'front_controller_pages'}) }}
+                        {{ form_widget(contact_form.subject, {'translation_domain': 'front_controller_pages'}) }}
+                        {{ form_widget(contact_form.message, {'translation_domain': 'front_controller_pages'}) }}
+                        {{ form_widget(contact_form.submit, { 'label': 'front.contact.button.send', 'translation_domain': 'front_contact' }) }}
+
+                        <div class="loader-container">
+                            <div class="loader-pulse">
+                                {{ 'front.contact.loader.loading'|trans }}...
+                            </div>
+                        </div>
+
+                    {{ form_end(contact_form) }}
+
+				</div>
+				<div class="col-sm-4 col-xs-12 col-sm-pull-8" itemscope itemtype="http://schema.org/Organization">
+					<div class="address">
+						<div itemprop="name">STRIME</div>
+						<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+							<span itemprop="streetAddress">5 rue Javelin Pagnon</span><br />
+							<span itemprop="postalCode">42000</span> <span itemprop="addressLocality">Saint-Etienne</span><br />
+							FRANCE
+						</div>
+					</div>
+
+					<div class="phone" itemprop="telephone">
+						(+33) 650 63 28 09
+					</div>
+
+					<div class="email" itemprop="email">
+						<script type="text/javascript" language="javascript">
+						<!--
+						// Email obfuscator script 2.1 by Tim Williams, University of Arizona
+						// Random encryption key feature by Andrew Moulden, Site Engineering Ltd
+						// This code is freeware provided these four comment lines remain intact
+						// A wizard to generate this code is at http://www.jottings.com/obfuscator/
+						{
+							coded = "CcxqwCq@tqd1XS.1c";
+							key = "kv4zLpBWrhsT3mDYiMe7PoGlQdutj6Xyn1USOAcV8aRgq0KN5xHFIfEC2JwZb9";
+							shift=coded.length;
+							link="";
+							for (i=0; i<coded.length; i++) {
+								if (key.indexOf(coded.charAt(i))==-1) {
+									ltr = coded.charAt(i);
+									link += (ltr);
+								}
+								else {
+									ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length;
+									link += (key.charAt(ltr));
+								}
+							}
+							document.write(link);
+						}
+						//-->
+						</script>
+					</div>
+				</div>
+			</div>
+		</div><!-- ./Contact form container -->
+	</div><!-- ./Wrapper -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    <script type="text/javascript">
+    	$(document).ready(function() {
+
+    		// Process the contact form
+			$("form#contact-form").on("submit", function(e) {
+
+				// Display the loader and hide the submit button
+				$("form#contact-form button[type=submit]").hide();
+				$("form#contact-form .loader-container").show();
+
+                // Send an event to Google
+                if(environmentIsProd == true) {
+                    ga('send', 'event', 'Form', 'submit', 'Contact form');
+                }
+			});
+
+    	});
+    </script>
+{% endblock %}

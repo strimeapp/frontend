@@ -1,0 +1,246 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_users') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin - Discounts">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord">
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        'bundles/strimeglobal/css/sub-menu.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}Admin | Discounts | Strime{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+	{% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="sub-menu">
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="{{ path('admin_offers') }}" title="Offres">Offres</a>
+                </li>
+                <li class="active">
+                    <a href="{{ path('admin_discounts') }}" title="Réductions">Réductions</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_tax_rates') }}" title="TVA">Taux de TVA</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="admin-content">
+    	<h1>Gestion des réductions</h1>
+
+        {% for flash_message in app.session.flashbag.get('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% for flash_message in app.session.flashbag.get('error') %}
+            <div class="alert alert-danger" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        <div class="white-box" id="discounts">
+	        <h2>La liste des coupons de réduction</h2>
+
+	        <div class="table-responsive margin-top">
+		        <table class="table table-hover table-condensed">
+		        	<thead>
+						<tr>
+							<td></td>
+							<td>
+								Coupon
+							</td>
+							<td>
+								Offres associées
+							</td>
+							<td>
+								Réduction (€)
+							</td>
+							<td>
+								Réduction (%)
+							</td>
+							<td>
+								Monnaie
+							</td>
+							<td>
+								Répétition
+							</td>
+							<td>
+								Nombre de répétitions
+							</td>
+							<td>
+								Nombre d'utilisations max
+							</td>
+							<td>
+								Date de péremption
+							</td>
+							<td>
+								Nombre d'utilisations
+							</td>
+							<td>
+								Date de création
+							</td>
+							<td></td>
+						</tr>
+					</thead>
+
+					<tbody>
+						{{ form_start(add_coupon_form, {'action': path('admin_discounts'), 'attr': {'id': 'add-coupon-form', 'novalidate': true} }) }}
+							<tr>
+								<td></td>
+								<td>
+									{{ form_widget(add_coupon_form.stripe_id) }}
+								</td>
+								<td>
+									{% for checkbox in add_coupon_form.offers|batch(1) %}
+										<div>
+											{% for option in checkbox %}
+												{{ form_widget(option) }}
+												{{ form_label(option) }}
+											{% endfor %}
+										</div>
+									{% endfor %}
+								</td>
+								<td>
+									{{ form_widget(add_coupon_form.amount_off) }}
+								</td>
+								<td>
+									{{ form_widget(add_coupon_form.percent_off) }}
+								</td>
+								<td>
+									Euros
+									{{ form_widget(add_coupon_form.currency) }}
+								</td>
+								<td>
+									{{ form_widget(add_coupon_form.duration) }}
+								</td>
+								<td>
+									{{ form_widget(add_coupon_form.duration_in_months) }}
+								</td>
+								<td>
+									{{ form_widget(add_coupon_form.max_redemptions) }}
+								</td>
+								<td>
+									{{ form_widget(add_coupon_form.redeem_by) }}
+								</td>
+								<td>
+									-
+								</td>
+								<td>
+									{{ form_widget(add_coupon_form.submit, { 'label': 'Ajouter' }) }}
+								</td>
+								<td></td>
+							</tr>
+						{{ form_end(add_coupon_form) }}
+
+						{% if coupons is defined %}
+						{% for coupon in coupons %}
+							<tr>
+								<td>
+									{{ loop.index }}
+								</td>
+								<td>
+									{{ coupon.id }}
+								</td>
+								<td>
+									{% for additional_information in coupons_additional_information %}
+										{% if (additional_information.stripe_id == coupon.id) and additional_information.offers is not null %}
+											{% for offer in additional_information.offers %}
+												{{ offer.name }}
+												{% if not loop.last %}, {% endif %}
+											{% endfor %}
+										{% endif %}
+									{% endfor %}
+								</td>
+								<td>
+									{% if coupon.amount_off is not null %}
+										{{ coupon.amount_off / 100 }} €
+									{% else %}
+										-
+									{% endif %}
+								</td>
+								<td>
+									{% if coupon.percent_off is not null %}
+										{{ coupon.percent_off }} %
+									{% else %}
+										-
+									{% endif %}
+								</td>
+								<td>
+									{{ coupon.currency }}
+								</td>
+								<td>
+									{% if coupon.duration == "once" %}
+										Une fois
+									{% elseif coupon.duration == "repeating" %}
+										Récurrente
+									{% else %}
+										Illimitée
+									{% endif %}
+								</td>
+								<td>
+									{% if coupon.duration_in_months is not null %}
+										{{ coupon.duration_in_months }}
+									{% else %}
+										-
+									{% endif %}
+								</td>
+								<td>
+									{{ coupon.max_redemptions }}
+								</td>
+								<td>
+									{{ coupon.redeem_by|date("d M Y") }}
+								</td>
+								<td>
+									{{ coupon.times_redeemed }}
+								</td>
+								<td>
+									{% for additional_information in coupons_additional_information %}
+										{% if (additional_information.stripe_id == coupon.id) and additional_information.created_at is not null %}
+											{{ additional_information.created_at.date|date("d M Y", additional_information.created_at.timezone)|localizeddate('medium', 'none', 'fr_FR') }}
+										{% endif %}
+									{% endfor %}
+								</td>
+								<td>
+									{% if coupon.times_redeemed == 0 %}
+										<a href="{{ path('admin_discounts', {'action': 'delete', 'coupon_id': coupon.id}) }}" class="coupon-delete" title="Supprimer ce coupon">
+			                                <i class="fa fa-trash" aria-hidden="true"></i>
+			                            </a>
+			                       	{% endif %}
+								</td>
+							</tr>
+						{% endfor %}
+						{% endif %}
+					</tbody>
+				</table>
+			</div>
+		</div><!-- ./White box -->
+    </div><!-- ./Admin content -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}

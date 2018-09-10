@@ -1,0 +1,134 @@
+{% trans_default_domain 'back_header' %}
+{% if app.session.get('first_name') is defined and app.session.get('first_name') is not null %}
+
+    <!-- Header -->
+    <div id="header">
+    	<div class="wrapper-full">
+    		<div class="row">
+    			<div class="col-sm-2">
+    				<a href="{{ url('app_dashboard') }}" title="Strime">
+    					<img src="{{ asset('bundles/strimeback/img/logo-strime-full-white.svg') }}" alt="Strime" title="Strime" id="logo">
+    				</a>
+    			</div>
+    			<div class="col-sm-6">
+                    <ul id="main-menu">
+                        <li>
+                            <a href="{{ url('app_dashboard') }}" title="{{ 'back.header.link.projects'|trans }}">
+                                {{ 'back.header.link.projects'|trans }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('faq') }}" title="{{ 'back.header.link.faq'|trans }}">
+                                {{ 'back.header.link.faq'|trans }}
+                            </a>
+                        </li>
+                    </ul>
+    			</div>
+                <div class="col-sm-4 text-right" id="header-submenu">
+                    <ul id="header-user">
+                        <li>
+                            <img class="avatar" src="{% if 'gravatar' in app.session.get('avatar') or 'googleusercontent' in app.session.get('avatar') or 'scontent.xx.fbcdn.net' in app.session.get('avatar') %}{{ app.session.get('avatar') }}{% else %}{{ app.session.get('avatar')|imagine_filter('profile_pic') }}{% endif %}" alt="{{ app.session.get('first_name') ~ " " ~ app.session.get('last_name')|escape }}" title="{{ app.session.get('first_name') ~ " " ~ app.session.get('last_name')|escape }}">
+                            {{ app.session.get('first_name') ~ " " ~ app.session.get('last_name') }}
+                            <ul id="header-user-submenu">
+                                <li class="storage">
+                                    {{ 'back.header.item.storage'|trans({'%storage_used%': app.session.get('storage_used'), '%storage_allowed%': app.session.get('storage_allowed') / 1000, '%storage_used_in_percent%': app.session.get('storage_used_in_percent')}) }}
+                                </li>
+                                <li>
+                                    <a href="{{ url('app_profile') }}" title="{{ 'back.header.link.my_account'|trans }}">
+                                        {{ 'back.header.link.my_account'|trans }}
+                                    </a>
+                                </li>
+                                <li>
+                                    {% if app.session.get('google_signin') is defined and app.session.get('google_signin') == true %}
+                                        <a href="#" class="signout" title="{{ 'back.header.link.signout'|trans }}" data-signout-url="{{ url('signout') }}" onclick="googleSignOut();">
+                                            {{ 'back.header.link.signout'|trans }}
+                                        </a>
+                                    {% else %}
+                                        <a href="{{ url('signout') }}" class="signout" title="{{ 'back.header.link.signout'|trans }}">
+                                            {{ 'back.header.link.signout'|trans }}
+                                        </a>
+                                    {% endif %}
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+    		</div>
+    	</div>
+    </div><!-- ./Header -->
+
+{% else %}
+
+    <!-- Header -->
+    <div id="header">
+        <div class="wrapper-full">
+            <div class="row">
+                <div class="col-sm-2">
+                    <a href="{{ url('app_dashboard') }}" title="Strime">
+                        <img src="{{ asset('bundles/strimeback/img/logo-strime-full-white.svg') }}" alt="Strime" title="Strime" id="logo">
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <ul id="main-menu">
+                        <li>
+                            <a href="#" class="login" title="{{ 'back.header.title.signin'|trans }}" data-toggle="modal" data-target="#loginModal" data-backdrop="false" data-keyboard="false">
+                                {{ 'back.header.link.signin'|trans }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="signup" title="{{ 'back.header.title.create_an_account'|trans }}" data-toggle="modal" data-target="#signupModal" data-backdrop="false" data-keyboard="false">
+                                {{ 'back.header.link.signup'|trans }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('faq') }}" title="{{ 'back.header.link.faq'|trans }}">
+                                {{ 'back.header.link.faq'|trans }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 text-right" id="header-change-id">
+                    {% if invited_contact is not null %}
+                        <div class="contact-profile">
+            		        <div class="contact-info">
+            		            <div class="contact-email">{{ invited_contact.email }}</div>
+            		            <a href="#" id="change-id" title="{{ 'back.header.link.change_id'|trans }}">{{ 'back.header.link.change_id'|trans }}</a>
+            		        </div>
+        		            <div class="contact-avatar">
+        		                <img src="{{ invited_contact.avatar }}" class="avatar">
+        		            </div>
+        		            <div class="clear"></div>
+        		        </div>
+        		        <div class="clear"></div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div><!-- ./Header -->
+
+{% endif %}
+
+
+{% if new_feature_disclaimer is defined and new_feature_disclaimer is not null %}
+    <div id="new-feature-disclaimer">
+        <span class="title">{{ 'back.header.disclaimer.news'|trans }}</span>
+        {% if app.request.locale == 'fr' %}
+            {{ new_feature_disclaimer.descriptionFr }}
+            <a href="{{ new_feature_disclaimer.blogUrlFr }}" title="{{ 'back.header.link.learn_more'|trans }}" target="_blank">
+                {{ 'back.header.link.learn_more'|trans }}
+            </a>
+        {% elseif app.request.locale == 'es' %}
+            {{ new_feature_disclaimer.descriptionEs }}
+            <a href="{{ new_feature_disclaimer.blogUrlEs }}" title="{{ 'back.header.link.learn_more'|trans }}" target="_blank">
+                {{ 'back.header.link.learn_more'|trans }}
+            </a>
+        {% else %}
+            {{ new_feature_disclaimer.descriptionEn }}
+            <a href="{{ new_feature_disclaimer.blogUrlEn }}" title="{{ 'back.header.link.learn_more'|trans }}" target="_blank">
+                {{ 'back.header.link.learn_more'|trans }}
+            </a>
+        {% endif %}
+        <div id="close-new-feature-disclaimer" data-new-feature-id="{{ new_feature_disclaimer.secretId }}"></div>
+    </div>
+{% endif %}

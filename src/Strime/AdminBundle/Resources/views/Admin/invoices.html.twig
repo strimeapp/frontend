@@ -1,0 +1,170 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_uploads') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin - Uploads">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord">
+{% endblock %}
+
+{% block title %}Admin | Factures | Strime{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+    {% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="admin-content">
+    	<div class="data-elt">
+	    	<h1>Gestion des factures</h1>
+
+	        {% for flash_message in app.session.flashbag.get('success') %}
+	            <div class="alert alert-success" role="alert">
+	                {{ flash_message }}
+	            </div>
+	        {% endfor %}
+
+	        {% for flash_message in app.session.flashbag.get('error') %}
+	            <div class="alert alert-danger" role="alert">
+	                {{ flash_message }}
+	            </div>
+	        {% endfor %}
+
+	        {% if downloadable_zip %}
+	            <div class="alert alert-success" role="alert">
+	                <a href="../../../invoices/strime-invoices.zip" title="Télécharger les factures">Tu peux télécharger le ZIP avec ces factures en cliquant ici</a>.
+	            </div>
+	        {% endif %}
+
+	        <div>
+		        {{ form_start(filter_invoices_form, {'action': path('admin_invoices'), 'attr': {'id': 'filter-invoices-form', 'novalidate': true} }) }}
+					<div class="row">
+						<div class="col-sm-4">
+							De : {{ form_widget(filter_invoices_form.start) }}
+						</div>
+						<div class="col-sm-4">
+							À : {{ form_widget(filter_invoices_form.stop) }}
+						</div>
+						<div class="col-sm-4">
+							{{ form_widget(filter_invoices_form.submit, { 'label': 'Filtrer' }) }}
+						</div>
+					</div>
+				{{ form_end(filter_invoices_form) }}
+			</div>
+
+	        <div class="table-responsive margin-top">
+		        <table class="table table-hover table-condensed">
+		        	<thead>
+						<tr>
+							<td></td>
+							<td>
+								Numéro de facture
+							</td>
+							<td>
+								Date d'émission
+							</td>
+							<td>
+								Utilisateur
+							</td>
+							<td>
+								Montant HT
+							</td>
+							<td>
+								TVA
+							</td>
+							<td>
+								Total
+							</td>
+							<td>
+
+							</td>
+						</tr>
+					</thead>
+
+					<tbody>
+
+						{% if invoices is not null %}
+						{% for invoice in invoices %}
+							<tr>
+								<td>
+									{{ loop.index }}
+								</td>
+                                <td>
+                                	{% if invoice.user is not null and invoice.file_exists is defined and invoice.file_exists == true %}
+	                                    <a href="{{ path('app_download_invoice', {'user_id': invoice.user.user_id, 'invoice_id': invoice.invoice_id}) }}">
+	                                        {{ invoice.invoice_id }}
+	                                    </a>
+	                                {% elseif invoice.user is null and invoice.deleted_user_id is not null %}
+	                                	<a href="{{ path('app_download_invoice', {'user_id': invoice.deleted_user_id, 'invoice_id': invoice.invoice_id}) }}">
+	                                        {{ invoice.invoice_id }}
+	                                    </a>
+	                                {% else %}
+	                                	{{ invoice.invoice_id }}
+	                                {% endif %}
+                                </td>
+								<td>
+									{{ invoice.day ~ "/" ~ invoice.month ~ "/" ~ invoice.year }}
+								</td>
+								<td>
+									{% if invoice.user is not null %}
+										<a href="{{ path('admin_user', {'client_id': invoice.user.user_id}) }}" title="Voir sa fiche">
+											{{ invoice.user.first_name ~ " " ~ invoice.user.last_name }}
+										</a>
+									{% elseif invoice.user is null and invoice.user_name is not null %}
+										{{ invoice.user_name }} <em>(Utilisateur supprimé)</em>
+									{% else %}
+										Utilisateur inconnu
+									{% endif %}
+								</td>
+								<td>
+									{{ invoice.amount_wo_taxes }}
+								</td>
+								<td>
+									{{ invoice.taxes }}
+								</td>
+								<td>
+									{{ invoice.total_amount }}
+								</td>
+								<td>
+									{% if invoice.user is not null %}
+										<a href="{{ path('admin_invoices', {'action': 'regenerate', 'invoice_id': invoice.invoice_id}) }}" title="Regénérer cette facture">
+											<button class="regenerate-invoice" data-invoice-id="{{ invoice.invoice_id }}">Regénérer</button>
+										</a>
+									{% endif %}
+								</td>
+							</tr>
+						{% endfor %}
+						{% endif %}
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+    </div><!-- ./Admin content -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			// If the user chooses a country in the dropdown field
+			$("select#form_country_code").change(function() {
+				var countryCode = $(this).val();
+				var country = $("select#form_country_code option[value='"+countryCode+"']").text();
+				console.log(countryCode);
+				$("#add-tax-rate-country").empty().text(countryCode);
+				$("#form_country").val(country);
+			});
+
+		});
+	</script>
+{% endblock %}

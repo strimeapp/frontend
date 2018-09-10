@@ -1,0 +1,184 @@
+{% trans_default_domain 'front_trust_badge' %}
+{% extends '::front_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('home') }}trust-badge" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="{{ 'front.trust_badge.meta.description'|trans }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'front.trust_badge.meta.keywords'|trans }}">
+{% endblock %}
+
+{% block title %}Strime | {{ 'front.trust_badge.title.trust_badge'|trans }}{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'front_header.html.twig' %}
+
+	<div class="wrapper">
+
+		<h1>{{ 'front.trust_badge.title.trust_badge'|trans }}</h1>
+
+		<div id="banner-trust-badge"></div>
+
+		<div class="excerpt">
+			{{ 'front.trust_badge.excerpt.trust_badge_by_orange'|trans }}<br />
+			{{ 'front.trust_badge.excerpt.partner_of_program'|trans }}
+		</div>
+
+		<h2><i class="fa fa-user" aria-hidden="true"></i> {{ 'front.trust_badge.title.my_identity'|trans }}</h2>
+
+		<div>
+			<a href="#" class="faq-question" title="{{ 'front.trust_badge.question.which_data_collected'|trans }}" data-target="#trust-badge-data-collected">
+				<i class="fa fa-caret-right" aria-hidden="true"></i> {{ 'front.trust_badge.question.which_data_collected'|trans }}
+			</a>
+			<div class="faq-answer" id="trust-badge-data-collected">
+				<p>
+					{{ 'front.trust_badge.answer.name_email'|trans }}
+				</p>
+				<p>
+					{{ 'front.trust_badge.answer.if_choose_paying_offer'|trans( {'%link_start%': '<a href="' ~ path('app_profile_billing') ~ '" title="votre compte">', '%link_end%': '</a>'} )|raw }}
+				</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<h2><i class="fa fa-bar-chart" aria-hidden="true"></i> {{ 'front.trust_badge.title.analytics'|trans }}</h2>
+
+		<div>
+			<a href="#" class="faq-question" title="{{ 'front.trust_badge.question.which_stats_tools_do_you_use'|trans }}" data-target="#trust-badge-analytics-tools">
+				<i class="fa fa-caret-right" aria-hidden="true"></i> {{ 'front.trust_badge.question.which_stats_tools_do_you_use'|trans }}
+			</a>
+			<div class="faq-answer" id="trust-badge-analytics-tools">
+				<p>
+					{{ 'front.trust_badge.answer.google_analytics'|trans }}
+				</p>
+				<p>
+					{{ 'front.trust_badge.answer.acquisition_localization'|trans }}
+				</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<h2><i class="fa fa-money" aria-hidden="true"></i> {{ 'front.trust_badge.title.my_credit_card_details'|trans }}</h2>
+
+		<div>
+			<a href="#" class="faq-question" title="{{ 'front.trust_badge.question.what_do_you_do_with_credit_card_details'|trans }}" data-target="#trust-badge-payment-data">
+				<i class="fa fa-caret-right" aria-hidden="true"></i> {{ 'front.trust_badge.question.what_do_you_do_with_credit_card_details'|trans }}
+			</a>
+			<div class="faq-answer" id="trust-badge-payment-data">
+				<p>
+					{{ 'front.trust_badge.answer.we_keep_nothing'|trans }}
+				</p>
+				<p>
+					{{ 'front.trust_badge.answer.work_with_stripe'|trans( {'%link_start%': '<a href="https://stripe.com/" title="Stripe" target="_blank">', '%link_end%': '</a>'} )|raw }}
+				</p>
+				<p>
+					{{ 'front.trust_badge.answer.stripe_chosen_by'|trans( {'%link_start%': '<a href="http://www.frenchweb.fr/la-licorne-stripe-part-a-la-conquete-du-marche-francais/246015" title="Stripe et le marché français" target="_blank">', '%link_end%': '</a>'} )|raw }}
+				</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<h2><i class="fa fa-video-camera" aria-hidden="true"></i> {{ 'front.trust_badge.title.my_videos'|trans }}</h2>
+
+		<div>
+			<a href="#" class="faq-question" title="{{ 'front.trust_badge.question.where_are_my_videos'|trans }}" data-target="#trust-badge-where-videos">
+				<i class="fa fa-caret-right" aria-hidden="true"></i> {{ 'front.trust_badge.question.where_are_my_videos'|trans }}
+			</a>
+			<div class="faq-answer" id="trust-badge-where-videos">
+				<p>
+					{{ 'front.trust_badge.answer.amazon_s3_ireland'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.trust_badge.question.who_can_access_my_videos'|trans }}" data-target="#trust-badge-who-videos">
+				<i class="fa fa-caret-right" aria-hidden="true"></i> {{ 'front.trust_badge.question.who_can_access_my_videos'|trans }}
+			</a>
+			<div class="faq-answer" id="trust-badge-who-videos">
+				<p>
+					{{ 'front.trust_badge.answer.can_only_be_played_from_strime'|trans }}
+				</p>
+				<p>
+					{{ 'front.trust_badge.answer.only_people_with_link'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.trust_badge.question.where_are_stored_the_comments'|trans }}" data-target="#trust-badge-where-comments">
+				<i class="fa fa-caret-right" aria-hidden="true"></i> {{ 'front.trust_badge.question.where_are_stored_the_comments'|trans }}
+			</a>
+			<div class="faq-answer" id="trust-badge-where-comments">
+				<p>
+					{{ 'front.trust_badge.answer.comments_stored_with_our_data'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.trust_badge.question.can_i_delete_videos'|trans }}" data-target="#trust-badge-delete-videos">
+				<i class="fa fa-caret-right" aria-hidden="true"></i> {{ 'front.trust_badge.question.can_i_delete_videos'|trans }}
+			</a>
+			<div class="faq-answer" id="trust-badge-delete-videos">
+				<p>
+					{{ 'front.trust_badge.answer.can_delete_videos_anytime'|trans( {'%link_start%': '<a href="' ~ path('app_dashboard') ~ '" title="tableau de bord">', '%link_end%': '</a>'} )|raw }}
+				</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<h2><i class="fa fa-envelope-o" aria-hidden="true"></i> {{ 'front.trust_badge.title.email_contacts'|trans }}</h2>
+
+		<div>
+			<a href="#" class="faq-question" title="{{ 'front.trust_badge.question.what_are_you_doing_email_contacts'|trans }}" data-target="#trust-badge-contacts-email">
+				<i class="fa fa-caret-right" aria-hidden="true"></i> {{ 'front.trust_badge.question.what_are_you_doing_email_contacts'|trans }}
+			</a>
+			<div class="faq-answer" id="trust-badge-contacts-email">
+				<p>
+					{{ 'front.trust_badge.answer.keep_them_in_database'|trans }}
+				</p>
+				<p>
+					{{ 'front.trust_badge.answer.we_dont_send_email'|trans }}
+				</p>
+				<p>
+					{{ 'front.trust_badge.answer.we_will_never_share_them'|trans }}
+				</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<iframe frameborder="0" width="100%" height="400" src="//www.dailymotion.com/embed/video/x3xxl13" allowfullscreen></iframe><br /><a href="http://www.dailymotion.com/video/x3xxl13_badge-de-confiance_tech" target="_blank">Badge de confiance</a> <i>par <a href="http://www.dailymotion.com/Orange" target="_blank">Orange</a></i>
+
+		<hr>
+
+		<div class="margin-top">
+			<div class="row">
+				<div class="col-sm-6">
+					{{ 'front.trust_badge.text.cant_find_answer'|trans }}<br />
+					<a href="{{ url('contact') }}" title="{{ 'front.trust_badge.text.contact_us'|trans }}">{{ 'front.trust_badge.text.contact_us'|trans }}</a>.
+				</div>
+				<div class="col-sm-6" id="trust-badge-site">
+					{{ 'front.trust_badge.text.learn_more'|trans( {'%link_start%': '<a href="https://partner.orange.com/trust-badge/" title="En savoir plus sur le Badge de Confiance Orange" target="_blank">', '%link_end%': '</a>'} )|raw }}
+				</div>
+			</div>
+		</div>
+
+	</div><!-- ./Wrapper -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    {% javascripts
+        '@StrimeFrontBundle/Resources/public/js/faq.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

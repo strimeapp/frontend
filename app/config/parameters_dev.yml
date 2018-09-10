@@ -1,0 +1,60 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host:
+    database_port:
+    database_name:
+    database_user:
+    database_password:
+    mailer_transport: smtp
+    mailer_host: #smtp.sendgrid.net
+    mailer_user:
+    mailer_password:
+
+    # A secret key that's used to generate certain security-related tokens
+    secret: '&y{R7c@X4@xZ0{ckNÃ‚Ã¢$]X69ZP2$xU'
+
+    # Strime App parameters
+    strime_app_url:
+    strime_app_token:
+    strime_app_name: 'Strime.io'
+    strime_app_version: '1.0'
+    locale: fr
+
+    # API parameters
+    strime_api_url:
+    strime_api_token:
+    strime_api_storage_multiplier: 1000000
+    strime_api_storage_allowed_multiplier: 1000
+    strime_api_default_video_names: "Démo 1,Démo 2,Demo 1,Demo 2,Demostración 1,Demostración 2"
+
+    # Video parameters
+    strime_video_gold_number: 1.6180339887
+    strime_video_default_width: 647
+    strime_video_default_height: 400
+    strime_video_default_accepted_extensions: "avi,3gp,mp4,mpg,ogg,ogv,mov,flv,mp2t,m2v,wmv,mkv"
+    strime_image_default_accepted_extensions: "jpg,jpeg,png,gif"
+    strime_audio_default_accepted_extensions: "aif,aiff,mp2,mp3,mpga,ra,wav,webm"
+    strime_video_volume: 0.4
+
+    # Stripe parameters
+    stripe_secret_key:
+    stripe_publishable_key:
+
+    # Slack parameters
+    slack_strime_billing_channel:
+    slack_strime_monitoring_channel:
+
+    # User account parameters
+    user_days_to_confirm_email: 7
+    user_days_to_display_email_popup: 2
+
+    # Google API Console
+    strime_google_api_console_id:
+    strime_google_api_console_secret:
+    strime_google_api_client_secret_json:
+
+    # Facebook API
+    strime_facebook_app_id: 
+
+    # Hubspot API parameters
+    hubspot_api_key:

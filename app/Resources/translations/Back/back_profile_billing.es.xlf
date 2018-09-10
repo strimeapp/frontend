@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_profile_billing_meta_description">
+                <source>back.profile_billing.meta.description</source>
+                <target>Facturación</target>
+            </trans-unit>
+            <trans-unit id="back_profile_billing_meta_keywords">
+                <source>back.profile_billing.meta.keywords</source>
+                <target>strime, strime.io, video, video, videos, comentario, comentarios, aplicación, app, apps, workflow, intercambiar, cliente, videasta, profesional, profesional, cuenta, contraseña</target>
+            </trans-unit>
+            <trans-unit id="back_profile_billing_meta_title">
+                <source>back.profile_billing.meta.title</source>
+                <target>Facturación</target>
+            </trans-unit>
+            <trans-unit id="back_profile_billing_title_storage">
+                <source>back.profile_billing.title.storage</source>
+                <target>Almacenamiento</target>
+            </trans-unit>
+            <trans-unit id="back_profile_billing_text_storage_used">
+                <source>back.profile_billing.text.storage_used</source>
+                <target><![CDATA[%storage_used% Mb <span class="storage-allowed">usado sobre %storage_allowed% Gb (%storage_used_in_percent%%)</span>]]></target>
+            </trans-unit>
+            <trans-unit id="back_profile_billing_title_address">
+                <source>back.profile_billing.title.address</source>
+                <target>Dirección de facturación</target>
+            </trans-unit>
+            <trans-unit id="back_profile_billing_button_update_the_address">
+                <source>back.profile_billing.button.update_the_address</source>
+                <target>Actualizar los datos</target>
+            </trans-unit>
+            <trans-unit id="back_profile_billing_loader_loading">
+                <source>back.profile_billing.loader.loading</source>
+                <target>Cargando</target>
+            </trans-unit>
+            <trans-unit id="back_profile_billing_title_your_invoices">
+                <source>back.profile_billing.title.your_invoices</source>
+                <target>Sus facturas</target>
+            </trans-unit>
+            <trans-unit id="back_profile_billing_list_title_invoice_number">
+                <source>back.profile_billing.list_title.invoice_number</source>
+                <target>Número de factura</target>
+            </trans-unit>
+            <trans-unit id="back_profile_billing_list_title_date">
+                <source>back.profile_billing.list_title.date</source>
+                <target>Fecha</target>
+            </trans-unit>
+            <trans-unit id="back_profile_billing_alt_download_the_invoice">
+                <source>back.profile_billing.alt.download_the_invoice</source>
+                <target>Descargar la factura</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

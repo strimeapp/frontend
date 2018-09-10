@@ -1,0 +1,68 @@
+{% trans_default_domain 'back_broken_link' %}
+{% extends '::back_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('app_broken') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - {{ 'back.broken_link.meta.title'|trans }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'back.broken_link.meta.keywords'|trans }}">
+    <meta name="google-signin-client_id" content="59471169232-igm9oedpkpc0f1spqmrj2nffqd1hj93f.apps.googleusercontent.com">
+{% endblock %}
+
+{% block title %}
+    {{ 'back.broken_link.meta.title'|trans }} | Strime
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets
+        'bundles/strimeback/css/broken-link.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+    <div id="broken-content">
+        <div id="broken-content-inner">
+            <h1>{{ 'back.broken_link.title.invalid_link'|trans }}</h1>
+
+            <p>
+                {{ 'back.broken_link.text.project_deleted_or_not_active'|trans }}
+            </p>
+
+            <div id="contact-owner">
+                {{ 'back.broken_link.text.contact_the_owner'|trans }}
+            </div>
+        </div><!-- ./Broken content inner -->
+    </div><!-- ./Broken content -->
+
+    <div id="logo-bottom">
+        <a href="{{ url('app_dashboard') }}" title="{{ 'back.broken_link.text.back_to_dashboard'|trans }}">
+            <img src="{{  asset('bundles/strimeback/img/logo-strime-white.svg') }}" alt="Strime" title="Strime">
+        </a>
+    </div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    <script type="text/javascript">
+
+        // Force the size of the HTML tag
+        $(document).ready(function() {
+
+            $("html").css("height", "100%");
+
+        });
+
+    </script>
+{% endblock %}

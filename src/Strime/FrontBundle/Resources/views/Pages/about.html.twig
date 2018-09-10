@@ -1,0 +1,38 @@
+{% trans_default_domain 'front_about' %}
+{% extends '::front_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('home') }}about" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="{{ 'front.about.meta.description'|trans }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'front.about.meta.keywords'|trans }}">
+{% endblock %}
+
+{% block title %}Strime | {{ 'front.about.meta.title'|trans }}{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'front_header.html.twig' %}
+
+	<div class="wrapper">
+		<h1>{{ 'front.about.title.who_are_we'|trans }}</h1>
+
+		<p class="excerpt">
+			{{ 'front.about.text.strime_born_from'|trans|raw }}
+			{{ 'front.about.text.strime_online_tool'|trans|raw }}
+			{{ 'front.about.text.we_want_that_feedback_phase'|trans }}
+			{{ 'front.about.text.if_we_succeed'|trans }}
+		</p>
+
+		<div id="about-container">
+
+			<!-- Set up your own content here -->
+
+		</div>
+	</div><!-- ./Wrapper -->
+
+{% endblock %}

@@ -1,0 +1,13 @@
+/* Tooltip styles
+-------------------------------------------------- */
+
+.tooltip.top .tooltip-arrow {
+	background: url(../img/tooltip-arrow-down.png) ;
+	background-size: 5px 5px;
+	bottom: 0;
+	left: 115px;
+	border: none;
+	width: 5px;
+	height: 5px;
+	margin: 0;
+}

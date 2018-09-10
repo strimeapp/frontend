@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_dashboard_empty_folder_button_see_project">
+                <source>back.dashboard_empty_folder.button.see_project</source>
+                <target>Voir le projet</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_empty_folder_text_zero_video">
+                <source>back.dashboard_empty_folder.text.zero_video</source>
+                <target>0 vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_empty_folder_text_zero_file">
+                <source>back.dashboard_empty_folder.text.zero_file</source>
+                <target>0 fichier</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

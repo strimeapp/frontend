@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_tos_meta_description">
+                <source>front.tos.meta.description</source>
+                <target>Condiciones generales de uso</target>
+            </trans-unit>
+            <trans-unit id="front_tos_meta_keywords">
+                <source>front.tos.meta.keywords</source>
+                <target>strime, strime.io, video, video, videos, comentario, comentarios, aplicación, app, apps, workflow, intercambiar, cliente, videasta, profesional, profesional, condiciones generales de uso</target>
+            </trans-unit>
+            <trans-unit id="front_tos_title_terms_of_service">
+                <source>front.tos.title.terms_of_service</source>
+                <target>Condiciones Generales de Uso</target>
+            </trans-unit>
+            <trans-unit id="front_tos_title_terms_of_service_of_strime">
+                <source>front.tos.title.terms_of_service_of_strime</source>
+                <target>Condiciones Generales de Uso de Strime.io</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

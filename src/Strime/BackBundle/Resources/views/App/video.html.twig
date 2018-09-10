@@ -1,0 +1,831 @@
+{% trans_default_domain 'back_video' %}
+{% extends '::back_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('app_video', {'video_id': video_id}, TRUE) }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - {{ video.name }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'back.video.meta.keywords'|trans }}">
+    <meta name="robots" content="noindex" />
+    <meta name="google-signin-client_id" content="59471169232-igm9oedpkpc0f1spqmrj2nffqd1hj93f.apps.googleusercontent.com">
+{% endblock %}
+
+{% block title %}
+    {% if video is not null %}
+        {{ 'back.video.meta.title'|trans({'%video_name%': video.name}) }} | Strime
+    {% endif %}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets
+        'bundles/strimeback/js/video-js-6.2.8/video-js.min.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/language-bar.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/switch.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/tooltip.css' filter='cssrewrite'
+        'bundles/strimeback/js/emojionearea-3.1.6/dist/emojionearea.min.css' filter='cssrewrite'
+        'bundles/strimeback/css/video/video.css' filter='cssrewrite'
+        'bundles/strimeback/css/video/animista.css' filter='cssrewrite'
+        'bundles/strimeback/css/video/animista-classes.css' filter='cssrewrite'
+        'bundles/strimeback/css/assets/comments-emoji.css' filter='cssrewrite'
+        'bundles/strimeback/css/assets/header.css' filter='cssrewrite'
+        'bundles/strimeback/css/assets/share.css' filter='cssrewrite'
+        'bundles/strimeback/css/assets/comments.css' filter='cssrewrite'
+        'bundles/strimeback/css/assets/comments-layer.css' filter='cssrewrite'
+        'bundles/strimeback/css/assets/scrollbars.css' filter='cssrewrite'
+        'bundles/strimeback/css/assets/playback-rate.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {% if is_owner is defined and is_owner == true %}
+        {% stylesheets
+            'bundles/strimeback/css/editable-title.css' filter='cssrewrite'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+    {% if app.session.get('first_name') is not defined or app.session.get('first_name') is null %}
+        <div id="languages-bar">
+            <div class="wrapper-full">
+                {{ 'back.video.text.language'|trans }}
+
+                {% if app.request.locale == 'fr' %}
+                    <span class="current">
+                {% else %}
+                    <span>
+                        {% if invited_contact is null %}
+                            {% set change_locale_url = path('change_locale', {'back_path': current_path, 'locale': 'fr', 'back_path_parameter_name': 'video_id', 'back_path_parameter': video.asset_id }) %}
+                        {% else %}
+                            {% set change_locale_url = path('change_locale', {'back_path': current_path, 'locale': 'fr', 'back_path_parameter_name': 'video_id', 'back_path_parameter': video.asset_id, 'action': 'contact', 'url_data': invited_contact.contact_id }) %}
+                        {% endif %}
+                        <a href="{{ change_locale_url }}" title="FR">
+                {% endif %}
+                    FR
+                {% if app.request.locale == 'fr' %}
+                    </span>
+                {% else %}
+                        </a>
+                    </span>
+                {% endif %}
+
+                {% if app.request.locale == 'en' %}
+                    <span class="current">
+                {% else %}
+                    <span>
+                        {% if invited_contact is null %}
+                            {% set change_locale_url = path('change_locale', {'back_path': current_path, 'locale': 'en', 'back_path_parameter_name': 'video_id', 'back_path_parameter': video.asset_id }) %}
+                        {% else %}
+                            {% set change_locale_url = path('change_locale', {'back_path': current_path, 'locale': 'en', 'back_path_parameter_name': 'video_id', 'back_path_parameter': video.asset_id, 'action': 'contact', 'url_data': invited_contact.contact_id }) %}
+                        {% endif %}
+                        <a href="{{ change_locale_url }}" title="EN">
+                {% endif %}
+                    EN
+                {% if app.request.locale == 'en' %}
+                    </span>
+                {% else %}
+                        </a>
+                    </span>
+                {% endif %}
+
+                {% if app.request.locale == 'es' %}
+                    <span class="current">
+                {% else %}
+                    <span>
+                        {% if invited_contact is null %}
+                            {% set change_locale_url = path('change_locale', {'back_path': current_path, 'locale': 'es', 'back_path_parameter_name': 'video_id', 'back_path_parameter': video.asset_id }) %}
+                        {% else %}
+                            {% set change_locale_url = path('change_locale', {'back_path': current_path, 'locale': 'es', 'back_path_parameter_name': 'video_id', 'back_path_parameter': video.asset_id, 'action': 'contact', 'url_data': invited_contact.contact_id }) %}
+                        {% endif %}
+                        <a href="{{ change_locale_url }}" title="ES">
+                {% endif %}
+                    ES
+                {% if app.request.locale == 'es' %}
+                    </span>
+                {% else %}
+                        </a>
+                    </span>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+	{% include 'asset_header.html.twig' %}
+
+
+    {% if video is not null %}
+        <div id="content">
+
+            <!-- Video -->
+            <div id="video" class="comments-visible">
+
+                <!-- Video meta -->
+                <div id="asset-meta">
+                    <div class="row">
+                        <div class="col-sm-7 col-xs-12">
+                            <h1 {% if is_owner is defined and is_owner == true %}class="editable"{%endif%}>
+                                {{ video.name }}
+                            </h1>
+                        </div>
+
+                        <div class="col-sm-5 col-xs-12 text-right">
+
+                            <div>
+                                <!-- Display comments -->
+                                <div class="video-show-comments-sidebar visible">
+                                    <img src="{{ asset('bundles/strimeback/img/icon-open-comments-pane.svg') }}" class="svg" alt="{{ 'back.video.alt.display_comments'|trans }}" title="{{ 'back.video.alt.display_comments'|trans }}">
+                                </div>
+
+                                {% if is_owner is defined and is_owner == true %}
+                                    <!-- Export button -->
+                                    <div class="video-export" data-video-id="{{ video.asset_id }}" data-video-url="{{ url('app_video', {'video_id' : video.asset_id}) }}" data-content-type="video" data-content-id="{{ video.asset_id }}" data-content-name="{{ video.name }}">
+                                        <img src="{{ asset('bundles/strimeback/img/icon-export.svg') }}" class="svg" alt="{{ 'back.video.alt.export_video'|trans }}" title="{{ 'back.video.alt.export_video'|trans }}">
+
+                                        <div id="video-export-modal">
+                                            <h3>{{ 'back.video.title.export_to'|trans|raw }}</h3>
+
+                                            <ul>
+                                                <li>
+                                                    <a href="#" data-toggle="modal" data-target="#exportYoutubeModal">
+                                                        <img src="{{ asset('bundles/strimeback/img/integrations-icon-youtube.svg') }}" class="svg" alt="Youtube" title="Youtube"> Youtube
+                                                        {% if video.video_youtube_details is defined and video.video_youtube_details.youtube_id is defined and video.video_youtube_details.youtube_id is not null %}
+                                                            <img src="{{ asset('bundles/strimeback/img/icon-check-green.svg') }}" class="video-shared" alt="{{ 'back.video.alt.shared_youtube'|trans }}" title="{{ 'back.video.alt.shared_youtube'|trans }}">
+                                                        {% endif %}
+                                                        <div class="clear"></div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Sharing button -->
+                                    <div class="asset-share" data-asset-id="{{ video.asset_id }}" data-asset-url="{{ url('app_video', {'video_id' : video.asset_id}) }}" data-content-type="video" data-content-id="{{ video.asset_id }}" data-content-name="{{ video.name }}">
+                                        {{ 'back.video.button.share_video'|trans|raw }}
+                                    </div>
+                                {% endif %}
+
+                                <div class="clear"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Video meta -->
+
+                <!-- Video container -->
+                <div id="video-container">
+
+                    <!-- Video inner -->
+                    <div id="video-inner" class="comments-visible">
+                        <div id="comments-layer" ondrop="dropMarker(event)" ondragover="allowDropMarker(event)" ondragenter="dragEnterZoneMarker(event)" ondragleave="dragEnterZoneMarker(event)">
+                            <div class="comment-box">
+                                <div class="comment-box-inner">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="pencil"></div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="trash"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-field">
+                                        <textarea placeholder="{{ 'back.video.placeholder.type_in_comment'|trans }}..."></textarea>
+                                        <button class="post-comment-answer" data-target="comment-1">{{ 'back.video.button.send'|trans }}</button>
+                                        <div class="loader-container">
+                                            <div class="loader-pulse">
+                                                {{ 'back.video.loader.loading'|trans }}...
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <video id="strime-video" class="video-js vjs-big-play-centered" width="{{ video_default_width }}" height="{{ video_default_height }}" data-setup='{"controls": true, "preload": "auto", "loop": false, "poster": "{{video.thumbnail}}"}'>
+                            <source src="{{video.video_webm}}" type='video/webm' />
+                            <source src="{{video.video_mp4}}" type='video/mp4' />
+                            <p class="vjs-no-js">
+                                {{ 'back.video.player.fallback'|trans }}
+                            </p>
+                        </video>
+
+
+                        <!-- Playback rate info box -->
+                        <div id="playback-rate-info-box">
+                            <div id="playback-rate-info-box-inner">
+                                <span></span>x
+                            </div>
+                        </div>
+                        <!-- ./Playback rate info box -->
+                    </div><!-- ./Video inner -->
+
+                    <div id="video-description" {% if is_owner is defined and is_owner == true %}class="editable"{% endif %}>
+                        {% if video.description is not null %}
+                            <div class="description-content">{{ video.description|raw }}</div>
+                        {% else %}
+                            {% if is_owner is defined and is_owner == true %}
+                                <textarea name="description" id="edit-video-description" placeholder="{{ 'back.video.textarea.add_description'|trans }}"></textarea>
+                                <div>
+                                    <button type="submit" name="save-description">{{ 'back.video.button.save'|trans }}</button>
+                                    <div class="loader-container">
+                                        <div class="loader-pulse">
+                                            {{ 'back.video.loader.loading'|trans }}...
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+
+                </div><!-- ./Video container -->
+            </div>
+            <!-- ./Video -->
+
+            <div id="comments" class="visible">
+
+                <div class="header">
+                    <span id="nb-comments">
+                        {{ 'back.video.text.nb_comments'|transchoice(nb_comments, {'%nb_comments%': nb_comments}) }}
+                    </span>
+                    <div id="close-comments-pane">
+                        <img src="{{ asset('bundles/strimeback/img/icon-close-comments-pane.svg') }}" class="svg" alt="{{ 'back.video.alt.hide_comments'|trans }}" title="{{ 'back.video.alt.hide_comments'|trans }}">
+                    </div>
+                    <div class="clear"></div>
+                </div><!-- ./Header -->
+
+                <div id="comments-filters">
+                    <div class="filter-elt" id="order-comments">
+                        <div class="filter-elt-inner">
+                            <div class="adjust-position">
+                                <div class="order-option-description">
+                                    {{ 'back.video.text.order'|trans }}
+                                </div>
+                                <div class="order-option hourglass down active" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ 'back.video.tooltip.ordered_by_publication_date'|trans|raw }}"></div>
+                                <div class="order-option timer down" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ 'back.video.tooltip.ordered_by_timecode'|trans|raw }}"></div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-elt" id="resolved-comments-toggle">
+                        <div class="filter-elt-inner">
+                            <div class="adjust-position">
+                                {{ 'back.video.text.hide_solved'|trans }}
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <div class="slider round"></div>
+                                </label>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- ./Comments filters -->
+
+                <!-- Comments Container -->
+                <div id="comments-container">
+                    <div class="comment-error-message" id="new-comment-error-message">
+                        {{ 'back.video.text.error_while_saving_comment'|trans }}<br />
+                        {{ 'back.video.text.try_again_or_contact'|trans }}
+                    </div>
+                    <div class="comment-error-message" id="delete-comment-error-message">
+                        {{ 'back.video.text.error_while_deleting_comment'|trans }}<br />
+                        {{ 'back.video.text.try_again_or_contact'|trans }}
+                    </div>
+                    <div class="comment-error-message" id="edit-comment-error-message">
+                        {{ 'back.video.text.error_while_editing_comment'|trans }}<br />
+                        {{ 'back.video.text.try_again_or_contact'|trans }}
+                    </div>
+
+                    {% if nb_comments > 0 %}
+                        {% for comment in comments %}
+                            {% if comment.answer_to is null %}
+
+                                <div class="comment {% if comment.done == 1 %}done{% endif %}" id="comment-{{ comment.comment_id }}" data-comment-id="{{ loop.index }}" data-time="{{comment.time}}" data-api-comment-id="{{ comment.comment_id }}" {% if comment.author is defined and comment.author is not null %}data-comment-author-type="{{ comment.author.author_type }}" data-comment-author-id="{{ comment.author.author_id }}"{% endif %}>
+
+                                    {% if is_owner is defined and is_owner == true %}
+                                        <div class="mark-as-done">
+                                            {{ 'back.video.text.resolved'|trans }}
+                                            {% if is_owner is defined and is_owner == true %}
+                                                <div class="mark-as-done-checkbox {% if comment.done == 1 %}checked{% endif %}"></div>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+
+                                    <div class="row">
+                                        <div class="col-avatar">
+                                            <div class="avatar {% if comment.author.avatar is defined and comment.author.avatar is not null %}no-background{% endif %}">
+                                                {% if comment.author.avatar is defined and comment.author.avatar is not null %}
+                                                    <img src="{% if 'gravatar' in comment.author.avatar or 'googleusercontent' in app.session.get('avatar') or 'scontent.xx.fbcdn.net' in app.session.get('avatar') %}{{ comment.author.avatar }}{% else %}{{ comment.author.avatar|imagine_filter('profile_pic') }}{% endif %}" alt="{{ comment.author.name }}" title="{{ comment.author.name }}">
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="col-content">
+                                            <div class="name"><span class="timestamp">{{ comment.timestamp }}</span><span class="pipe"> | </span><span class="comment-author">{{ comment.author.name }}</span></div>
+                                            <div class="text">
+                                                <div class="text-inner">
+                                                    {{ comment.comment|raw|nl2br }}
+                                                </div>
+
+                                                {% if user_id is defined and user_id == comment.author.author_id %}
+                                                    <div class="comment-edition-tools">
+                                                        <div class="comment-delete" data-toggle="modal" data-target="#deleteCommentModal"></div>
+                                                        <div class="comment-edit" data-toggle="modal" data-target="#editCommentModal"></div>
+                                                        <div class="clear"></div>
+                                                    </div>
+                                                {% elseif invited_contact is defined and invited_contact is not null and invited_contact.contact_id == comment.author.author_id %}
+                                                    <div class="comment-edition-tools">
+                                                        <div class="comment-delete" data-toggle="modal" data-target="#deleteCommentModal"></div>
+                                                        <div class="comment-edit" data-toggle="modal" data-target="#editCommentModal"></div>
+                                                        <div class="clear"></div>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                            <div class="details">
+                                                {{ 'back.video.text.there_was_x_ago'|trans({'%time%': comment.when}) }}
+                                                <div class="separator">•</div>
+                                                <a href="#" class="answer-to-comment" data-target="comment-{{ comment.comment_id }}">
+                                                    {{ 'back.video.link.answer'|trans }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="answers-container">
+                                        {% for answer in comments %}
+                                            {% if answer.answer_to is not null and answer.answer_to == comment.comment_id %}
+                                                <div class="comment-answer" id="comment-{{ answer.comment_id }}">
+                                                    <div class="col-left">
+                                                        <div class="icon-answer"></div>
+                                                        <div class="clear"></div>
+                                                    </div>
+                                                    <div class="col-avatar">
+                                                        <div class="avatar {% if answer.author.avatar is defined and answer.author.avatar is not null %}no-background{% endif %}">
+                                                            {% if answer.author.avatar is defined and answer.author.avatar is not null %}
+                                                                <img src="{% if 'gravatar' in answer.author.avatar or 'googleusercontent' in app.session.get('avatar') or 'scontent.xx.fbcdn.net' in app.session.get('avatar') %}{{ answer.author.avatar }}{% else %}{{ answer.author.avatar|imagine_filter('profile_pic') }}{% endif %}" alt="{{ answer.author.name }}" title="{{ answer.author.name }}">
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-content">
+                                                        <div class="name">{{ answer.author.name }}</div>
+                                                        <div class="text">
+                                                            {{ answer.comment|raw|nl2br }}
+                                                        </div>
+                                                        <div class="details">
+                                                            Il y a {{ answer.when }}
+                                                            <div class="separator">•</div>
+                                                            <a href="#" class="answer-to-comment is-child" data-target="comment-{{ answer.comment_id }}" data-target-parent="comment-{{ comment.comment_id }}">
+                                                                {{ 'back.video.link.answer'|trans }}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="comment-answer-field">
+                                        <textarea placeholder="{{ 'back.video.placeholder.type_in_answer'|trans }}..."></textarea>
+                                        <button class="post-comment-answer" data-target="comment-{{ comment.comment_id }}">{{ 'back.video.button.send'|trans }}</button>
+
+                                        <div class="loader-container">
+                                            <div class="loader-pulse">
+                                                {{ 'back.video.loader.loading'|trans }}...
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div><!-- ./Comment -->
+
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div><!-- ./Comments Container -->
+
+            </div>
+            <!-- ./Comments -->
+
+            <div class="clear"></div>
+        </div>
+        <!-- ./Content -->
+
+
+        <div class="modal fade" id="editCommentModal" tabindex="-1" role="dialog" aria-labelledby="editCommentLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.video.alt.close_window'|trans }}" title="{{ 'back.video.alt.close_window'|trans }}"></span></button>
+                        <h4 class="modal-title">{{ 'back.video.title.edit_comment'|trans }}</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="modal-body-inner">
+                            <div class="avatar-container">
+                                <div class="avatar {% if comment.author.avatar is defined and comment.author.avatar is not null %}no-background{% endif %}">
+                                    <img src="" alt="" title="">
+                                </div>
+                            </div>
+                            <div class="comment-container">
+                                <textarea></textarea>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="pull-right">
+                            <button class="cancel" data-dismiss="modal">
+                                {{ 'back.video.button.cancel'|trans }}
+                            </button>
+                            <button class="validate" data-comment-id="">
+                                {{ 'back.video.button.validate'|trans }}
+                            </button>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        <div class="modal fade" id="deleteCommentModal" tabindex="-1" role="dialog" aria-labelledby="deleteCommentLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.video.alt.close_window'|trans }}" title="{{ 'back.video.alt.close_window'|trans }}"></span></button>
+                        <h4 class="modal-title">{{ 'back.video.title.delete_comment'|trans }}</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        {{ 'back.video.text.about_to_delete_comment'|trans|raw }}
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="action-buttons">
+                            <button class="cancel" data-dismiss="modal">
+                                {{ 'back.video.button.cancel'|trans }}
+                            </button>
+                            <button class="validate" data-comment-id="">
+                                {{ 'back.video.button.validate'|trans }}
+                            </button>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        <div class="modal fade" id="exportYoutubeModal" tabindex="-1" role="dialog" aria-labelledby="exportYoutubeLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.video.alt.close_window'|trans }}" title="{{ 'back.video.alt.close_window'|trans }}"></span></button>
+                        <h4 class="modal-title">{{ 'back.video.title.export_video_to_youtube'|trans }}</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div id="youtube-export-result"></div>
+
+                        <input name="name" value="{{ video.name }}" placeholder="{{ 'back.video.input.name'|trans }}">
+                        <input name="tags" value="" placeholder="{{ 'back.video.input.tags_separated_by_comas'|trans }}">
+                        <select name="status">
+                            <option value="public" selected="selected">{{ 'back.video.input.status_public'|trans }}</option>
+                            <option value="private">{{ 'back.video.input.status_private'|trans }}</option>
+                            <option value="unlisted">{{ 'back.video.input.status_unlisted'|trans }}</option>
+                        </select>
+                        {% set videoDescription = video.description %}
+                        <textarea name="description" placeholder="{{ 'back.video.input.description'|trans }}">{{ videoDescription|striptags }}</textarea>
+
+                        <button type="submit" data-target="{{ url('app_video_export_youtube', {'video_id' : video.asset_id}) }}">{{ 'back.video.button.export'|trans }}</button>
+
+                        <div class="loader-container">
+                            <div class="loader-pulse">
+                                {{ 'back.video.loader.loading'|trans }}...
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        {% if app.session.get('first_name') is not defined or app.session.get('first_name') is null %}
+            <div class="modal fade" id="changeIdentityModal" tabindex="-1" role="dialog" aria-labelledby="changeIdentityLabel">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.video.alt.close_window'|trans }}" title="{{ 'back.video.alt.close_window'|trans }}"></span></button>
+                            <h4 class="modal-title">{{ 'back.video.title.hello'|trans }}</h4>
+                            <h5>{{ 'back.video.title.thanks_for_introducing'|trans }}</h5>
+                        </div>
+                        <div class="modal-body">
+
+                            <div id="contacts-list">
+                            {% for contact in contacts %}
+                                <div class="contact" data-contact-id="{{ contact.contact_id|escape }}" data-contact-email="{{ contact.email|escape }}" data-contact-avatar="{{ contact.avatar|escape }}">
+                                    <div class="row">
+                                        <div class="col-xs-2">
+                                            <img src="{{ contact.avatar }}" class="avatar">
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="email">{{ contact.email }}</div>
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <img src="{{ asset('bundles/strimeback/img/icon-check.svg') }}" title="{{ 'back.video.alt.choose_this_profile'|trans }}" class="choose-identity">
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+
+                            <h5>{{ 'back.video.title.not_in_the_list'|trans }}</h5>
+
+                            <div>
+                                {% if add_video_contact_form is not null %}
+                                    {{ form_start(add_video_contact_form, {'action': path('app_ajax_add_asset_contact'), 'attr': {'id': 'add-video-contact-form', 'novalidate': true} }) }}
+
+                                        {{ form_widget(add_video_contact_form.email, {'translation_domain': 'back_helpers_form'}) }}
+
+                                        {{ form_widget(add_video_contact_form.submit, { 'label': 'back.video.button.validate', 'translation_domain': 'back_video' }) }}
+
+                                        <div class="clear"></div>
+
+                                    {{ form_end(add_video_contact_form) }}
+                                {% endif %}
+                            </div>
+
+                            <div id="add-video-contact-result"></div>
+
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <div class="modal fade" id="changeIdentityConfirmationMessageModal" tabindex="-1" role="dialog" aria-labelledby="changeIdentityConfirmationMessageLabel">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+
+                            <h4>{{ 'back.video.title.glad_to_see_you_again'|trans }}</h4>
+
+                            <h5>{{ 'back.video.title.you_can_access_the_video'|trans }}</h5>
+
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        {% endif %}
+
+
+        {% if is_owner is defined and is_owner == true %}
+            {% include 'StrimeBackBundle:Modal:modal-share-asset.html.twig' %}
+        {% endif %}
+
+    {% endif %}
+
+{% endblock %}
+
+
+{% block footer %}
+	{{ parent() }}
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    <script type="text/javascript">
+        // Define the text variables
+        const backVideoJsTextChangeId = "{{ 'back.video.js.change_id'|trans|raw }}";
+        const backVideoJsTextEmailAddressNotValid = "{{ 'back.video.js.email_address_not_valid'|trans|raw }}";
+        const backVideoJsTextErrorSendingData = "{{ 'back.video.js.error_sending_data'|trans|raw }}";
+        const backVideoJsTextErrorSavingEmailAddress = "{{ 'back.video.js.error_saving_email_address'|trans|raw }}";
+        const backVideoJsTextErrorOccuredDuringIdentification = "{{ 'back.video.js.error_occured_during_identification'|trans|raw }}";
+        const backVideoJsTextThanksCanBeginCommenting = "{{ 'back.video.js.thanks_can_begin_commenting'|trans|raw }}";
+        const backVideoJsTextChooseThisProfile = "{{ 'back.video.js.choose_this_profile'|trans|raw }}";
+        const backVideoJsTextSeeTheComment = "{{ 'back.video.js.see_the_comment'|trans|raw }}";
+        const backVideoJsTextThereWasOneMinute = "{{ 'back.video.js.there_was_one_minute'|trans|raw }}";
+        const backVideoJsTextAnswer = "{{ 'back.video.js.answer'|trans|raw }}";
+        const backVideoJsTextTypeInAnswer = "{{ 'back.video.js.type_in_answer'|trans|raw }}";
+        const backVideoJsTextSend = "{{ 'back.video.js.send'|trans|raw }}";
+        const backVideoJsTextLoading = "{{ 'back.video.js.loading'|trans|raw }}";
+        const backVideoJsTextComments = "{{ 'back.video.js.comments'|trans|raw }}";
+        const backVideoJsTextComment = "{{ 'back.video.js.comment'|trans|raw }}";
+        const backVideoJsTextAnonymous = "{{ 'back.video.js.anonymous'|trans|raw }}";
+        const backVideoJsTextResolved = "{{ 'back.video.js.resolved'|trans|raw }}";
+        const backVideoJsTextRewind = "{{ 'back.video.js.rewind'|trans|raw }}";
+        const backVideoJsTextHideMarkers = "{{ 'back.video.js.hide_markers'|trans|raw }}";
+        const backVideoJsTextBackFrom10s = "{{ 'back.video.js.back_from_10s'|trans|raw }}";
+        const backVideoJsTextGoToNextComment = "{{ 'back.video.js.go_to_next_comment'|trans|raw }}";
+        const backVideoJsTextGoToPreviousComment = "{{ 'back.video.js.go_to_previous_comment'|trans|raw }}";
+        const backVideoJsTextAddDescription = "{{ 'back.video.textarea.add_description'|trans }}";
+        const backVideoJsTextSave = "{{ 'back.video.button.save'|trans }}";
+        var backVideoJsTextTitle = "{{ 'back.video.js.title'|trans|raw }}";
+    </script>
+
+    {% javascripts
+        '@StrimeBackBundle/Resources/public/js/video-js-6.2.8/video.min.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/zeroclipboard-2.2.0/dist/ZeroClipboard.min.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/functions.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/video.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/linkifyjs-2.1.3/linkify.min.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/linkifyjs-2.1.3/linkify-jquery.min.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/emojionearea-3.1.6/dist/emojionearea.min.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/add-links-to-comments.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/answer-to-comment.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/comments-emoji.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/edit-comment.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/hide-resolved-comments.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/reorder-comments.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/set-comment-as-active.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/set-comment-as-done.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/activate-additional-buttons.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/activate-shortcuts.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/close-comment-box.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/delete-comment.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/display-markers.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/drag-and-drop.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/populate-edit-comment.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/edit-video-description.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/edit-video-name.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/export.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/go-to-comment.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/hash-url.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/play-pause-video.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/post-answer.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/post-comment.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/reload-markers.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/resize-containers.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/resize-player.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/save-video-volume.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/video/show-comments-sidebar.js' filter='?uglifyjs2'
+        '@StrimeGlobalBundle/Resources/public/js/svg.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {% if is_owner is defined and is_owner == true %}
+
+        {% javascripts
+            '@StrimeBackBundle/Resources/public/js/typeahead.js-0.11.1/dist/typeahead.jquery.min.js' filter='?uglifyjs2'
+            '@StrimeBackBundle/Resources/public/js/share.js' filter='?uglifyjs2'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+        <script type="text/javascript">
+            // Define the variables
+            var contactsList = {{ contacts_list|raw }};
+        </script>
+
+    {% else %}
+
+        {% javascripts
+            '@StrimeBackBundle/Resources/public/js/video/contacts.js' filter='?uglifyjs2'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+    {% endif %}
+
+    <script type="text/javascript">
+        {% if app.session.get('first_name') is defined and app.session.get('first_name') is not null %}
+            var author = "{{ app.session.get('first_name') ~ " " ~ app.session.get('last_name') }}";
+        {% elseif invited_contact is defined and invited_contact is not null %}
+            var author = "{{ invited_contact.email }}";
+        {% else %}
+            var author = backVideoJsTextAnonymous;
+        {% endif %}
+
+        {% if app.session.get('avatar') is defined and app.session.get('avatar') is not null %}
+            var userAvatar = "{% if 'gravatar' in app.session.get('avatar') or 'googleusercontent' in app.session.get('avatar') or 'scontent.xx.fbcdn.net' in app.session.get('avatar') %}{{ app.session.get('avatar') }}{% else %}{{ app.session.get('avatar')|imagine_filter('profile_pic') }}{% endif %}";
+        {% elseif invited_contact is defined and invited_contact is not null %}
+            var userAvatar = "{{ invited_contact.avatar }}";
+        {% else %}
+            var userAvatar = null;
+        {% endif %}
+
+        {% if user_id is defined and user_id is not null %}
+            var userID = "{{ user_id }}";
+            var contactID = null;
+            var authorType = "user";
+        {% elseif invited_contact is defined and invited_contact is not null %}
+            var userID = null;
+            var contactID = "{{ invited_contact.contact_id }}";
+            var authorType = "contact";
+        {% else %}
+            var userID = null;
+            var contactID = null;
+            var authorType = null;
+        {% endif %}
+
+        {% if is_owner is defined and is_owner == true %}
+            var isOwner = true;
+        {% else %}
+            var isOwner = false;
+        {% endif %}
+
+        const iconMarker = "{{ asset('bundles/strimeback/img/player/icon-point.png') }}";
+        const iconCheck = "{{ asset('bundles/strimeback/img/icon-check.svg') }}";
+        const goldNumber = {{ video_default_gold_number }};
+        const assetType = "video";
+        var videoDefaultWidth = {{ video_default_width }};
+        var videoDefaultHeight = {{ video_default_height }};
+        var videoActualWidth = {{ video_default_width }};
+        var videoActualHeight = {{ video_default_height }};
+        var isVideoFullScreen = false;
+        const ajaxAddCommentURL = "{{ path('app_ajax_add_comment') }}";
+        const ajaxEditCommentURL = "{{ path('app_ajax_edit_comment') }}";
+        const ajaxDeleteCommentURL = "{{ path('app_ajax_delete_comment') }}";
+        const ajaxSaveVideoVolumeURL = "{{ path('app_ajax_save_video_volume') }}";
+        const ajaxEditAssetURL = "{{ path('app_ajax_edit_asset') }}";
+        const ajaxSaveContactInSessionURL = "{{ path('app_ajax_save_contact_in_session') }}";
+        const ajaxExportYoutubeURL = "{{ path('app_video_export_youtube') }}";
+        const ajaxGetCommentsParentsIdsURL = "{{ path('app_ajax_comments_get_parents_ids') }}";
+        const videoID = "{{ video_id }}";
+        var nbComments = {{ nb_comments}};
+        var answerToAuthorID;
+        var answerToAuthorType;
+        var isDraggingMarker = false;
+        const exportMarkerImage = "{{ asset('bundles/strimeback/img/icon-check-green.svg') }}";
+        const exportMarkerTitle = "{{ 'back.video.alt.shared_youtube'|trans }}";
+        var globallyHideMarkersOnVideo = false;
+        var commentsList = [{%for comment in comments_list_for_buttons%}"{{ comment.comment_id }}"{% if loop.last == false %},{%endif%}{%endfor%}];
+        var nextCommentForButton = commentsList[0];
+        var previousCommentForButton = commentsList[commentsList.length-1];
+        var lastChangePreviousNextButtons = 0;
+        var currentPlaybackRate = 1;
+
+        {% if app.session.get('video_volume') is defined and app.session.get('video_volume') is not null %}
+            var videoVolume = {{ app.session.get('video_volume') }};
+        {% else %}
+            var videoVolume = {{ video_default_volume }};
+        {% endif %}
+
+        {% if is_mobile() %}
+            var isMobile = true;
+        {% else %}
+            var isMobile = false;
+        {% endif %}
+
+        {% if video.video_youtube_details is defined and video.video_youtube_details.youtube_id is defined and video.video_youtube_details.youtube_id is not null %}
+            var hasBeenExportedOnYoutube = true;
+        {% else %}
+            var hasBeenExportedOnYoutube = false;
+        {% endif %}
+
+
+
+
+        function displayVideoMarkers() {
+            // videojs("strime-video").ready(function(){
+            videojs("strime-video", {}, function(){
+
+                var strimePlayer = this;
+
+                // 1. Get the video width
+                var videoWidth = $("#video-inner video").width();
+
+                // 2. Get the length of the video
+                var videoLength = strimePlayer.duration();
+
+                {% if nb_comments > 0 %}
+                    {% for comment in comments %}
+                        {% if comment.answer_to is null %}
+
+                                // 3. Position the marker
+                                var markerProgressLeft{{ loop.index }} = ({{ comment.time }} / videoLength) * 100;
+
+                                // 4. Create the marker
+                                var markerProgress{{ loop.index }} = '<div class="marker-progress" id="marker-progress-{{ loop.index }}" data-time="{{ comment.time }}" data-comment-id="{{ loop.index }}" data-api-comment-id="{{ comment.comment_id }}" style="left: '+markerProgressLeft{{ loop.index }}+'%;"></div>';
+                                $("#video #video-inner .vjs-progress-control").append(markerProgress{{ loop.index }});
+
+                                // 5. Add the marker to the video
+                                var marker{{ loop.index }} = '<img src="'+iconMarker+'" class="marker" id="marker-{{ loop.index }}" alt="{{ 'back.video.js.see_the_comment'|trans|raw }}" title="{{ 'back.video.js.see_the_comment'|trans|raw }}" data-show="{{ comment.when_to_show }}" data-hide="{{ comment.when_to_hide }}" data-comment-id="{{ loop.index }}" data-api-comment-id="{{ comment.comment_id }}" style="top: {{ comment.marker_top }}%; left: {{ comment.marker_left }}%; display: {{ comment.marker_display }}" {% if (user_id is defined and user_id == comment.author.author_id) or (invited_contact is defined and invited_contact is not null and invited_contact.contact_id == comment.author.author_id) %}draggable="true" ondragstart="dragMarker(event)" ondragend="dragEndMarker(event)"{% endif %}>';
+                                $("#comments-layer").append(marker{{ loop.index }});
+
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+            });
+        }
+
+    </script>
+{% endblock %}

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_encoding_killed_meta_title">
+                <source>email.encoding_killed.meta.title</source>
+                <target>La codificación del archivo fracaso</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_title_video_encoded">
+                <source>email.encoding_killed.title.video_encoded</source>
+                <target>El vídeo no pudo estar codificado...</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_title_audio_encoded">
+                <source>email.encoding_killed.title.audio_encoded</source>
+                <target>El fichero audio no pudo estar codificado...</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_title_file_encoded">
+                <source>email.encoding_killed.title.file_encoded</source>
+                <target>El archivo no pudo estar codificado...</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_hi_first_name">
+                <source>email.encoding_killed.text.hi_first_name</source>
+                <target>Hola %first_name%</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_video_encoding_killed">
+                <source>email.encoding_killed.text.video_encoding_killed</source>
+                <target><![CDATA[La codificación del vídeo con el nombre <strong>"%asset%"</strong> fue parada. No se puede codificar este fichero.]]></target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_audio_encoding_killed">
+                <source>email.encoding_killed.text.audio_encoding_killed</source>
+                <target><![CDATA[La codificación del fichero audio con el nombre <strong>"%asset%"</strong> fue parada. No se puede codificar este fichero.]]></target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_file_encoding_killed">
+                <source>email.encoding_killed.text.file_encoding_killed</source>
+                <target><![CDATA[La codificación del archivo con el nombre <strong>"%asset%"</strong> fue parada. No se puede codificar este fichero.]]></target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_sorry_inconvenience">
+                <source>email.encoding_killed.text.sorry_inconvenience</source>
+                <target>Lamentamos esta situación.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_invite_reupload_file_or_contact_us">
+                <source>email.encoding_killed.text.invite_reupload_file_or_contact_us</source>
+                <target>Invitamos usted a re-intentar de subir este archivo o a contactarnos.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_see_you_soon">
+                <source>email.encoding_killed.text.see_you_soon</source>
+                <target>Nos vemos pronto</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_strime_team">
+                <source>email.encoding_killed.text.strime_team</source>
+                <target>El equipo Strime</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

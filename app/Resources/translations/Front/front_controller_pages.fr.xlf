@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_controller_pages_contact_subject">
+                <source>front.controller_pages.contact.subject</source>
+                <target>C'est à quel sujet ?</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_contact_technical_issue">
+                <source>front.controller_pages.contact.technical_issue</source>
+                <target>Un problème technique</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_contact_new_feature">
+                <source>front.controller_pages.contact.new_feature</source>
+                <target>Une nouvelle fonctionnalité</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_contact_question_on_the_offers">
+                <source>front.controller_pages.contact.question_on_the_offers</source>
+                <target>Une question sur les offres</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_contact_candidature">
+                <source>front.controller_pages.contact.candidature</source>
+                <target>Une candidature</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_contact_other">
+                <source>front.controller_pages.contact.other</source>
+                <target>Autre</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_contact_name">
+                <source>front.controller_pages.contact.name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_contact_email">
+                <source>front.controller_pages.contact.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_contact_your_message">
+                <source>front.controller_pages.contact.your_message</source>
+                <target>Votre message</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_contact_message_sent_will_answer_asap">
+                <source>front.controller_pages.contact.message_sent_will_answer_asap</source>
+                <target>Nous avons bien reçu votre message. Nous y répondrons dès que possible !</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_contact_please_choose_subject">
+                <source>front.controller_pages.contact.please_choose_subject</source>
+                <target>Veuillez choisir un sujet.</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_contact_all_the_fields_not_provided">
+                <source>front.controller_pages.contact.all_the_fields_not_provided</source>
+                <target>Tous les champs n'ont pas été remplis.</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_confirm_not_able_to_confirm_email">
+                <source>front.controller_pages.confirm.not_able_to_confirm_email</source>
+                <target><![CDATA[Nous n'avons pas pu confirmer cette adresse email.<br />Veuillez vous assurer que le lien sur lequel vous avez cliqué est valide.]]></target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_confirm_email_confirmed">
+                <source>front.controller_pages.confirm.email_confirmed</source>
+                <target><![CDATA[Nous avons bien confirmé votre adresse email.<br />Vous allez être redirigé.]]></target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_confirm_error_while_updating_profile">
+                <source>front.controller_pages.confirm.error_while_updating_profile</source>
+                <target><![CDATA[Une erreur est survenue lors de la mise à jour de votre profil.<br />Veuillez prendre contact avec nous.]]></target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_confirm_not_able_to_reset_password">
+                <source>front.controller_pages.confirm.not_able_to_reset_password</source>
+                <target><![CDATA[Vous n'êtes pas autorisé à modifier ce mot de passe.<br />Veuillez vous assurer que le lien sur lequel vous avez cliqué est valide et qu'il a moins de 24h.]]></target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_reset_pwd_new_pwd">
+                <source>front.controller_pages.reset_pwd.new_pwd</source>
+                <target>Nouveau mot de passe</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_reset_pwd_retype_new_pwd">
+                <source>front.controller_pages.reset_pwd.retype_new_pwd</source>
+                <target>Resaisissez le nouveau mot de passe</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_reset_pwd_incorrect_pwd">
+                <source>front.controller_pages.reset_pwd.incorrect_pwd</source>
+                <target>Le mot de passe saisi est incorrect.</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_reset_pwd_new_pwd_saved">
+                <source>front.controller_pages.reset_pwd.new_pwd_saved</source>
+                <target>Votre nouveau mot de passe a bien été enregistré.</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_reset_pwd_error_occured_while_updating_pwd">
+                <source>front.controller_pages.reset_pwd.error_occured_while_updating_pwd</source>
+                <target>Une erreur est survenue lors de la mise à jour de votre mot de passe.</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_reset_pwd_all_fields_not_provided">
+                <source>front.controller_pages.reset_pwd.all_fields_not_provided</source>
+                <target>Tous les champs n'ont pas été remplis.</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_confirm_passwords_are_not_identical">
+                <source>front.controller_pages.confirm.passwords_are_not_identical</source>
+                <target>Les mots de passe saisis ne sont pas identiques.</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_ajax_signup_confirm_email">
+                <source>front.controller_pages.ajax_signup.confirm_email</source>
+                <target>Confirmez votre adresse email</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_ajax_signup_confirm_signup">
+                <source>front.controller_pages.ajax_signup.confirm_signup</source>
+                <target>Confirmation d'inscription</target>
+            </trans-unit>
+            <trans-unit id="front_controller_pages_ajax_forgotten_pwd_your_new_password">
+                <source>front.controller_pages.ajax_forgotten_pwd.your_new_password</source>
+                <target>Votre nouveau mot de passe</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

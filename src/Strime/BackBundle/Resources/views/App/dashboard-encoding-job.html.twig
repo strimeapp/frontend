@@ -1,0 +1,67 @@
+{% trans_default_domain 'back_dashboard_encoding_job' %}
+
+<div class="asset {{ asset.asset_type }} {% if asset.project is defined %}project{% endif %} {% if nb_assets_per_line is divisible by(4) %}last-elt{% endif %}" style="background: url({{ asset.thumbnail }}) no-repeat; background-size: cover; background-position: center center;" {% if asset.project is not defined or asset.project is null %}data-asset-type="{{ asset.asset_type }}"{% endif %}>
+
+    {% set asset_delete_url = path('app_dashboard', {'action': 'delete', 'content_type': asset.asset_type, 'content_id' : asset.asset_id}) %}
+    {% if asset.asset_type == "video" %}
+        {% set asset_share_url = url('app_video', {'video_id' : asset.asset_id}, TRUE) %}
+        {% set asset_page_url = path('app_video', {'video_id' : asset.asset_id}) %}
+        {% set encoding_job_id = "encoding-job-" ~ asset.encoding_job.encoding_job_id %}
+    {% elseif asset.asset_type == "image" %}
+        {% set asset_share_url = url('app_image', {'video_id' : asset.asset_id}, TRUE) %}
+        {% set asset_page_url = path('app_image', {'video_id' : asset.asset_id}) %}
+        {% set encoding_job_id = "encoding-job-" ~ asset.encoding_job.encoding_job_id %}
+    {% elseif asset.asset_type == "audio" %}
+        {% set asset_share_url = url('app_audio', {'audio_id' : asset.asset_id}, TRUE) %}
+        {% set asset_page_url = path('app_audio', {'audio_id' : asset.asset_id}) %}
+        {% set encoding_job_id = "encoding-job-audio-" ~ asset.encoding_job.encoding_job_id %}
+    {% endif %}
+
+    <div class="encoding-overlay" id="{{ encoding_job_id }}" data-encoding-job-id="{{ asset.encoding_job.encoding_job_id }}" data-asset-id="{{ asset.asset_id }}" data-asset-name="{{ asset.name }}" data-asset-url="{{ asset_page_url }}" data-asset-delete-url="{{ asset_delete_url }}" data-asset-share-url="{{ asset_share_url }}" data-asset-type="{{ asset.asset_type }}">
+        <div class="encoding-overlay-inner">
+            {% if asset.asset_type == "video" %}
+                {{ 'back.dashboard_encoding_job.text.video_currently_encoding'|trans }}
+            {% elseif asset.asset_type == "audio" %}
+                {{ 'back.dashboard_encoding_job.text.audio_currently_encoding'|trans }}
+            {% else %}
+                {{ 'back.dashboard_encoding_job.text.file_currently_encoding'|trans }}
+            {% endif %}
+            <span class="encoding-dot">.</span><span class="encoding-dot">.</span><span class="encoding-dot">.</span>
+            <br />
+            <span class="encoding-progress">{{asset.encoding_job.status}}</span>%
+            <div class="encoding-job-progress-bar">
+                <div class="encoding-job-progress-bar-inner"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="asset-details">
+        {% if asset.project is defined and asset.project is not null %}
+            <div class="asset-folder"></div>
+        {% endif %}
+        <div class="asset-details-inner">
+            <div class="asset-name">
+                {% if asset.project is defined and asset.project is not null and asset.project.name is not defined %}
+                    {{asset.project}}
+                {% else %}
+                    {{asset.name}}
+                {% endif %}
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="asset-date">
+                        {% if app.request.locale == 'fr' %}
+                            {{ asset.created_at.date|date("d M Y", asset.created_at.timezone)|localizeddate('medium', 'none', 'fr_FR') }}
+                        {% elseif app.request.locale == 'es' %}
+                            {{ asset.created_at.date|date("d M Y", asset.created_at.timezone)|localizeddate('medium', 'none', 'es_ES') }}
+                        {% else %}
+                            {{ asset.created_at.date|date("d M Y", asset.created_at.timezone)|localizeddate('medium', 'none', 'en_US') }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-xs-6"></div>
+            </div>
+        </div><!-- ./Video details inner -->
+    </div><!-- ./Video details -->
+</div>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_signup_confirmation_meta_title">
+                <source>email.signup_confirmation.meta.title</source>
+                <target>Bienvenue sur Strime !</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_title_signup_confirmation">
+                <source>email.signup_confirmation.title.signup_confirmation</source>
+                <target>Confirmation d'inscription !</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_text_hi_first_name">
+                <source>email.signup_confirmation.text.hi_first_name</source>
+                <target>Bonjour %first_name%</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_text_just_signed_up">
+                <source>email.signup_confirmation.text.just_signed_up</source>
+                <target>Vous venez de vous créer un compte sur %strime%.</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_text_happy_to_have_you">
+                <source>email.signup_confirmation.text.happy_to_have_you</source>
+                <target>Nous sommes heureux de vous compter parmi nos utilisateurs.</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_text_hope_youll_enjoy_strime">
+                <source>email.signup_confirmation.text.hope_youll_enjoy_strime</source>
+                <target>Nous espérons que ce service répondra à vos attentes et vous aidera à gagner du temps dans la gestion des retours de vos clients.</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_title_first_steps">
+                <source>email.signup_confirmation.title.first_steps</source>
+                <target>Vos premiers pas sur Strime</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_text_here_is_what_we_suggest">
+                <source>email.signup_confirmation.text.here_is_what_we_suggest</source>
+                <target>Pour bien commencer sur Strime, voici ce que nous vous recommandons :</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_text_upload_your_first_video">
+                <source>email.signup_confirmation.text.upload_your_first_video</source>
+                <target>mettez en ligne votre première vidéo</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_text_organize">
+                <source>email.signup_confirmation.text.organize</source>
+                <target>organisez, si vous le souhaitez, vos vidéos dans des projets</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_text_share_video">
+                <source>email.signup_confirmation.text.share_video</source>
+                <target>partagez cette vidéo (ou ce projet) avec un client</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_text_answer_clients_comments">
+                <source>email.signup_confirmation.text.answer_clients_comments</source>
+                <target>répondez aux commentaires de votre client</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_text_fulfill_profile">
+                <source>email.signup_confirmation.text.fulfill_profile</source>
+                <target>complétez votre profil</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_text_see_you_soon">
+                <source>email.signup_confirmation.text.see_you_soon</source>
+                <target>À bientôt</target>
+            </trans-unit>
+            <trans-unit id="email_signup_confirmation_text_strime_team">
+                <source>email.signup_confirmation.text.strime_team</source>
+                <target>L'équipe Strime</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

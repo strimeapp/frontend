@@ -1,0 +1,481 @@
+/* Audio styles
+-------------------------------------------------- */
+
+body.audio {
+	background-color: #303031;
+	overflow: hidden;
+}
+body.audio .alert-success {
+	background-color: transparent;
+}
+
+body.audio .audio-export {
+	position: relative;
+	float: right;
+	width: 18px;
+	height: 18px;
+	margin-left: 10px;
+	margin-top: 8px;
+	cursor: pointer;
+}
+body.audio .audio-export svg {
+	width: 100%;
+}
+body.audio .audio-export svg path {
+	fill: #898B8E;
+}
+body.audio .audio-export svg:hover path {
+	fill: #B7C6C2;
+}
+body.audio .audio-export #audio-export-modal {
+	display: none;
+	position: absolute;
+	top: 30px;
+	right: 0px;
+	width: 170px;
+	background-color: #FFF;
+	border-radius: 5px;
+	padding: 5px 10px;
+	text-align: left;
+	font-size: 14px;
+	color: #434344;
+	z-index: 1000;
+	cursor: default;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6), 0 3px 8px 0 rgba(0,0,0,0.59);
+}
+body.audio #audio.comments-visible .audio-export #audio-export-modal {
+	right: auto;
+	left: -10px;
+}
+body.audio .audio-export #audio-export-modal h3 {
+	font-family: 'UbuntuBold', sans-serif;
+	text-transform: uppercase;
+	font-size: 14px;
+	color: #434344;
+	margin: 0 0 5px 0;
+	cursor: text;
+}
+body.audio .audio-export #audio-export-modal ul {
+	display: table;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+}
+body.audio .audio-export #audio-export-modal ul li {
+	display: table-cell;
+	width: 100%;
+	height: 30px;
+	vertical-align: middle;
+	font-family: 'Ubuntu', sans-serif;
+}
+body.audio .audio-export #audio-export-modal ul li svg {
+	float: left;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	margin-top: 2px;
+}
+body.audio .audio-export #audio-export-modal ul li svg path {
+	fill: #FFF;
+}
+body.audio .audio-export #audio-export-modal ul li img.audio-shared {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-left: 5px;
+}
+
+body.audio .audio-show-comments-sidebar {
+	float: right;
+	opacity: 1;
+	cursor: pointer;
+	margin-left: 20px;
+	width: 30px;
+	height: 30px;
+	-webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+body.audio .audio-show-comments-sidebar.visible {
+	opacity: 0;
+}
+body.audio .audio-show-comments-sidebar svg {
+	width: 20px;
+	height: 20px;
+	margin-top: 7px;
+}
+body.audio .audio-show-comments-sidebar svg path {
+	fill: #898B8E;
+}
+body.audio .audio-show-comments-sidebar.visible {
+	display: none;
+}
+body.audio .audio-show-comments-sidebar svg:hover path {
+	fill: #B7C6C2;
+}
+
+body.audio .modal#changeIdentityModal .modal-header {
+	padding-top: 60px;
+}
+body.audio .modal#changeIdentityModal button.close {
+	display: none;
+}
+body.audio .modal#changeIdentityModal h5 {
+	font-family: 'UbuntuLight', sans-serif;
+	text-align: center;
+	font-size: 28px;
+	color: #303031;
+}
+body.audio .modal#changeIdentityModal .contact {
+	border: solid 1px #C4C5C6;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	padding: 5px 10px;
+	font-size: 17px;
+	color: #898B8E;
+	vertical-align: middle;
+	cursor: pointer;
+}
+body.audio .modal#changeIdentityModal .contact img.avatar {
+	border-radius: 20px;
+}
+body.audio .modal#changeIdentityModal .contact .email {
+	margin-top: 7px;
+}
+body.audio .modal#changeIdentityModal .contact .choose-identity {
+	float: right;
+	display: block;
+	margin-top: 5px;
+}
+body.audio .modal#changeIdentityModal .contact:hover {
+	background-color: #0CAC9A;
+	color: #FFF;
+	border-color: transparent;
+}
+body.audio .modal#changeIdentityModal .contact:hover svg.choose-identity path {
+	fill: #FFF;
+}
+body.audio .modal#changeIdentityModal form#add-audio-contact-form {
+	margin-top: 20px;
+}
+body.audio .modal#changeIdentityModal form#add-audio-contact-form input {
+	float: left;
+	width: 60%;
+	-webkit-border-top-right-radius: 0px;
+	-webkit-border-bottom-right-radius: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+body.audio .modal#changeIdentityModal form#add-audio-contact-form button[type=submit] {
+	float: left;
+	width: 40%;
+	text-transform: uppercase;
+	margin: 0;
+	border: solid 1px #0CAC9A;
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+body.audio .modal#changeIdentityConfirmationMessageModal .modal-body {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+body.audio .modal#changeIdentityConfirmationMessageModal h4,
+body.audio .modal#changeIdentityConfirmationMessageModal h5 {
+	text-align: center;
+	color: #0CAC9A;
+}
+body.audio .modal#changeIdentityConfirmationMessageModal h4 {
+	font-size: 30px;
+}
+body.audio .modal#changeIdentityConfirmationMessageModal h5 {
+	font-family: 'UbuntuLight', sans-serif;
+	font-size: 24px;
+}
+body.audio #header #header-change-id .contact-profile,
+body.audio #header #header-change-id .contact-avatar,
+body.audio #header #header-change-id .contact-info {
+	float: right;
+}
+body.audio #header #header-change-id .contact-info {
+	margin-left: 10px;
+}
+body.audio #header #header-change-id img.avatar {
+	float: right;
+	border-radius: 20px;
+	border: solid 1px #898B8E;
+}
+body.audio #header #header-change-id .contact-email {
+	font-family: 'UbuntuLight', sans-serif;
+	line-height: 16px;
+	font-size: 14px;
+	color: #898B8E;
+}
+body.audio #header #header-change-id a#change-id {
+	font-family: 'UbuntuLight', sans-serif;
+	text-decoration: underline;
+	font-size: 12px;
+	line-height: 14px;
+}
+body.audio .modal#changeIdentityModal #add-audio-contact-result {
+	display: none;
+}
+
+#content {
+	position: relative;
+	background-color: #282829;
+	width: 100%;
+	height: auto;
+	padding: 0px 0px 20px 0px;
+	overflow: auto;
+}
+#content #audio {
+	position: relative;
+	float: left;
+	width: 100%;
+    -webkit-transition: width 0.6s ease-in-out;
+    -moz-transition: width 0.6s ease-in-out;
+    -o-transition: width 0.6s ease-in-out;
+    transition: width 0.6s ease-in-out;
+}
+#content #audio.comments-visible {
+	width: 60%;
+}
+#content #audio #audio-container {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+#content #audio #audio-inner {
+	position: relative;
+	padding: 10px;
+}
+#content #audio #audio-inner #comments-layer {
+	height: 200px !important;
+}
+#content #audio #audio-waveform {
+	background-color: #434344 !important;
+	background-repeat: none !important;
+	background-position: center center !important;
+	background-size: 100% 100% !important;
+	width: 100%;
+	height: 200px;
+}
+#content #audio #audio-progress {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	height: 200px;
+	width: 100%;
+	padding-right: 20px;
+	z-index: 20;
+}
+#content #audio #audio-progress #audio-progress-inner {
+	background-color: none;
+	background-repeat: none !important;
+	background-position: left center !important;
+	height: 100%;
+	width: 0%;
+	border-right: solid 2px #F4B34E;
+}
+#content #audio #audio-progress-bar {
+	position: relative;
+	height: 10px;
+	width: 100%;
+	z-index: 20;
+	background-color: #161616;
+	cursor: pointer;
+}
+#content #audio #audio-progress-bar #audio-progress-bar-inner {
+	background-color: #0CAC9A;
+	height: 100%;
+	width: 0%;
+	border-right: solid 2px #F4B34E;
+}
+
+
+#content #audio #audio-inner #comments-layer .comment-box {
+	top: 90px;
+}
+#content #audio #audio-inner #comments-layer .marker {
+	display: block;
+	position: absolute;
+	top: 90px;
+}
+#content #audio #audio-inner .marker-progress.active {
+	background-color: #F4B34E;
+}
+
+#content #audio #audio-inner #audio-progress-bar .marker-progress {
+	position: absolute;
+	background-color: #FFF;
+	top: 0px;
+	bottom: 0px;
+	width: 3px;
+	z-index: 100;
+	cursor: pointer;
+	-webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+	z-index: 100;
+}
+#content #audio #audio-inner #audio-progress-bar .marker-progress.active {
+	background-color: #F4B34E;
+	opacity: 1;
+}
+#content #audio #audio-inner #audio-progress-bar .marker-progress.inactive {
+	opacity: 0.4;
+}
+#content #audio #audio-inner #audio-progress-bar .marker-progress:hover {
+	top: -5px;
+	bottom: -5px;
+	width: 5px;
+}
+
+
+#content #audio #audio-description {
+	padding: 0 10px;
+}
+#content #audio #audio-description textarea {
+	display: block;
+	background-color: #434344;
+	width: 100%;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 16px;
+	color: #898B8E;
+	border: none;
+	padding: 7px 10px;
+	border-radius: 5px;
+}
+#content #audio #audio-description button,
+#content #audio #audio-description .loader-container {
+	float: right;
+	width: 40%;
+	margin-top: 10px;
+}
+#content #audio #audio-description .description-content {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 16px;
+	color: #898B8E;
+	padding: 7px 10px;
+}
+#content #audio #audio-description.editable .description-content {
+	background: url(../../img/icon-pen-round.svg) no-repeat;
+    background-position: 95% 5%;
+    background-size: 15px 15px;
+	cursor: pointer;
+}
+#content #audio #audio-description.saved .description-content {
+	background: none;
+}
+#content #audio #audio-description.saved .description-content {
+	background: url(../../img/icon-check-green.svg) no-repeat;
+	background-position: 95% 5%;
+	background-size: 15px 15px;
+}
+
+
+
+/* Styles modals
+-------------------------------------------------------------- */
+
+.modal#editCommentModal .modal-header,
+.modal#deleteCommentModal .modal-header {
+	padding: 20px;
+	border-bottom: solid 1px #C4C5C6;
+}
+.modal#editCommentModal .modal-footer {
+	padding: 10px;
+	border-top: solid 1px #C4C5C6;
+}
+.modal#editCommentModal .modal-footer button,
+.modal#deleteCommentModal .modal-footer button {
+	float: left;
+	font-family: 'Cabin', sans-serif;
+	text-align: center;
+	font-size: 17px;
+	color: #FFF;
+	width: auto;
+	padding: 5px 40px;
+	margin-left: 10px;
+	margin-top: 0;
+	border-radius: 3px;
+}
+.modal#editCommentModal .modal-footer button.cancel,
+.modal#deleteCommentModal .modal-footer button.cancel {
+	background-color: #898B8E;
+}
+.modal#editCommentModal .modal-footer button.cancel:hover,
+.modal#deleteCommentModal .modal-footer button.cancel:hover {
+	background-color: #C4C5C6;
+}
+.modal#editCommentModal .modal-body {
+	padding: 20px 80px;
+}
+.modal#editCommentModal .modal-body .modal-body-inner {
+	width: 100%;
+}
+.modal#editCommentModal .modal-body .avatar-container {
+	float: left;
+	width: 40px;
+	margin-right: 10px;
+}
+.modal#editCommentModal .modal-body .comment-container {
+	float: left;
+	width: calc(100% - 51px);
+}
+.modal#editCommentModal .modal-body .comment-container textarea {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height: 200px;
+	height: auto;
+	border: none;
+	resize: none;
+}
+.modal#editCommentModal .modal-body .avatar img {
+	border-radius: 20px;
+	width: 40px;
+	height: 40px;
+}
+
+.modal#deleteCommentModal .modal-header {
+	padding: 40px;
+	border-bottom: none;
+}
+.modal#deleteCommentModal .modal-footer {
+	padding: 10px;
+	border-top: none;
+}
+.modal#deleteCommentModal .modal-footer .action-buttons {
+	text-align: center;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+.modal#editCommentModal .modal-footer button, .modal#deleteCommentModal .modal-footer button {
+	float: none;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.modal#exportYoutubeModal .modal-body #youtube-export-result {
+	display: none;
+	margin-bottom: 20px;
+}
+.modal#exportYoutubeModal .modal-body select {
+	margin-bottom: 10px;
+}
+.modal#exportYoutubeModal .modal-body textarea {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height: 200px;
+}

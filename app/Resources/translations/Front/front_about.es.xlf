@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_about_meta_title">
+                <source>front.about.meta.title</source>
+                <target>¿Quiénes somos?</target>
+            </trans-unit>
+            <trans-unit id="front_about_meta_description">
+                <source>front.about.meta.description</source>
+                <target>El equipo en pocas palabras</target>
+            </trans-unit>
+            <trans-unit id="front_about_meta_keywords">
+                <source>front.about.meta.keywords</source>
+                <target>strime, strime.io, video, video, videos, comentario, comentarios, aplicación, app, apps, workflow, intercambiar, cliente, videasta, profesional, profesional, equipo, miembros, fundadores</target>
+            </trans-unit>
+                <trans-unit id="front_about_title_who_are_we">
+                    <source>front.about.title.who_are_we</source>
+                    <target>¿Quiénes somos?</target>
+                </trans-unit>
+            <trans-unit id="front_about_text_strime_born_from">
+                <source>front.about.text.strime_born_from</source>
+                <target><![CDATA[<strong>En Strime</strong> sabemos que la comunicación entre proveedor y cliente es decisiva a la hora de desarrollar proyectos audiovisuales. De esta necesidad nace Strime, una plataforma que permite gestionar de manera eficiente la edición de los videos.]]></target>
+            </trans-unit>
+            <trans-unit id="front_about_text_strime_online_tool">
+                <source>front.about.text.strime_online_tool</source>
+                <target><![CDATA[<strong>Strime</strong> es una plataforma en línea diseñada para simplificar los intercambios entre el equipo de audiovisuales y sus clientes, a través de una interfaz que permite dejar comentarios directamente en la pantalla.]]></target>
+            </trans-unit>
+            <trans-unit id="front_about_text_we_want_that_feedback_phase">
+                <source>front.about.text.we_want_that_feedback_phase</source>
+                <target>Deseamos facilitar la etapa de edición, para que nunca más sea un momento de tensión en el seguimiento de un proyecto.</target>
+            </trans-unit>
+            <trans-unit id="front_about_text_if_we_succeed">
+                <source>front.about.text.if_we_succeed</source>
+                <target>Si logramos que esta etapa sea más agradable para usted, entonces habremos logrado nuestra misión.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

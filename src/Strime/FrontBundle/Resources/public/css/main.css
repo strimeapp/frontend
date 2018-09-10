@@ -1,0 +1,835 @@
+/* Body styles
+-------------------------------------------------- */
+
+body {
+	margin-bottom: 75px; /* Set for the fixed footer */
+}
+
+body.about,
+body.contact,
+body.tos,
+body.confirm-email {
+	background-color: #FFF;
+}
+
+
+/* Header styles
+-------------------------------------------------- */
+
+header {
+	width: 100%;
+	height: 150px;
+	padding-top: 30px;
+}
+
+header h1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+header h1 #logo,
+#fixed-header #logo-fixed {
+	max-width: 150px;
+	height: auto;
+}
+
+header .wrapper {
+	height: 100%;
+	margin-top: -20px;
+}
+
+header .container-table,
+#fixed-header .container-table {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+header .container-table .container-table-cell,
+#fixed-header .container-table .container-table-cell {
+	width: 100%;
+}
+
+header #top-links {
+	position: absolute;
+	top: 70px;
+	right: 10px;
+}
+header #top-links img,
+header #top-links svg,
+#fixed-header #top-links-fixed img,
+#fixed-header #top-links-fixed svg {
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+}
+
+header #top-links svg path,
+#fixed-header #top-links-fixed svg path {
+	fill: #0CAC9A;
+}
+header #top-links svg:hover path {
+	fill: #FFF;
+}
+#fixed-header #top-links-fixed svg:hover path {
+	fill: #E9E9E9;
+}
+header #top-links #menu,
+#fixed-header #top-links-fixed #menu-fixed {
+	display: inline-block;
+	font-family: 'UbuntuLight', sans-serif;
+	margin-right: 10px;
+}
+header #top-links #menu button,
+#fixed-header #top-links-fixed #menu-fixed button,
+#header button.signup {
+	display: inline-block;
+	background: none;
+	border: solid 1px #0CAC9A;
+	border-radius: 2px;
+	color: #0CAC9A;
+	width: auto;
+	padding: 3px 15px;
+	cursor: pointer;
+	margin-top: 0;
+}
+header #top-links #menu button:hover,
+#fixed-header #top-links-fixed #menu-fixed button:hover,
+#header button.signup:hover {
+	background-color: #0CAC9A;
+	color: #FFF;
+}
+header #top-links #menu a,
+#fixed-header #top-links-fixed #menu-fixed a {
+	display: inline-block;
+	margin-right: 10px;
+	color: #303031;
+}
+header #top-links #menu a:hover,
+#fixed-header #top-links-fixed #menu-fixed a:hover {
+	color: #0FD8C1;
+}
+header #top-links a,
+#fixed-header #top-links-fixed a {
+	display: inline-block;
+	margin-left: 5px;
+	height: 30px;
+	vertical-align: middle;
+}
+
+#fixed-header {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	background-color: #FFF;
+	padding: 10px 0;
+	z-index: 1000;
+}
+#fixed-header #top-links-fixed {
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#fixed-header #top-links-fixed #menu-fixed a,
+#fixed-header #top-links-fixed #menu-fixed a:visited {
+	color: #434344;
+}
+#fixed-header #top-links-fixed #menu-fixed a:hover {
+	color: #0CAC9A;
+}
+
+#header {
+	background-color: #282829;
+	padding: 20px 0;
+}
+#header img#logo {
+	max-width: 150px;
+	height: auto;
+}
+
+#header ul#main-menu {
+	float: right;
+	display: table;
+	padding: 0;
+	margin: 0;
+	height: 40px;
+}
+#header ul#main-menu li {
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
+	text-align: right;
+	padding-left: 20px;
+}
+#header ul#main-menu li a,
+#header ul#main-menu li a:visited {
+	font-size: 16px;
+	color: #DDD;
+}
+#header ul#main-menu li a:hover {
+	text-decoration: none;
+	color: #50D8B0;
+}
+
+
+
+/* Footer styles
+-------------------------------------------------- */
+
+footer {
+	background-color: #282829;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 75px;
+	padding: 20px;
+}
+footer .footer-elt {
+	display: inline-block;
+	float: left;
+	margin-right: 20px;
+	width: auto;
+}
+footer .footer-elt.pull-right {
+	margin-right: 0;
+	margin-left: 10px;
+}
+
+footer img,
+footer svg {
+	height: 25px;
+	width: auto;
+}
+footer svg:hover path {
+	fill: #50D8B0;
+}
+
+footer ul {
+	float: right;
+	display: table;
+	padding: 0;
+	margin: 0;
+}
+footer ul li {
+	display: table-cell;
+	text-align: right;
+	padding-left: 10px;
+}
+footer ul li a,
+footer ul li a:visited {
+	font-size: 14px;
+	color: #FFF;
+}
+footer ul li a:hover {
+	text-decoration: none;
+	color: #50D8B0;
+}
+footer .trust-badge {
+	width: 100%;
+	text-align: center;
+}
+footer .trust-badge a svg {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+footer .trust-badge a,
+footer .trust-badge a:visited {
+	font-size: 14px;
+	color: #FFF;
+}
+footer .trust-badge a:hover {
+	color: #50D8B0;
+}
+footer .trust-badge a:hover svg path {
+	fill: #50D8B0;
+}
+
+footer .footer-elt button {
+	margin-top: 0;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+
+/* Baseline styles
+-------------------------------------------------- */
+
+#baseline {
+	position: relative;
+	background-color: #E9E9E9;
+	width: 100%;
+	height: 200px;
+}
+
+#baseline .container-table,
+#baseline .container-table .container-table-cell {
+	width: 100%;
+	height: 100%;
+}
+
+#baseline h2 {
+	font-family: 'UbuntuLight', sans-serif;
+	font-size: 60px;
+	color: #414142;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 30px;
+}
+#baseline p {
+	font-family: 'UbuntuLight', sans-serif;
+	font-size: 30px;
+	color: #414142;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+
+/* Computer screen styles
+-------------------------------------------------- */
+
+#computer {
+	position: relative;
+	background: url(../img/home-computer.svg) no-repeat;
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	height: 550px;
+}
+#computer #computer-clock {
+	position: absolute;
+	top: -10px;
+	right: -30px;
+	background: url(../img/home-computer-clock.svg) no-repeat;
+	background-size: contain;
+	background-position: center center;
+	width: 200px;
+	height: 200px;
+}
+#computer #computer-sticker-01 {
+	position: absolute;
+	top: 30%;
+	left: 2%;
+	background: url(../img/home-computer-sticker-01.svg) no-repeat;
+	background-size: contain;
+	background-position: center center;
+	width: 75px;
+	height: 88px;
+}
+#computer #computer-sticker-02 {
+	position: absolute;
+	top: 28%;
+	left: 7%;
+	background: url(../img/home-computer-sticker-02.svg) no-repeat;
+	background-size: contain;
+	background-position: center center;
+	width: 70px;
+	height: 74px;
+}
+#computer .computer-bubble {
+	-webkit-transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	position: absolute;
+}
+#computer .computer-bubble#bubble-01 {
+	background: url(../img/home-bubble-01.svg) no-repeat;
+	background-size: contain;
+	background-position: center center;
+	top: 44%;
+	left: 19.3%;
+	width: 191px;
+	height: 100px;
+}
+#computer .computer-bubble#bubble-02 {
+	background: url(../img/home-bubble-02.svg) no-repeat;
+	background-size: contain;
+	background-position: center center;
+	width: 132px;
+	height: 74px;
+	top: 28%;
+	left: 41.3%;
+}
+#computer .computer-bubble#bubble-03 {
+	background: url(../img/home-bubble-03.svg) no-repeat;
+	background-size: contain;
+	background-position: center center;
+	top: 55%;
+	left: 39.45%;
+	width: 100px;
+	height: 86px;
+}
+
+
+/* Strime is free styles
+-------------------------------------------------- */
+
+#strime-is-free {
+	background-color: #FFF;
+	padding: 60px 40px;
+	font-family: 'Ubuntu', sans-serif;
+	text-transform: uppercase;
+	color: #898B8E;
+	text-align: center;
+}
+#strime-is-free button {
+	display: block;
+	width: 500px;
+	font-family: 'UbuntuBold', sans-serif;
+	text-transform: uppercase;
+	font-size: 22px;
+	padding: 20px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+/* What we do styles
+-------------------------------------------------- */
+
+#what-we-do {
+	background-color: #0CAC9A;
+	font-size: 18px;
+	text-align: center;
+	line-height: 34px;
+	color: #FFF;
+	width: 100%;
+	padding: 140px 20px;
+}
+#what-we-do p {
+	font-size: 23px;
+	color: #FFF;
+}
+#what-we-do p.lead {
+	font-family: 'UbuntuLight', sans-serif;
+	font-size: 30px;
+	line-height: 48px;
+	margin-bottom: 60px;
+}
+
+
+
+/* App description styles
+-------------------------------------------------- */
+
+#home-app-description {
+	background-color: #FFF;
+}
+#home-app-description .description-elt {
+	padding: 80px 0 40px 0;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#home-app-description .description-elt:last-child {
+	padding-bottom: 80px;
+}
+#home-app-description .description-elt .description-elt-table {
+	display: table;
+	width: 100%;
+}
+#home-app-description .description-elt .description-elt-table .description-elt-table-cell {
+	display: table-cell;
+	height: 100%;
+	width: 50%;
+	vertical-align: middle;
+	margin: 0;
+}
+#home-app-description .description-elt .description-elt-table .description-elt-table-cell.home-img-left {
+	padding-right: 40px;
+}
+#home-app-description .description-elt .description-elt-table .description-elt-table-cell.home-img-right {
+	padding-left: 40px;
+}
+#home-app-description .description-elt .description-elt-details {
+	width: 440px;
+	margin: 0;
+	padding: 0 40px;
+}
+#home-app-description .description-elt .description-elt-details.right {
+	float: right;
+}
+#home-app-description .description-elt .description-elt-details h3 {
+	font-family: 'UbuntuLight', sans-serif;
+	line-height: 40px;
+	font-size: 30px;
+	color: #0CAC9A;
+	margin-bottom: 40px;
+	margin-top: 0;
+}
+#home-app-description .description-elt .description-elt-details p {
+	line-height: 28px;
+	color: #393837;
+}
+#home-app-description .description-elt .description-elt-img {
+	height: 356px;
+	width: 100%;
+}
+
+
+
+/* Partners styles
+-------------------------------------------------- */
+
+#partners {
+	background-color: #E9E9E9;
+	font-size: 18px;
+	text-align: center;
+	color: #FFF;
+	width: 100%;
+	padding: 100px 20px;
+}
+#partners h3 {
+	font-family: 'UbuntuLight', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 24px;
+	color: #898B8E;
+	margin-bottom: 40px;
+}
+#partners img {
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+/* Stay connected styles
+-------------------------------------------------- */
+
+#stay-connected {
+	background-color: #303031;
+	font-size: 28px;
+	text-align: center;
+	color: #4B4B4C;
+	width: 100%;
+	padding: 100px 20px;
+}
+
+#stay-connected p.lead {
+	font-size: 28px;
+	line-height: 34px;
+	color: #0CAC9A;
+}
+
+#stay-connected form input {
+	display: inline-block;
+	width: 24%;
+	margin-right: 0.6%;
+	font-size: 16px;
+}
+#stay-connected form button,
+#stay-connected form .loader-container {
+	display: inline-block;
+	width: 24%;
+	text-transform: uppercase;
+	font-size: 16px;
+}
+#stay-connected form .loader-container {
+	display: none;
+}
+#stay-connected form .loader-container .loader-pulse {
+	margin-bottom: -15px;
+}
+#stay-connected form #form_first_name_bottom,
+#stay-connected form #form_opt_in_bottom {
+	display: none;
+}
+#stay-connected form .tos {
+	font-family: 'UbuntuLight', sans-serif;
+	font-size: 14px;
+	color: #898B8E;
+	margin-top: 10px;
+}
+#stay-connected form .tos a,
+#stay-connected form .tos a:visited {
+	text-decoration: underline;
+	color: #898B8E;
+}
+#stay-connected form .tos a:hover {
+	color: #FFF;
+}
+#stay-connected form #signup-bottom-result {
+	background-color: transparent;
+	font-size: 18px;
+	margin-bottom: 0;
+}
+#stay-connected #signup-bottom-result.alert.alert-danger {
+	color: #E69300;
+}
+#stay-connected #signup-bottom-result.alert.alert-success {
+	color: #0CAC9A;
+}
+
+
+
+/* Subscribe to newsletter styles
+-------------------------------------------------- */
+
+#subscribe-to-newsletter-container {
+	display: none;
+	position: absolute;
+	background-color: #FFF;
+	bottom: 10px;
+	left: 40%;
+	width: 300px;
+	border-radius: 10px;
+	padding: 20px;
+	z-index: 300;
+}
+#subscribe-to-newsletter-container button.close {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	margin-top: 0;
+	width: auto;
+	opacity: 0.5;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+#subscribe-to-newsletter-container button.close:hover {
+	background-color: transparent;
+	opacity: 1;
+}
+#subscribe-to-newsletter-container h4 {
+	text-align: center;
+	font-size: 24px;
+	color: #303031;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+#subscribe-to-newsletter-container form input#mc-embedded-subscribe {
+	background-color: #F4B34E;
+	text-transform: uppercase;
+	font-size: 14px;
+	color: #FFF;
+	border: none;
+}
+#subscribe-to-newsletter-container form input#mc-embedded-subscribe:hover {
+	background-color: #0FD8C1;
+}
+#subscribe-to-newsletter-container form .response {
+	display: none !important;
+}
+#subscribe-to-newsletter-container form .custom-message {
+	display: none;
+	text-align: center;
+	color: #303031;
+}
+
+
+
+/* Contact styles
+-------------------------------------------------- */
+
+body.contact {
+	color: #303031;
+	padding-bottom: 60px;
+}
+
+body.contact #contact-form-container {
+	border: solid 1px #898B8E;
+	padding: 20px 30px;
+}
+body.contact #contact-form-container .address,
+body.contact #contact-form-container .phone,
+body.contact #contact-form-container .email {
+	padding-left: 30px;
+}
+body.contact #contact-form-container .address {
+	background: url(../img/icon-address.svg) no-repeat;
+	background-position: left 5px;
+	background-size: 18px 18px;
+}
+body.contact #contact-form-container .phone {
+	background: url(../img/icon-phone.svg) no-repeat;
+	background-position: left 5px;
+	background-size: 18px 18px;
+	margin-top: 10px;
+}
+body.contact #contact-form-container .email {
+	background: url(../img/icon-mail.svg) no-repeat;
+	background-position: left 5px;
+	background-size: 18px 18px;
+	margin-top: 10px;
+}
+
+body.contact #contact-form #form_message {
+	display: block;
+	margin-top: 10px;
+	height: 150px;
+}
+body.contact #contact-form .loader-container {
+	display: none;
+}
+
+
+
+/* About styles
+-------------------------------------------------- */
+
+body.about {
+	color: #303031;
+	padding-bottom: 60px;
+}
+
+body.about #about-container h2 {
+	text-align: left;
+	color: #0CAC9A;
+	margin-bottom: 5px;
+}
+body.about #about-container h3 {
+	text-align: left;
+	font-size: 22px;
+	margin-top: 5px;
+}
+body.about #about-container .row {
+	margin-top: 40px;
+}
+body.about #about-container img {
+	width: 200px;
+	border-radius: 100px;
+}
+body.about #about-container .know-more {
+	text-transform: uppercase;
+	font-size: 14px;
+}
+body.about #about-container a.about-linkedin {
+	display: inline-block;
+	float: left;
+	background: url(../img/about/linkedin-line.svg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 25px;
+	height: 25px;
+	margin-right: 10px;
+}
+body.about #about-container a.about-linkedin:hover {
+	background: url(../img/about/linkedin-plain.svg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 25px;
+	height: 25px;
+}
+body.about #about-container a.about-twitter {
+	display: inline-block;
+	float: left;
+	background: url(../img/about/twitter-line.svg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 25px;
+	height: 25px;
+	margin-right: 10px;
+}
+body.about #about-container a.about-twitter:hover {
+	background: url(../img/about/twitter-plain.svg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 25px;
+	height: 25px;
+}
+body.about #about-container .credits {
+	font-size: 12px;
+	margin-top: 60px;
+}
+
+
+
+/* TOS styles
+-------------------------------------------------- */
+
+body.tos {
+	color: #303031;
+	padding-bottom: 60px;
+}
+body.tos .lead {
+	text-transform: uppercase;
+}
+
+body.tos h3 {
+	color: #0CAC9A;
+}
+body.tos p,
+body.tos ul li {
+	font-size: 14px;
+	color: #434344;
+}
+
+
+
+/* FAQ styles
+-------------------------------------------------- */
+
+body.faq,
+body.trust-badge {
+	background-color: #FFF;
+	color: #303031;
+	padding-bottom: 60px;
+}
+
+body.faq .faq-question,
+body.trust-badge .faq-question {
+	display: block;
+	margin-bottom: 5px;
+}
+body.faq .faq-answer,
+body.trust-badge .faq-answer {
+	display: none;
+}
+body.faq .faq-answer img {
+	display: block;
+	margin: 10px auto;
+}
+
+
+
+/* Trust badge styles
+-------------------------------------------------- */
+
+body.trust-badge #banner-trust-badge {
+	background: url(../img/banner-trust-badge.jpg) no-repeat;
+	background-size: cover;
+	background-position: center center;
+	display: block;
+	width: 100%;
+	height: 250px;
+	margin: 0 auto 20px auto;
+}
+body.trust-badge h2 {
+	margin-top: 20px;
+}
+body.trust-badge a i {
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+body.trust-badge a.visible i {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+ 	transform: rotate(90deg);
+}
+body.trust-badge #trust-badge-site {
+	text-align: right;
+}
+
+
+
+/* TOS styles
+-------------------------------------------------- */
+
+body.confirm-email {
+	color: #303031;
+	padding-bottom: 60px;
+}

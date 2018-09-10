@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_confirm_email_meta_description">
+                <source>front.confirm_email.meta.title</source>
+                <target>Confirme su dirección de correo electrónico</target>
+            </trans-unit>
+            <trans-unit id="front_confirm_email_meta_keywords">
+                <source>front.confirm_email.meta.keywords</source>
+                <target>strime, strime.io, video, video, videos, comentario, comentarios, aplicación, app, apps, workflow, intercambiar, cliente, videasta, profesional, profesional, faq, base de conocimiento, preguntas</target>
+            </trans-unit>
+            <trans-unit id="front_confirm_email_meta_title">
+                <source>front.confirm_email.meta.title</source>
+                <target>Confirme su correo electrónico</target>
+            </trans-unit>
+            <trans-unit id="front_confirm_email_title_confirm_your_email_address">
+                <source>front.confirm_email.title.confirm_your_email_address</source>
+                <target>Confirmación de su dirección de correo electrónico</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

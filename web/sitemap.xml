@@ -1,0 +1,30 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+	<url>
+		<loc>https://www.strime.io/</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://www.strime.io/about</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://www.strime.io/offers</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://www.strime.io/contact</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://www.strime.io/tos</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://www.strime.io/faq</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://www.strime.io/trust-badge</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+</urlset>

@@ -1,0 +1,334 @@
+{% trans_default_domain 'front_base' %}
+
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <!-- Charset definition -->
+        <meta charset="UTF-8" />
+
+        <!-- Mobile properties -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block link_canonical %}
+            <link rel="canonical" href="https://www.strime.io/" />
+        {% endblock %}
+
+        <title>
+            {% block title %}Strime.io | {{ 'front.base.meta.title'|trans }}{% endblock %}
+        </title>
+
+        <!-- Meta tags -->
+        {% block meta_tags %}
+            <meta name="description" content="{{ 'front.base.meta.title'|trans }}">
+            <meta name="author" content="Strime">
+            <meta name="keywords" content="{{ 'front.base.meta.keywords'|trans }}">
+            <meta name="google-signin-client_id" content="59471169232-igm9oedpkpc0f1spqmrj2nffqd1hj93f.apps.googleusercontent.com">
+        {% endblock %}
+
+        <!-- OG tags -->
+        {% block og_tags %}
+            {% if app.request.locale == 'fr' %}
+                <meta property="og:locale" content="fr_FR" />
+            {% elseif app.request.locale == 'es' %}
+                <meta property="og:locale" content="es_ES" />
+            {% else %}
+                <meta property="og:locale" content="en_US" />
+            {% endif %}
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Strime - {{ 'front.base.meta.title'|trans }}" />
+            <meta property="og:url" content="{{ url('home') }}" />
+            <meta property="og:site_name" content="Strime" />
+            <meta property="og:image" content="{{ asset('bundles/strimefront/img/main.jpg') }}" />
+            <meta name="twitter:card" content="summary"/>
+            <meta name="twitter:title" content="Strime - {{ 'front.base.meta.title'|trans }}"/>
+            <meta name="twitter:domain" content="{{ url('home') }}"/>
+            <meta name="twitter:image:src" content="{{ asset('bundles/strimefront/img/main.jpg') }}"/>
+        {% endblock %}
+
+        {% block stylesheets %}
+            <!-- Bootstrap -->
+            {% stylesheets
+                'bundles/strimefront/css/bootstrap.min.css' filter='cssrewrite'
+                'bundles/strimefront/css/font-awesome-4.6.3/css/font-awesome.min.css' filter='cssrewrite'
+                'bundles/strimeback/css/loader-pulse.css' filter='cssrewrite'
+                'bundles/strimeglobal/css/pace.css' filter='cssrewrite'
+                'bundles/strimeglobal/css/modal.css' filter='cssrewrite'
+                'bundles/strimefront/css/global.css' filter='cssrewrite'
+                'bundles/strimefront/css/main.css' filter='cssrewrite'
+                'bundles/strimefront/css/responsive.css' filter='cssrewrite'
+                'bundles/strimeglobal/css/language-bar.css' filter='cssrewrite'
+            %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+
+            <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
+        {% endblock %}
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('bundles/strimefront/img/favicon.ico') }}" />
+
+        {% if app.environment == "prod" %}
+            <!-- Facebook Pixel Code -->
+            {% if app.session.get('email') is defined and app.session.get('email') is not null %}
+                <script>
+                    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+                    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+                    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+                    fbq('init', '258547327887541', {
+                        em: '{{ app.session.get('email') }}'
+                    });
+                    fbq('track', 'PageView');
+                </script>
+            {% else %}
+                <script>
+                    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+                    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+                    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+                    fbq('init', '258547327887541', {});
+                    fbq('track', 'PageView');
+                </script>
+            {% endif %}
+            <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=258547327887541&ev=PageView&noscript=1" /></noscript>
+            <!-- DO NOT MODIFY -->
+            <!-- End Facebook Pixel Code -->
+
+
+            <!-- Start of HubSpot Embed Code -->
+            <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3022819.js"></script>
+            <!-- End of HubSpot Embed Code -->
+        {% endif %}
+
+    </head>
+    <body class="{{ body_classes }}">
+        {% block body %}
+            {% include 'StrimeGlobalBundle:JS:facebook-login.html.twig' %}
+
+            {% if current_path != "confirm_email" %}
+                <div id="languages-bar">
+                    <div class="wrapper">
+                        {{ 'front.base.text.language'|trans }}
+
+                        {% if app.request.locale == 'fr' %}
+                            <span class="current">
+                        {% else %}
+                            <span>
+                                <a href="{{ path('change_locale', {'back_path': current_path, 'locale': 'fr' }) }}" title="FR">
+                        {% endif %}
+                            FR
+                        {% if app.request.locale == 'fr' %}
+                            </span>
+                        {% else %}
+                                </a>
+                            </span>
+                        {% endif %}
+
+                        {% if app.request.locale == 'en' %}
+                            <span class="current">
+                        {% else %}
+                            <span>
+                                <a href="{{ path('change_locale', {'back_path': current_path, 'locale': 'en' }) }}" title="EN">
+                        {% endif %}
+                            EN
+                        {% if app.request.locale == 'en' %}
+                            </span>
+                        {% else %}
+                                </a>
+                            </span>
+                        {% endif %}
+
+                        {% if app.request.locale == 'es' %}
+                            <span class="current">
+                        {% else %}
+                            <span>
+                                <a href="{{ path('change_locale', {'back_path': current_path, 'locale': 'es' }) }}" title="ES">
+                        {% endif %}
+                            ES
+                        {% if app.request.locale == 'es' %}
+                            </span>
+                        {% else %}
+                                </a>
+                            </span>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endblock %}
+
+        {% block footer %}
+            <div id="subscribe-to-newsletter-container" class="shadow">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimefront/img/icon-close-modal.svg') }}" alt="{{ 'front.base.button.close_window'|trans }}" title="{{ 'front.base.button.close_window'|trans }}"></span></button>
+                <h4>{{ 'front.base.title.keep_posted'|trans|raw }}</h4>
+
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form action="//strime.us11.list-manage.com/subscribe/post?u=ea5cde0558ba43bf30b11f91c&amp;id=15053a8ada&LOCALE={% filter upper %}{{ app.request.locale }}{% endfilter %}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div class="custom-message"></div>
+                        <div class="fields">
+                            <input type="text" value="" name="FNAME" id="mce-FNAME" placeholder="{{ 'front.base.mailchimp.first_name'|trans }}">
+                            <input type="text" value="" name="LNAME" id="mce-LNAME" placeholder="{{ 'front.base.mailchimp.name'|trans }}">
+                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="{{ 'front.base.mailchimp.email'|trans }}">
+                        </div>
+                        <div id="mce-responses" class="clear">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="b_ea5cde0558ba43bf30b11f91c_15053a8ada" tabindex="-1" value="">
+                        </div>
+                        <div class="fields">
+                            <input type="submit" value="{{ 'front.base.mailchimp.subscribe'|trans }}" name="subscribe" id="mc-embedded-subscribe" class="button">
+                        </div>
+                    </form>
+                </div>
+                <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                <!--End mc_embed_signup-->
+            </div>
+
+            <footer class="footer">
+                <div class="wrapper">
+                    <div class="footer-elt">
+                        <a href="{{ url('home') }}" title="Strime">
+                            <img src="{{ asset('bundles/strimefront/img/logo-strime-full-white.svg') }}" alt="Strime" title="Strime">
+                        </a>
+                    </div>
+                    <div class="footer-elt">
+                        <a href="https://www.facebook.com/strimeapp" title="Facebook" target="_blank">
+                            <img src="{{ asset('bundles/strimefront/img/icon-facebook.svg') }}" class="svg" alt="Facebook" title="Facebook">
+                        </a>
+                        <a href="https://www.twitter.com/strimeapp" title="Twitter" target="_blank">
+                            <img src="{{ asset('bundles/strimefront/img/icon-twitter.svg') }}" class="svg" alt="Twitter" title="Twitter">
+                        </a>
+                    </div>
+                    <div class="footer-elt">
+                        <div class="trust-badge">
+                            <a href="{{ path('trust_badge') }}" title="{{ 'front.base.footer.trust_badge'|trans }}">
+                                <img src="{{ asset('bundles/strimefront/img/icon-trust-badge-white.svg') }}" class="svg" alt="Twitter" title="Twitter">
+                                <span>{{ 'front.base.footer.trust_badge'|trans }}</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-elt pull-right">
+                        <ul>
+                            <li>
+                                <a href="{{ path('about') }}" title="{{ 'front.base.item.who_are_we'|trans }}">
+                                    {{ 'front.base.item.who_are_we'|trans }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://blog.strime.io" title="{{ 'front.base.item.blog'|trans }}" target="_blank">
+                                    {{ 'front.base.item.blog'|trans }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://shop.spreadshirt.com/strime" title="{{ 'front.base.item.shop'|trans }}" target="_blank">
+                                    {{ 'front.base.item.shop'|trans }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('contact') }}" title="{{ 'front.base.item.contact'|trans }}">
+                                    {{ 'front.base.item.contact'|trans }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('tos') }}" title="{{ 'front.base.item.terms_of_services'|trans }}">
+                                    {{ 'front.base.item.tos'|trans }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('faq') }}" title="{{ 'front.base.item.faq'|trans }}">
+                                    {{ 'front.base.item.faq'|trans }}
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="footer-elt pull-right">
+                        <button id="subscribe-to-newsletter">
+                            {{ 'front.base.mailchimp.subscribe'|trans }}
+                        </button>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </footer>
+        {% endblock %}
+
+        {% block login_popup %}
+
+            {% include 'StrimeGlobalBundle:Modals:login.html.twig' %}
+
+        {% endblock %}
+
+        {% block signup_popup %}
+
+            {% include 'StrimeGlobalBundle:Modals:signup.html.twig' %}
+
+        {% endblock %}
+
+        {% block goodbye_popup %}
+
+            {% include 'StrimeGlobalBundle:Modals:goodbye.html.twig' %}
+
+        {% endblock %}
+
+        {% block javascripts %}
+            {% include 'StrimeGlobalBundle:JS:signup-constants.html.twig' %}
+
+            <script type="text/javascript">
+                const ajaxSocialSigninURL = "{{ path('ajax_social_signin') }}";
+
+                {% if app.session.get('first_name') is defined and app.session.get('first_name') is not null %}
+                    var userLoggedIn = true;
+                {% else %}
+                    var userLoggedIn = false;
+                {% endif %}
+            </script>
+
+            {% javascripts
+                '@jquery_and_bootstrap'
+                '@StrimeGlobalBundle/Resources/public/js/main.js' filter='?uglifyjs2'
+                '@StrimeFrontBundle/Resources/public/js/main.js' filter='?uglifyjs2'
+                '@StrimeGlobalBundle/Resources/public/js/login.js' filter='?uglifyjs2'
+                '@StrimeFrontBundle/Resources/public/js/mailchimp.js' filter='?uglifyjs2'
+                '@StrimeGlobalBundle/Resources/public/js/svg.js' filter='?uglifyjs2'
+                '@StrimeGlobalBundle/Resources/public/js/pace-1.0.0.min.js' filter='?uglifyjs2'
+                '@StrimeGlobalBundle/Resources/public/js/google-sign-in.js' filter='?uglifyjs2'
+                '@StrimeGlobalBundle/Resources/public/js/google-sign-out.js' filter='?uglifyjs2'
+            %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+
+        <script src="https://apis.google.com/js/platform.js?onload=renderGoogleButton" async defer></script>
+
+        <script type="text/javascript">
+            $('#goodbyeModal').modal('show');
+        </script>
+
+        {% if app.environment == "prod" %}
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-64615405-1', 'auto');
+                ga('send', 'pageview');
+
+                const environmentIsProd = true;
+            </script>
+        {% else %}
+            <script type="text/javascript">
+                const environmentIsProd = false;
+            </script>
+        {% endif %}
+    </body>
+</html>

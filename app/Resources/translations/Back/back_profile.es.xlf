@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_profile_meta_description">
+                <source>back.profile.meta.description</source>
+                <target>Su cuenta Strime</target>
+            </trans-unit>
+            <trans-unit id="back_profile_meta_keywords">
+                <source>back.profile.meta.keywords</source>
+                <target>strime, strime.io, video, video, videos, comentario, comentarios, aplicación, app, apps, workflow, intercambiar, cliente, videasta, profesional, profesional, cuenta</target>
+            </trans-unit>
+            <trans-unit id="back_profile_meta_title">
+                <source>back.profile.meta.title</source>
+                <target>Mi cuenta</target>
+            </trans-unit>
+            <trans-unit id="back_profile_form_file_selected">
+                <source>back.profile.form.file_selected</source>
+                <target>{count} archivo seleccionado</target>
+            </trans-unit>
+            <trans-unit id="back_profile_alt_delete_image">
+                <source>back.profile.alt.delete_image</source>
+                <target>Suprimir imagen</target>
+            </trans-unit>
+            <trans-unit id="back_profile_button_delete">
+                <source>back.profile.button.delete</source>
+                <target>Suprimir</target>
+            </trans-unit>
+            <trans-unit id="back_profile_button_update_profile">
+                <source>back.profile.button.update_profile</source>
+                <target>Actualizar perfil</target>
+            </trans-unit>
+            <trans-unit id="back_profile_loader_loading">
+                <source>back.profile.loader.loading</source>
+                <target>Cargando</target>
+            </trans-unit>
+            <trans-unit id="back_profile_link_delete_my_account">
+                <source>back.profile.link.delete_my_account</source>
+                <target>Suprimir mi cuenta</target>
+            </trans-unit>
+            <trans-unit id="back_profile_alt_close_window">
+                <source>back.profile.alt.close_window</source>
+                <target>Cierre la ventana</target>
+            </trans-unit>
+            <trans-unit id="back_profile_title_delete_your_account">
+                <source>back.profile.title.delete_your_account</source>
+                <target>Suprimir su cuenta</target>
+            </trans-unit>
+            <trans-unit id="back_profile_text_are_you_sure">
+                <source>back.profile.text.are_you_sure</source>
+                <target><![CDATA[<strong>Cuidado !</strong>¿Está seguro de querer suprimir su cuenta?]]></target>
+            </trans-unit>
+            <trans-unit id="back_profile_text_will_be_completely_removed">
+                <source>back.profile.text.will_be_completely_removed</source>
+                <target>Este será totalmente eliminado con sus datos, sus videos, sus comentarios, sus contactos, etc...</target>
+            </trans-unit>
+            <trans-unit id="back_profile_text_cannot_be_undone">
+                <source>back.profile.text.cannot_be_undone</source>
+                <target><![CDATA[<strong>Esta operación es irreversible.</strong>]]></target>
+            </trans-unit>
+            <trans-unit id="back_profile_text_to_confirm">
+                <source>back.profile.text.to_confirm</source>
+                <target>Para confirmar que usted desea suprimir su cuenta, escriba SUPRIMIR  a continuación:</target>
+            </trans-unit>
+            <trans-unit id="back_profile_alt_delete_my_account">
+                <source>back.profile.alt.delete_my_account</source>
+                <target>Suprimir mi cuenta</target>
+            </trans-unit>
+            <trans-unit id="back_profile_button_yes_delete">
+                <source>back.profile.button.yes_delete</source>
+                <target>Si, suprimirlo</target>
+            </trans-unit>
+            <trans-unit id="back_profile_button_no_get_me_out_of_here">
+                <source>back.profile.button.no_get_me_out_of_here</source>
+                <target>No, sáqueme de aquí!</target>
+            </trans-unit>
+            <trans-unit id="back_profile_js_delete">
+                <source>back.profile.js.delete</source>
+                <target>SUPRIMIR</target>
+            </trans-unit>
+            <trans-unit id="back_profile_js_credit_card_number_invalid">
+                <source>back.profile.js.credit_card_number_invalid</source>
+                <target>El número de su tarjeta de crédito no es válida.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_js_credit_card_expiration_date_invalid">
+                <source>back.profile.js.credit_card_expiration_date_invalid</source>
+                <target>La fecha de expiración de su tarjeta de crédito no es válida.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_js_credit_card_security_code_invalid">
+                <source>back.profile.js.credit_card_security_code_invalid</source>
+                <target>El código de seguridad no es valido.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_js_error_in_credit_card_number">
+                <source>back.profile.js.error_in_credit_card_number</source>
+                <target>Hay un error en el número de su tarjeta de crédito.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_js_credit_card_expired">
+                <source>back.profile.js.credit_card_expired</source>
+                <target>Esta tarjeta ha expirado.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_js_error_in_security_code">
+                <source>back.profile.js.error_in_security_code</source>
+                <target>Hay un error en el código de seguridad.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_js_error_in_zip_code">
+                <source>back.profile.js.error_in_zip_code</source>
+                <target>Hay un error en el código postal.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_js_credit_card_rejected">
+                <source>back.profile.js.credit_card_rejected</source>
+                <target>Su tarjeta de crédito ha sido rechazada.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_js_no_credit_card_associated_to_user">
+                <source>back.profile.js.no_credit_card_associated_to_user</source>
+                <target>No exista una tarjeta de crédito asociada a su persona.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_js_error_occured_while_processing_credit_card">
+                <source>back.profile.js.error_occured_while_processing_credit_card</source>
+                <target>Se produjo un error al momento de procesar su tarjeta de crédito.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_js_error_occured_while_payment_transaction">
+                <source>back.profile.js.error_occured_while_payment_transaction</source>
+                <target>Se produjo un error al momento de procesar su pago.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_title_choose_your_language">
+                <source>back.profile.title.choose_your_language</source>
+                <target>Escoja su idioma</target>
+            </trans-unit>
+            <trans-unit id="back_profile_text_choose_the_language_you_wanna_use">
+                <source>back.profile.text.choose_the_language_you_wanna_use</source>
+                <target>Seleccione el idioma que usted quiere usar en Strime.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_text_english">
+                <source>back.profile.text.english</source>
+                <target>Inglés</target>
+            </trans-unit>
+            <trans-unit id="back_profile_text_french">
+                <source>back.profile.text.french</source>
+                <target>Francés</target>
+            </trans-unit>
+            <trans-unit id="back_profile_text_spanish">
+                <source>back.profile.text.spanish</source>
+                <target>Español</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

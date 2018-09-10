@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_controller_webhook_encoding_done_invites_you_to_comment_video">
+                <source>back.controller_webhook.encoding_done.invites_you_to_comment_video</source>
+                <target>%first_name% vous invite à commenter une vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_controller_webhook_encoding_done_invites_you_to_comment_audio">
+                <source>back.controller_webhook.encoding_done.invites_you_to_comment_audio</source>
+                <target>%first_name% vous invite à commenter un fichier audio</target>
+            </trans-unit>
+            <trans-unit id="back_controller_webhook_encoding_done_invites_you_to_comment_file">
+                <source>back.controller_webhook.encoding_done.invites_you_to_comment_video</source>
+                <target>%first_name% vous invite à commenter un fichier</target>
+            </trans-unit>
+            <trans-unit id="back_controller_webhook_encoding_done_video_encoding_done">
+                <source>back.controller_webhook.encoding_done.video_encoding_done</source>
+                <target>Encodage de votre vidéo terminé</target>
+            </trans-unit>
+            <trans-unit id="back_controller_webhook_encoding_done_audio_encoding_done">
+                <source>back.controller_webhook.encoding_done.audio_encoding_done</source>
+                <target>Encodage de votre fichier audio terminé</target>
+            </trans-unit>
+            <trans-unit id="back_controller_webhook_encoding_done_file_encoding_done">
+                <source>back.controller_webhook.encoding_done.file_encoding_done</source>
+                <target>Encodage de votre fichier terminé</target>
+            </trans-unit>
+            <trans-unit id="back_controller_webhook_encoding_killed_video_encoding_killed">
+                <source>back.controller_webhook.encoding_killed.video_encoding_killed</source>
+                <target>L'encodage de votre vidéo a échoué</target>
+            </trans-unit>
+            <trans-unit id="back_controller_webhook_encoding_killed_audio_encoding_killed">
+                <source>back.controller_webhook.encoding_killed.audio_encoding_killed</source>
+                <target>L'encodage de votre fichier audio a échoué</target>
+            </trans-unit>
+            <trans-unit id="back_controller_webhook_encoding_killed_encoding_killed">
+                <source>back.controller_webhook.encoding_killed.encoding_killed</source>
+                <target>L'encodage de votre fichier a échoué</target>
+            </trans-unit>
+            <trans-unit id="back_controller_webhook_resend_confirmation_email_confirm_email">
+                <source>back.controller_webhook.resend_confirmation_email.confirm_email</source>
+                <target>Confirmez votre adresse email</target>
+            </trans-unit>
+            <trans-unit id="back_controller_webhook_send_comments_notification_files_commented">
+                <source>back.controller_webhook.send_comments_notification.files_commented</source>
+                <target>Vous avez reçu des commentaires</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

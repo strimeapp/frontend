@@ -1,0 +1,181 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_users') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin - Utilisateurs">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord">
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        'bundles/strimeadmin/js/datatables-1.10.12/datatables.min.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/sub-menu.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}Admin | Utilisateurs | Strime{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+	{% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="sub-menu">
+        <div class="wrapper">
+            <ul>
+                <li class="active">
+                    <a href="{{ path('admin_users') }}" title="Utilisateurs">Utilisateurs</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_integrations') }}" title="Intégrations">Intégrations</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_users_map') }}" title="Carte">Carte</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="admin-content">
+    	<h1>Gestion des utilisateurs</h1>
+
+        {% for flash_message in app.session.flashbag.get('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% for flash_message in app.session.flashbag.get('error') %}
+            <div class="alert alert-danger" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% if users_list is defined %}
+        <div class="white-box">
+	        <h2>Liste des utilisateurs</h2>
+
+	        <div class="table-responsive margin-top">
+		        <table class="table table-hover table-condensed dataTable">
+		        	<thead>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>
+								Nom
+							</td>
+							<td>
+								Email
+							</td>
+							<td>
+								Confirmé
+							</td>
+                            <td>
+                                Statut
+                            </td>
+                            <td>
+                                Langue
+                            </td>
+							<td>
+								Intégr.
+							</td>
+							<td>
+								Inscription
+							</td>
+							<td>
+								Dern. connexion
+							</td>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div><!-- ./White box -->
+		{% endif %}
+    </div><!-- ./Admin content -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+	{% javascripts
+        '@StrimeAdminBundle/Resources/public/js/datatables-1.10.12/datatables.min.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+            var dataSet = [
+                {% for user in users_list %}
+                    [
+                        "{{ loop.index }}",
+                        "<img src='{% if 'gravatar' in user.avatar or 'googleusercontent' in user.avatar or 'scontent.xx.fbcdn.net' in user.avatar %}{{ user.avatar }}{% else %}{{ user.avatar|imagine_filter('profile_pic') }}{% endif %}' class='avatar' alt='{{ user.first_name ~ " " ~ user.last_name|escape }}' title='{{ user.first_name ~ " " ~ user.last_name|escape }}'>",
+                        "<a href='{{ path('admin_user', {'client_id': user.user_id}) }}' title='Voir sa fiche'>{{ user.first_name ~ " " ~ user.last_name }}</a>",
+                        "{{ user.email }}",
+                        {% if user.needs_to_confirm_email == true %}
+                            "<strong>NON</strong>",
+                        {% else %}
+                            "Oui",
+                        {% endif %}
+                        "{{ user.status }}",
+                        "{{ user.locale }}",
+                        "{% if user.user_google_details is not null %}<img src='{{ asset('bundles/strimeback/img/integrations-icon-google.png') }}' class='integration' alt='Google' title='Google'>{% endif %}
+                        {% if user.user_facebook_details is not null %}<img src='{{ asset('bundles/strimeback/img/integrations-icon-facebook.png') }}' class='integration' alt='Facebook' title='Facebook'>{% endif %}
+                        {% if user.user_slack_details is not null %}<img src='{{ asset('bundles/strimeback/img/integrations-icon-slack.svg') }}' class='integration' alt='Slack' title='Slack'>{% endif %}",
+                        "{{ user.created_at.date|date("d M Y", user.created_at.timezone)|localizeddate('medium', 'none', 'fr_FR') }}<span class='hidden'>{{ user.created_at.date|date('U', user.created_at.timezone) }}</span>",
+                        "{{ user.last_login|date("d F Y")|localizeddate('long', 'none', 'fr_FR') }} - {{ user.last_login|date("H:i:s") }}<span class='hidden'>{{ user.last_login|date('U') }}</span>"
+                    ]{% if loop.last == false %},{% endif %}
+                {% endfor %}
+            ];
+
+			// Activate the datatable
+			$('.dataTable').DataTable({
+                pageLength: 25,
+                responsive: true,
+                data: dataSet,
+                dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    {extend: 'copy'},
+                    {extend: 'csv'},
+                    {extend: 'excel', title: 'ExcelExport'},
+                    {extend: 'pdf', title: 'PDFExport'},
+
+                    {
+                        extend: 'print',
+                        customize: function (win){
+                                $(win.document.body).addClass('white-bg');
+                                $(win.document.body).css('font-size', '10px');
+
+                                $(win.document.body).find('table')
+                                        .addClass('compact')
+                                        .css('font-size', 'inherit');
+                        }
+                    }
+                ],
+                'createdRow': function(row, data, dataIndex) {
+                    var $signinCell = $(row).find('td:eq(8)'); // get the last signin column
+                    var $signupCell = $(row).find('td:eq(9)'); // get the last signup column
+                    var $signinTimestampCell = $signinCell.children('.hidden');
+                    var $signupTimestampCell = $signupCell.children('.hidden');
+                    var signinOrder = $signinTimestampCell.text(); // get the date
+                    var signupOrder = $signupTimestampCell.text(); // get the date
+                    $signinCell.attr('data-order', signinOrder); // set it to data-order
+                    $signupCell.attr('data-order', signupOrder); // set it to data-order
+                }
+            });
+		});
+	</script>
+{% endblock %}

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_confirmation_meta_title">
+                <source>email.confirmation.meta.title</source>
+                <target>Sign up confirmation</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_title_welcome">
+                <source>email.confirmation.title.welcome</source>
+                <target>Welcome on Strime!</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_hi_first_name">
+                <source>email.confirmation.text.hi_first_name</source>
+                <target>Hi %first_name%</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_for_security_reasons_confirm_email">
+                <source>email.confirmation.text.for_security_reasons_confirm_email</source>
+                <target>For security reasons, you must confirm your email address by clicking on the button below.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_button_confirm_email">
+                <source>email.confirmation.button.confirm_email</source>
+                <target>Confirm my email address</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_button_confirm_your_email">
+                <source>email.confirmation.button.confirm_your_email</source>
+                <target>Confirm your email address</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_copy_link_in_browser">
+                <source>email.confirmation.text.copy_link_in_browser</source>
+                <target>Or by copying the following link into your browser:</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_see_you_soon">
+                <source>email.confirmation.text.see_you_soon</source>
+                <target>See you soon</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_strime_team">
+                <source>email.confirmation.text.strime_team</source>
+                <target>Strime's team</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_you_still_have_not_confirmed_email">
+                <source>email.confirmation.text.you_still_have_not_confirmed_email</source>
+                <target>Unless we are mistaken, you have still not confirmed your email address.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_mandatory_action">
+                <source>email.confirmation.text.mandatory_action</source>
+                <target>Confirming your email address is mandatory to guarantee that Strime will work smoothly.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_still_possible_to_do_it">
+                <source>email.confirmation.text.still_possible_to_do_it</source>
+                <target>You can still confirm it by clicking now on the button below.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_will_have_to_deactivate_account">
+                <source>email.confirmation.text.will_have_to_deactivate_account</source>
+                <target>Without any action on your side, your Strime account will be deactivated in a delay of %days% day.|Without any action on your side, your Strime account will be deactivated in a delay of %days% days.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_will_keep_data">
+                <source>email.confirmation.text.will_keep_data</source>
+                <target>However, we will retain your data so that you can reactivate it if you need it.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,189 @@
+{% trans_default_domain 'back_profile_integrations' %}
+{% extends '::back_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('app_profile_integrations', {}, TRUE) }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="{{ 'back.profile_integrations.meta.description'|trans }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'back.profile_integrations.meta.keywords'|trans }}">
+    <meta name="google-signin-client_id" content="59471169232-igm9oedpkpc0f1spqmrj2nffqd1hj93f.apps.googleusercontent.com">
+{% endblock %}
+
+{% block title %}{{ 'back.profile_integrations.meta.title'|trans }} | Strime{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets
+        'bundles/strimeback/css/profile.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/sub-menu.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+    {% include 'StrimeBackBundle:App:profile-menu.html.twig' %}
+
+
+    <!-- Wrapper full -->
+    <div class="wrapper-full">
+
+    	<!-- Profile container -->
+    	<div id="profile-container">
+
+    		<div id="profile-inner">
+
+                {% for flash_message in app.session.flashbag.get('success') %}
+                    <div class="alert alert-success" role="alert">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+
+                {% for flash_message in app.session.flashbag.get('error') %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+
+                <div class="row">
+
+                    <div class="col-sm-5">
+                        <h3>{{ 'back.profile_integrations.title.signin'|trans }}</h3>
+                        <p class="description">{{ 'back.profile_integrations.description.manage_your_signin_methods'|trans }}</p>
+
+                        <div class="integration" id="google">
+                            <img src="{{ asset('bundles/strimeback/img/integrations-icon-google.png') }}" alt="Google" title="Google" {% if user.user_google_details is null %}class="deactivated"{% endif %}>
+                            <div class="action">
+                                {% if user.user_google_details is null %}
+                                    {{ 'back.profile_integrations.text.deactivated'|trans }}
+                                {% else %}
+                                    <a href="#" class="revoke-google" title="{{ 'back.profile_integrations.link.deactivate'|trans }}">
+                                        {{ 'back.profile_integrations.link.deactivate'|trans }}
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="integration" id="facebook">
+                            <img src="{{ asset('bundles/strimeback/img/integrations-icon-facebook.png') }}" alt="Facebook" title="Facebook" {% if user.user_facebook_details is null %}class="deactivated"{% endif %}>
+                            <div class="action">
+                                {% if user.user_facebook_details is null %}
+                                    {{ 'back.profile_integrations.text.deactivated'|trans }}
+                                {% else %}
+                                    <a href="#" class="revoke-facebook" title="{{ 'back.profile_integrations.link.deactivate'|trans }}">
+                                        {{ 'back.profile_integrations.link.deactivate'|trans }}
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-sm-offset-2">
+                        <h3>{{ 'back.profile_integrations.title.notifications'|trans }}</h3>
+                        <p class="description">{{ 'back.profile_integrations.description.manage_notifications_channels'|trans }}</p>
+
+                        <div class="integration" id="slack-comment-notification">
+                            <img src="{{ asset('bundles/strimeback/img/integrations-icon-slack.svg') }}" alt="Slack" title="Slack" {% if user.user_slack_details is null or user.user_slack_details.webhook_url is null %}class="deactivated"{% endif %}>
+                            <div class="action">
+                                {% if user.user_slack_details is not null and user.user_slack_details.webhook_url is not null %}
+                                    <a href="#" class="revoke-slack-comment-notification" title="{{ 'back.profile_integrations.link.deactivate'|trans }}">
+                                        {{ 'back.profile_integrations.link.deactivate'|trans }}
+                                    </a>
+                                {% else %}
+                                    {{ 'back.profile_integrations.text.deactivated'|trans }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr >
+
+                <div class="row">
+
+                    <div class="col-sm-5">
+                        <h3>{{ 'back.profile_integrations.title.export'|trans }}</h3>
+                        <p class="description">{{ 'back.profile_integrations.description.manage_your_export_connexions'|trans }}</p>
+
+                        <div class="integration" id="youtube">
+                            <img src="{{ asset('bundles/strimeback/img/integrations-icon-youtube.svg') }}" alt="Youtube" title="Youtube" {% if user.user_youtube_details is null %}class="deactivated"{% endif %}>
+                            <div class="action">
+                                {% if user.user_youtube_details is null %}
+                                    {{ 'back.profile_integrations.text.deactivated'|trans }}
+                                {% else %}
+                                    <a href="#" class="revoke-youtube" title="{{ 'back.profile_integrations.link.deactivate'|trans }}">
+                                        {{ 'back.profile_integrations.link.deactivate'|trans }}
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+    		</div><!-- ./Profile inner -->
+
+    	</div><!-- ./Profile container -->
+
+    </div><!-- ./Wrapper full -->
+
+{% endblock %}
+
+
+{% block footer %}
+	{{ parent() }}
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    <script type="text/javascript">
+        const ajaxIsLoggedInURL = "{{ url('app_ajax_is_logged_in', {}, TRUE) }}";
+        const ajaxUserRevokeGoogleURL = "{{ url('app_ajax_user_revoke_google', {}, TRUE) }}";
+        const ajaxUserRevokeFacebookURL = "{{ url('app_ajax_user_revoke_facebook', {}, TRUE) }}";
+        const ajaxUserRevokeSlackCommentNotificationURL = "{{ url('app_ajax_user_revoke_slack_comment_notification', {}, TRUE) }}";
+        const ajaxUserRevokeYoutubeURL = "{{ url('app_ajax_user_revoke_youtube', {}, TRUE) }}";
+        const backJsTextErrorOccuredWhileRevokingGoogle = "{{ 'back.profile_integrations.js.error_occured_while_revoking_google'|trans|raw }}";
+        const backJsTextErrorOccuredWhileRevokingFacebook = "{{ 'back.profile_integrations.js.error_occured_while_revoking_facebook'|trans|raw }}";
+        const backJsTextGoogleAccessRevoked = "{{ 'back.profile_integrations.js.google_access_revoked'|trans|raw }}";
+        const backJsTextFacebookAccessRevoked = "{{ 'back.profile_integrations.js.facebook_access_revoked'|trans|raw }}";
+        const backJsTextYoutubeAccessRevoked = "{{ 'back.profile_integrations.js.facebook_access_revoked'|trans|raw }}";
+        const backJsTextErrorOccuredWhileDeactivatingSlack = "{{ 'back.profile_integrations.js.error_occured_while_deactivating_slack'|trans|raw }}";
+        const backJsTextSlackWebhookDeactivated = "{{ 'back.profile_integrations.js.slack_webhook_deactivated'|trans|raw }}";
+        const backJsTextErrorOccuredWhileRevokingYoutube = "{{ 'back.profile_integrations.js.error_occured_while_revoking_facebook'|trans|raw }}";
+        const backJsTextYouWillBeLoggedOut = "{{ 'back.profile_integrations.js.will_be_logged_out'|trans|raw }}";
+        const backJsTextDeactivated = "{{ 'back.profile_integrations.text.deactivated'|trans|raw }}";
+        const facebookAppID = "{{ strime_facebook_app_id }}";
+
+        {% if app.session.get("google_signin") == true %}
+            const isLoggedInWithGoogle = true;
+        {% else %}
+            const isLoggedInWithGoogle = false;
+        {% endif %}
+
+        {% if user.user_facebook_details is not null and user.user_facebook_details.facebook_id is defined %}
+            var userFacebookID = "{{ user.user_facebook_details.facebook_id }}";
+        {% endif %}
+    </script>
+
+    {% javascripts
+        '@StrimeGlobalBundle/Resources/public/js/is-logged-in.js' filter='?uglifyjs2'
+        '@StrimeFrontBundle/Resources/public/js/main.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/profile/profile_integrations.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

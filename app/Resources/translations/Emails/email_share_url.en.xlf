@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_share_url_meta_title_video">
+                <source>email.share_url.meta.title_video</source>
+                <target>%first_name% would like to share a video with you</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_meta_title_image">
+                <source>email.share_url.meta.title_image</source>
+                <target>%first_name% would like to share an image with you</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_meta_title_project">
+                <source>email.share_url.meta.title_project</source>
+                <target>%first_name% would like to share a video with you</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_title_comment_video">
+                <source>email.share_url.title.comment_video</source>
+                <target>Comment on the video "%content_name%"</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_title_comment_image">
+                <source>email.share_url.title.comment_image</source>
+                <target>Comment on the image "%content_name%"</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_title_comment_audio">
+                <source>email.share_url.title.comment_audio</source>
+                <target>Comment on the audio file "%content_name%"</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_title_comment_project">
+                <source>email.share_url.title.comment_project</source>
+                <target>Comment on the project "%content_name%"</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_text_hi">
+                <source>email.share_url.text.hi</source>
+                <target>Hi</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_text_share_video">
+                <source>email.share_url.text.share_video</source>
+                <target><![CDATA[%first_name% would like to share the video <strong>%content_name%</strong> with you.]]></target>
+            </trans-unit>
+            <trans-unit id="email_share_url_text_share_image">
+                <source>email.share_url.text.share_image</source>
+                <target><![CDATA[%first_name% would like to share the image <strong>%content_name%</strong> with you.]]></target>
+            </trans-unit>
+            <trans-unit id="email_share_url_text_share_audio">
+                <source>email.share_url.text.share_audio</source>
+                <target><![CDATA[%first_name% would like to share the audio file <strong>%content_name%</strong> with you.]]></target>
+            </trans-unit>
+            <trans-unit id="email_share_url_text_share_project">
+                <source>email.share_url.text.share_project</source>
+                <target><![CDATA[%first_name% would like to share the project <strong>%content_name%</strong> with you.]]></target>
+            </trans-unit>
+            <trans-unit id="email_share_url_text_here_is_his_message">
+                <source>email.share_url.text.here_is_his_message</source>
+                <target>Here is his message:</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_button_go_to_video">
+                <source>email.share_url.button.go_to_video</source>
+                <target>Go to the video</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_button_go_to_image">
+                <source>email.share_url.button.go_to_image</source>
+                <target>Go to the image</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_button_go_to_audio">
+                <source>email.share_url.button.go_to_audio</source>
+                <target>Go to the audio file</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_button_go_to_project">
+                <source>email.share_url.button.go_to_project</source>
+                <target>Go to the project</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_text_see_you_soon">
+                <source>email.share_url.text.see_you_soon</source>
+                <target>See you soon</target>
+            </trans-unit>
+            <trans-unit id="email_share_url_text_strime_team">
+                <source>email.share_url.text.strime_team</source>
+                <target>Strime's team</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

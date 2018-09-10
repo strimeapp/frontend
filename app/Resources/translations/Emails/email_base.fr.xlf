@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_base_link_feedback_platform">
+                <source>email.base.link.feedback_platform</source>
+                <target>Plateforme de corrections vidéos</target>
+            </trans-unit>
+            <trans-unit id="email_base_text_all_rights_reserved">
+                <source>email.base.text.all_rights_reserved</source>
+                <target>Tous droits réservés</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

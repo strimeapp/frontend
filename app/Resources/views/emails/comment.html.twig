@@ -1,0 +1,117 @@
+{% trans_default_domain 'email_comment' %}
+{% extends 'emails/email_base.html.twig' %}
+
+
+
+{% block email_title %}
+	<title>{{ 'email.comment.meta.title'|trans({'%video_name%': asset.name}) }}</title>
+{% endblock %}
+
+
+
+{% block email_header_title %}
+	<h1 style="margin: 0px;">{{ 'email.comment.meta.title'|trans({'%video_name%': asset.name}) }}</h1>
+{% endblock %}
+
+
+
+{% block email_content %}
+
+	{% if is_owner == false %}
+
+		{% if answer_to == false %}
+			<p>{{ 'email.comment.text.hi_first_name'|trans({'%first_name%': first_name}) }},</p>
+		{% else %}
+			<p>{{ 'email.comment.text.hi'|trans }},</p>
+		{% endif %}
+
+		<p>
+			{% if auto_login_token is not null %}
+				{{ 'email.comment.text.new_comment_on_video_autologin'|trans({'%link_start%': '<a href="' ~ url('app_video', {'video_id': asset.asset_id, 'action': 'user', 'url_data': auto_login_token}) ~ '#comment-' ~ comment_id ~ '" title="' ~ asset.name ~ '" target="_blank">', '%link_end%': '</a>', '%video_name%': asset.name})|raw }}
+			{% else %}
+				{{ 'email.comment.text.new_comment_on_video'|trans({'%link_start%': '<a href="' ~ url('app_video', {'video_id': asset.asset_id}) ~ '#comment-' ~ comment_id ~ '" title="' ~ asset.name ~ '" target="_blank">', '%link_end%': '</a>', '%video_name%': asset.name})|raw }}
+			{% endif %}
+			<br />
+			{{ 'email.comment.text.here_is_the_message'|trans }}
+		</p>
+
+		<p>
+			<blockquote style="border-left: solid 3px #DFDFDF; padding-left: 10px;">
+				{% if comment.comment is defined %}
+					{{ comment.comment|nl2br }}
+				{% else %}
+					{{ comment|nl2br }}
+				{% endif %}
+			</blockquote>
+		</p>
+
+		{% if comment.s3_url is defined and comment.s3_url is not null %}
+			<p>
+				{% if auto_login_token is not null %}
+					<a href="{{ url('app_video', {'video_id': asset.asset_id, 'action': 'user', 'url_data': auto_login_token}) }}" title="{{ asset.name }}" target="_blank">
+				{% else %}
+					<a href="{{ url('app_video', {'video_id': asset.asset_id}) }}" title="{{ asset.name }}" target="_blank">
+				{% endif %}
+					<img src="{{ comment.s3_url }}" title="{{ comment.video.name }}" alt="{{ comment.video.name }}" style="display: block; width: 60%; margin-left: auto; margin-right: auto;">
+				</a>
+			</p>
+		{% endif %}
+
+		<p>
+			{{ 'email.comment.text.details_about_comment'|trans }}
+			<br />
+			{% if answer_to == FALSE %}
+				- {{ 'email.comment.text.at_what_time'|trans }} {{ time }},<br />
+			{% endif %}
+			- {{ 'email.comment.text.answer_to_comment'|trans }} {% if answer_to == FALSE %}{{ 'email.comment.text.no'|trans }}{% else %}{{ 'email.comment.text.yes'|trans }}{% endif %},<br />
+			- {{ 'email.comment.text.author_of_the_comment'|trans }} {{ author }}
+		</p>
+
+	{% else %}
+
+		<p>{{ 'email.comment.text.hi'|trans }},</p>
+
+		<p>
+			{{ 'email.comment.text.owner_of_video_left_a_comment'|trans({'%link_start%': '<a href="' ~ url('app_video', {'video_id': asset.asset_id}) ~ '" title="' ~ asset.name ~ '" target="_blank">', '%link_end%': '</a>', '%video_name%': asset.name})|raw }}
+			<br />
+			{{ 'email.comment.text.here_is_the_message'|trans }}
+		</p>
+
+		<p>
+			<blockquote style="border-left: solid 3px #DFDFDF; padding-left: 10px;">
+				{% if comment.comment is defined %}
+					{{ comment.comment|nl2br }}
+				{% else %}
+					{{ comment|nl2br }}
+				{% endif %}
+			</blockquote>
+		</p>
+
+		{% if comment.s3_url is defined and comment.s3_url is not null %}
+			<p>
+				{% if auto_login_token is not null %}
+					<a href="{{ url('app_video', {'video_id': asset.asset_id, 'action': 'user', 'url_data': auto_login_token}) }}" title="{{ asset.name }}" target="_blank">
+				{% else %}
+					<a href="{{ url('app_video', {'video_id': asset.asset_id}) }}" title="{{ asset.name }}" target="_blank">
+				{% endif %}
+					<img src="{{ comment.s3_url }}" title="{{ comment.video.name }}" alt="{{ comment.video.name }}" style="display: block; width: 60%; margin-left: auto; margin-right: auto;">
+				</a>
+			</p>
+		{% endif %}
+
+		<p>
+			{{ 'email.comment.text.details_about_comment'|trans }}<br />
+			{% if answer_to == FALSE %}
+				- {{ 'email.comment.text.at_what_time'|trans }} {{ time }},<br />
+			{% endif %}
+			- {{ 'email.comment.text.answer_to_comment'|trans }} {% if answer_to == FALSE %}{{ 'email.comment.text.no'|trans }}{% else %}{{ 'email.comment.text.yes'|trans }}{% endif %},<br />
+			- {{ 'email.comment.text.author_of_the_comment'|trans }} {{ author }}
+		</p>
+
+	{% endif %}
+
+	<p>
+		{{ 'email.comment.text.see_you_soon'|trans }},<br />
+		{{ 'email.comment.text.strime_team'|trans }}
+	</p>
+{% endblock %}

@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_base_title_video_projects_validation">
+                <source>back.base.title.video_projects_validation</source>
+                <target>Suivi de projets vidéos</target>
+            </trans-unit>
+            <trans-unit id="back_base_meta_description">
+                <source>back.base.meta.description</source>
+                <target>Feedback is sexy</target>
+            </trans-unit>
+            <trans-unit id="back_base_meta_keywords">
+                <source>back.base.meta.keywords</source>
+                <target>strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle</target>
+            </trans-unit>
+            <trans-unit id="back_base_text_help_us_improve_strime">
+                <source>back.base.text.help_us_improve_strime</source>
+                <target>Aidez-nous à améliorer Strime,</target>
+            </trans-unit>
+            <trans-unit id="back_base_text_suggest_improvement">
+                <source>back.base.text.suggest_improvement</source>
+                <target>proposez une amélioration</target>
+            </trans-unit>
+            <trans-unit id="back_base_text_or">
+                <source>back.base.text.or</source>
+                <target>ou</target>
+            </trans-unit>
+            <trans-unit id="back_base_alt_suggest_improvement">
+                <source>back.base.alt.suggest_improvement</source>
+                <target>Proposez une amélioration</target>
+            </trans-unit>
+            <trans-unit id="back_base_text_signal_issue">
+                <source>back.base.text.signal_issue</source>
+                <target>signalez un problème.</target>
+            </trans-unit>
+            <trans-unit id="back_base_alt_signal_issue">
+                <source>back.base.alt.signal_issue</source>
+                <target>Signalez un problème</target>
+            </trans-unit>
+            <trans-unit id="back_base_alt_trust_badge">
+                <source>back.base.alt.trust_badge</source>
+                <target>Badge de confiance</target>
+            </trans-unit>
+            <trans-unit id="back_base_title_feedback_is_important">
+                <source>back.base.title.feedback_is_important</source>
+                <target>Vos retours nous sont très précieux</target>
+            </trans-unit>
+            <trans-unit id="back_base_button_send">
+                <source>back.base.button.send</source>
+                <target>Envoyer</target>
+            </trans-unit>
+            <trans-unit id="back_base_loader_loading">
+                <source>back.base.loader.loading</source>
+                <target>Chargement</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_feedback_suggest_improvement">
+                <source>back.base.js.feedback_suggest_improvement</source>
+                <target>Proposez une amélioration</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_feedback_signal_issue">
+                <source>back.base.js.feedback_signal_issue</source>
+                <target>Signalez un problème</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_project">
+                <source>back.base.js.share_project</source>
+                <target>Partager ce projet</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_video">
+                <source>back.base.js.share_video</source>
+                <target>Partager cette vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_image">
+                <source>back.base.js.share_image</source>
+                <target>Partager cette image</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_file">
+                <source>back.base.js.share_file</source>
+                <target>Partager ce fichier</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_copied">
+                <source>back.base.js.share_copied</source>
+                <target>Copié !</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_copy">
+                <source>back.base.js.share_copy</source>
+                <target>Copier</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_add_a_message">
+                <source>back.base.js.share_add_a_message</source>
+                <target>Ajouter un message</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_do_not_add_message">
+                <source>back.base.js.share_do_not_add_message</source>
+                <target>Ne pas ajouter de message</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_no_user_found_for_this_request">
+                <source>back.base.js.share_no_user_found_for_this_request</source>
+                <target>Aucun utilisateur ne correspond à la requête envoyée.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_project_with_this_name_already_exists">
+                <source>back.base.js.share_project_with_this_name_already_exists</source>
+                <target>Un projet avec ce nom existe déjà.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_all_fields_not_provided">
+                <source>back.base.js.share_all_fields_not_provided</source>
+                <target>Tous les champs n'ont pas été remplis.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_error_occured_while_sending_file">
+                <source>back.base.js.share_error_occured_while_sending_file</source>
+                <target>Une erreur s'est produite lors de l'envoi du fichier.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_error_occured_while_sending_url">
+                <source>back.base.js.share_error_occured_while_sending_url</source>
+                <target>Une erreur s'est produite lors de l'envoi de cette URL.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_share_message_has_been_sent">
+                <source>back.base.js.share_message_has_been_sent</source>
+                <target>Votre message a bien été envoyé.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_not_enough_space">
+                <source>back.base.js.upload_not_enough_space</source>
+                <target>Vous n'avez pas assez d'espace pour ce fichier.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_drop_or_import_file">
+                <source>back.base.js.upload_drop_or_import_file</source>
+                <target>Glissez ou importez un fichier vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_in_progress">
+                <source>back.base.js.upload_in_progress</source>
+                <target>Upload en cours</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_cancel_upload">
+                <source>back.base.js.upload_cancel_upload</source>
+                <target>Annuler cet upload</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_no_user_found_for_this_request">
+                <source>back.base.js.upload_no_user_found_for_this_request</source>
+                <target>Aucun utilisateur ne correspond à la requête envoyée.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_project_with_this_name_already_exists">
+                <source>back.base.js.upload_project_with_this_name_already_exists</source>
+                <target>Un projet avec ce nom existe déjà.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_all_fields_not_provided">
+                <source>back.base.js.upload_all_fields_not_provided</source>
+                <target>Tous les champs n'ont pas été remplis.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_reached_max_number_of_videos">
+                <source>back.base.js.upload_reached_max_number_of_videos</source>
+                <target><![CDATA[Vous avez atteint votre quota de vidéos.<br />Commencez par en supprimer.]]></target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_reached_max_space_available">
+                <source>back.base.js.upload_reached_max_space_available</source>
+                <target><![CDATA[Vous avez atteint votre quota d'espace.<br />Commencez par supprimer des vidéos.]]></target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_error_occured_while_sending_file">
+                <source>back.base.js.upload_error_occured_while_sending_file</source>
+                <target>Une erreur s'est produite lors de l'envoi du fichier.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_error_occured_while_encoding_video">
+                <source>back.base.js.upload_error_occured_while_encoding_video</source>
+                <target>Une erreur s'est produite lors de la conversion de votre vidéo.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_error_occured_while_uploading_image">
+                <source>back.base.js.upload_error_occured_while_uploading_image</source>
+                <target>Une erreur s'est produite lors de l'envoi de votre image.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_error_occured_while_uploading_audio">
+                <source>back.base.js.upload_error_occured_while_uploading_audio</source>
+                <target>Une erreur s'est produite lors de l'envoi de votre fichier audio.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_error_occured_while_uploading_asset">
+                <source>back.base.js.upload_error_occured_while_uploading_asset</source>
+                <target>Une erreur s'est produite lors de l'envoi de votre fichier.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_encoding_scheduled_will_be_notified">
+                <source>back.base.js.upload_encoding_scheduled_will_be_notified</source>
+                <target><![CDATA[Votre encodage a bien été programmé.<br/>Vous serez alerté par mail lorsqu'il aura fini.]]></target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_image_success">
+                <source>back.base.js.upload_image_success</source>
+                <target>Votre image a été correctement uploadée.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_asset_success">
+                <source>back.base.js.upload_asset_success</source>
+                <target>Votre fichier a été correctement uploadée.</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_encoding_in_progress">
+                <source>back.base.js.upload_encoding_in_progress</source>
+                <target>Encodage en cours</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_video_encoding_in_progress">
+                <source>back.base.js.upload_video_encoding_in_progress</source>
+                <target>Encodage d'une vidéo en cours</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_upload_audio_encoding_in_progress">
+                <source>back.base.js.upload_audio_encoding_in_progress</source>
+                <target>Encodage de votre fichier audio en cours</target>
+            </trans-unit>
+            <trans-unit id="back_base_js_you_are_now_logged_in">
+                <source>back.base.js.you_are_now_logged_in</source>
+                <target>Vous êtes désormais connecté.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

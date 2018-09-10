@@ -1,0 +1,11 @@
+<div id="admin-content">
+	<h1>Vérification du support TLS</h1>
+
+	<div class="white-box encoding-jobs-list">
+    	{% if support_tls is defined and support_tls == true %}
+    		TLS 1.2 supported, no action required.
+    	{% elseif support_tls is defined and support_tls == false %}
+    		TLS 1.2 is not supported. You will need to upgrade your integration.
+		{% endif %}
+	</div><!-- ./White box -->
+</div><!-- ./Admin content -->

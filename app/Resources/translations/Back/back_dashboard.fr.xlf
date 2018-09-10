@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_dashboard_meta_description">
+                <source>back.dashboard.meta.description</source>
+                <target>Votre tableau de bord Strime</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_meta_keywords">
+                <source>back.dashboard.meta.keywords</source>
+                <target>strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_title_dashboard">
+                <source>back.dashboard.title.dashboard</source>
+                <target>Tableau de bord</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_alt_create_new_folder">
+                <source>back.dashboard.alt.create_new_folder</source>
+                <target>Créer un nouveau dossier</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_alt_create_folder">
+                <source>back.dashboard.alt.create_folder</source>
+                <target>Créer un dossier</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_title_add_video">
+                <source>back.dashboard.title.add_video</source>
+                <target>Ajouter une vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_title_add_image">
+                <source>back.dashboard.title.add_image</source>
+                <target>Ajouter une image</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_title_add_audio">
+                <source>back.dashboard.title.add_audio</source>
+                <target>Ajouter un fichier audio</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_alt_close_window">
+                <source>back.dashboard.alt.close_window</source>
+                <target>Fermer la fenêtre</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_text_put_in_addresses_of_contacts">
+                <source>back.dashboard.text.put_in_addresses_of_contacts</source>
+                <target>Vous pouvez dès à présent saisir les adresses des personnes avec qui vous souhaitez partager cette vidéo.</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_text_put_in_addresses_of_contacts_image">
+                <source>back.dashboard.text.put_in_addresses_of_contacts_image</source>
+                <target>Vous pouvez dès à présent saisir les adresses des personnes avec qui vous souhaitez partager cette image.</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_text_put_in_addresses_of_contacts_audio">
+                <source>back.dashboard.text.put_in_addresses_of_contacts_audio</source>
+                <target>Vous pouvez dès à présent saisir les adresses des personnes avec qui vous souhaitez partager ce fichier audio.</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_text_will_be_notified">
+                <source>back.dashboard.text.will_be_notified</source>
+                <target>Elles seront alertées par email à la fin de l'encodage.</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_button_add">
+                <source>back.dashboard.button.add</source>
+                <target>Ajouter</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_alt_stop_upload">
+                <source>back.dashboard.alt.stop_upload</source>
+                <target>Arrêter cet upload</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_alt_cancel_upload">
+                <source>back.dashboard.button.cancel_upload</source>
+                <target>Annuler cet upload</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_loader_loading">
+                <source>back.dashboard.loader.loading</source>
+                <target>Chargement</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_loader_copying_files">
+                <source>back.dashboard.loader.copying_files</source>
+                <target>Copie des fichiers</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_loader_we_are_programming_encoding">
+                <source>back.dashboard.loader.we_are_programming_encoding</source>
+                <target>Nous programmons actuellement l'encodage de votre vidéo.</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_title_create_folder">
+                <source>back.dashboard.title.create_folder</source>
+                <target>Créer un dossier</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_button_validate">
+                <source>back.dashboard.button.validate</source>
+                <target>Valider</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_title_please_do_not_leave">
+                <source>back.dashboard.title.please_do_not_leave</source>
+                <target>Veuillez ne pas quitter</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_text_upload_in_progress">
+                <source>back.dashboard.text.upload_in_progress</source>
+                <target>Le téléchargement de votre fichier est en cours...</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_text_encoding_will_automatically_start">
+                <source>back.dashboard.text.encoding_will_automatically_start</source>
+                <target>L'encodage démarrera automatiquement après.</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_button_no_get_me_out">
+                <source>back.dashboard.button.no_get_me_out</source>
+                <target>Non, sortez-moi de là !</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_title_delete_project">
+                <source>back.dashboard.title.delete_project</source>
+                <target>Supprimer ce projet</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_text_sure_wanna_detele_project">
+                <source>back.dashboard.text.sure_wanna_detele_project</source>
+                <target><![CDATA[Voulez-vous réellement supprimer le projet nommé <strong><span class="project-name"></span></strong> ?]]></target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_text_will_also_delete_videos_and_comments">
+                <source>back.dashboard.text.will_also_delete_videos_and_comments</source>
+                <target>Les vidéos et commentaires associés seront définitivement supprimés.</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_button_yes_delete_project">
+                <source>back.dashboard.button.yes_delete_project</source>
+                <target>Oui, supprimer ce projet</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_error_sending">
+                <source>back.dashboard.js.error_sending</source>
+                <target>Erreur lors de l'envoi...</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_mail_sent">
+                <source>back.dashboard.js.mail_sent</source>
+                <target>Email envoyé !</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_resend_confirmation_email">
+                <source>back.dashboard.js.resend_confirmation_email</source>
+                <target>Renvoyer l'email de confirmation</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_you_must_be_logged_in">
+                <source>back.dashboard.js.you_must_be_logged_in</source>
+                <target>Vous devez être connecté.</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_couldnt_find_information_for_this_encoding">
+                <source>back.dashboard.js.couldnt_find_information_for_this_encoding</source>
+                <target>Nous n'avons pas pu trouver les informations relatives à cet encodage.</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_see_the_video">
+                <source>back.dashboard.js.see_the_video</source>
+                <target>Voir la vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_see_the_image">
+                <source>back.dashboard.js.see_the_image</source>
+                <target>Voir l'image</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_see_the_audio">
+                <source>back.dashboard.js.see_the_audio</source>
+                <target>Voir le fichier audio</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_see_the_project">
+                <source>back.dashboard.js.see_the_project</source>
+                <target>Voir la projet</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_error_occured_while_collecting_information_from_this_encoding">
+                <source>back.dashboard.js.error_occured_while_collecting_information_from_this_encoding</source>
+                <target>Une erreur s'est produite lors de la récupération des informations de cet encodage.</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_video">
+                <source>back.dashboard.js.video</source>
+                <target>vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_videos">
+                <source>back.dashboard.js.videos</source>
+                <target>vidéos</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_file">
+                <source>back.dashboard.js.file</source>
+                <target>fichier</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_files">
+                <source>back.dashboard.js.files</source>
+                <target>fichiers</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_loading">
+                <source>back.dashboard.js.loading</source>
+                <target>Chargement</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_extension_not_authorized">
+                <source>back.dashboard.js.extension_not_authorized</source>
+                <target>Cette extension n'est pas autorisée.</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_js_file_must_have_extension">
+                <source>back.dashboard.js.file_must_have_extension</source>
+                <target>Votre fichier doit avoir une extension.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

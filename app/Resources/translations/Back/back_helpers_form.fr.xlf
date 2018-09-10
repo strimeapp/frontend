@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_helpers_form_add_asset_dont_associate_to_project">
+                <source>back.helpers_form.add_asset.dont_associate_to_project</source>
+                <target>Ne pas associer à un projet</target>
+            </trans-unit>
+            <trans-unit id="back_helpers_form_add_asset_new_project">
+                <source>back.helpers_form.add_asset.new_project</source>
+                <target>Nouveau projet</target>
+            </trans-unit>
+            <trans-unit id="back_helpers_form_add_asset_email">
+                <source>back.helpers_form.add_asset.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="back_helpers_form_add_asset_video_name">
+                <source>back.helpers_form.add_asset.video_name</source>
+                <target>Nom de la vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_helpers_form_add_asset_project_name">
+                <source>back.helpers_form.add_asset.project_name</source>
+                <target>Nom du projet</target>
+            </trans-unit>
+            <trans-unit id="back_helpers_form_add_project_folder_name">
+                <source>back.helpers_form.add_project.folder_name</source>
+                <target>Nom du dossier</target>
+            </trans-unit>
+            <trans-unit id="back_helpers_form_share_by_email_email">
+                <source>back.helpers_form.share_by_email.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="back_helpers_form_share_by_email_your_message">
+                <source>back.helpers_form.share_by_email.your_message</source>
+                <target>Votre message</target>
+            </trans-unit>
+            <trans-unit id="back_helpers_form_add_contact_type_in_email">
+                <source>back.helpers_form.add_contact.type_in_email</source>
+                <target>Entrez votre email</target>
+            </trans-unit>
+            <trans-unit id="back_helpers_form_feedback_email">
+                <source>back.helpers_form.feedback.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="back_helpers_form_feedback_your_message">
+                <source>back.helpers_form.feedback.your_message</source>
+                <target>Votre message</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

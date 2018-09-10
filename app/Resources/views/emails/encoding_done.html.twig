@@ -1,0 +1,76 @@
+{% trans_default_domain 'email_encoding_done' %}
+{% extends 'emails/email_base.html.twig' %}
+
+
+
+{% block email_title %}
+	<title>{{ 'email.comment.meta.title'|trans({}, 'email_encoding_done', locale) }}</title>
+{% endblock %}
+
+
+
+{% block email_header_title %}
+	<h1 style="margin: 0px;">
+		{% if asset_type == "video" %}
+			{{ 'email.encoding_done.title.video_encoded'|trans({}, 'email_encoding_done', locale) }}
+		{% elseif asset_type == "audio" %}
+			{{ 'email.encoding_done.title.audio_encoded'|trans({}, 'email_encoding_done', locale) }}
+		{% else %}
+			{{ 'email.encoding_done.title.file_encoded'|trans({}, 'email_encoding_done', locale) }}
+		{% endif %}
+	</h1>
+{% endblock %}
+
+
+
+{% block email_content %}
+	<p>{{ 'email.encoding_done.text.hi_first_name'|trans({'%first_name%': first_name}, 'email_encoding_done', locale) }},</p>
+
+	<p>
+		{% if asset_type == "video" %}
+			{{ 'email.encoding_done.title.video_encoded'|trans({}, 'email_encoding_done', locale) }}
+		{% elseif asset_type == "audio" %}
+			{{ 'email.encoding_done.title.audio_encoded'|trans({}, 'email_encoding_done', locale) }}
+		{% else %}
+			{{ 'email.encoding_done.title.file_encoded'|trans({}, 'email_encoding_done', locale) }}
+		{% endif %}
+
+		{% if emails_list is not null %}
+			<br />
+			{% if asset_type == "video" %}
+				{{ 'email.encoding_done.text.people_invited_video'|trans({'%emails_list%': emails_list}, 'email_encoding_done', locale) }}
+			{% elseif asset_type == "audio" %}
+				{{ 'email.encoding_done.text.people_invited_audio'|trans({'%emails_list%': emails_list}, 'email_encoding_done', locale) }}
+			{% else %}
+				{{ 'email.encoding_done.text.people_invited_file'|trans({'%emails_list%': emails_list}, 'email_encoding_done', locale) }}
+			{% endif %}
+		{% endif %}
+	</p>
+
+	<p>
+		{% if asset_type == "video" %}
+			{% if emails_list is not null %}
+				{{ 'email.encoding_done.text.find_video_on_strime'|trans({'%link_start%': '<a href="' ~ absolute_url( '/app/dashboard' ) ~ '" target="_blank" style="color: #1DAC9A; text-decoration: none;">', '%link_end%': '</a>'}, 'email_encoding_done', locale)|raw }}
+			{% else %}
+				{{ 'email.encoding_done.text.find_video_on_strime_and_share'|trans({'%link_start%': '<a href="' ~ absolute_url( '/app/dashboard' ) ~ '" target="_blank" style="color: #1DAC9A; text-decoration: none;">', '%link_end%': '</a>'}, 'email_encoding_done', locale)|raw }}
+			{% endif %}
+		{% elseif asset_type == "audio" %}
+			{% if emails_list is not null %}
+				{{ 'email.encoding_done.text.find_audio_on_strime'|trans({'%link_start%': '<a href="' ~ absolute_url( '/app/dashboard' ) ~ '" target="_blank" style="color: #1DAC9A; text-decoration: none;">', '%link_end%': '</a>'}, 'email_encoding_done', locale)|raw }}
+			{% else %}
+				{{ 'email.encoding_done.text.find_audio_on_strime_and_share'|trans({'%link_start%': '<a href="' ~ absolute_url( '/app/dashboard' ) ~ '" target="_blank" style="color: #1DAC9A; text-decoration: none;">', '%link_end%': '</a>'}, 'email_encoding_done', locale)|raw }}
+			{% endif %}
+		{% else %}
+			{% if emails_list is not null %}
+				{{ 'email.encoding_done.text.find_file_on_strime'|trans({'%link_start%': '<a href="' ~ absolute_url( '/app/dashboard' ) ~ '" target="_blank" style="color: #1DAC9A; text-decoration: none;">', '%link_end%': '</a>'}, 'email_encoding_done', locale)|raw }}
+			{% else %}
+				{{ 'email.encoding_done.text.find_file_on_strime_and_share'|trans({'%link_start%': '<a href="' ~ absolute_url( '/app/dashboard' ) ~ '" target="_blank" style="color: #1DAC9A; text-decoration: none;">', '%link_end%': '</a>'}, 'email_encoding_done', locale)|raw }}
+			{% endif %}
+		{% endif %}
+	</p>
+
+	<p>
+		{{ 'email.encoding_done.text.see_you_soon'|trans({}, 'email_encoding_done', locale) }},<br />
+		{{ 'email.encoding_done.text.strime_team'|trans({}, 'email_encoding_done', locale) }}
+	</p>
+{% endblock %}

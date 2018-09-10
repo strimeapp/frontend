@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="global_pdf_invoice_text_vat">
+                <source>global.pdf_invoice.text.vat</source>
+                <target>VAT</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_invoice">
+                <source>global.pdf_invoice.text.invoice</source>
+                <target>Invoice</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_date">
+                <source>global.pdf_invoice.text.date</source>
+                <target>Date</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_contact">
+                <source>global.pdf_invoice.text.contact</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_payment_mode">
+                <source>global.pdf_invoice.text.payment_mode</source>
+                <target>Payment method</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_credit_card">
+                <source>global.pdf_invoice.text.credit_card</source>
+                <target>Credit card</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_client_vat">
+                <source>global.pdf_invoice.text.client_vat</source>
+                <target>Client's VAT</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_invoicing_address">
+                <source>global.pdf_invoice.text.invoicing_address</source>
+                <target>Billing address</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_description">
+                <source>global.pdf_invoice.text.description</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_quantity">
+                <source>global.pdf_invoice.text.quantity</source>
+                <target>Quantity</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_unit_price">
+                <source>global.pdf_invoice.text.unit_price</source>
+                <target>Unit price</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_total_price">
+                <source>global.pdf_invoice.text.total_price</source>
+                <target>Total price</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_discount">
+                <source>global.pdf_invoice.text.discount</source>
+                <target>Discount</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_wo_taxes">
+                <source>global.pdf_invoice.text.wo_taxes</source>
+                <target>w/o VAT</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_total_wo_taxes">
+                <source>global.pdf_invoice.text.total_wo_taxes</source>
+                <target>Pre-taxed Total</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_autoliquidation_vat">
+                <source>global.pdf_invoice.text.autoliquidation_vat</source>
+                <target>VAT Autolequidation</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_amount_with_taxes">
+                <source>global.pdf_invoice.text.amount_with_taxes</source>
+                <target>Amount w/ VAT</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_amount_payed">
+                <source>global.pdf_invoice.text.amount_payed</source>
+                <target>Payed amount</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_made_with_love">
+                <source>global.pdf_invoice.text.made_with_love</source>
+                <target><![CDATA[Made with love in Saint-Etienne & Valparaíso!]]></target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

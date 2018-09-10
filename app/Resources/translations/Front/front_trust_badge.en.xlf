@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_trust_badge_meta_description">
+                <source>front.trust_badge.meta.description</source>
+                <target>Strime engages in the Orange Trust Badge</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_meta_keywords">
+                <source>front.trust_badge.meta.keywords</source>
+                <target>strime, strime.io, video, videos, comment, comments, application, app, workflow, collaboration, client, video producer, producer, professional, professionals, trust badge, personal data, confidence</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_title_trust_badge">
+                <source>front.trust_badge.title.trust_badge</source>
+                <target>Trust Badge</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_excerpt_trust_badge_by_orange">
+                <source>front.trust_badge.excerpt.trust_badge_by_orange</source>
+                <target>The Trust Badge is an initiative launched by Orange.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_excerpt_partner_of_program">
+                <source>front.trust_badge.excerpt.partner_of_program</source>
+                <target>As a partner of this initiative, we are committed to inform you of the data we collect, how it is used, and how to administer them.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_title_my_identity">
+                <source>front.trust_badge.title.my_identity</source>
+                <target>My identity</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_question_which_data_collected">
+                <source>front.trust_badge.question.which_data_collected</source>
+                <target>What data do you collect?</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_name_email">
+                <source>front.trust_badge.answer.name_email</source>
+                <target>Strime collects your first and last name, as well as your email address.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_if_choose_paying_offer">
+                <source>front.trust_badge.answer.if_choose_paying_offer</source>
+                <target>If you choose one of our paying offers, we will ask you to also provide a postal address for the edition of your invoices. You will be able to delete this data in %link_start%your account%link_end%, as soon as you downgrade to the free offer.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_title_analytics">
+                <source>front.trust_badge.title.analytics</source>
+                <target>Analytics</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_question_which_stats_tools_do_you_use">
+                <source>front.trust_badge.question.which_stats_tools_do_you_use</source>
+                <target>What statistical tools do you use?</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_google_analytics">
+                <source>front.trust_badge.answer.google_analytics</source>
+                <target>We use Google Analytics to track the traffic on our platform.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_acquisition_localization">
+                <source>front.trust_badge.answer.acquisition_localization</source>
+                <target>We also use this tool to obtain statistics on the origin of our visitors, whether from a geographical point of view or to know the sites that allowed them to know Strime.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_title_my_credit_card_details">
+                <source>front.trust_badge.title.my_credit_card_details</source>
+                <target>My bank details</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_question_what_do_you_do_with_credit_card_details">
+                <source>front.trust_badge.question.what_do_you_do_with_credit_card_details</source>
+                <target>What are you doing with my bank details?</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_we_keep_nothing">
+                <source>front.trust_badge.answer.we_keep_nothing</source>
+                <target>We don't store any credit card number on Strime.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_work_with_stripe">
+                <source>front.trust_badge.answer.work_with_stripe</source>
+                <target>We work with a payment solution named %link_start%Stripe%link_end% which is in charge of managing your bank details, and charging you.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_stripe_chosen_by">
+                <source>front.trust_badge.answer.stripe_chosen_by</source>
+                <target>Stripe is a trusted partner. This solution is that chosen by more than %link_start%2 out of 3 companies%link_end% that are created, and doing online sales in France.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_title_my_videos">
+                <source>front.trust_badge.title.my_videos</source>
+                <target>My videos</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_question_where_are_my_videos">
+                <source>front.trust_badge.question.where_are_my_videos</source>
+                <target>Where are stored my videos?</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_amazon_s3_ireland">
+                <source>front.trust_badge.answer.amazon_s3_ireland</source>
+                <target>Your videos are stored on Amazon S3, on servers located in Ireland.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_question_who_can_access_my_videos">
+                <source>front.trust_badge.question.who_can_access_my_videos</source>
+                <target>Who can access to my videos?</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_can_only_be_played_from_strime">
+                <source>front.trust_badge.answer.can_only_be_played_from_strime</source>
+                <target>Your videos can only be played from Strime's website. It is impossible to read a video right from the Amazon S3 link.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_only_people_with_link">
+                <source>front.trust_badge.answer.only_people_with_link</source>
+                <target>As a result, only those who have the link to your videos or projects on Strime will be able to play your videos and read their comments. Moreover, depending on the offer chosen, you can protect these videos with a password, which reinforces their privacy.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_question_where_are_stored_the_comments">
+                <source>front.trust_badge.question.where_are_stored_the_comments</source>
+                <target>Where are stored the comments posted on my videos?</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_comments_stored_with_our_data">
+                <source>front.trust_badge.answer.comments_stored_with_our_data</source>
+                <target>Comments are stored with the rest of our data, on our servers, at OVH in France.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_question_can_i_delete_videos">
+                <source>front.trust_badge.question.can_i_delete_videos</source>
+                <target>Can I delete my videos?</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_can_delete_videos_anytime">
+                <source>front.trust_badge.answer.can_delete_videos_anytime</source>
+                <target>You can delete your videos from your %link_start%dashboard%link_end% at any time. Related comments will also be deleted.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_title_email_contacts">
+                <source>front.trust_badge.title.email_contacts</source>
+                <target>Email addresses of my contacts</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_question_what_are_you_doing_email_contacts">
+                <source>front.trust_badge.question.what_are_you_doing_email_contacts</source>
+                <target>What are you doing of the email addresses of my contacts?</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_keep_them_in_database">
+                <source>front.trust_badge.answer.keep_them_in_database</source>
+                <target>We keep them in our database so that we can display them to you when you share a new video with one or more of your contacts.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_we_dont_send_email">
+                <source>front.trust_badge.answer.we_dont_send_email</source>
+                <target>We only send them emails only to let them know when someone collaborating on the same project is answering to one of their comments.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_answer_we_will_never_share_them">
+                <source>front.trust_badge.answer.we_will_never_share_them</source>
+                <target>We will never share these email addresses, nor will we send them sollicitations.</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_text_cant_find_answer">
+                <source>front.trust_badge.text.cant_find_answer</source>
+                <target>You can't find the answer to your question?</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_text_contact_us">
+                <source>front.trust_badge.text.contact_us</source>
+                <target>Contact us</target>
+            </trans-unit>
+            <trans-unit id="front_trust_badge_text_learn_more">
+                <source>front.trust_badge.text.learn_more</source>
+                <target>Learn more on the %link_start%Orange Trust Badge%link_end%</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

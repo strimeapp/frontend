@@ -1,0 +1,37 @@
+{% trans_default_domain 'email_payment' %}
+{% extends 'emails/email_base.html.twig' %}
+
+
+
+{% block email_title %}
+	<title>{{ 'email.payment.meta.title_error'|trans({'%first_day%': first_day|date('d/m/Y'), '%last_day%': last_day|date('d/m/Y')}) }}</title>
+{% endblock %}
+
+
+
+{% block email_header_title %}																		                        
+	<h1 style="margin: 0px;">{{ 'email.payment.meta.title_error'|trans({'%first_day%': first_day|date('d/m/Y'), '%last_day%': last_day|date('d/m/Y')}) }}</h1>
+{% endblock %}
+
+
+																						                        
+{% block email_content %}													                            
+	<p>{{ 'email.payment.text.hi_first_name'|trans({'%first_name%': first_name}) }},</p>
+
+	<p>
+		{{ 'email.payment.text.payment_didnt_occur'|trans({'%strime%': '<a href="' ~ absolute_url( '/' ) ~ '" title="Strime" target="_blank" style="color: #1DAC9A; text-decoration: none;">Strime</a>', '%first_day%': first_day|date('d/m/Y'), '%last_day%': last_day|date('d/m/Y')})|raw }}
+	</p>
+	<p>
+		{{ 'email.payment.text.downgraded_free_offer_2go'|trans }}<br />
+		{{ 'email.payment.text.cannot_add_videos'|trans }}
+	</p>
+	<p>
+		{{ 'email.payment.text.stay_available'|trans }}<br />
+		{{ 'email.payment.text.thanks_trusting_us'|trans }}
+	</p>
+
+	<p>
+		{{ 'email.payment.text.see_you_soon'|trans }},<br />
+		{{ 'email.payment.text.strime_team'|trans }}
+	</p>
+{% endblock %}

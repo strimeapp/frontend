@@ -1,0 +1,96 @@
+{% trans_default_domain 'back_dashboard_folder' %}
+
+{% if asset.asset_type == "video" %}
+    {% set asset_page_url = path('app_video', {'video_id' : asset.asset_id}) %}
+    {% set asset_share_url = url('app_video', {'video_id' : asset.asset_id}) %}
+{% elseif asset.asset_type == "image" %}
+    {% set asset_page_url = path('app_image', {'image_id' : asset.asset_id}) %}
+    {% set asset_share_url = url('app_image', {'image_id' : asset.asset_id}) %}
+{% elseif asset.asset_type == "audio" %}
+    {% set asset_page_url = path('app_audio', {'audio_id' : asset.asset_id}) %}
+    {% set asset_share_url = url('app_audio', {'audio_id' : asset.asset_id}) %}
+{% endif %}
+
+<div {% if asset.project is defined and asset.project is not null %}id="project-{{ asset.project.project_id }}"{% else %}id="asset-{{ asset.asset_id }}" data-asset-type="{{ asset.asset_type }}"{% endif %} class="asset {{ asset.asset_type }} {% if asset.project.name is defined %}project{% endif %} {% if nb_assets_per_line is divisible by(4) %}last-elt{% endif %}" style="background: url({{ asset.thumbnail }}) no-repeat; background-size: cover; background-position: center center;" {% if asset.project is defined and asset.project is not null %}data-nb-assets="{{ asset.nb_assets_in_project }}"{% endif %} {% if asset.project is defined and asset.project is not null %}data-elt-id="{{ asset.project.project_id }}"{% else %}data-elt-id="{{ asset.asset_id }}"{% endif %}>
+
+    {% if asset.project is defined and asset.project is not null %}
+        <a href="{{ path('app_project', {'project_id' : asset.project.project_id}) }}" ondrop="dropAsset(event)" ondragover="allowDropAsset(event)" ondragenter="dragEnterZoneAsset(event)" ondragleave="dragEnterZoneAsset(event)">
+    {% else %}
+        <a href="{{ asset_page_url }}" ondragstart="dragAsset(event)" draggable="true" ondragend="dragEndAsset(event)">
+    {% endif %}
+
+        <div class="asset-actions">
+            {% if asset.project.name is not defined %}
+
+                <div class="asset-delete" data-target="{{ path('app_dashboard', {'action': 'delete', 'content_type': asset.asset_type, 'content_id' : asset.asset_id}) }}" data-asset-name="{{ asset.name }}" data-asset-type="{{ asset.asset_type }}">
+                </div>
+                <div class="asset-share" data-asset-id="{{ asset.asset_id }}" data-asset-url="{{ asset_share_url }}" data-content-type="{{ asset.asset_type }}" data-content-id="{{ asset.asset_id }}" data-content-name="{{ asset.name }}">
+                </div>
+                <div class="clear"></div>
+            {% else %}
+                <div class="project-delete" data-target="{{ path('app_dashboard', {'action': 'delete', 'content_type': 'project', 'content_id' : asset.project.project_id}) }}" data-project-name="{{ asset.project.name }}">
+                </div>
+                <div class="asset-share" data-asset-id="{{ asset.project.project_id }}" data-asset-url="{{ url('app_project', {'project_id' : asset.project.project_id}) }}" data-content-type="project" data-content-id="{{ asset.project.project_id }}" data-content-name="{{ asset.project.name }}">
+                </div>
+                <div class="clear"></div>
+            {% endif %}
+        </div>
+
+        <div class="see-asset">
+            <div class="see-asset-inner">
+                <button>
+                    {% if asset.project.name is defined %}
+                        {{ 'back.dashboard_folder.button.see_project'|trans }}
+                    {% elseif asset.asset_type == "video" %}
+                        {{ 'back.dashboard_folder.button.see_video'|trans }}
+                    {% elseif asset.asset_type == "image" %}
+                        {{ 'back.dashboard_folder.button.see_image'|trans }}
+                    {% elseif asset.asset_type == "audio" %}
+                        {{ 'back.dashboard_folder.button.see_audio'|trans }}
+                    {% else %}
+                        {{ 'back.dashboard_folder.button.see_file'|trans }}
+                    {% endif %}
+                </button>
+            </div>
+        </div>
+
+        <div class="asset-details">
+            {% if asset.project.name is defined %}
+                <div class="asset-folder"></div>
+            {% endif %}
+            <div class="asset-details-inner">
+                <div class="asset-name" {% if asset.project is defined and asset.project is not null %}data-elt-id="{{ asset.project.project_id }}"{% else %}data-elt-id="{{ asset.asset_id }}"{% endif %}>
+                    {% if asset.project.name is defined %}
+                        {{asset.project.name}}
+                    {% else %}
+                        {{asset.name}}
+                    {% endif %}
+                </div>
+
+                {% if asset.project.name is not defined %}
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="asset-date">
+                                {{ asset.created_at.date|date("d M Y", asset.created_at.timezone)|localizeddate('medium', 'none', app.request.locale) }}
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="asset-nb-comments">
+                                {{ asset.nb_comments }}
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="project-nb-assets">
+                        {% if rights is not empty and rights is not null and ('image' in rights|keys or 'audio' in rights|keys) %}
+                            {{ 'back.dashboard_folder.text.nb_files'|transchoice(asset.nb_assets_in_project, {'%nb_files%': asset.nb_assets_in_project}, 'back_dashboard_folder') }}
+                        {% else %}
+                            {{ 'back.dashboard_folder.text.nb_videos'|transchoice(asset.nb_assets_in_project, {'%nb_videos%': asset.nb_assets_in_project}, 'back_dashboard_folder') }}
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div><!-- ./Asset details inner -->
+        </div><!-- ./Asset details -->
+    </a>
+</div>

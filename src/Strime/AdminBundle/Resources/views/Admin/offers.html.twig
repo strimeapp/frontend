@@ -1,0 +1,157 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_users') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin - Offres">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord">
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        'bundles/strimeglobal/css/sub-menu.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}Admin | Offres | Strime{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+	{% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="sub-menu">
+        <div class="wrapper">
+            <ul>
+                <li class="active">
+                    <a href="{{ path('admin_offers') }}" title="Offres">Offres</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_discounts') }}" title="Réductions">Réductions</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_tax_rates') }}" title="TVA">Taux de TVA</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="admin-content">
+    	<h1>Gestion des offres</h1>
+
+        {% for flash_message in app.session.flashbag.get('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% for flash_message in app.session.flashbag.get('error') %}
+            <div class="alert alert-danger" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% if offers is defined %}
+        <div class="white-box">
+	        <h2>La liste des offres</h2>
+
+	        <div class="table-responsive margin-top">
+		        <table class="table table-hover table-condensed">
+		        	<thead>
+						<tr>
+							<td></td>
+							<td>
+								Offre
+							</td>
+							<td>
+								Prix
+							</td>
+							<td>
+								Nb vidéos
+							</td>
+							<td>
+								Stockage
+							</td>
+							<td>
+								Date de création
+							</td>
+							<td></td>
+						</tr>
+					</thead>
+
+					<tbody>
+						{{ form_start(add_offer_form, {'action': path('admin_offers'), 'attr': {'id': 'add-offer-form', 'novalidate': true} }) }}
+							<tr>
+								<td></td>
+								<td>
+									{{ form_widget(add_offer_form.name) }}
+								</td>
+								<td>
+									{{ form_widget(add_offer_form.price) }}
+								</td>
+								<td>
+									{{ form_widget(add_offer_form.nb_videos) }}
+								</td>
+								<td>
+									{{ form_widget(add_offer_form.storage_allowed) }}
+								</td>
+								<td>
+									{{ form_widget(add_offer_form.submit, { 'label': 'Ajouter' }) }}
+								</td>
+								<td></td>
+							</tr>
+						{{ form_end(add_offer_form) }}
+
+						{% for offer in offers %}
+							<tr>
+								<td>
+									{{ loop.index }}
+								</td>
+								<td>
+									{{ offer.name }}
+								</td>
+								<td>
+									{{ offer.price }}
+								</td>
+								<td>
+									{{ offer.nb_videos }}
+								</td>
+								<td>
+									{{ offer.storage_allowed }}
+								</td>
+								<td>
+									{{ offer.created_at.date|date("d M Y", offer.created_at.timezone)|localizeddate('medium', 'none', 'fr_FR') }}
+								</td>
+								<td>
+									{% if offer.nb_users == 0 %}
+										<a href="{{ path('admin_offers', {'action': 'delete', 'offer_id': offer.offer_id}) }}" title="Supprimer cette offre">
+			                                <i class="fa fa-trash" aria-hidden="true"></i>
+			                            </a>
+			                        {% else %}
+			                        	{{ offer.nb_users }}
+			                       	{% endif %}
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div><!-- ./White box -->
+		{% endif %}
+    </div><!-- ./Admin content -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% trans_default_domain 'back_modal_progress_add_asset' %}
+
+<div class="modal fade" id="addAssetProgressModal" tabindex="-1" role="dialog" aria-labelledby="addAssetProgressLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ 'back.modal_progress_add_asset.text.upload_in_progress'|trans }}</h4>
+            </div>
+            <div class="modal-body">
+
+                <div id="text-in-progress" class="text-center">
+                    {{ 'back.modal_progress_add_asset.text.upload_in_progress'|trans }}
+                    <span class="encoding-message">
+                        <br />
+                        {{ 'back.modal_progress_add_asset.text.encoding_will_automatically_start'|trans }}
+                    </span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                    0%
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

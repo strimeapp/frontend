@@ -1,0 +1,494 @@
+/* Dashboard styles
+-------------------------------------------------- */
+
+body.dashboard h2,
+body.project h2 {
+	color: #434344;
+}
+
+body.dashboard .alert-success,
+body.project .alert-success {
+	background-color: transparent;
+}
+
+body.dashboard #assets,
+body.project #assets {
+	margin: 40px 0;
+	padding-bottom: 40px;
+}
+
+body.dashboard #assets #create-project-container {
+	height: 20px;
+	width: 100%;
+	margin-bottom: 30px;
+}
+body.dashboard #assets #create-project-container #create-project {
+	position: relative;
+	float: right;
+}
+body.dashboard #assets #create-project-container #create-project a {
+	background: url(../../img/icon-add-project.svg) no-repeat;
+	background-position: center center;
+	background-size: 36px 36px;
+	display: block;
+	width: 36px;
+	height: 36px;
+}
+body.dashboard #assets #create-project-container #create-project a:hover {
+	background: url(../../img/icon-add-project-green.svg) no-repeat;
+	background-position: center center;
+	background-size: 36px 36px;
+}
+
+body.dashboard #assets #upload,
+body.project #assets #upload {
+	float: left;
+	position: relative;
+	display: table;
+	width: 23%;
+	height: 190px;
+	border: dashed 2px #42B190;
+	border-radius: 5px;
+	margin-right: 2.6%;
+	margin-bottom: 20px;
+}
+body.dashboard #assets #upload:hover,
+body.project #assets #upload:hover {
+	border-color: #303031;
+}
+body.dashboard #assets #upload.uploading:hover,
+body.project #assets #upload.uploading:hover {
+	border-color: #42B190;
+}
+body.dashboard #assets #upload #prevent-upload,
+body.project #assets #upload #prevent-upload {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	cursor: progress;
+}
+body.dashboard #assets #upload img,
+body.project #assets #upload img {
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	margin-left: -20px;
+	width: 40px;
+	height: 40px;
+	z-index: 1;
+	transform: rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(.11, 1.5, .36, .87);
+}
+body.dashboard #assets #upload:hover img,
+body.project #assets #upload:hover img {
+	transform: rotate(-90deg);
+    -webkit-transform:rotate(-90deg);
+    -o-transform:rotate(-90deg);
+    transition-duration: 1s;
+	transition-timing-function: cubic-bezier(.5, 0, 0, 1);
+}
+body.dashboard #assets #upload form,
+body.project #assets #upload form {
+	position: relative;
+	display: table-cell;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	text-align: center;
+	padding: 20px;
+	color: #303031;
+	cursor: pointer;
+	z-index: 20;
+}
+body.dashboard #assets #upload form .dz-preview .dz-image,
+body.dashboard #assets #upload form .dz-preview .dz-details,
+body.dashboard #assets #upload form .dz-preview .dz-error-message,
+body.dashboard #assets #upload form .dz-preview .dz-success-mark,
+body.dashboard #assets #upload form .dz-preview .dz-error-mark,
+body.project #assets #upload form .dz-preview .dz-image,
+body.project #assets #upload form .dz-preview .dz-details,
+body.project #assets #upload form .dz-preview .dz-error-message,
+body.project #assets #upload form .dz-preview .dz-success-mark,
+body.project #assets #upload form .dz-preview .dz-error-mark {
+	display: none;
+}
+body.dashboard #assets #upload form .dz-message,
+body.project #assets #upload form .dz-message {
+	margin-top: 40px;
+}
+
+body.dashboard #addAssetProgressModal .progress,
+body.project #addAssetProgressModal .progress {
+	margin-top: 20px;
+	border-radius: 10px;
+}
+body.dashboard #addAssetModal button.stop-upload,
+body.project #addAssetModal button.stop-upload {
+	display: block;
+	margin-top: 10px;
+	line-height: 14px;
+	background-color: #898B8E;
+	padding: 10px;
+}
+body.dashboard #confirmEmailModal button,
+body.project #confirmEmailModal button {
+	text-transform: uppercase;
+}
+
+body.dashboard #assets #upload form button.stop-upload,
+body.project #assets #upload form button.stop-upload,
+body.dashboard #assets #upload #prevent-upload button.stop-upload,
+body.project #assets #upload #prevent-upload button.stop-upload {
+	position: absolute;
+	width: 90%;
+	bottom: 5px;
+	left: 5%;
+	line-height: 14px;
+	background-color: #898B8E;
+	padding: 0;
+	margin-top: 5px;
+}
+body.dashboard #assets #upload form button.stop-upload a,
+body.project #assets #upload form button.stop-upload a,
+body.dashboard #assets #upload #prevent-upload button.stop-upload a,
+body.project #assets #upload #prevent-upload button.stop-upload a {
+	display: block;
+	padding: 5px;
+	width: 100%;
+	height: 100%;
+	font-size: 12px;
+	color: #FFF;
+}
+body.dashboard #assets #upload form button.stop-upload:hover,
+body.project #assets #upload form button.stop-upload:hover,
+body.dashboard #assets #upload #prevent-upload button.stop-upload:hover,
+body.project #assets #upload #prevent-upload button.stop-upload:hover {
+	background-color: #282829;
+}
+body.dashboard #assets #upload form button.stop-upload:hover a,
+body.project #assets #upload form button.stop-upload:hover a,
+body.dashboard #assets #upload #prevent-upload button.stop-upload:hover a,
+body.project #assets #upload #prevent-upload button.stop-upload:hover a {
+	color: #FFF;
+}
+
+.modal#addAssetResultModal .modal-header {
+	padding-top: 50px;
+}
+.modal#addAssetResultModal #add-asset-result {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+body.dashboard .asset,
+body.project .asset {
+	float: left;
+	position: relative;
+	background-color: #C5C5C5;
+	width: 23%;
+	height: 190px;
+	margin-right: 2.6%;
+	margin-bottom: 20px;
+	overflow: hidden;
+	-webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.5s;
+}
+body.dashboard #assets .asset.last-elt,
+body.project #assets .asset.last-elt {
+	float: right;
+	margin-right: 0;
+}
+body.dashboard #assets .asset.project {
+	background: url(../../img/icon-camera-white.svg) no-repeat;
+	background-size: 38px 25px;
+	background-position: center 30%;
+	background-color: #C5C5C5;
+}
+body.dashboard #assets .asset.dragged-elt-parent,
+body.project #assets .asset.dragged-elt-parent {
+	opacity: 0.3;
+}
+body.dashboard #assets .asset.project.project-drop-zone,
+body.project #drop-asset-reset.project-drop-zone {
+	opacity: 0.5;
+	border: dashed 2px #42B190;
+	border-radius: 5px;
+}
+body.dashboard .asset.audio,
+body.project .asset.audio {
+	background-color: #434344 !important;
+	background-size: contain !important;
+	background-position: center 40% !important;
+	background-repeat: no-repeat !important;
+}
+body.dashboard #dragged-content-to-display,
+body.project #dragged-content-to-display {
+	display: none;
+	position: absolute;
+    top: -1000px;
+    right: -1000px;
+    z-index: 2;
+}
+body.dashboard #dragged-content-to-display .asset,
+body.project #dragged-content-to-display .asset {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;
+	float: none;
+	width: 100%;
+	background-color: transparent !important;
+}
+body.dashboard #dragged-content-to-display .asset a,
+body.project #dragged-content-to-display .asset a {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0 20px 30px 0 rgba(0,0,0,0.2), 0 10px 30px 0 rgba(0,0,0,0.19);
+}
+body.dashboard #assets .asset .loader-overlay,
+body.project #assets .asset .loader-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: table;
+	background-color: rgba(255, 255, 255, 0.8);
+	z-index: 1000;
+	-webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.5s;
+}
+body.dashboard #assets .asset .loader-overlay .loader-overlay-inner,
+body.project #assets .asset .loader-overlay .loader-overlay-inner {
+	display: table-cell;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+}
+body.dashboard #assets .asset .loader-overlay .loader-overlay-inner .loader-container,
+body.project #assets .asset .loader-overlay .loader-overlay-inner .loader-container {
+	display: block;
+}
+body.dashboard #assets .asset .encoding-overlay,
+body.project #assets .asset .encoding-overlay {
+	display: table;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 190px;
+	width: 100%;
+	background: rgba(255, 255, 255, 0.85);
+	z-index: 300;
+}
+body.dashboard #assets .asset .encoding-overlay .encoding-overlay-inner,
+body.project #assets .asset .encoding-overlay .encoding-overlay-inner {
+	position: relative;
+	display: table-cell;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	text-align: center;
+	color: #434344;
+	padding: 0 10px;
+}
+body.dashboard #assets .asset .encoding-overlay .encoding-overlay-inner .encoding-job-progress-bar,
+body.project #assets .asset .encoding-overlay .encoding-overlay-inner .encoding-job-progress-bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+}
+body.dashboard #assets .asset .encoding-overlay .encoding-overlay-inner .encoding-job-progress-bar-inner,
+body.project #assets .asset .encoding-overlay .encoding-overlay-inner .encoding-job-progress-bar-inner {
+	position: relative;
+	background-color: #0CAC9A;
+	width: 0%;
+	height: 3px;
+	-webkit-transition: all 3s;
+    -moz-transition: all 3s;
+    -o-transition: all 3s;
+    transition: all 3s;
+}
+body.dashboard #assets .asset .encoding-overlay .encoding-overlay-inner img,
+body.project #assets .asset .encoding-overlay .encoding-overlay-inner img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+body.dashboard .asset a,
+body.project .asset a {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+body.dashboard .asset a .see-asset,
+body.project .asset a .see-asset {
+	display: none;
+	background: rgba(0, 0, 0, 0.4);
+	width: 100%;
+	height: 122px;
+	z-index: 100;
+}
+body.dashboard .asset a:hover .see-asset,
+body.project .asset a:hover .see-asset {
+	display: table;
+}
+body.dashboard .asset a .see-asset .see-asset-inner,
+body.project .asset a .see-asset .see-asset-inner {
+	display: table-cell;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	text-align: center;
+}
+body.dashboard .asset a .see-asset .see-asset-inner button,
+body.project .asset a .see-asset .see-asset-inner button {
+	display: block;
+	background: rgba(255, 255, 255, 0.2);
+	border: solid 1px #FFF;
+	border-radius: 2px;
+	padding: 10px 20px;
+	color: #FFF;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+body.dashboard .asset .asset-details,
+body.project .asset .asset-details {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 200;
+}
+body.dashboard .asset.project .asset-details .asset-folder {
+	background: url(../../img/background-folder-corner.png) no-repeat;
+	background-position: top left;
+	background-size: 78px 16px;
+	height: 16px;
+	width: 100%;
+}
+body.dashboard .asset .asset-details .asset-details-inner,
+body.project .asset .asset-details .asset-details-inner {
+	background-color: #FFF;
+	padding: 10px;
+}
+body.dashboard .asset .asset-details .asset-name,
+body.project .asset .asset-details .asset-name {
+	font-size: 14px;
+	text-align: center;
+	color: #303031;
+}
+body.dashboard .asset .asset-details .asset-date,
+body.project .asset .asset-details .asset-date {
+	font-size: 13px;
+	color: #898B8E;
+}
+body.dashboard .asset .asset-details .asset-nb-comments,
+body.project .asset .asset-details .asset-nb-comments {
+	float: right;
+	background: url(../../img/icon-comments.png) no-repeat;
+	background-position: left center;
+	background-size: 20px 20px;
+	padding: 0 0 0 25px;
+	font-size: 14px;
+	color: #898B8E;
+}
+body.dashboard .asset .asset-details .project-nb-assets {
+	text-align: center;
+	font-size: 14px;
+	color: #898B8E;
+}
+body.dashboard .asset .asset-actions,
+body.project .asset .asset-actions {
+	display: none;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+body.dashboard .asset a:hover .asset-actions,
+body.project .asset a:hover .asset-actions {
+	display: block;
+}
+body.dashboard .asset a .asset-actions .asset-delete,
+body.dashboard .asset a .asset-actions .project-delete,
+body.project .asset a .asset-actions .asset-delete {
+	float: right;
+	background: url(../../img/icon-trash-white.png) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 21px;
+	height: 23px;
+	margin-left: 10px;
+}
+body.dashboard .asset a .asset-actions .asset-share,
+body.dashboard .asset a .asset-actions .project-share,
+body.project .asset a .asset-actions .asset-share {
+	float: right;
+	background: url(../../img/icon-share-white.svg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 23px;
+	height: 23px;
+	margin-left: 10px;
+}
+
+body.project #assets {
+	margin: 0;
+}
+body.project #assets a.back-to-dashboard {
+	display: block;
+	background: url(../../img/icon-arrow-back.png) no-repeat;
+	background-position: left center;
+	background-size: 6px 12px;
+	padding: 0 0 0 20px;
+	margin-top: 10px;
+	font-size: 14px;
+	color: #303031;
+}
+body.project #assets a.back-to-dashboard:hover {
+	color: #42B190;
+}
+body.project #assets h1 {
+	display: inline-block;
+	padding-right: 40px;
+	margin: 30px 0;
+	font-family: 'UbuntuLight', sans-serif;
+	text-align: left;
+	color: #303031;
+	font-size: 30px;
+	width: auto;
+}
+
+body.dashboard .modal .modal-body .encoding-processing,
+body.project .modal .modal-body .encoding-processing {
+	font-family: 'UbuntuMedium', sans-serif;
+	text-transform: uppercase;
+	font-size: 18px;
+	color: #0CAC9A;
+}
+
+body.project #drop-asset-reset {
+	margin: 0 0 20px 0;
+	padding: 10px;
+	width: 100%;
+	border: dashed 2px #898B8E;
+    border-radius: 5px;
+	text-align: center;
+	color: #898B8E;
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_comment_image_meta_title">
+                <source>email.comment_image.meta.title</source>
+                <target>Un commentario ha sido insertado sobre la imagen %image_name%</target>
+            </trans-unit>
+            <trans-unit id="email_comment_image_text_hi_first_name">
+                <source>email.comment_image.text.hi_first_name</source>
+                <target>Hola %first_name%</target>
+            </trans-unit>
+            <trans-unit id="email_comment_image_text_new_comment_on_image_autologin">
+                <source>email.comment_image.text.new_comment_on_image_autologin</source>
+                <target>Tiene un nuevo comentario en la imagen %link_start%%image_name%%link_end%.</target>
+            </trans-unit>
+            <trans-unit id="email_comment_image_text_new_comment_on_image">
+                <source>email.comment_image.text.new_comment_on_image</source>
+                <target>Tiene un nuevo comentario en la imagen %link_start%%image_name%%link_end%.</target>
+            </trans-unit>
+            <trans-unit id="email_comment_image_text_here_is_the_message">
+                <source>email.comment_image.text.here_is_the_message</source>
+                <target>Aquí está su mensaje:</target>
+            </trans-unit>
+            <trans-unit id="email_comment_image_text_details_about_comment">
+                <source>email.comment_image.text.details_about_comment</source>
+                <target>Información sobre este comentario:</target>
+            </trans-unit>
+            <trans-unit id="email_comment_image_text_answer_to_comment">
+                <source>email.comment_image.text.answer_to_comment</source>
+                <target>Respuesta de un comentario anterior:</target>
+            </trans-unit>
+            <trans-unit id="email_comment_image_text_author_of_the_comment">
+                <source>email.comment_image.text.author_of_the_comment</source>
+                <target>Autor del comentario:</target>
+            </trans-unit>
+            <trans-unit id="email_comment_image_text_hi">
+                <source>email.comment_image.text.hi</source>
+                <target>Hola</target>
+            </trans-unit>
+            <trans-unit id="email_comment_image_text_owner_of_image_left_a_comment">
+                <source>email.comment_image.text.owner_of_image_left_a_comment</source>
+                <target>El propietario de la imagen %link_start%%image_name%%link_end% le ha dejado un commentario.</target>
+            </trans-unit>
+            <trans-unit id="email_comment_image_text_see_you_soon">
+                <source>email.comment_image.text.see_you_soon</source>
+                <target>Nos vemos pronto</target>
+            </trans-unit>
+            <trans-unit id="email_comment_image_text_strime_team">
+                <source>email.comment_image.text.strime_team</source>
+                <target>El equipo Strime</target>
+            </trans-unit>
+            <trans-unit id="email_comment_image_text_no">
+                <source>email.comment_image.text.no</source>
+                <target>No</target>
+            </trans-unit>
+            <trans-unit id="email_comment_image_text_yes">
+                <source>email.comment_image.text.yes</source>
+                <target>Si</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

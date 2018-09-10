@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_profile_menu_link_profile">
+                <source>back.profile_menu.link.profile</source>
+                <target>Profil</target>
+            </trans-unit>
+            <trans-unit id="back_profile_menu_alt_my_account">
+                <source>back.profile_menu.alt.my_account</source>
+                <target>Mon compte</target>
+            </trans-unit>
+            <trans-unit id="back_profile_menu_link_password">
+                <source>back.profile_menu.link.password</source>
+                <target>Mot de passe</target>
+            </trans-unit>
+            <trans-unit id="back_profile_menu_alt_my_password">
+                <source>back.profile_menu.alt.my_password</source>
+                <target>Mon mot de passe</target>
+            </trans-unit>
+            <trans-unit id="back_profile_menu_link_invoicing">
+                <source>back.profile_menu.link.invoicing</source>
+                <target>Facturation</target>
+            </trans-unit>
+            <trans-unit id="back_profile_menu_link_email_notifications">
+                <source>back.profile_menu.link.email_notifications</source>
+                <target>Notifications</target>
+            </trans-unit>
+            <trans-unit id="back_profile_menu_link_integrations">
+                <source>back.profile_menu.link.integrations</source>
+                <target>Intégrations</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

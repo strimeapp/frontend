@@ -1,0 +1,230 @@
+{% trans_default_domain 'back_profile' %}
+{% extends '::back_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('app_profile', {}, TRUE) }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="{{ 'back.profile.meta.description'|trans }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'back.profile.meta.keywords'|trans }}">
+    <meta name="google-signin-client_id" content="59471169232-igm9oedpkpc0f1spqmrj2nffqd1hj93f.apps.googleusercontent.com">
+{% endblock %}
+
+{% block title %}{{ 'back.profile.meta.title'|trans }} | Strime{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets
+        'bundles/strimeback/css/profile.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/sub-menu.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/radio-button.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+    {% include 'StrimeBackBundle:App:profile-menu.html.twig' %}
+
+
+    <!-- Wrapper full -->
+    <div class="wrapper-full">
+
+    	<!-- Profile container -->
+    	<div id="profile-container">
+
+    		<div id="profile-inner">
+
+                {% for flash_message in app.session.flashbag.get('success') %}
+                    <div class="alert alert-success" role="alert">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+
+                {% for flash_message in app.session.flashbag.get('error') %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+
+                {{ form_start(edit_profile_form, {'action': path('app_profile'), 'attr': {'id': 'edit-profile-form', 'novalidate': true} }) }}
+
+                    <div class="row">
+
+                        <div class="col-sm-6">
+
+                            <div class="profile-avatar">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <img class="avatar" src="{% if 'gravatar' in app.session.get('avatar') or 'googleusercontent' in app.session.get('avatar') or 'scontent.xx.fbcdn.net' in app.session.get('avatar') %}{{ app.session.get('avatar') }}{% else %}{{ app.session.get('avatar')|imagine_filter('profile_pic') }}{% endif %}" alt="{{ app.session.get('first_name') ~ " " ~ app.session.get('last_name')|escape }}" title="{{ app.session.get('first_name') ~ " " ~ app.session.get('last_name')|escape }}">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        {{ form_widget(edit_profile_form.avatar, {'attr': {'data-caption': 'back.profile.form.file_selected'|trans}}, {'translation_domain': 'back_controller_app'}) }}
+                                        {{ form_label(edit_profile_form.avatar) }}
+
+                                        <a href="{{ path('app_profile', {'target': 'avatar', 'action': 'delete'}) }}" title="{{ 'back.profile.alt.delete_image'|trans }}">
+                                            <div class="remove-avatar">{{ 'back.profile.button.delete'|trans }}</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-details">
+                                <div class="profile-first-name">
+                                    {{ form_widget(edit_profile_form.first_name, {'translation_domain': 'back_controller_app'}) }}
+                                </div>
+                                <div class="profile-last-name">
+                                    {{ form_widget(edit_profile_form.last_name, {'translation_domain': 'back_controller_app'}) }}
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+                            {{ form_widget(edit_profile_form.email, {'translation_domain': 'back_controller_app'}) }}
+
+                        </div>
+
+                        <div class="col-sm-5 col-sm-offset-1" id="choose-locale">
+                            <h3>{{ 'back.profile.title.choose_your_language'|trans }}</h3>
+                            <p class="description">{{ 'back.profile.text.choose_the_language_you_wanna_use'|trans }}</p>
+
+                            <div class="language {% if app.request.locale == 'en' %}current{% endif %}" data-locale="en">
+                                <label class="radio-button">
+                                    <input type="checkbox" {% if app.request.locale == 'en' %}checked="checked"{% endif %}>
+                                    <div class="slider round"></div>
+                                </label>
+                                {{ 'back.profile.text.english'|trans }}
+                                <div class="clear"></div>
+                            </div>
+                            <div class="language {% if app.request.locale == 'fr' %}current{% endif %}" data-locale="fr">
+                                <label class="radio-button">
+                                    <input type="checkbox" {% if app.request.locale == 'fr' %}checked="checked"{% endif %}>
+                                    <div class="slider round"></div>
+                                </label>
+                                {{ 'back.profile.text.french'|trans }}
+                                <div class="clear"></div>
+                            </div>
+                            <div class="language {% if app.request.locale == 'es' %}current{% endif %}" data-locale="es">
+                                <label class="radio-button">
+                                    <input type="checkbox" {% if app.request.locale == 'es' %}checked="checked"{% endif %}>
+                                    <div class="slider round"></div>
+                                </label>
+                                {{ 'back.profile.text.spanish'|trans }}
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {{ form_widget(edit_profile_form.submit, { 'label': 'back.profile.button.update_profile', 'translation_domain': 'back_profile' }) }}
+
+                    <div class="loader-container">
+                        <div class="loader-pulse">
+                            {{ 'back.profile.loader.loading'|trans }}...
+                        </div>
+                    </div>
+
+                {{ form_end(edit_profile_form) }}
+
+                <hr>
+
+                <p class="text-center">
+                    <a href="#" class="account-delete" title="{{ 'back.profile.link.delete_my_account'|trans }}" data-target="{{ path('app_account_delete') }}">{{ 'back.profile.link.delete_my_account'|trans }}</a>
+                </p>
+
+    		</div><!-- ./Profile inner -->
+
+    	</div><!-- ./Profile container -->
+
+    </div><!-- ./Wrapper full -->
+
+
+    <div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog" aria-labelledby="deleteAccountLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.profile.alt.close_window'|trans }}" title="{{ 'back.profile.alt.close_window'|trans }}"></span></button>
+                    <h4 class="modal-title">{{ 'back.profile.title.delete_your_account'|trans }}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{{ 'back.profile.text.are_you_sure'|trans|raw }}</p>
+                    <p>{{ 'back.profile.text.will_be_completely_removed'|trans }}</p>
+                    <p>{{ 'back.profile.text.cannot_be_undone'|trans|raw }}</p>
+
+                    <hr>
+
+                    <p>{{ 'back.profile.text.to_confirm'|trans }}</p>
+
+                    <input type="text" id="deletion-confirmation">
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <a href="" title="{{ 'back.profile.alt.delete_my_account'|trans }}" id="confirm-account-deletion">
+                                <button>
+                                    {{ 'back.profile.button.yes_delete'|trans }}
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="action-close" data-dismiss="modal">
+                                {{ 'back.profile.button.no_get_me_out_of_here'|trans }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% endblock %}
+
+
+{% block footer %}
+	{{ parent() }}
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    {% include 'StrimeBackBundle:App:profile-js-variables.html.twig' %}
+
+    {% javascripts
+        '@StrimeGlobalBundle/Resources/public/js/is-logged-in.js' filter='?uglifyjs2'
+        '@StrimeFrontBundle/Resources/public/js/main.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/profile/profile.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+
+            // Indicate if files were selected for the avatar
+            var input = $( 'body.profile .profile-avatar input[type=file]' );
+            var label    = $( 'body.profile .profile-avatar label[for=form_avatar]' ),
+                labelVal = label.innerHTML;
+
+            input.on( 'change', function( e ) {
+                var labelContent = '';
+                if( this.files && this.files.length == 1 )
+                    labelContent = ( input.attr( 'data-caption' ) || '' ).replace( '{count}', this.files.length );
+                else if( this.files && this.files.length > 1 )
+                    labelContent = "1 fichier max"
+                else
+                    labelContent = labelVal;
+
+                label.empty().text(labelContent);
+            });
+
+        });
+
+    </script>
+{% endblock %}

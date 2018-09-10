@@ -1,0 +1,45 @@
+{% trans_default_domain 'email_confirmation' %}
+{% extends 'emails/email_base.html.twig' %}
+
+
+
+{% block email_title %}
+	<title>{{ 'email.confirmation.meta.title'|trans }}</title>
+{% endblock %}
+
+
+
+{% block email_header_title %}
+	<h1 style="margin: 0px;">{{ 'email.confirmation.title.welcome'|trans }}</h1>
+{% endblock %}
+
+
+
+{% block email_content %}
+	<p>{{ 'email.confirmation.text.hi_first_name'|trans({'%first_name%': first_name}) }},</p>
+
+	<p>
+		{{ 'email.confirmation.text.for_security_reasons_confirm_email'|trans }}
+	</p>
+
+	<a href="{{ url('confirm_email', {'user_id': user_id, 'token': email_confirmation_token, 'locale': locale}) }}" title="{{ 'email.confirmation.button.confirm_your_email'|trans }}" style="text-decoration: none; margin-top: 20px;">
+		<button style="display: block; background-color: #0CAC9A; border: none; border-radius: 5px; width: auto; padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; margin-left: auto; margin-right: auto; text-transform: uppercase; color: #FFF; font-size: 18px; cursor: pointer; margin-top: 20px; margin-bottom: 20px;">
+			{{ 'email.confirmation.button.confirm_email'|trans }}
+		</button>
+	</a>
+
+	<p>
+		{{ 'email.confirmation.text.copy_link_in_browser'|trans }}
+	</p>
+
+	<p>
+		<a href="{{ url('confirm_email', {'user_id': user_id, 'token': email_confirmation_token, 'locale': locale}) }}" title="{{ 'email.confirmation.button.confirm_your_email'|trans }}" style="text-decoration: none; color: #0CAC9A;">
+			{{ url('confirm_email', {'user_id': user_id, 'token': email_confirmation_token}) }}
+		</a>
+	</p>
+
+	<p>
+		{{ 'email.confirmation.text.see_you_soon'|trans }},<br />
+		{{ 'email.confirmation.text.strime_team'|trans }}
+	</p>
+{% endblock %}

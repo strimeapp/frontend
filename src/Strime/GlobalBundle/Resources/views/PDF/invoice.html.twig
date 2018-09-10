@@ -1,0 +1,163 @@
+{% trans_default_domain 'global_pdf_invoice' %}
+{% extends '::invoice_base.html.twig' %}
+
+{% block title %}
+	{{ parent() }} | Facture #
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block header %}
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	<div class="row" id="strime-address">
+		<div class="col-xs-8">
+			<strong>SAS Strime</strong><br />
+			5 rue Javelin Pagnon<br />
+			42000 Saint-Étienne<br />
+			France<br />
+			contact@strime.com<br />
+			{{ 'global.pdf_invoice.text.vat'|trans }} : FR55812538718
+		</div>
+		<div class="col-xs-4">
+			
+			<div class="row">
+				<div class="col-xs-4">
+					<strong>{{ 'global.pdf_invoice.text.invoice'|trans }}</strong><br />
+					<strong>{{ 'global.pdf_invoice.text.date'|trans }}</strong>
+				</div>
+				<div class="col-xs-4">
+					{{ invoice_id }}<br />
+					{{ date }}
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="row" id="client-address">
+		<div class="col-xs-4">
+			<div class="title"><strong>{{ 'global.pdf_invoice.text.contact'|trans }}</strong></div>
+			<div>{{ contact }}</div>
+			<div class="title" style="margin-top: 10px;"><strong>{{ 'global.pdf_invoice.text.payment_mode'|trans }}</strong></div>
+			<div>{{ 'global.pdf_invoice.text.credit_card'|trans }}</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="title"><strong>{{ 'global.pdf_invoice.text.client_vat'|trans }}</strong></div>
+			{% if vat_number is not null %}
+				<div>{{ vat_number }}</div>
+			{% endif %}
+		</div>
+		<div class="col-xs-4">
+			<div class="title"><strong>{{ 'global.pdf_invoice.text.invoicing_address'|trans }}</strong></div>
+			{% if company is not null %}
+				{{ company }}<br />
+			{% endif %}
+			{{ address }}<br />
+			{% if address_more is not null %}
+				{{ address_more }}<br />
+			{% endif %}
+			{{ zip ~ " " ~ city }}<br />
+			{{ country }}
+		</div>
+	</div>
+
+	<div id="product-title">
+		<div class="row">
+			<div class="col-xs-2">
+				<strong>{{ 'global.pdf_invoice.text.description'|trans }}</strong>
+			</div>
+			<div class="col-xs-4">
+				<strong>{{ 'global.pdf_invoice.text.date'|trans }}</strong>
+			</div>
+			<div class="col-xs-2">
+				<strong>{{ 'global.pdf_invoice.text.quantity'|trans }}</strong>
+			</div>
+			<div class="col-xs-2">
+				<strong>{{ 'global.pdf_invoice.text.unit_price'|trans }}</strong>
+			</div>
+			<div class="col-xs-2">
+				<strong>{{ 'global.pdf_invoice.text.total_price'|trans }}</strong>
+			</div>
+		</div>
+	</div>
+	<div id="product-content">
+		<div class="row">
+			<div class="col-xs-2">
+				{{ plan }}<br />({{ plan_nb_occurrences ~ " " ~ plan_occurrence }})
+			</div>
+			<div class="col-xs-4">
+				{{ plan_start ~ " au " ~ plan_end }}
+			</div>
+			<div class="col-xs-2">
+				{{ quantity }}
+			</div>
+			<div class="col-xs-2 text-right">
+				{{ unit_price }} €
+			</div>
+			<div class="col-xs-2 text-right">
+				{{ total_price }} €
+			</div>
+		</div>
+
+		{% if coupon is not null %}
+			<div class="row" id="coupon-details">
+				<div class="col-xs-2">
+					{{ 'global.pdf_invoice.text.discount'|trans }}<br />({{ coupon.id }})
+				</div>
+				<div class="col-xs-2 col-xs-offset-4">
+					{{ quantity }}
+				</div>
+				<div class="col-xs-2 text-right">
+					{% if amount_off is not null %}
+						- {{ amount_off }} € {{ 'global.pdf_invoice.text.wo_taxes'|trans }}
+					{% endif %}
+				</div>
+				<div class="col-xs-2 text-right">
+					{{ amount_wo_taxes }} €
+				</div>
+			</div>
+		{% endif %}
+	</div>
+
+	<div class="row" id="due-payment">
+		<div class="col-xs-6 col-xs-offset-6">
+			
+			<div class="row">
+				<div class="col-xs-8 text-right">
+					{{ 'global.pdf_invoice.text.total_wo_taxes'|trans }}<br />
+					{% if taxes_liquidation is not null and taxes_liquidation_rate is not null %}
+						{{ 'global.pdf_invoice.text.autoliquidation_vat'|trans }} ({{ taxes_liquidation_rate }}%)<br />
+						{{ 'global.pdf_invoice.text.vat'|trans }} ({{ -taxes_liquidation_rate }}%)<br />
+					{% else %}
+						{{ 'global.pdf_invoice.text.vat'|trans }} ({{ tax_rate }}%)<br />
+					{% endif %}
+					{{ 'global.pdf_invoice.text.amount_with_taxes'|trans }}<br />
+					{{ 'global.pdf_invoice.text.amount_payed'|trans }}<br />
+					Devise
+				</div>
+				<div class="col-xs-4 text-right">
+					<strong>{{ amount_wo_taxes }} €</strong><br />
+					{% if taxes_liquidation is not null and taxes_liquidation_rate is not null %}
+						<strong>{{ taxes_liquidation }} €</strong><br />
+					{% endif %}
+					<strong>{{ taxes }} €</strong><br />
+					<strong>{{ total_amount }} €</strong><br />
+					<strong>{{ total_amount }} €</strong><br />
+					EUR
+				</div>
+			</div>
+
+		</div>
+	</div>
+{% endblock %}
+
+{% block footer %}
+	{{ parent() }}
+{% endblock %}

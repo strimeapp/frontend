@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_controller_ajax_add_video_file_not_properly_uploaded">
+                <source>back.controller_ajax.add_video.file_not_properly_uploaded</source>
+                <target>The file was not properly uploaded.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_add_comment_a_comment_has_been_posted_on_video">
+                <source>back.controller_ajax.add_comment.a_comment_has_been_posted_on_video</source>
+                <target>A comment has been posted on the video %video%</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_add_comment_a_comment_has_been_posted_on_image">
+                <source>back.controller_ajax.add_comment.a_comment_has_been_posted_on_image</source>
+                <target>A comment has been posted on the image %image%</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_add_comment_a_comment_has_been_posted_on_video_by">
+                <source>back.controller_ajax.add_comment.a_comment_has_been_posted_on_video_by</source>
+                <target>A comment has been posted on the video %video% by %author_name% at %at%.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_add_comment_a_comment_has_been_posted_on_image_by">
+                <source>back.controller_ajax.add_comment.a_comment_has_been_posted_on_image_by</source>
+                <target>A comment has been posted on the image %image% by %author_name%.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_add_comment_see_the_video">
+                <source>back.controller_ajax.add_comment.see_the_video</source>
+                <target>See the video</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_add_comment_see_the_image">
+                <source>back.controller_ajax.add_comment.see_the_image</source>
+                <target>See the image</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_share_by_email_invites_you_to_comment_a_video">
+                <source>back.controller_ajax.share_by_email.invites_you_to_comment_a_video</source>
+                <target>%first_name% invites you to comment a video</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_share_by_email_invites_you_to_comment_an_image">
+                <source>back.controller_ajax.share_by_email.invites_you_to_comment_an_image</source>
+                <target>%first_name% invites you to comment an image</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_share_by_email_invites_you_to_comment_a_project">
+                <source>back.controller_ajax.share_by_email.invites_you_to_comment_a_project</source>
+                <target>%first_name% invites you to comment a project</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_send_feedback_suggest_improvement">
+                <source>back.controller_ajax.send_feedback.suggest_improvement</source>
+                <target>Propose an improvement</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_send_feedback_signal_issue">
+                <source>back.controller_ajax.send_feedback.signal_issue</source>
+                <target>Report a problem</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_send_feedback_message_sent">
+                <source>back.controller_ajax.send_feedback.message_sent</source>
+                <target>Your message has been sent.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_send_feedback_error_occured_while_sending_message">
+                <source>back.controller_ajax.send_feedback.error_occured_while_sending_message</source>
+                <target>A error occurred while sending your message.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_ajax_global_you_must_be_logged_in">
+                <source>back.controller_ajax.global.you_must_be_logged_in</source>
+                <target>You must be logged in.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,48 @@
+{% extends 'emails/email_base.html.twig' %}
+
+
+
+{% block email_title %}
+	<title>Message envoyé depuis le formulaire de feedback</title>
+{% endblock %}
+
+
+
+{% block email_header_title %}
+	<h1 style="margin: 0px;">[Feedback] - {{ subject }}</h1>
+{% endblock %}
+
+
+
+{% block email_content %}
+	<p>Salut,</p>
+
+	<p>
+		Un utilisateur nous fait un feedback depuis le site.<br />
+		Voici son message :
+	</p>
+
+	<p>
+		<blockquote style="border-left: solid 3px #DFDFDF; padding-left: 10px;">
+			{{ message|nl2br }}
+		</blockquote>
+	</p>
+
+	<p>
+		Voici les informations de cet utilisateur :<br />
+		- Nom : {{ name }},<br />
+		- Email : {{ email }},<br />
+		- Browser : {{ browser }},<br />
+		- Browser version : {{ browser_version }},<br />
+		- Browser size : {{ browser_size }},<br />
+		- OS : {{ os }},<br />
+		- Cookies enabled : {{ cookies_enabled }},<br />
+		- User Agent : {{ browser }},<br />
+		- Locale : {{ locale }}
+	</p>
+
+	<p>
+		À bientôt,<br />
+		Votre robot préféré !
+	</p>
+{% endblock %}

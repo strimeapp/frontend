@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_profile_integrations_meta_description">
+                <source>back.profile_integrations.meta.description</source>
+                <target>Gestión de las integraciones</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_meta_keywords">
+                <source>back.profile_integrations.meta.keywords</source>
+                <target>strime, strime.io, video, video, videos, comentario, comentarios, aplicación, app, apps, workflow, intercambiar, cliente, videasta, profesional, profesional, cuenta, integraciones</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_meta_title">
+                <source>back.profile_integrations.meta.title</source>
+                <target>Integraciones</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_title_signin">
+                <source>back.profile_integrations.title.signin</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_description_manage_your_signin_methods">
+                <source>back.profile_integrations.description.manage_your_signin_methods</source>
+                <target>Gestione el modo de conexión</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_link_deactivate">
+                <source>back.profile_integrations.link.deactivate</source>
+                <target>Desactivar</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_text_deactivated">
+                <source>back.profile_integrations.text.deactivated</source>
+                <target>Desactivado</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_js_error_occured_while_revoking_google">
+                <source>back.profile_integrations.js.error_occured_while_revoking_google</source>
+                <target>Se produjo un error al momento de desactivar Google</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_js_error_occured_while_revoking_facebook">
+                <source>back.profile_integrations.js.error_occured_while_revoking_facebook</source>
+                <target>Se produjo un error al momento de desactivar Facebook</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_js_error_occured_while_revoking_youtube">
+                <source>back.profile_integrations.js.error_occured_while_revoking_youtube</source>
+                <target>Se produjo un error al momento de desactivar Youtube</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_js_google_access_revoked">
+                <source>back.profile_integrations.js.google_access_revoked</source>
+                <target>La conexión a Google ha sido desactivada.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_js_facebook_access_revoked">
+                <source>back.profile_integrations.js.facebook_access_revoked</source>
+                <target>La conexión a Facebook ha sido desactivada.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_js_youtube_access_revoked">
+                <source>back.profile_integrations.js.youtube_access_revoked</source>
+                <target>La conexión a Youtube ha sido desactivada.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_js_will_be_logged_out">
+                <source>back.profile_integrations.js.will_be_logged_out</source>
+                <target>Será desconectar en algunos instantes.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_title_notifications">
+                <source>back.profile_integrations.title.notifications</source>
+                <target>Notificaciones</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_description_manage_notifications_channels">
+                <source>back.profile_integrations.description.manage_notifications_channels</source>
+                <target>Gestione los servicios donde quiere recibir notificaciones.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_js_error_occured_while_deactivating_slack">
+                <source>back.profile_integrations.js.error_occured_while_deactivating_slack</source>
+                <target>Se produjo un error al momento de la desactivación de Slack.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_js_slack_webhook_deactivated">
+                <source>back.profile_integrations.js.slack_webhook_deactivated</source>
+                <target>El webhook Slack fue desactivado.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_title_export">
+                <source>back.profile_integrations.title.export</source>
+                <target>Exportar</target>
+            </trans-unit>
+            <trans-unit id="back_profile_integrations_description_manage_your_export_connexions">
+                <source>back.profile_integrations.description.manage_your_export_connexions</source>
+                <target>Gestione los servicios donde quiere exportar sus videos.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

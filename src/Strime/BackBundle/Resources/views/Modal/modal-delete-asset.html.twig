@@ -1,0 +1,53 @@
+{% trans_default_domain 'back_modal_delete_asset' %}
+
+<div class="modal fade" id="deleteAssetModal" tabindex="-1" role="dialog" aria-labelledby="deleteAssetLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.modal_delete_asset.alt.close_window'|trans }}" title="{{ 'back.modal_delete_asset.alt.close_window'|trans }}"></span></button>
+                <h4 class="modal-title">{{ 'back.modal_delete_asset.title.delete_video'|trans }}</h4>
+            </div>
+            <div class="modal-body">
+                <p class="sure-wanna-delete">{{ 'back.modal_delete_asset.text.sure_wanna_delete_video'|trans|raw }}</p>
+                <p class="will-free-space">{{ 'back.modal_delete_asset.text.will_free_space_video'|trans }}</p>
+                <p>{{ 'back.modal_delete_asset.text.cannot_be_canceled'|trans }}</p>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <a href="" title="{{ 'back.modal_delete_asset.alt.delete_this_video'|trans }}" id="confirm-asset-deletion">
+                            <button class="yes-delete">
+                                {{ 'back.modal_delete_asset.button.yes_delete_video'|trans }}
+                            </button>
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <button class="action-close" data-dismiss="modal">
+                            {{ 'back.modal_delete_asset.button.no_get_me_out'|trans }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script type="text/javascript">
+
+    // Set the constants for the modal
+    const modalDeleteAssetVideo = "{{ 'back.modal_delete_asset.title.delete_video'|trans|raw }}";
+    const modalDeleteAssetImage = "{{ 'back.modal_delete_asset.title.delete_image'|trans|raw }}";
+    const modalDeleteAssetFile = "{{ 'back.modal_delete_asset.title.delete_file'|trans|raw }}";
+    const modalDeleteAssetSureWannaDeleteVideo = "{{ 'back.modal_delete_asset.text.sure_wanna_delete_video'|trans|raw }}";
+    const modalDeleteAssetSureWannaDeleteImage = "{{ 'back.modal_delete_asset.text.sure_wanna_delete_image'|trans|raw }}";
+    const modalDeleteAssetSureWannaDeleteFile = "{{ 'back.modal_delete_asset.text.sure_wanna_delete_file'|trans|raw }}";
+    const modalDeleteAssetWillFreeSpaceVideo = "{{ 'back.modal_delete_asset.text.will_free_space_video'|trans|raw }}";
+    const modalDeleteAssetWillFreeSpaceImage = "{{ 'back.modal_delete_asset.text.will_free_space_image'|trans|raw }}";
+    const modalDeleteAssetWillFreeSpaceFile = "{{ 'back.modal_delete_asset.text.will_free_space_file'|trans|raw }}";
+    const modalDeleteAssetDeleteThisVideo = "{{ 'back.modal_delete_asset.alt.delete_this_video'|trans|raw }}";
+    const modalDeleteAssetDeleteThisImage = "{{ 'back.modal_delete_asset.alt.delete_this_image'|trans|raw }}";
+    const modalDeleteAssetDeleteThisFile = "{{ 'back.modal_delete_asset.alt.delete_this_file'|trans|raw }}";
+    const modalDeleteAssetYesDeleteVideo = "{{ 'back.modal_delete_asset.button.yes_delete_video'|trans|raw }}";
+    const modalDeleteAssetYesDeleteImage = "{{ 'back.modal_delete_asset.button.yes_delete_image'|trans|raw }}";
+    const modalDeleteAssetYesDeleteFile = "{{ 'back.modal_delete_asset.button.yes_delete_file'|trans|raw }}";
+</script>

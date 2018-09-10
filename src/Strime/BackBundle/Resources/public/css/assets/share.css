@@ -1,0 +1,16 @@
+body.asset .asset-share {
+	float: right;
+	background: url(../../img/icon-share-green.svg) no-repeat #303031;
+	background-position: 95% center;
+	background-size: 18px 18px;
+	font-family: 'UbuntuLight', sans-serif;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #0CAC9A;
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 5px 36px 5px 10px;
+}
+body.asset .asset-share:hover {
+	color: #0FD8C1;
+}

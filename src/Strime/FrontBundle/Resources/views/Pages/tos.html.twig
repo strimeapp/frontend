@@ -1,0 +1,28 @@
+{% trans_default_domain 'front_tos' %}
+{% extends '::front_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('home') }}tos" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="{{ 'front.tos.meta.description'|trans }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'front.tos.meta.keywords'|trans }}">
+{% endblock %}
+
+{% block title %}Strime | {{ 'front.tos.title.terms_of_service'|trans }}{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'front_header.html.twig' %}
+
+	<div class="wrapper">
+		<h1>{{ 'front.tos.title.terms_of_service_of_strime'|trans }}</h1>
+
+		<!-- Set up your own content here -->
+
+	</div><!-- ./Wrapper -->
+
+{% endblock %}

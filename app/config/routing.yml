@@ -1,0 +1,29 @@
+strime_global:
+    resource: "@StrimeGlobalBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+strime_back:
+    resource: "@StrimeBackBundle/Controller/"
+    type:     annotation
+    prefix:   /app
+
+strime_front:
+    resource: "@StrimeFrontBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+strime_admin:
+    resource: "@StrimeAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /private/admin
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+remove_trailing_slash:
+    path: /{url}
+    defaults: { _controller: StrimeGlobalBundle:Redirecting:removeTrailingSlash }
+    requirements:
+        url: .*/$
+    methods: [GET]

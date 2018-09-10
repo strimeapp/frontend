@@ -1,0 +1,39 @@
+{% trans_default_domain 'email_payment' %}
+{% extends 'emails/email_base.html.twig' %}
+
+
+
+{% block email_title %}
+	<title>{{ 'email.payment.meta.title'|trans }}</title>
+{% endblock %}
+
+
+
+{% block email_header_title %}
+	<h1 style="margin: 0px;">{{ 'email.payment.meta.title'|trans }}</h1>
+{% endblock %}
+
+
+
+{% block email_content %}
+	<p>{{ 'email.payment.text.hi_first_name'|trans({'%first_name%': first_name}) }},</p>
+
+	<p>
+		{{ 'email.payment.text.downgrade_free_offer'|trans }}
+	</p>
+	<p>
+		{{ 'email.payment.text.regret_this'|trans }}
+	</p>
+	<p>
+		{{ 'email.payment.text.get_back_to_normal'|trans({'%link_start%': '<a href="' ~ absolute_url( '/' ) ~ '" title="' ~ 'email.payment.alt.signin'|trans ~ '" target="_blank">', '%link_end%': '</a>'})|raw }}
+	</p>
+	<p>
+		{{ 'email.payment.text.stay_available'|trans }}<br />
+		{{ 'email.payment.text.thanks_trusting_us'|trans }}
+	</p>
+
+	<p>
+		{{ 'email.payment.text.see_you_soon'|trans }},<br />
+		{{ 'email.payment.text.strime_team'|trans }}
+	</p>
+{% endblock %}

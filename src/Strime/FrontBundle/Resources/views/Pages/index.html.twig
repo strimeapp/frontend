@@ -1,0 +1,344 @@
+{% trans_default_domain 'front_index' %}
+{% extends '::front_base.html.twig' %}
+
+{% block meta_tags %}
+	{{ parent() }}
+	<link rel="alternate" hreflang="{{ app.request.locale }}" href="https://www.strime.io/en">
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+
+    {% stylesheets
+        'bundles/strimefront/css/bounce-0.8.2-jelly.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	<header>
+		<div class="wrapper relative">
+			<div class="container-table">
+				<div class="container-table-cell">
+					<h1>
+						<a href="https://www.strime.io" title="Strime">
+							<img src="{{ asset('bundles/strimefront/img/logo-strime.svg') }}" alt="Strime" title="Strime" id="logo">
+						</a>
+					</h1>
+
+					<!-- Top Links -->
+					<div id="top-links">
+						{% if app.session.get('first_name') is defined and app.session.get('first_name') is not null %}
+							<div id="menu">
+								<a href="{{ path('app_dashboard') }}">
+									<button class="signup">
+										{{ 'front.index.button.access_app'|trans }}
+									</button>
+								</a>
+							</div>
+						{% else %}
+							<div id="menu">
+								<a href="http://blog.strime.io" title="{{ 'front.index.title.strime_the_blog'|trans }}" target="_blank">
+									{{ 'front.index.link.blog'|trans }}
+								</a>
+								<a href="#" class="login" title="{{ 'front.index.title.login'|trans }}" data-toggle="modal" data-target="#loginModal" data-backdrop="true" data-keyboard="false">
+									{{ 'front.index.link.login'|trans }}
+								</a>
+								<button class="signup" data-toggle="modal" data-target="#signupModal" data-backdrop="true" data-keyboard="false">
+									{{ 'front.index.button.signup'|trans }}
+								</button>
+							</div>
+						{% endif %}
+
+						<a href="https://www.facebook.com/strimeapp" title="Facebook" target="_blank">
+							<img src="{{ asset('bundles/strimefront/img/icon-facebook.svg') }}" class="svg" alt="Facebook" title="Facebook">
+						</a>
+						<a href="https://www.twitter.com/strimeapp" title="Twitter" target="_blank">
+							<img src="{{ asset('bundles/strimefront/img/icon-twitter.svg') }}" class="svg" alt="Twitter" title="Twitter">
+						</a>
+					</div><!-- ./Top Links -->
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Fixed Header -->
+	<div id="fixed-header">
+		<div class="wrapper relative">
+			<a href="https://www.strime.io" title="Strime">
+				<img src="{{ asset('bundles/strimefront/img/logo-strime.svg') }}" alt="Strime" title="Strime" id="logo-fixed">
+			</a>
+
+			<!-- Top Links -->
+			<div id="top-links-fixed">
+				{% if app.session.get('first_name') is defined and app.session.get('first_name') is not null %}
+					<div id="menu-fixed">
+						<a href="{{ path('app_dashboard') }}">
+							<button class="signup">
+								{{ 'front.index.button.access_app'|trans }}
+							</button>
+						</a>
+					</div>
+				{% else %}
+					<div id="menu-fixed">
+						<a href="http://blog.strime.io" title="{{ 'front.index.title.strime_the_blog'|trans }}" target="_blank">
+							{{ 'front.index.link.blog'|trans }}
+						</a>
+						<a href="#" class="login" title="{{ 'front.index.title.login'|trans }}" data-toggle="modal" data-target="#loginModal" data-backdrop="false" data-keyboard="false">
+							{{ 'front.index.link.login'|trans }}
+						</a>
+						<button class="signup" data-toggle="modal" data-target="#signupModal" data-backdrop="false" data-keyboard="false">
+							{{ 'front.index.button.signup'|trans }}
+						</button>
+					</div>
+				{% endif %}
+
+				<a href="https://www.facebook.com/strimeapp" title="Facebook" target="_blank">
+					<img src="{{ asset('bundles/strimefront/img/icon-facebook-grey.svg') }}" class="svg" alt="Facebook" title="Facebook">
+				</a>
+				<a href="https://www.twitter.com/strimeapp" title="Twitter" target="_blank">
+					<img src="{{ asset('bundles/strimefront/img/icon-twitter-grey.svg') }}" class="svg" alt="Twitter" title="Twitter">
+				</a>
+			</div><!-- ./Top Links -->
+		</div>
+	</div><!-- ./Fixed Header -->
+
+	<div id="baseline">
+		<div class="container-table">
+			<div class="container-table-cell">
+				<h2>{{ 'front.index.baseline.simplify_video_feedback'|trans }}</h2>
+				<p>{{ 'front.index.baseline.get_precise_feedback'|trans }}</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Computer -->
+	<div id="computer">
+		<div id="bubble-01"  class="computer-bubble"></div>
+		<div id="bubble-02" class="computer-bubble"></div>
+		<div id="bubble-03" class="computer-bubble"></div>
+	</div><!-- ./Computer -->
+
+	<!-- Strime is free -->
+	<div id="strime-is-free">
+		{{ 'front.index.free.strime_is_free'|trans }}
+		<button data-toggle="modal" data-target="#signupModal" data-backdrop="true" data-keyboard="false">
+			{{ 'front.index.free.button.create_account'|trans }}
+		</button>
+	</div><!-- ./Strime is free -->
+
+	<!-- What we do -->
+	<div id="what-we-do">
+		<div class="wrapper">
+			<p>
+				{{ 'front.index.what_we_do.make_feedback_not_easy'|trans }}<br />
+				{{ 'front.index.what_we_do.simple_tool'|trans|raw }}<br />
+				{{ 'front.index.what_we_do.simplify_communication'|trans }}
+			</p>
+		</div>
+	</div>
+	<!-- ./What we do -->
+
+	<!-- App description -->
+	<div id="home-app-description">
+
+		<!-- Post videos -->
+		<div class="description-elt">
+			<div class="description-elt-table">
+				<div class="description-elt-table-cell">
+					<div class="description-elt-details right">
+						<h3>{{ 'front.index.app_description.up_to_10go'|trans }}</h3>
+						<p>
+							{{ 'front.index.app_description.download_videos'|trans }}
+							{{ 'front.index.app_description.organize_them'|trans }}
+						</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="description-elt-table-cell {% if is_mobile() == FALSE %}home-img-right{% endif %}">
+					<div class="description-elt-img" style="background: url({{ asset('bundles/strimefront/img/home-post-videos.jpg') }}) no-repeat; background-size: cover; background-position: center left;"></div>
+				</div>
+			</div>
+		</div>
+
+		{% if is_mobile() %}
+
+			<!-- Annotate video -->
+			<div class="description-elt">
+				<div class="description-elt-table">
+					<div class="description-elt-table-cell">
+						<div class="description-elt-details">
+							<h3>{{ 'front.index.app_description.collect_annotations'|trans }}</h3>
+							<p>
+								{{ 'front.index.app_description.write_directly_on_images'|trans }}
+								{{ 'front.index.app_description.answer_to_client'|trans }}
+							</p>
+						</div>
+					</div>
+					<div class="description-elt-table-cell">
+						<div class="description-elt-img" style="background: url({{ asset('bundles/strimefront/img/home-annotate-video.jpg') }}) no-repeat; background-size: cover; background-position: center center;"></div>
+					</div>
+				</div>
+			</div>
+
+		{% else %}
+
+			<!-- Annotate video -->
+			<div class="description-elt">
+				<div class="description-elt-table">
+					<div class="description-elt-table-cell home-img-left">
+						<div class="description-elt-img" style="background: url({{ asset('bundles/strimefront/img/home-annotate-video.jpg') }}) no-repeat; background-size: cover; background-position: center right;"></div>
+					</div>
+					<div class="description-elt-table-cell">
+						<div class="description-elt-details">
+							<h3>{{ 'front.index.app_description.collect_annotations'|trans }}</h3>
+							<p>
+								{{ 'front.index.app_description.write_directly_on_images'|trans }}
+								{{ 'front.index.app_description.answer_to_client'|trans }}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		{% endif %}
+
+		<!-- Share video -->
+		<div class="description-elt">
+			<div class="description-elt-table">
+				<div class="description-elt-table-cell">
+					<div class="description-elt-details right">
+						<h3>{{ 'front.index.app_description.share_in_one_clic'|trans }}</h3>
+						<p>
+							{{ 'front.index.app_description.private_access'|trans }}
+						</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="description-elt-table-cell {% if is_mobile() == FALSE %}home-img-right{% endif %}">
+					<div class="description-elt-img" style="background: url({{ asset('bundles/strimefront/img/home-share-video.jpg') }}) no-repeat; background-size: cover; background-position: center left;"></div>
+				</div>
+			</div>
+		</div>
+
+		{% if is_mobile() %}
+
+			<!-- Keep comments -->
+			<div class="description-elt">
+				<div class="description-elt-table">
+					<div class="description-elt-table-cell">
+						<div class="description-elt-details">
+							<h3>{{ 'front.index.app_description.keep_the_comments'|trans }}</h3>
+							<p>
+								{{ 'front.index.app_description.collect_feedback_in_one_place'|trans }}
+							</p>
+						</div>
+					</div>
+					<div class="description-elt-table-cell">
+						<div class="description-elt-img" style="background: url({{ asset('bundles/strimefront/img/home-keep-comments.jpg') }}) no-repeat; background-size: cover; background-position: center center;"></div>
+					</div>
+				</div>
+			</div>
+
+		{% else %}
+
+			<!-- Keep comments -->
+			<div class="description-elt">
+				<div class="description-elt-table">
+					<div class="description-elt-table-cell home-img-left">
+						<div class="description-elt-img" style="background: url({{ asset('bundles/strimefront/img/home-keep-comments.jpg') }}) no-repeat; background-size: cover; background-position: center right;"></div>
+					</div>
+					<div class="description-elt-table-cell">
+						<div class="description-elt-details">
+							<h3>{{ 'front.index.app_description.keep_the_comments'|trans }}</h3>
+							<p>
+								{{ 'front.index.app_description.collect_feedback_in_one_place'|trans }}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		{% endif %}
+
+	</div><!-- ./App description -->
+
+	<div id="partners">
+		<div class="wrapper">
+			<h3>{{ 'front.index.partners.they_support_strime'|trans }}</h3>
+			<div class="row">
+				<div class="col-sm-4 text-center">
+					<a href="http://www.startupchile.org/" title="Startup Chile" target="_blank">
+						<img src="{{ asset('bundles/strimefront/img/partners/logo-startup-chile.png') }}" title="Startup Chile" alt="Startup Chile">
+					</a>
+				</div>
+				<div class="col-sm-3 text-center">
+					<a href="http://numelink.com/" title="Numelink" target="_blank">
+						<img src="{{ asset('bundles/strimefront/img/partners/logo-numelink.png') }}" title="Numelink" alt="Numelink">
+					</a>
+				</div>
+				<div class="col-sm-3 text-center">
+					<a href="https://www.ovh.com" title="OVH" target="_blank">
+						<img src="{{ asset('bundles/strimefront/img/partners/logo-ovh.png') }}" title="OVH" alt="OVH">
+					</a>
+				</div>
+				<div class="col-sm-2 text-center">
+					<a href="http://www.orange.fr/" title="OVH" target="_blank">
+						<img src="{{ asset('bundles/strimefront/img/partners/logo-orange.png') }}" title="Orange" alt="Orange">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div><!-- ./Partners -->
+
+	{% if signup_form.first_name is defined %}
+		<!-- Stay connected -->
+		<div id="stay-connected">
+			<div class="wrapper">
+
+				<p class="lead">
+					{{ 'front.index.stay_connected.create_account'|trans|raw }}
+				</p>
+
+	            {{ form_start(signup_form_bottom, {'action': path('ajax_simple_signup'), 'attr': {'id': 'signup-form-bottom', 'novalidate': true} }) }}
+
+	                {{ form_widget(signup_form_bottom.name) }}
+	                {{ form_widget(signup_form_bottom.email) }}
+	                {{ form_widget(signup_form_bottom.password) }}
+	                {{ form_widget(signup_form_bottom.submit, { 'label': 'front.index.stay_connected.lets_go', 'translation_domain': 'front_index' }) }}
+
+	                <div class="loader-container">
+	                    <div class="loader-pulse">
+	                        {{ 'front.index.loader.loading'|trans }}
+	                    </div>
+	                </div>
+
+	                <p class="text-center tos">
+	                	{{ 'front.index.stay_connected.accept_tos'|trans( {'%link_start%': '<a href="' ~ path('tos') ~ '" title="TOS">', '%link_end%': '</a>'} )|raw }}
+	                </p>
+
+	                <div id="signup-bottom-result" class="alert"></div>
+
+	            {{ form_end(signup_form_bottom) }}
+
+			</div>
+		</div>
+		<!-- ./Stay connected -->
+	{% endif %}
+
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+
+    {% javascripts
+        '@StrimeFrontBundle/Resources/public/js/scrollreveal-3.1.4/dist/scrollreveal.min.js' filter='?uglifyjs2'
+        '@StrimeFrontBundle/Resources/public/js/rellax-1.0.0/rellax.min.js' filter='?uglifyjs2'
+        '@StrimeFrontBundle/Resources/public/js/index.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

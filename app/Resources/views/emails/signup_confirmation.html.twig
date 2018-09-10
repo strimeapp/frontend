@@ -1,0 +1,45 @@
+{% trans_default_domain 'email_signup_confirmation' %}
+{% extends 'emails/email_base.html.twig' %}
+
+
+
+{% block email_title %}
+	<title>{{ 'email.signup_confirmation.meta.title'|trans }}</title>
+{% endblock %}
+
+
+
+{% block email_header_title %}																		                        
+	<h1 style="margin: 0px;">{{ 'email.signup_confirmation.title.signup_confirmation'|trans }}</h1>
+{% endblock %}
+
+
+																						                        
+{% block email_content %}													                            
+	<p>{{ 'email.signup_confirmation.text.hi_first_name'|trans({'%first_name%': first_name}) }},</p>
+
+	<p>
+		{{ 'email.signup_confirmation.text.just_signed_up'|trans({'%strime%': '<a href="' ~ absolute_url( '/' ) ~ '" title="Strime" target="_blank" style="color: #1DAC9A; text-decoration: none;">Strime</a>'})|raw }}
+		<br />
+		{{ 'email.signup_confirmation.text.happy_to_have_you'|trans }}
+	</p>
+	<p>
+		{{ 'email.signup_confirmation.text.hope_youll_enjoy_strime'|trans }}
+	</p>
+
+	<h2>{{ 'email.signup_confirmation.title.first_steps'|trans }}</h2>
+
+	<p>
+		{{ 'email.signup_confirmation.text.here_is_what_we_suggest'|trans }}<br /><br />
+		1. &nbsp; {{ 'email.signup_confirmation.text.upload_your_first_video'|trans }}<br />
+		2. &nbsp; {{ 'email.signup_confirmation.text.organize'|trans }}<br />
+		3. &nbsp; {{ 'email.signup_confirmation.text.share_video'|trans }}<br />
+		4. &nbsp; {{ 'email.signup_confirmation.text.answer_clients_comments'|trans }}<br />
+		5. &nbsp; {{ 'email.signup_confirmation.text.fulfill_profile'|trans }}
+	</p>
+
+	<p>
+		{{ 'email.signup_confirmation.text.see_you_soon'|trans }},<br />
+		{{ 'email.signup_confirmation.text.strime_team'|trans }}
+	</p>
+{% endblock %}

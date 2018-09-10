@@ -1,0 +1,28 @@
+{% trans_default_domain 'front_base' %}
+
+<div class="modal fade" id="goodbyeModal" tabindex="-1" role="dialog" aria-labelledby="goodbyeLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimefront/img/icon-close-modal.svg') }}" alt="{{ 'front.base.button.close_window'|trans }}" title="{{ 'front.base.button.close_window'|trans }}"></span></button>
+                <h4 class="modal-title">{{ 'front.base.modal.strime_will_stop'|trans }}</h4>
+            </div>
+            <div class="modal-body">
+
+                <p>{{ 'front.base.modal.after_three_years_we_are_stopping'|trans }}</p>
+                <p>{{ 'front.base.modal.why_did_we_create_strime'|trans }}</p>
+                <p>
+                    {{ 'front.base.modal.any_question_contact_us'|trans|raw }}<br />
+                    {{ 'front.base.modal.learn_more_end_of_strime'|trans|raw }}
+                </p>
+                <p>
+                    {{ 'front.base.modal.thanks_for_using_strime'|trans }}<br />
+                    {{ 'front.base.modal.we_were_honored'|trans }}
+                </p>
+                <p>{{ 'front.base.modal.frank_romain_jp'|trans }}</p>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

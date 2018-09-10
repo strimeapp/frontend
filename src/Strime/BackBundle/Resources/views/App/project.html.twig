@@ -1,0 +1,394 @@
+{% trans_default_domain 'back_project' %}
+{% extends '::back_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ path('app_project', {'project_id' : project.project_id}) }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="{{ 'back.project.meta.description'|trans }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'back.project.meta.keywords'|trans }}">
+    <meta name="robots" content="noindex" />
+    <meta name="google-signin-client_id" content="59471169232-igm9oedpkpc0f1spqmrj2nffqd1hj93f.apps.googleusercontent.com">
+{% endblock %}
+
+{% block title %}{% if project is defined and project is not null %}{{ project.name }}{% else %}{{ 'back.project.meta.title'|trans }}{% endif %} | Strime{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets
+        'bundles/strimeglobal/css/language-bar.css' filter='cssrewrite'
+        'bundles/strimeback/css/dashboard/dashboard.css' filter='cssrewrite'
+        'bundles/strimeback/css/dashboard/ellipsis-blink.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {% if is_owner is defined and is_owner == true %}
+        {% stylesheets
+            'bundles/strimeback/css/editable-title.css' filter='cssrewrite'
+            'bundles/strimeback/css/editable-name.css' filter='cssrewrite'
+            'bundles/strimeback/css/dashboard/animista-drag-and-drop.css' filter='cssrewrite'
+            'bundles/strimeback/css/dashboard/animista-classes-drag-and-drop.css' filter='cssrewrite'
+            'bundles/strimeback/css/draggable.css' filter='cssrewrite'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endif %}
+{% endblock %}
+
+{% block header_js %}
+    {{ parent() }}
+
+    {% javascripts
+        '@StrimeBackBundle/Resources/public/js/dashboard/drag-and-drop-videos.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+    <!-- HTML node for the dragged elements -->
+    <div id="dragged-content-to-display"></div>
+
+    {% if app.session.get('first_name') is not defined or app.session.get('first_name') is null %}
+        <div id="languages-bar">
+            <div class="wrapper-full">
+                {{ 'back.project.text.language'|trans }}
+
+                {% if app.request.locale == 'fr' %}
+                    <span class="current">
+                {% else %}
+                    <span>
+                        <a href="{{ path('change_locale', {'back_path': current_path, 'locale': 'fr', 'back_path_parameter_name': 'project_id', 'back_path_parameter': project.project_id }) }}" title="FR">
+                {% endif %}
+                    FR
+                {% if app.request.locale == 'fr' %}
+                    </span>
+                {% else %}
+                        </a>
+                    </span>
+                {% endif %}
+
+                {% if app.request.locale == 'en' %}
+                    <span class="current">
+                {% else %}
+                    <span>
+                        <a href="{{ path('change_locale', {'back_path': current_path, 'locale': 'en', 'back_path_parameter_name': 'project_id', 'back_path_parameter': project.project_id }) }}" title="EN">
+                {% endif %}
+                    EN
+                {% if app.request.locale == 'en' %}
+                    </span>
+                {% else %}
+                        </a>
+                    </span>
+                {% endif %}
+
+                {% if app.request.locale == 'es' %}
+                    <span class="current">
+                {% else %}
+                    <span>
+                        <a href="{{ path('change_locale', {'back_path': current_path, 'locale': 'es', 'back_path_parameter_name': 'project_id', 'back_path_parameter': project.project_id }) }}" title="ES">
+                {% endif %}
+                    ES
+                {% if app.request.locale == 'es' %}
+                    </span>
+                {% else %}
+                        </a>
+                    </span>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+	{% include 'back_header.html.twig' %}
+
+	<!-- Assets -->
+	<div id="assets">
+
+		<div class="wrapper">
+
+            {% if app.session.get('first_name') is defined and app.session.get('first_name') is not null %}
+                <a href="{{ path('app_dashboard') }}" class="back-to-dashboard" title="{{ 'back.project.link.back_to_home'|trans }}" >
+                    {{ 'back.project.link.back_to_home'|trans }}
+                </a>
+            {% endif %}
+
+            <h1 {% if is_owner is defined and is_owner == true %}class="editable"{%endif%} {% if app.session.get('first_name') is null %}style="margin-left: 15px;"{% endif %}>
+                {{ project.name }}
+            </h1>
+
+            {% for flash_message in app.session.flashbag.get('success') %}
+                <div class="alert alert-success" role="alert">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+
+            {% for flash_message in app.session.flashbag.get('error') %}
+                <div class="alert alert-danger" role="alert">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+
+            {% if is_owner is defined and is_owner == true %}
+                <div id="drop-asset-reset" ondrop="dropAssetReset(event)" ondragover="allowDropAsset(event)" ondragenter="dragEnterZoneAsset(event)" ondragleave="dragLeaveZoneAsset(event)">
+                    {% if rights is not empty and rights is not null and ('image' in rights|keys or 'audio' in rights|keys) %}
+                        {{ 'back.project.text.drag_drop_file_to_take_it_off_project'|trans }}
+                    {% else %}
+                        {{ 'back.project.text.drag_drop_video_to_take_it_off_project'|trans }}
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            <div>
+
+                {# If the user is logged in, display the upload box #}
+                {% if app.session.get('first_name') is defined and app.session.get('first_name') is not null %}
+
+        				{% include 'StrimeBackBundle:App:dashboard-upload-box.html.twig' with {upload_form: upload_form} %}
+                        {% set nb_assets_per_line = 1 %}
+
+                        {% if assets is not null %}
+                            {% for asset in assets %}
+
+                                {% if asset.encoding_job is defined and asset.encoding_job is not null %}
+
+                                    {% set nb_assets_per_line = nb_assets_per_line + 1 %}
+                                    {% include 'StrimeBackBundle:App:dashboard-encoding-job.html.twig' with {asset: asset, nb_assets_per_line: nb_assets_per_line} %}
+
+                                {% elseif asset.thumbnail is defined and asset.thumbnail is not null %}
+
+                                    {% set nb_assets_per_line = nb_assets_per_line + 1 %}
+                                    {% include 'StrimeBackBundle:App:project-element.html.twig' with {asset: asset, nb_assets_per_line: nb_assets_per_line} %}
+
+                                {% endif %}
+
+                            {% endfor %}
+                        {% endif %}
+
+                {# If the user is not logged in, simply display the assets #}
+                {% else %}
+                    {% set nb_assets_per_line = 0 %}
+
+                    {% if assets is not null %}
+                        {% for asset in assets %}
+
+                            {% if  asset.encoding_job is defined and asset.encoding_job is null %}
+
+                                {% set nb_assets_per_line = nb_assets_per_line + 1 %}
+                                {% include 'StrimeBackBundle:App:project-element.html.twig' with {asset: asset} %}
+
+                            {% elseif asset.thumbnail is defined and asset.thumbnail is not null %}
+
+                                {% set nb_assets_per_line = nb_assets_per_line + 1 %}
+                                {% include 'StrimeBackBundle:App:project-element.html.twig' with {asset: asset, nb_assets_per_line: nb_assets_per_line} %}
+
+                            {% endif %}
+
+                        {% endfor %}
+                    {% endif %}
+
+                {% endif %}
+
+                <div class="clear"></div>
+            </div>
+
+		</div><!-- ./Wrapper -->
+
+	</div><!-- ./Assets -->
+
+    <script type="text/javascript">
+        var nbAssetsPerLine = {{ nb_assets_per_line }};
+    </script>
+
+{% endblock %}
+
+
+{% block footer %}
+	{{ parent() }}
+
+    {# If the user is logged in, display the modals for the upload #}
+    {% if app.session.get('first_name') is defined and app.session.get('first_name') is not null %}
+
+        <div class="modal fade" id="addAssetModal" tabindex="-1" role="dialog" aria-labelledby="addAssetLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.project.alt.close_window'|trans }}" title="{{ 'back.project.alt.close_window'|trans }}"></span></button>
+                        <h4 class="modal-title">{{ 'back.project.title.add_video'|trans }}</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        {{ form_start(add_video_form, {'action': path('app_ajax_add_asset'), 'attr': {'id': 'add-asset-form', 'novalidate': true} }) }}
+
+                            {{ form_widget(add_video_form.name, {'translation_domain': 'back_helpers_form'}) }}
+                            {{ form_widget(add_video_form.project, {'translation_domain': 'back_helpers_form'}) }}
+                            {{ form_widget(add_video_form.new_project_name, {'translation_domain': 'back_helpers_form'}) }}
+
+                            <hr class="share-emails-description">
+
+                            <p class="share-emails-description">
+                                {{ 'back.project.text.type_in_addresses_to_share_with'|trans }}<br />
+                                {{ 'back.project.text.will_be_notified'|trans }}
+                            </p>
+
+                            {{ form_widget(add_video_form.email, {'translation_domain': 'back_helpers_form'}) }}
+
+                            <div class="share-emails-list">
+                                <div class="clear"></div>
+                            </div>
+
+                            {{ form_widget(add_video_form.submit, { 'label': 'back.project.button.add', 'translation_domain': 'back_project' }) }}
+
+                            <div class="loader-container">
+                                <div class="loader-pulse">
+                                    {{ 'back.project.loader.loading'|trans }}...
+                                </div>
+                                <div class="margin-top">
+                                    <span class="encoding-processing">{{ 'back.project.loader.copying_files'|trans }}...</span><br />
+                                    {{ 'back.project.loader.we_are_programming_encoding'|trans }}
+                                </div>
+                            </div>
+
+                        {{ form_end(add_video_form) }}
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        {% include 'StrimeBackBundle:Modal:modal-add-asset-result.html.twig' %}
+
+        {% include 'StrimeBackBundle:Modal:modal-progress-add-asset.html.twig' %}
+
+
+        {% include 'StrimeBackBundle:Modal:modal-delete-asset.html.twig' %}
+        <div class="modal fade" id="deleteAssetModal" tabindex="-1" role="dialog" aria-labelledby="deleteAssetLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.project.alt.close_window'|trans }}" title="{{ 'back.project.alt.close_window'|trans }}"></span></button>
+                        <h4 class="modal-title">{{ 'back.project.title.delete_this_video'|trans }}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{ 'back.project.text.sure_you_wanna_delete'|trans|raw }}</p>
+                        <p>{{ 'back.project.text.cannot_be_undone'|trans }}</p>
+                        <p>{{ 'back.project.text.will_free_space'|trans }}</p>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="#" title="{{ 'back.project.alt.delete_this_video'|trans }}" id="confirm-asset-deletion">
+                                    <button>
+                                        {{ 'back.project.button.yes_delete_video'|trans }}
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="action-close" data-dismiss="modal">
+                                    {{ 'back.project.button.no_get_me_out_of_here'|trans }}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        {% if display_email_confirmation_popup == true %}
+            {% include 'StrimeBackBundle:Modal:modal-confirm-email.html.twig' %}
+        {% endif %}
+
+        {% include 'StrimeBackBundle:Modal:modal-share-asset.html.twig' %}
+
+    {% endif %}
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    {% include 'StrimeBackBundle:JS:upload-variables.html.twig' %}
+
+    <script type="text/javascript">
+
+        // Define the text variables
+        const dashboardJsTextErrorSending = "{{ 'back.project.js.error_sending'|trans|raw }}";
+        const dashboardJsTextMailSent = "{{ 'back.project.js.mail_sent'|trans|raw }}";
+        const dashboardJsTextResendConfirmationEmail = "{{ 'back.project.js.resend_confirmation_email'|trans|raw }}";
+        const dashboardJsTextYouMustBeLoggedIn = "{{ 'back.project.js.you_must_be_logged_in'|trans|raw }}";
+        const dashboardJsTextWeCouldntFindInformationForThisEncoding = "{{ 'back.project.js.couldnt_find_information_for_this_encoding'|trans|raw }}";
+        const dashboardJsTextSeeTheVideo = "{{ 'back.project.js.see_the_video'|trans|raw }}";
+        const dashboardJsTextSeeTheImage = "{{ 'back.project.js.see_the_image'|trans|raw }}";
+        const dashboardJsTextSeeTheAudio = "{{ 'back.project.js.see_the_audio'|trans|raw }}";
+        const dashboardJsTextSeeTheFile = "{{ 'back.project.js.see_the_file'|trans|raw }}";
+        const dashboardJsTextSeeTheProject = "{{ 'back.project.js.see_the_project'|trans|raw }}";
+        const dashboardJsTextErrorWhileCollectingInformationFromEncoding = "{{ 'back.project.js.error_occured_while_collecting_information_from_this_encoding'|trans|raw }}";
+        const dashboardJsTextVideo = "{{ 'back.project.js.video'|trans|raw }}";
+        const dashboardJsTextVideos = "{{ 'back.project.js.videos'|trans|raw }}";
+        const dashboardJsTextLoading = "{{ 'back.project.js.loading'|trans|raw }}";
+        const dashboardJsTextThisExtensionIsNotAuthorized = "{{ 'back.project.js.extension_not_authorized'|trans|raw }}";
+        const dashboardJsTextFileMustHaveExtension = "{{ 'back.project.js.file_must_have_extension'|trans|raw }}";
+        const dashboardJsTextAddVideo = "{{ 'back.project.title.add_video'|trans|raw }}";
+        const dashboardJsTextAddImage = "{{ 'back.project.title.add_image'|trans|raw }}";
+        const dashboardJsTextAddAudio = "{{ 'back.project.title.add_audio'|trans|raw }}";
+        const dashboardJsTextDefineMailPeopleToShareVideoWith = "{{ 'back.project.text.type_in_addresses_to_share_with'|trans|raw }}";
+        const dashboardJsTextDefineMailPeopleToShareImageWith = "{{ 'back.project.text.type_in_addresses_to_share_image_with'|trans|raw }}";
+        const dashboardJsTextDefineMailPeopleToShareAudioWith = "{{ 'back.project.text.type_in_addresses_to_share_audio_with'|trans|raw }}";
+        const dashboardJsTextWillBeNotifiedAfterEncoding = "{{ 'back.project.text.will_be_notified'|trans|raw }}";
+
+        // Define the variables
+        var contactsList = {{ contacts_list|raw }};
+        const ajaxGetEncodingJobStatusURL = "{{ url('app_ajax_get_encoding_job_status', {}, TRUE) }}";
+        const ajaxGetAssetDetailsAction = "{{ url('app_ajax_get_asset_details', {}, TRUE) }}";
+        const ajaxResendEmailConfirmationMessageAction = "{{ path('app_ajax_resend_email_confirmation_message') }}";
+        const ajaxEditProjectURL = "{{ path('app_ajax_edit_project') }}";
+        const ajaxEditAssetURL = "{{ path('app_ajax_edit_asset') }}";
+        const baseUrl = "{{ url( 'home' ) }}";
+        var projectID = "{{ project.project_id }}";
+        const isProjectPage = true;
+        var projectTemplateURL = "{{ path('app_project', {'project_id' : 'CHANGETHISPARAMETER'}) }}";
+        var isDraggingAsset = false;
+
+        {% if storage_available <= 2000 and app.session.get('first_name') is defined and app.session.get('first_name') is not null %}
+            const maxUploadFileSize = {{ storage_available }};
+        {% else %}
+            const maxUploadFileSize = 2000;
+        {% endif %}
+
+        {% if is_owner is defined and is_owner == true %}
+            const isOwner = true;
+        {% else %}
+            const isOwner = false;
+        {% endif %}
+    </script>
+
+    {% javascripts
+        '@StrimeBackBundle/Resources/public/js/dashboard/dropzone.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/zeroclipboard-2.2.0/dist/ZeroClipboard.min.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/typeahead.js-0.11.1/dist/typeahead.jquery.min.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/dashboard/upload.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/dashboard/dashboard.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {% if is_owner is defined and is_owner == true %}
+
+        {% javascripts
+            '@StrimeBackBundle/Resources/public/js/share.js' filter='?uglifyjs2'
+            '@StrimeBackBundle/Resources/public/js/dashboard/project.js' filter='?uglifyjs2'
+            '@StrimeBackBundle/Resources/public/js/dashboard/edit-name.js' filter='?uglifyjs2'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+        <script type="text/javascript">
+            // Define the variables
+            var contactsList = {{ contacts_list|raw }};
+        </script>
+    {% endif %}
+{% endblock %}

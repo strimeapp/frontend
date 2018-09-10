@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_audio_meta_keywords">
+                <source>back.audio.meta.keywords</source>
+                <target>strime, strime.io, video, videos, comment, comments, application, app, workflow, collaboration, client, video producer, producer, professional, professionals, dashboard, audio</target>
+            </trans-unit>
+            <trans-unit id="back_audio_meta_title">
+                <source>back.audio.meta.title</source>
+                <target>Comment on the audio file %audio_name%</target>
+            </trans-unit>
+            <trans-unit id="back_audio_alt_back_to_project">
+                <source>back.audio.alt.back_to_project</source>
+                <target>Back to the project</target>
+            </trans-unit>
+            <trans-unit id="back_audio_button_share_audio">
+                <source>back.audio.button.share_audio</source>
+                <target><![CDATA[Share<span class="hide-text-on-tablet"> the audio file</span>]]></target>
+            </trans-unit>
+            <trans-unit id="back_audio_alt_export_audio">
+                <source>back.audio.alt.export_audio</source>
+                <target>Export audio file</target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_export_to">
+                <source>back.audio.title.export_to</source>
+                <target>Export to</target>
+            </trans-unit>
+            <trans-unit id="back_audio_placeholder_type_in_comment">
+                <source>back.audio.placeholder.type_in_comment</source>
+                <target>Enter your comment</target>
+            </trans-unit>
+            <trans-unit id="back_audio_button_send">
+                <source>back.audio.button.send</source>
+                <target>Post</target>
+            </trans-unit>
+            <trans-unit id="back_audio_loader_loading">
+                <source>back.audio.loader.loading</source>
+                <target>Loading</target>
+            </trans-unit>
+            <trans-unit id="back_audio_text_nb_comments">
+                <source>back.audio.text.nb_comments</source>
+                <target>%nb_comments% comment|%nb_comments% comments</target>
+            </trans-unit>
+            <trans-unit id="back_audio_text_mark_as_solved">
+                <source>back.audio.text.hide_solved</source>
+                <target>Hide resolved comments</target>
+            </trans-unit>
+            <trans-unit id="back_audio_text_error_while_saving_comment">
+                <source>back.audio.text.error_while_saving_comment</source>
+                <target>An error occurred while saving this comment.</target>
+            </trans-unit>
+            <trans-unit id="back_audio_text_try_again_or_contact">
+                <source>back.audio.text.try_again_or_contact</source>
+                <target>Please try again or contact us.</target>
+            </trans-unit>
+            <trans-unit id="back_audio_text_error_while_deleting_comment">
+                <source>back.audio.text.error_while_deleting_comment</source>
+                <target>An error occurred while deleting this comment.</target>
+            </trans-unit>
+            <trans-unit id="back_audio_text_error_while_editing_comment">
+                <source>back.audio.text.error_while_editing_comment</source>
+                <target>An error occurred while editing this comment.</target>
+            </trans-unit>
+            <trans-unit id="back_audio_text_resolved">
+                <source>back.audio.text.resolved</source>
+                <target>Resolved</target>
+            </trans-unit>
+            <trans-unit id="back_audio_link_answer">
+                <source>back.audio.link.answer</source>
+                <target>Answer</target>
+            </trans-unit>
+            <trans-unit id="back_audio_placeholder_type_in_answer">
+                <source>back.audio.placeholder.type_in_answer</source>
+                <target>Enter your answer</target>
+            </trans-unit>
+            <trans-unit id="back_audio_alt_close_window">
+                <source>back.audio.alt.close_window</source>
+                <target>Close the window</target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_edit_comment">
+                <source>back.audio.title.edit_comment</source>
+                <target>Edit a comment</target>
+            </trans-unit>
+            <trans-unit id="back_audio_button_cancel">
+                <source>back.audio.button.cancel</source>
+                <target>Cancel</target>
+            </trans-unit>
+            <trans-unit id="back_audio_button_validate">
+                <source>back.audio.button.validate</source>
+                <target>Validate</target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_delete_comment">
+                <source>back.audio.title.delete_comment</source>
+                <target>Remove a comment</target>
+            </trans-unit>
+            <trans-unit id="back_audio_text_about_to_delete_comment">
+                <source>back.audio.text.about_to_delete_comment</source>
+                <target><![CDATA[You are about to remove a comment,<br />this one, as well as its answers, will be permanently deleted.]]></target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_hello">
+                <source>back.audio.title.hello</source>
+                <target>Hi!</target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_thanks_for_introducing">
+                <source>back.audio.title.thanks_for_introducing</source>
+                <target>thank you for announcing yourself</target>
+            </trans-unit>
+            <trans-unit id="back_audio_alt_choose_this_profile">
+                <source>back.audio.alt.choose_this_profile</source>
+                <target>Choose this profile</target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_not_in_the_list">
+                <source>back.audio.title.not_in_the_list</source>
+                <target>You are not in the list?</target>
+            </trans-unit>
+            <trans-unit id="back_audio_text_there_was_x_ago">
+                <source>back.audio.text.there_was_x_ago</source>
+                <target>%time% ago</target>
+            </trans-unit>
+            <trans-unit id="back_audio_text_language">
+                <source>back.audio.text.language</source>
+                <target>Language:</target>
+            </trans-unit>
+            <trans-unit id="back_audio_text_order">
+                <source>back.audio.text.order</source>
+                <target>Order</target>
+            </trans-unit>
+            <trans-unit id="back_audio_tooltip_ordered_by_publication_date">
+                <source>back.audio.tooltip.ordered_by_publication_date</source>
+                <target><![CDATA[Ordered by<br />publication date]]></target>
+            </trans-unit>
+            <trans-unit id="back_audio_tooltip_ordered_by_timecode">
+                <source>back.audio.tooltip.ordered_by_timecode</source>
+                <target><![CDATA[Ordered by<br />timecode]]></target>
+            </trans-unit>
+            <trans-unit id="back_audio_alt_display_comments">
+                <source>back.audio.alt.display_comments</source>
+                <target>Display the comments</target>
+            </trans-unit>
+            <trans-unit id="back_audio_alt_hide_comments">
+                <source>back.audio.alt.hide_comments</source>
+                <target>Hide the comments</target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_you_can_access_the_audio">
+                <source>back.audio.title.you_can_access_the_audio</source>
+                <target>you can now watch the audio file</target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_glad_to_see_you_again">
+                <source>back.audio.title.glad_to_see_you_again</source>
+                <target>Pleased to welcome you</target>
+            </trans-unit>
+            <trans-unit id="back_audio_input_name">
+                <source>back.audio.input.name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="back_audio_input_tags_separated_by_comas">
+                <source>back.audio.input.tags_separated_by_comas</source>
+                <target>Tags separated by comas</target>
+            </trans-unit>
+            <trans-unit id="back_audio_input_description">
+                <source>back.audio.input.description</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="back_audio_input_status_public">
+                <source>back.audio.input.status_public</source>
+                <target>Public</target>
+            </trans-unit>
+            <trans-unit id="back_audio_input_status_private">
+                <source>back.audio.input.status_private</source>
+                <target>Private</target>
+            </trans-unit>
+            <trans-unit id="back_audio_input_status_unlisted">
+                <source>back.audio.input.status_unlisted</source>
+                <target>Unlisted</target>
+            </trans-unit>
+            <trans-unit id="back_audio_textarea_add_description">
+                <source>back.audio.textarea.add_description</source>
+                <target>Add a description...</target>
+            </trans-unit>
+            <trans-unit id="back_audio_button_save">
+                <source>back.audio.button.save</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="back_audio_button_export">
+                <source>back.audio.button.export</source>
+                <target>Export</target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_rewind">
+                <source>back.audio.title.rewind</source>
+                <target>Back to beginning</target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_go_to_next_comment">
+                <source>back.audio.title.go_to_next_comment</source>
+                <target>Go to next comment</target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_go_to_previous_comment">
+                <source>back.audio.title.go_to_previous_comment</source>
+                <target>Go to previous comment</target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_back_from_10s">
+                <source>back.audio.title.back_from_10s</source>
+                <target>Back from 10s</target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_hide_markers">
+                <source>back.audio.title.hide_markers</source>
+                <target>Hide markers</target>
+            </trans-unit>
+            <trans-unit id="back_audio_title_mute">
+                <source>back.audio.title.mute</source>
+                <target>Mute</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_anonymous">
+                <source>back.audio.js.anonymous</source>
+                <target>Anonymous</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_change_id">
+                <source>back.audio.js.change_id</source>
+                <target>Change ID</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_email_address_not_valid">
+                <source>back.audio.js.email_address_not_valid</source>
+                <target>This email address is not valid.</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_error_sending_data">
+                <source>back.audio.js.error_sending_data</source>
+                <target>Error while sending data.</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_error_saving_email_address">
+                <source>back.audio.js.error_saving_email_address</source>
+                <target>Error while saving your email address.</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_error_occured_during_identification">
+                <source>back.audio.js.error_occured_during_identification</source>
+                <target>An error occurred during your identification.</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_thanks_can_begin_commenting">
+                <source>back.audio.js.thanks_can_begin_commenting</source>
+                <target>Thank you! You will be able to comment on the audio file.</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_choose_this_profile">
+                <source>back.audio.js.choose_this_profile</source>
+                <target>Choose this profile</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_see_the_comment">
+                <source>back.audio.js.see_the_comment</source>
+                <target>See the comment</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_there_was_one_minute">
+                <source>back.audio.js.there_was_one_minute</source>
+                <target>1 minute ago</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_answer">
+                <source>back.audio.js.answer</source>
+                <target>Answer</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_type_in_answer">
+                <source>back.audio.js.type_in_answer</source>
+                <target>Enter your answer</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_send">
+                <source>back.audio.js.send</source>
+                <target>Send</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_loading">
+                <source>back.audio.js.loading</source>
+                <target>Loading</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_comments">
+                <source>back.audio.js.comments</source>
+                <target>comments</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_comment">
+                <source>back.audio.js.comment</source>
+                <target>comment</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_resolved">
+                <source>back.audio.js.resolved</source>
+                <target>Resolved</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_rewind">
+                <source>back.audio.js.rewind</source>
+                <target>Rewind</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_hide_markers">
+                <source>back.audio.js.hide_markers</source>
+                <target>Hide markers</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_back_from_10s">
+                <source>back.audio.js.back_from_10s</source>
+                <target>Back from 10s</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_go_to_next_comment">
+                <source>back.audio.js.go_to_next_comment</source>
+                <target>Go to next comment</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_go_to_previous_comment">
+                <source>back.audio.js.go_to_previous_comment</source>
+                <target>Go to previous comment</target>
+            </trans-unit>
+            <trans-unit id="back_audio_js_title">
+                <source>back.audio.js.title</source>
+                <target>Comment on the audio file *|AUDIO_NAME|*</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

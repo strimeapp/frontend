@@ -1,0 +1,277 @@
+{% trans_default_domain 'front_faq' %}
+{% extends '::front_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('home') }}faq" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="{{ 'front.faq.meta.description'|trans }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'front.faq.meta.description'|trans }}">
+{% endblock %}
+
+{% block title %}Strime | {{ 'front.faq.meta.title'|trans }}{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'front_header.html.twig' %}
+
+	<div class="wrapper">
+		<h1>{{ 'front.faq.title.frequent_asked_questions'|trans }}</h1>
+
+		<div class="excerpt">
+			{{ 'front.faq.excerpt.find_below_answers_to'|trans }}
+		</div>
+
+		<h2>{{ 'front.faq.title.first_steps'|trans }}</h2>
+
+		<div>
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.change_language'|trans }}" data-target="#faq-change-language">
+				{{ 'front.faq.link.change_language'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-change-language">
+				<p>
+					{{ 'front.faq.text.yes_language_selector'|trans }}
+				</p>
+				<p>
+					{{ 'front.faq.text.languages_available'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.how_can_i_have_a_profile_picture'|trans }}" data-target="#faq-change-avatar">
+				{{ 'front.faq.link.how_can_i_have_a_profile_picture'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-change-avatar">
+				<p>
+					{{ 'front.faq.text.profile_picture_automatically_collected'|trans|raw }}
+				</p>
+				<p>
+					{{ 'front.faq.text.can_also_change_picture_in_my_account'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.available_tablet_phone'|trans }}" data-target="#faq-available-mobile">
+				{{ 'front.faq.link.available_tablet_phone'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-available-mobile">
+				<p>
+					{{ 'front.faq.text.screen_size_not_big_enough'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="Puis-je importer des fichiers son ou images ?" data-target="#faq-import-image">
+				{{ 'front.faq.link.can_i_import_images'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-import-image">
+				<p>
+					{{ 'front.faq.text.features_not_available_yet'|trans }}
+				</p>
+			</div>
+		</div>
+
+		<h2>{{ 'front.faq.title.videos'|trans }}</h2>
+
+		<div>
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.which_format_can_i_import'|trans }}" data-target="#faq-video-format">
+				{{ 'front.faq.link.which_format_can_i_import'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-video-format">
+				<p>
+					{{ 'front.faq.text.strime_wants_to_be_the_simplest'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.max_resolution'|trans }}" data-target="#faq-video-maxsize">
+				{{ 'front.faq.link.max_resolution'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-video-maxsize">
+				<p>
+					{{ 'front.faq.text.you_can_use_any_resolution'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.why_conversion_phase'|trans }}" data-target="#faq-why-conversion">
+				{{ 'front.faq.link.why_conversion_phase'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-why-conversion">
+				<p>
+					{{ 'front.faq.text.ensure_compatibility'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.can_i_mount_videos'|trans }}" data-target="#faq-video-production">
+				{{ 'front.faq.link.can_i_mount_videos'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-video-production">
+				<p>
+					{{ 'front.faq.text.platform_to_share_videos'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.what_if_i_stop_my_subscription'|trans }}" data-target="#faq-video-unsubscribe">
+				{{ 'front.faq.link.what_if_i_stop_my_subscription'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-video-unsubscribe">
+				<p>
+					{{ 'front.faq.text.will_keep_your_videos_2_months'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.can_i_share_videos_on_social_network'|trans }}" data-target="#faq-video-social-share">
+				{{ 'front.faq.link.can_i_share_videos_on_social_network'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-video-social-share">
+				<p>
+					{{ 'front.faq.text.no_validation_platform'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.can_i_replace_a_file_by_another'|trans }}" data-target="#faq-video-replace">
+				{{ 'front.faq.link.can_i_replace_a_file_by_another'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-video-replace">
+				<p>
+					{{ 'front.faq.text.no_corrections_implies_radical_changes'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.can_we_download_a_video_from_strime_interface'|trans }}" data-target="#faq-video-download">
+				{{ 'front.faq.link.can_we_download_a_video_from_strime_interface'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-video-download">
+				<p>
+					{{ 'front.faq.text.not_yet_this_will_come_later'|trans({'%link_start%': '<a href="' ~ url('home') ~ '#stay-connected" title="' ~ 'front.faq.text.contact_us'|trans ~ '">', '%link_end%': '</a>'})|raw }}
+				</p>
+			</div>
+		</div>
+
+		<h2>{{ 'front.faq.title.comments'|trans }}</h2>
+
+		<div>
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.why_are_some_comments_anonymous'|trans }}" data-target="#faq-anonymous-comment">
+				{{ 'front.faq.link.why_are_some_comments_anonymous'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-anonymous-comment">
+				<p>
+					{{ 'front.faq.text.people_not_connected'|trans|raw }}
+				</p>
+				<p>
+					{{ 'front.faq.text.since_2016_mandatory_to_identify_yourself'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.do_my_clients_have_to_create_an_account'|trans }}" data-target="#faq-comment-account-creation">
+				{{ 'front.faq.link.do_my_clients_have_to_create_an_account'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-comment-account-creation">
+				<p>
+					{{ 'front.faq.text.your_clients_will_have_to_provide_email'|trans }}
+				</p>
+			</div>
+		</div>
+
+		<h2>{{ 'front.faq.title.users_accounts'|trans }}</h2>
+
+		<div>
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.how_can_i_know_how_much_available_storage_i_have'|trans }}" data-target="#faq-storage-used">
+				{{ 'front.faq.link.how_can_i_know_how_much_available_storage_i_have'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-storage-used">
+				<p>
+					{{ 'front.faq.text.just_have_to_click_on_your_name'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.many_people_of_my_company_want_to_use_strime'|trans }}" data-target="#faq-multiple-users">
+				{{ 'front.faq.link.many_people_of_my_company_want_to_use_strime'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-multiple-users">
+				<p>
+					{{ 'front.faq.text.multi_account_feature_not_available'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.can_i_share_with_someone_who_doesnt_have_account'|trans }}" data-target="#faq-share-no-account">
+				{{ 'front.faq.link.can_i_share_with_someone_who_doesnt_have_account'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-share-no-account">
+				<p>
+					{{ 'front.faq.text.of_course_this_is_the_point'|trans }}
+				</p>
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.can_i_connect_myself_with_webservice'|trans }}" data-target="#faq-use-webservice-account">
+				{{ 'front.faq.link.can_i_connect_myself_with_webservice'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-use-webservice-account">
+				<p>
+					{{ 'front.faq.text.yes_you_can_use_google_or_facebook'|trans }}
+				</p>
+                <img src="{{ asset('bundles/strimefront/img/faq/faq-use-webservice-account.png') }}" title="{{ 'front.faq.alt.more_details'|trans }}" alt="{{ 'front.faq.alt.more_details'|trans }}">
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.how_to_revoke_access'|trans }}" data-target="#faq-revoke-access-to-webservices">
+				{{ 'front.faq.link.how_to_revoke_access'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-revoke-access-to-webservices">
+				<p>
+					{{ 'front.faq.text.use_integrations_tab'|trans }}
+				</p>
+				<p>
+					{{ 'front.faq.text.google_apps_manager'|trans({'%link_start%': '<a href="https://myaccount.google.com/u/1/permissions?pageId=none" title="' ~ 'front.faq.text.access_this_page'|trans ~ '" target="_blank">', '%link_end%': '</a>'})|raw }}
+				</p>
+                <img src="{{ asset('bundles/strimefront/img/faq/faq-revoke-access-to-webservices.png') }}" title="{{ 'front.faq.alt.more_details'|trans }}" alt="{{ 'front.faq.alt.more_details'|trans }}">
+			</div>
+
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.how_to_change_locale'|trans }}" data-target="#faq-change-language-of-account">
+				{{ 'front.faq.link.how_to_change_locale'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-change-language-of-account">
+				<p>
+					{{ 'front.faq.text.in_your_account_you_can_change_locale'|trans }}
+				</p>
+                <img src="{{ asset('bundles/strimefront/img/faq/change-language-of-account.png') }}" title="{{ 'front.faq.alt.more_details'|trans }}" alt="{{ 'front.faq.alt.more_details'|trans }}">
+			</div>
+		</div>
+
+		<!--<h2>{{ 'front.faq.title.payments_billing'|trans }}</h2>
+
+		<div>
+		</div>-->
+
+		<h2>{{ 'front.faq.title.data_security'|trans }}</h2>
+
+		<div>
+			<a href="#" class="faq-question" title="{{ 'front.faq.link.what_guarantees_the_security_of_my_data'|trans }}" data-target="#faq-data-privacy">
+				{{ 'front.faq.link.what_guarantees_the_security_of_my_data'|trans }}
+			</a>
+			<div class="faq-answer" id="faq-data-privacy">
+				<p>
+					{{ 'front.faq.text.strime_deploys_important_means'|trans }}
+				</p>
+				<p>
+					{{ 'front.faq.text.for_safety_of_transactions'|trans }}
+				</p>
+			</div>
+		</div>
+
+		<div>
+			{{ 'front.faq.text.cant_find_answer'|trans({'%link_start%': '<a href="' ~ url('contact') ~ '" title="' ~ 'front.faq.aalt.contact_us'|trans ~ '">', '%link_end%': '</a>'})|raw }}
+		</div>
+
+	</div><!-- ./Wrapper -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    {% javascripts
+        '@StrimeFrontBundle/Resources/public/js/faq.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

@@ -1,0 +1,211 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_audios') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin - Audio files">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord, audio">
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        'bundles/strimeadmin/js/datatables-1.10.12/datatables.min.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/sub-menu.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}Admin | Audio | Strime{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+	{% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="sub-menu">
+        <div class="wrapper">
+            <ul>
+                <li class="active">
+                    <a href="{{ path('admin_audios') }}" title="Audio">Audio</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_encoding_jobs_audio') }}" title="Encodages">Encodages</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="admin-content">
+    	<h1>Gestion des fichiers audio</h1>
+
+        {% for flash_message in app.session.flashbag.get('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% for flash_message in app.session.flashbag.get('error') %}
+            <div class="alert alert-danger" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% if audios_list is defined %}
+        <div class="white-box">
+	        <h2>Liste des fichiers audio</h2>
+
+	        <div class="table-responsive margin-top">
+		        <table class="table table-hover table-condensed dataTable">
+		        	<thead>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>
+								Nom
+							</td>
+							<td>
+								Utilisateur
+							</td>
+                            <td>
+                                Projet
+                            </td>
+							<td>
+                                Date d'upload
+                            </td>
+                            <td>
+                                Nombre de commentaires
+                            </td>
+                            <td>
+                                Poids
+                            </td>
+                            <td>
+                                Extension
+                            </td>
+                            <td>
+                                Actions
+                            </td>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div><!-- ./White box -->
+		{% endif %}
+    </div><!-- ./Admin content -->
+
+
+    <div class="modal fade" id="deleteAssetModal" tabindex="-1" role="dialog" aria-labelledby="deleteAssetLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="Fermer la fenêtre" title="Fermer la fenêtre"></span></button>
+                    <h4 class="modal-title">Supprimer ce fichier audio</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Yo mec ! T'es sûr de vouloir supprimer ce fichier audio ?</p>
+                    <p>Celui-ci, ainsi que les commentaires associés seront intégralement supprimés !</p>
+                    <p>Supprimer ce fichier audio libèrera également de l'espace dans Amazon.</p>
+                    <p><strong>Cette opération est irréversible.</strong></p>
+
+                    <hr>
+
+                    <p>Pour confirmer ton souhait de supprimer ce fichier audio, saisis SUPPRIMER dans le champ ci-dessous :</p>
+
+                    <input type="text" id="deletion-confirmation">
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <a href="" title="Supprimer ce fichier audio" id="confirm-asset-deletion">
+                                <button>
+                                    Oui, le supprimer
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <button data-dismiss="modal">
+                                Non, sortez-moi de là !
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+	{% javascripts
+        '@StrimeAdminBundle/Resources/public/js/datatables-1.10.12/datatables.min.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+            var dataSet = [
+                {% for audio in audios_list %}
+                    [
+                        "{{ loop.index }}",
+                        "<img src='{{ audio.thumbnail }}' class='thumbnail' alt='{{ audio.name|escape }}' title='{{ audio.name|escape }}'>",
+                        "<a href='{{ path('app_audio', {'audio_id': audio.asset_id}) }}' title='Voir le fichier audio'>{{ audio.name }}</a>",
+                        "<a href='{{ path('admin_user', {'client_id': audio.user.user_id}) }}' title='Voir l\'utilisateur'>{{ audio.user.first_name ~ " " ~ audio.user.last_name }}</a>",
+                        {% if audio.project is defined and audio.project is not null %}
+                            "<a href='{{ path('app_project', {'project_id': audio.project.project_id}) }}' title='Voir le project'>{{ audio.project.name }}</a>",
+                        {% else %}
+                            "-",
+                        {% endif %}
+                        "{{ audio.created_at.date|date("d M Y", audio.created_at.timezone)|localizeddate('medium', 'none', 'fr_FR') }}<span class='hidden'>{{ audio.created_at.date|date('U', audio.created_at.timezone) }}</span>",
+                        "{{ audio.nb_comments }}",
+                        "{{ audio.size }} Mo",
+                        ".{{ audio.extension }}",
+                        "<a href='#' class='asset-delete' data-target='{{ path('admin_audios', {'audio_id': audio.asset_id, 'action': 'delete'}) }}'><i class='fa fa-times' aria-hidden='true'></i> Supprimer</a>"
+                    ]{% if loop.last == false %},{% endif %}
+                {% endfor %}
+            ];
+
+			// Activate the datatable
+			$('.dataTable').DataTable({
+                pageLength: 25,
+                responsive: true,
+                data: dataSet,
+                dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    {extend: 'copy'},
+                    {extend: 'csv'},
+                    {extend: 'excel', title: 'ExcelExport'},
+                    {extend: 'pdf', title: 'PDFExport'},
+
+                    {
+                        extend: 'print',
+                        customize: function (win){
+                                $(win.document.body).addClass('white-bg');
+                                $(win.document.body).css('font-size', '10px');
+
+                                $(win.document.body).find('table')
+                                        .addClass('compact')
+                                        .css('font-size', 'inherit');
+                        }
+                    }
+                ],
+                'createdRow': function(row, data, dataIndex) {
+                    var $dateCell = $(row).find('td:eq(5)'); // get the last signin column
+                    var $timestampSpan = $dateCell.children('.hidden');
+                    var dateOrder = $timestampSpan.text(); // get the ISO date
+                    $dateCell.attr('data-order', dateOrder); // set it to data-order
+                }
+            });
+		});
+	</script>
+{% endblock %}

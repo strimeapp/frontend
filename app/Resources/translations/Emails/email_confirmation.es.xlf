@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_confirmation_meta_title">
+                <source>email.confirmation.meta.title</source>
+                <target>Confirmación de inscripción</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_title_welcome">
+                <source>email.confirmation.title.welcome</source>
+                <target>Bienvenido a Strime!</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_hi_first_name">
+                <source>email.confirmation.text.hi_first_name</source>
+                <target>Hola %first_name%</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_for_security_reasons_confirm_email">
+                <source>email.confirmation.text.for_security_reasons_confirm_email</source>
+                <target>Por su seguridad, debe confirmar su dirección de correo electrónico haciendo clic en el botón de abajo.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_button_confirm_email">
+                <source>email.confirmation.button.confirm_email</source>
+                <target>Confirmar mi correo electrónico</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_button_confirm_your_email">
+                <source>email.confirmation.button.confirm_your_email</source>
+                <target>Confirmar su dirección de correo electrónico</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_copy_link_in_browser">
+                <source>email.confirmation.text.copy_link_in_browser</source>
+                <target>O al copiar y pegar el siguiente enlace en su navegador:</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_see_you_soon">
+                <source>email.confirmation.text.see_you_soon</source>
+                <target>Nos vemos pronto</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_strime_team">
+                <source>email.confirmation.text.strime_team</source>
+                <target>El equipo Strime</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_you_still_have_not_confirmed_email">
+                <source>email.confirmation.text.you_still_have_not_confirmed_email</source>
+                <target>A menos que estemos equivocados, todavía no se ha confirmado su dirección de correo electrónico.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_mandatory_action">
+                <source>email.confirmation.text.mandatory_action</source>
+                <target>La confirmación de su correo electrónico es una acción indispensable para garantizar el correcto funcionamiento de Strime.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_still_possible_to_do_it">
+                <source>email.confirmation.text.still_possible_to_do_it</source>
+                <target>Todavía le es possible confirmar esto haciendo clic ahora en el botón de abajo.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_will_have_to_deactivate_account">
+                <source>email.confirmation.text.will_have_to_deactivate_account</source>
+                <target>Notamos que no ha habido recientemente activdades en su cuenta, por lo que su cuenta Strime seraa desactivada en un plazo de %days% día.|Notamos que no ha habido recientemente activdades en su cuenta, por lo que su cuenta Strime seraa desactivada en un plazo de %days% días.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_will_keep_data">
+                <source>email.confirmation.text.will_keep_data</source>
+                <target>Conservaremos sus datos personales, para que a futuro pueda reactivarla, si usted lo desea.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

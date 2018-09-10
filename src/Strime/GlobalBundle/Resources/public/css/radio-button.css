@@ -1,0 +1,58 @@
+/* The radio-button - the box around the slider */
+
+.radio-button {
+	position: relative;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+
+
+/* Hide default HTML checkbox */
+
+.radio-button input {
+	display: none;
+}
+
+
+/* The slider */
+
+.radio-button .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #FFF;
+	border: solid 1px #898B8E;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+.radio-button .slider:before {
+	position: absolute;
+	content: "";
+	height: 14px;
+	width: 14px;
+	left: 2px;
+	bottom: 2px;
+	background-color: #FFF;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+.radio-button input:checked + .slider {
+	background-color: #FFF;
+	border-color: #0CAC9A;
+}
+.radio-button input:focus + .slider {
+	box-shadow: 0 0 1px #FFF;
+}
+.radio-button input:checked + .slider:before {
+	background-color: #0CAC9A;
+}
+.radio-button .slider.round {
+	border-radius: 15px;
+}
+.radio-button .slider.round:before {
+	border-radius: 50%;
+}

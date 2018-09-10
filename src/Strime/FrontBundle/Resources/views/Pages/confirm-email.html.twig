@@ -1,0 +1,63 @@
+{% trans_default_domain 'front_confirm_email' %}
+{% extends '::front_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('home') }}confirm-email" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="{{ 'front.confirm_email.meta.description'|trans }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'front.confirm_email.meta.keywords'|trans }}">
+{% endblock %}
+
+{% block title %}Strime | {{ 'front.confirm_email.meta.title'|trans }}{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'front_header.html.twig' %}
+
+	<div class="wrapper">
+		<h1>{{ 'front.confirm_email.title.confirm_your_email_address'|trans }}</h1>
+
+		<div class="row">
+			<div class="col-sm-12">
+
+	            {% for flash_message in app.session.flashbag.get('success') %}
+	                <div class="alert alert-success" role="alert">
+	                    {{ flash_message|raw }}
+	                </div>
+	            {% endfor %}
+
+	            {% for flash_message in app.session.flashbag.get('error') %}
+	                <div class="alert alert-danger" role="alert">
+	                    {{ flash_message|raw }}
+	                </div>
+	            {% endfor %}
+
+			</div>
+		</div>
+	</div><!-- ./Wrapper -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+	{% if email_is_confirmed == true %}
+	    <script type="text/javascript">
+	    	$(document).ready(function() {
+
+	    		// Reload the page after 8 seconds
+	    		setTimeout(function(){
+
+					document.location.href = "{{ url('app_dashboard') }}";
+
+	    		}, 8000);
+
+	    	});
+	    </script>
+	{% endif %}
+{% endblock %}

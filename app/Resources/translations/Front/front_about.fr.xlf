@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_about_meta_title">
+                <source>front.about.meta.title</source>
+                <target>Qui sommes-nous ?</target>
+            </trans-unit>
+            <trans-unit id="front_about_meta_description">
+                <source>front.about.meta.description</source>
+                <target>L'équipe en quelques mots</target>
+            </trans-unit>
+            <trans-unit id="front_about_meta_keywords">
+                <source>front.about.meta.keywords</source>
+                <target>strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, équipe, membres, fondateurs</target>
+            </trans-unit>
+                <trans-unit id="front_about_title_who_are_we">
+                    <source>front.about.title.who_are_we</source>
+                    <target>Qui sommes-nous ?</target>
+                </trans-unit>
+            <trans-unit id="front_about_text_strime_born_from">
+                <source>front.about.text.strime_born_from</source>
+                <target><![CDATA[<strong>Strime</strong> est né du constat que la gestion des corrections clients dans un projet vidéo est certes décisive à son bon déroulement, mais pas toujours bien organisée.]]></target>
+            </trans-unit>
+            <trans-unit id="front_about_text_strime_online_tool">
+                <source>front.about.text.strime_online_tool</source>
+                <target><![CDATA[<strong>Strime</strong> est un outil en ligne destiné à simplifier les échanges entre les professionnels de la vidéo et leurs clients via une interface qui permet de laisser des commentaires directement sur l’écran.]]></target>
+            </trans-unit>
+            <trans-unit id="front_about_text_we_want_that_feedback_phase">
+                <source>front.about.text.we_want_that_feedback_phase</source>
+                <target>Nous souhaitons que la phase de correction ne soit plus un moment stressant dans le suivi d’un projet.</target>
+            </trans-unit>
+            <trans-unit id="front_about_text_if_we_succeed">
+                <source>front.about.text.if_we_succeed</source>
+                <target>Si nous arrivons à rendre cette phase plus agréable, alors nous aurons rempli notre mission.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

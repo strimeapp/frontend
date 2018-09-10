@@ -1,0 +1,51 @@
+{% trans_default_domain 'global_pdf_invoice' %}
+
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <!-- Charset definition -->
+        <meta charset="UTF-8" />
+
+        <!-- Mobile properties -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block link_canonical %}
+            <link rel="canonical" href="https://www.strime.io/" />
+        {% endblock %}
+
+        <title>
+            {% block title %}Strime.io | Feedbacks are sexy{% endblock %}
+        </title>
+
+        <!-- Meta tags -->
+        {% block meta_tags %}
+            <meta name="description" content="Feedbacks are sexy">
+            <meta name="author" content="Strime">
+            <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle">
+        {% endblock %}
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ absolute_url( asset('bundles/strimeback/css/bootstrap.css') ) }}">
+            <link rel="stylesheet" href="{{ absolute_url( asset('bundles/strimeback/css/invoice.css') ) }}">
+        {% endblock %}
+
+        <!-- Favicon -->
+        <link rel="icon shortcut" type="image/x-icon" href="{{ asset('bundles/strimeback/img/favicon.ico') }}" />
+    </head>
+    <body>
+        {% block header %}
+            <header>
+                <img src="{{ absolute_url( asset('bundles/strimefront/img/logo-strime.svg') ) }}" alt="Strime" title="Strime">
+            </header>
+        {% endblock %}
+
+        {% block body %}{% endblock %}
+
+        {% block footer %}
+            <footer>
+                SAS Strime 5 rue Javelin Pagnon 42000 Saint-Étienne - Société par actions simplifiées au capital de 3000 €<br />
+                812 538 718 RCS Saint-Étienne - {{ 'global.pdf_invoice.text.made_with_love'|trans }}
+            </footer>
+        {% endblock %}
+    </body>
+</html>

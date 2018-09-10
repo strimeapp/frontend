@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_contact_meta_description">
+                <source>front.contact.meta.description</source>
+                <target>Contact us!</target>
+            </trans-unit>
+            <trans-unit id="front_contact_meta_keywords">
+                <source>front.contact.meta.keywords</source>
+                <target>strime, strime.io, video, videos, comment, comments, application, app, workflow, collaboration, client, video producer, producer, professional, professionals, contact</target>
+            </trans-unit>
+            <trans-unit id="front_contact_meta_title">
+                <source>front.contact.meta.title</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="front_contact_title_contact_us">
+                <source>front.contact.title.contact_us</source>
+                <target>Contact us</target>
+            </trans-unit>
+            <trans-unit id="front_contact_text_use_form_below">
+                <source>front.contact.text.use_form_below</source>
+                <target>If you have any question on the way the platform works or on our pricing model, if you encounter any technical issue, or if you simply want to share with us your love for Strime, feel free to use the contact form below!</target>
+            </trans-unit>
+            <trans-unit id="front_contact_button_send">
+                <source>front.contact.button.send</source>
+                <target>Send</target>
+            </trans-unit>
+            <trans-unit id="front_contact_loader_loading">
+                <source>front.contact.loader.loading</source>
+                <target>Loading</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

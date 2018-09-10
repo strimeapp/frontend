@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_comments_notification_meta_title">
+                <source>email.comments_notification.meta.title</source>
+                <target>Notification de commentaires</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_title_your_files_have_been_commented">
+                <source>email.comments_notification.title.your_files_have_been_commented</source>
+                <target>Vos fichiers ont été commentés</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_text_will_find_below_notifications">
+                <source>email.comments_notification.text.will_find_below_notifications</source>
+                <target>Vous trouverez ci-dessous les commentaires postés sur vos fichiers depuis la dernière notification.</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_text_hi_first_name">
+                <source>email.comments_notification.text.hi_first_name</source>
+                <target>Bonjour %first_name%</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_text_new_comment_on_video_autologin">
+                <source>email.comments_notification.text.new_comment_on_video_autologin</source>
+                <target>Vous avez de nouveaux commentaires sur la vidéo %link_start%%video_name%%link_end%.</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_text_new_comment_on_image_autologin">
+                <source>email.comments_notification.text.new_comment_on_image_autologin</source>
+                <target>Vous avez de nouveaux commentaires sur l'image %link_start%%image_name%%link_end%.</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_text_here_is_the_message">
+                <source>email.comments_notification.text.here_is_the_message</source>
+                <target>Voici le message :</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_text_details_about_comment">
+                <source>email.comments_notification.text.details_about_comment</source>
+                <target>Informations sur ce commentaire :</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_text_at_what_time">
+                <source>email.comments_notification.text.at_what_time</source>
+                <target>À quel moment de la vidéo :</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_text_answer_to_comment">
+                <source>email.comments_notification.text.answer_to_comment</source>
+                <target>Réponse à un précédent commentaire :</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_text_author_of_the_comment">
+                <source>email.comments_notification.text.author_of_the_comment</source>
+                <target>Auteur du commentaire :</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_text_see_you_soon">
+                <source>email.comments_notification.text.see_you_soon</source>
+                <target>À bientôt</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_text_strime_team">
+                <source>email.comments_notification.text.strime_team</source>
+                <target>L'équipe Strime</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_text_no">
+                <source>email.comments_notification.text.no</source>
+                <target>Non</target>
+            </trans-unit>
+            <trans-unit id="email_comments_notification_text_yes">
+                <source>email.comments_notification.text.yes</source>
+                <target>Oui</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

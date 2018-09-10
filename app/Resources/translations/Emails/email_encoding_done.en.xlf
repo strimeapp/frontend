@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_encoding_done_meta_title">
+                <source>email.encoding_done.meta.title</source>
+                <target>The encoding of your file is complete</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_title_video_encoded">
+                <source>email.encoding_done.title.video_encoded</source>
+                <target>Your video is encoded!</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_title_audio_encoded">
+                <source>email.encoding_done.title.audio_encoded</source>
+                <target>Your audio file is encoded!</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_title_file_encoded">
+                <source>email.encoding_done.title.file_encoded</source>
+                <target>Your file is encoded!</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_hi_first_name">
+                <source>email.encoding_done.text.hi_first_name</source>
+                <target>Hi %first_name%</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_video_encoding_done">
+                <source>email.encoding_done.text.video_encoding_done</source>
+                <target>The encoding of your video has just finished.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_audio_encoding_done">
+                <source>email.encoding_done.text.audio_encoding_done</source>
+                <target>The encoding of your audio file has just finished.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_file_encoding_done">
+                <source>email.encoding_done.text.file_encoding_done</source>
+                <target>The encoding of your file has just finished.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_people_invited_video">
+                <source>email.encoding_done.text.people_invited_video</source>
+                <target>The following people have been invited to comment on this video: %emails_list%.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_people_invited_audio">
+                <source>email.encoding_done.text.people_invited_audio</source>
+                <target>The following people have been invited to comment on this audio file: %emails_list%.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_people_invited_file">
+                <source>email.encoding_done.text.people_invited_file</source>
+                <target>The following people have been invited to comment on this file: %emails_list%.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_find_video_on_strime">
+                <source>email.encoding_done.text.find_video_on_strime</source>
+                <target>Watch this video on %link_start%Strime%link_end%.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_find_audio_on_strime">
+                <source>email.encoding_done.text.find_audio_on_strime</source>
+                <target>Watch this audio file on %link_start%Strime%link_end%.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_find_file_on_strime">
+                <source>email.encoding_done.text.find_file_on_strime</source>
+                <target>Watch this file on %link_start%Strime%link_end%.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_find_video_on_strime_and_share">
+                <source>email.encoding_done.text.find_video_on_strime_and_share</source>
+                <target>Watch this video on %link_start%Strime%link_end%, then share it with your clients.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_find_audio_on_strime_and_share">
+                <source>email.encoding_done.text.find_audio_on_strime_and_share</source>
+                <target>Watch this audio file on %link_start%Strime%link_end%, then share it with your clients.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_find_file_on_strime_and_share">
+                <source>email.encoding_done.text.find_file_on_strime_and_share</source>
+                <target>Watch this file on %link_start%Strime%link_end%, then share it with your clients.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_see_you_soon">
+                <source>email.encoding_done.text.see_you_soon</source>
+                <target>See you soon</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_done_text_strime_team">
+                <source>email.encoding_done.text.strime_team</source>
+                <target>Strime's team</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

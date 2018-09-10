@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_modal_confirm_email_alt_close_window">
+                <source>back.modal_confirm_email.alt.close_window</source>
+                <target>Cierre la ventana</target>
+            </trans-unit>
+            <trans-unit id="back_modal_confirm_email_title_email_unconfirmed">
+                <source>back.modal_confirm_email.title.email_unconfirmed</source>
+                <target>Dirección de correo electrónico no confirmado</target>
+            </trans-unit>
+            <trans-unit id="back_modal_confirm_email_text_please_confirm_email_address">
+                <source>back.modal_confirm_email.text.please_confirm_email_address</source>
+                <target>Por favor confirmar la dirección de correo electrónico que usted ha recibido a %user_email%.</target>
+            </trans-unit>
+            <trans-unit id="back_modal_confirm_email_text_account_will_be_suspended">
+                <source>back.modal_confirm_email.text.account_will_be_suspended</source>
+                <target>Si usted no confirma, sera suspendida dentro de %user_days_before_deactivation% día.|Si usted no confirma, sera suspendida dentro de %user_days_before_deactivation% días.</target>
+            </trans-unit>
+            <trans-unit id="back_modal_confirm_email_button_resend_confirmation_email">
+                <source>back.modal_confirm_email.button.resend_confirmation_email</source>
+                <target>Reenviar el correo de confirmación a su e-mail</target>
+            </trans-unit>
+            <trans-unit id="back_modal_confirm_email_alt_edit_email_address">
+                <source>back.modal_confirm_email.alt.edit_email_address</source>
+                <target>Modificar su dirección de e-mail</target>
+            </trans-unit>
+            <trans-unit id="back_modal_confirm_email_link_change_my_email_address">
+                <source>back.modal_confirm_email.link.change_my_email_address</source>
+                <target>Yo quiero %link_start%cambiar mi dirección de correo electrónico%link_end%.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

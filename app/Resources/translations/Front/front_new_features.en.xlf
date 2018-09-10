@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_new_features_meta_description">
+                <source>front.new_features.meta.description</source>
+                <target>Any question? We probably already have the answer...</target>
+            </trans-unit>
+            <trans-unit id="front_new_features_meta_keywords">
+                <source>front.new_features.meta.keywords</source>
+                <target>strime, strime.io, video, videos, comment, comments, application, app, workflow, collaboration, client, video producer, producer, professional, professionals, new features</target>
+            </trans-unit>
+            <trans-unit id="front_new_features_title_new_features">
+                <source>front.new_features.title.new_features</source>
+                <target>New features</target>
+            </trans-unit>
+            <trans-unit id="front_new_features_text_since_october_2016">
+                <source>front.new_features.text.since_october_2016</source>
+                <target>Since october 2016, we have set up a banner to announce the new features we are adding to Strime, directly inside the application.</target>
+            </trans-unit>
+            <trans-unit id="front_new_features_text_find_below_the_list">
+                <source>front.new_features.text.find_below_the_list</source>
+                <target>You will find below the list of announced features since the launch of this banner.</target>
+            </trans-unit>
+            <trans-unit id="front_new_features_link_learn_more">
+                <source>front.new_features.link.learn_more</source>
+                <target>Learn more</target>
+            </trans-unit>
+            <trans-unit id="front_new_features_text_more_information">
+                <source>front.new_features.text.more_information</source>
+                <target>Do you want more information on a feature? %link_start%Contact-us%link_end%.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

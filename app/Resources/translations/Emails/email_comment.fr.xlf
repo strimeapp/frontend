@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_comment_meta_title">
+                <source>email.comment.meta.title</source>
+                <target>Un commentaire a été laissé sur la vidéo %video_name%</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_hi_first_name">
+                <source>email.comment.text.hi_first_name</source>
+                <target>Bonjour %first_name%</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_new_comment_on_video_autologin">
+                <source>email.comment.text.new_comment_on_video_autologin</source>
+                <target>Vous avez un nouveau commentaire sur la video %link_start%%video_name%%link_end%.</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_new_comment_on_video">
+                <source>email.comment.text.new_comment_on_video</source>
+                <target>Vous avez un nouveau commentaire sur la video %link_start%%video_name%%link_end%.</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_here_is_the_message">
+                <source>email.comment.text.here_is_the_message</source>
+                <target>Voici son message :</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_details_about_comment">
+                <source>email.comment.text.details_about_comment</source>
+                <target>Informations sur ce commentaire :</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_at_what_time">
+                <source>email.comment.text.at_what_time</source>
+                <target>À quel moment de la vidéo :</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_answer_to_comment">
+                <source>email.comment.text.answer_to_comment</source>
+                <target>Réponse à un précédent commentaire :</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_author_of_the_comment">
+                <source>email.comment.text.author_of_the_comment</source>
+                <target>Auteur du commentaire :</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_hi">
+                <source>email.comment.text.hi</source>
+                <target>Bonjour</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_owner_of_video_left_a_comment">
+                <source>email.comment.text.owner_of_video_left_a_comment</source>
+                <target>Le propriétaire de la video %link_start%%video_name%%link_end% vous a laissé un commentaire.</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_see_you_soon">
+                <source>email.comment.text.see_you_soon</source>
+                <target>À bientôt</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_strime_team">
+                <source>email.comment.text.strime_team</source>
+                <target>L'équipe Strime</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_no">
+                <source>email.comment.text.no</source>
+                <target>Non</target>
+            </trans-unit>
+            <trans-unit id="email_comment_text_yes">
+                <source>email.comment.text.yes</source>
+                <target>Oui</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

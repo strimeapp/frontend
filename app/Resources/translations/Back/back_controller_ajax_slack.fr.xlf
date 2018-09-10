@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_controller_ajax_slack_send_test_well_done">
+                <source>back.controller_ajax_slack.send_test.well_done</source>
+                <target>Bien joué !</target>
+            </trans-unit>
+                <trans-unit id="back_controller_ajax_slack_send_test_successful_test">
+                    <source>back.controller_ajax_slack.send_test.successful_test</source>
+                    <target>Test effectué avec succès</target>
+                </trans-unit>
+                <trans-unit id="back_controller_ajax_slack_send_test_webhook_perfectly_set_up">
+                    <source>back.controller_ajax_slack.send_test.webhook_perfectly_set_up</source>
+                    <target>Votre webhook est parfaitement configuré.</target>
+                </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,145 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_users') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin - Nouvelles fonctionnalités">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord">
+{% endblock %}
+
+{% block title %}Admin | Nouvelles fonctionnalités | Strime{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+	{% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="admin-content" class="new-features">
+    	<h1>Gestion des nouvelles fonctionnalités</h1>
+
+        {% for flash_message in app.session.flashbag.get('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% for flash_message in app.session.flashbag.get('error') %}
+            <div class="alert alert-danger" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        <div class="white-box encoding-jobs-list">
+	        <h2 class="pull-left">Publier un message</h2>
+
+	        <div class="pull-right">
+	        	<a href="{{ path('admin_new_features') }}" title="Retour à la liste">
+		        	<button id="add-new-feature">
+		        		Retour à la liste
+		        	</button>
+		        </a>
+	        </div>
+	        <div class="clear"></div>
+
+	        <div class="margin-top">
+		        {{ form_start(new_feature_form, {'method': 'post', 'action': path('admin_add_new_feature') }) }}
+
+		        	<div class="row">
+	    				<div class="col-sm-6">
+	    					<div class="form-group">
+	                            {{ form_label(new_feature_form.titleFr, 'Titre [FR]', {'label_attr': {'class': 'control-label'}}) }}
+	                            {{ form_widget(new_feature_form.titleFr, {'attr': {'placeholder': 'Titre [FR]'}}) }}
+	                            <div class="clear"></div>
+	                        </div>
+	    				</div>
+                        <div class="col-sm-6">
+	    					<div class="form-group">
+	                            {{ form_label(new_feature_form.blogUrlFr, 'URL de l\'article correspondant sur le blog [FR]', {'label_attr': {'class': 'control-label'}}) }}
+	                            {{ form_widget(new_feature_form.blogUrlFr, {'attr': {'placeholder': 'http://www.blog.strime.io/...'}}) }}
+	                            <div class="clear"></div>
+	                        </div>
+	    				</div>
+	    			</div>
+
+		        	<div class="row">
+	    				<div class="col-sm-6">
+                            <div class="form-group">
+                                {{ form_label(new_feature_form.titleEn, 'Titre [EN]', {'label_attr': {'class': 'control-label'}}) }}
+                                {{ form_widget(new_feature_form.titleEn, {'attr': {'placeholder': 'Titre [EN]'}}) }}
+                                <div class="clear"></div>
+                            </div>
+	    				</div>
+	    				<div class="col-sm-6">
+	    					<div class="form-group">
+	                            {{ form_label(new_feature_form.blogUrlEn, 'URL de l\'article correspondant sur le blog [EN]', {'label_attr': {'class': 'control-label'}}) }}
+	                            {{ form_widget(new_feature_form.blogUrlEn, {'attr': {'placeholder': 'http://www.blog.strime.io/...'}}) }}
+	                            <div class="clear"></div>
+	                        </div>
+	    				</div>
+	    			</div>
+
+		        	<div class="row">
+	    				<div class="col-sm-6">
+                            <div class="form-group">
+                                {{ form_label(new_feature_form.titleEs, 'Titre [ES]', {'label_attr': {'class': 'control-label'}}) }}
+                                {{ form_widget(new_feature_form.titleEs, {'attr': {'placeholder': 'Titre [ES]'}}) }}
+                                <div class="clear"></div>
+                            </div>
+	    				</div>
+	    				<div class="col-sm-6">
+	    					<div class="form-group">
+	                            {{ form_label(new_feature_form.blogUrlEs, 'URL de l\'article correspondant sur le blog [ES]', {'label_attr': {'class': 'control-label'}}) }}
+	                            {{ form_widget(new_feature_form.blogUrlEs, {'attr': {'placeholder': 'http://www.blog.strime.io/...'}}) }}
+	                            <div class="clear"></div>
+	                        </div>
+	    				</div>
+	    			</div>
+
+		        	<div class="row">
+	    				<div class="col-sm-12">
+	    					<div class="form-group">
+	                            {{ form_label(new_feature_form.descriptionFr, 'Description [FR]', {'label_attr': {'class': 'control-label'}}) }}
+	                            {{ form_widget(new_feature_form.descriptionFr, {'attr': {'placeholder': 'Une description en quelques mots, pas un roman !'}}) }}
+	                            <div class="clear"></div>
+	                        </div>
+	    				</div>
+	    			</div>
+
+		        	<div class="row">
+	    				<div class="col-sm-12">
+	    					<div class="form-group">
+	                            {{ form_label(new_feature_form.descriptionEn, 'Description [EN]', {'label_attr': {'class': 'control-label'}}) }}
+	                            {{ form_widget(new_feature_form.descriptionEn, {'attr': {'placeholder': 'A short description, not a novel!'}}) }}
+	                            <div class="clear"></div>
+	                        </div>
+	    				</div>
+	    			</div>
+
+		        	<div class="row">
+	    				<div class="col-sm-12">
+	    					<div class="form-group">
+	                            {{ form_label(new_feature_form.descriptionEs, 'Description [ES]', {'label_attr': {'class': 'control-label'}}) }}
+	                            {{ form_widget(new_feature_form.descriptionEs, {'attr': {'placeholder': 'Una descripción corta, no un libro !'}}) }}
+	                            <div class="clear"></div>
+	                        </div>
+	    				</div>
+	    			</div>
+
+	    			{{ form_widget(new_feature_form.add, {'attr': {'value': 'Ajouter ce message'}}) }}
+
+		        {{ form_end(new_feature_form) }}
+			</div>
+		</div><!-- ./White box -->
+    </div><!-- ./Admin content -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}

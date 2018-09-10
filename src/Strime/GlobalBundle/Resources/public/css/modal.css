@@ -1,0 +1,169 @@
+/* Modal specific styles
+-------------------------------------------------- */
+
+.modal-content {
+	border: none;
+}
+
+.modal .modal-dialog .modal-subaction {
+	margin-top: 10px;
+	color: #FFF;
+}
+
+.modal#signupModal .modal-dialog,
+.modal#fullSignupModal .modal-dialog,
+.modal#loginModal .modal-dialog {
+	margin-top: 80px;
+	color: #393837;
+}
+.modal#signupModal .modal-header,
+.modal#fullSignupModal .modal-header,
+.modal#loginModal .modal-header {
+	border: none;
+	padding: 80px 40px 20px 40px;
+}
+.modal#signupModal .modal-header .close,
+.modal#fullSignupModal .modal-header .close,
+.modal#loginModal .modal-header .close {
+	position: absolute;
+    top: -16px;
+    right: -16px;
+    opacity: .7;
+}
+.modal#signupModal .modal-header h4,
+.modal#fullSignupModal .modal-header h4,
+.modal#loginModal .modal-header h4 {
+	font-family: 'UbuntuLight', sans-serif;
+	text-align: center;
+	font-size: 38px;
+	color: #303031;
+}
+.modal#signupModal .modal-header .close:hover,
+.modal#fullSignupModal .modal-header .close:hover,
+.modal#loginModal .modal-header .close:hover {
+	opacity: 1;
+}
+.modal#signupModal .modal-body,
+.modal#fullSignupModal .modal-body,
+.modal#loginModal .modal-body {
+	padding: 20px 40px 40px 40px;
+}
+.modal#signupModal .modal-body input,
+.modal#fullSignupModal .modal-body input,
+.modal#loginModal .modal-body input {
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 10px;
+	text-align: center;
+	color: #393837;
+}
+.modal#signupModal #form_opt_in,
+.modal#fullSignupModal #form_opt_in,
+.modal#loginModal #form_opt_in {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.modal#signupModal .modal-body input[type=checkbox],
+.modal#fullSignupModal .modal-body input[type=checkbox] {
+	display: inline-block;
+	width: auto;
+	margin-right: 10px;
+}
+.modal#signupModal .modal-body button,
+.modal#fullSignupModal .modal-body button,
+.modal#loginModal .modal-body button {
+	display: block;
+	width: 100%;
+	border: none;
+	color: #FFF;
+	padding: 10px;
+	margin-top: 20px;
+}
+.modal#fullSignupModal .modal-body #payment-details {
+	margin-bottom: 20px;
+}
+.modal#fullSignupModal .modal-body #payment-details label {
+	width: 100%;
+	margin-bottom: 5px;
+}
+.modal#fullSignupModal .modal-body #payment-details .exp-date {
+	display: inline-block;
+	width: 45%;
+}
+.modal#fullSignupModal .modal-body #payment-details .exp-date-separator {
+	display: inline-block;
+	text-align: center;
+	width: 5%;
+}
+.modal#fullSignupModal .modal-body #payment-details .payment-errors {
+	font-style: italic;
+	font-size: 16px;
+	color: #0CAC9A;
+	margin-bottom: 10px;
+}
+
+.modal#signupModal #signup-result,
+.modal#fullSignupModal #full-signup-result,
+.modal#loginModal #full-signup-result {
+	display: none;
+}
+
+.modal#loginModal #forgotten-password-block {
+	display: none;
+	height: 266px;
+}
+
+.modal .modal-loading-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: table;
+	background-color: #FFF;
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+	z-index: 100;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s linear;
+}
+.modal .modal-loading-overlay .modal-loading-overlay-inner {
+	display: table-cell;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+}
+.modal .modal-loading-overlay .modal-loading-overlay-inner .loader-container {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.modal#slackVideoTutorialModal .modal-content {
+	border-radius: 0;
+}
+.modal#slackVideoTutorialModal .modal-content .modal-header {
+	min-height: 0;
+	padding: 0;
+}
+.modal#slackVideoTutorialModal .modal-content .modal-body {
+	padding: 0;
+	height: 315px;
+}
+
+
+.modal#signupModal #google-signin,
+.modal#fullSignupModal #google-signin,
+.modal#loginModal #google-signin,
+.modal#signupModal #google-signup,
+.modal#fullSignupModal #google-signup,
+.modal#loginModal #google-signup {
+	float: left;
+}
+
+.modal#signupModal .fb-login-button,
+.modal#fullSignupModal .fb-login-button,
+.modal#loginModal .fb-login-button {
+	float: right;
+}

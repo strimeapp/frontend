@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_login_button_regenerate_password">
+                <source>front.login.button.regenerate_password</source>
+                <target>Regénérer un nouveau mot de passe</target>
+            </trans-unit>
+            <trans-unit id="front_login_button_signin">
+                <source>front.login.button.signin</source>
+                <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="front_login_loader_loading">
+                <source>front.login.loader.loading</source>
+                <target>Chargement...</target>
+            </trans-unit>
+            <trans-unit id="front_login_link_no_account">
+                <source>front.login.link.no_account</source>
+                <target>Vous n'avez pas de compte ?</target>
+            </trans-unit>
+            <trans-unit id="front_login_link_signup">
+                <source>front.login.link.signup</source>
+                <target>Inscrivez-vous</target>
+            </trans-unit>
+            <trans-unit id="front_login_link_signin">
+                <source>front.login.link.signin</source>
+                <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="front_login_button_close_window">
+                <source>front.login.button.close_window</source>
+                <target>Fermer la fenêtre</target>
+            </trans-unit>
+            <trans-unit id="front_login_link_forgotten_pwd">
+                <source>front.login.link.forgotten_pwd</source>
+                <target>Vous avez %link_start%oublié votre mot de passe%link_end% ?</target>
+            </trans-unit>
+            <trans-unit id="front_login_modal_sign_in_your_account">
+                <source>front.login.modal.sign_in_your_account</source>
+                <target>Connexion à votre compte</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

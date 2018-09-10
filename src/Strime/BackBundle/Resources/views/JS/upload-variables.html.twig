@@ -1,0 +1,34 @@
+<script type="text/javascript">
+
+    // Set the constants for the upload
+    const iconUpload = "{{ asset('bundles/strimeback/img/icon-add-file.svg') }}";
+    const iconRotate = "{{ asset('bundles/strimeback/img/icon-loading.svg') }}";
+    const ajaxAddUploadURL = "{{ path('app_ajax_add_upload') }}";
+    const ajaxDeleteUploadURL = "{{ path('app_ajax_delete_upload') }}";
+    const stopUploadURL = "{{ path('app_dashboard', {'action': 'delete', 'content_type': 'upload'}) }}";
+    const storageMultiplier = {{ storage_multiplier }};
+    const userRights = "{{ app.session.get('rights') }}";
+    const userRightsArray = userRights.split(",");
+    const imageExtensions = "{{ strime_image_default_accepted_extensions }}";
+    const imageExtensionsArray = imageExtensions.split(",");
+    const audioExtensions = "{{ strime_audio_default_accepted_extensions }}";
+    const audioExtensionsArray = audioExtensions.split(",");
+
+    // Set the variable for the upload
+    var filenameExtension;
+    var fileType = "video";
+    var fileReadyToUpload = false;
+    var acceptedExtensions = "{{ strime_video_default_accepted_extensions }}";
+
+    // Check if the user has the right to upload images
+    if(userRightsArray.indexOf("image") != -1) {
+        acceptedExtensions += "," + imageExtensions;
+    }
+
+    // Check if the user has the right to upload sounds
+    if(userRightsArray.indexOf("audio") != -1) {
+        acceptedExtensions += "," + audioExtensions;
+    }
+
+    const acceptedExtensionsArray = acceptedExtensions.split(",");
+</script>

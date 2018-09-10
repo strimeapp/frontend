@@ -1,0 +1,39 @@
+body.project h1.editable,
+body.asset #asset-meta h1.editable {
+	cursor: pointer;
+}
+body.project h1.editable:hover,
+body.asset #asset-meta h1.editable:hover {
+	background: url(../img/icon-pen-round.svg) no-repeat;
+    background-position: 95% center;
+    background-size: 20px 20px;
+}
+body.project h1.editable.saved:hover,
+body.asset #asset-meta h1.editable.saved:hover {
+	background: none;
+}
+body.project h1 input,
+body.asset #asset-meta h1 input {
+	background-color: #434344;
+	font-size: 20px;
+	color: #898B8E;
+	border-color: #5F5F60;
+	padding: 5px;
+	margin: 0;
+}
+body.project h1 input {
+	background-color: #E9E9E9;
+	color: #282829;
+	border-color: #898B8E;
+}
+body.project .changes-saved,
+body.asset #asset-meta h1 .changes-saved {
+	display: inline-block;
+	background: url(../img/icon-check-green.svg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	margin-left: 10px;
+}

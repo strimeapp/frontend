@@ -1,0 +1,99 @@
+{% trans_default_domain 'front_login' %}
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-loading-overlay">
+                <div class="modal-loading-overlay-inner">
+                    <div class="loader-container">
+                        <div class="loader-pulse">
+                            {{ 'front.login.loader.loading'|trans }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimefront/img/icon-close-modal.svg') }}" alt="{{ 'front.login.button.close_window'|trans }}" title="{{ 'front.login.button.close_window'|trans }}"></span></button>
+                <h4 class="modal-title">{{ 'front.login.modal.sign_in_your_account'|trans }}</h4>
+            </div>
+            <div class="modal-body">
+
+                <!-- Login block -->
+                <div id="login-block">
+
+                    {% if login_form.email is defined %}
+                        {{ form_start(login_form, {'action': path('ajax_login'), 'attr': {'id': 'login-form', 'novalidate': true} }) }}
+
+                            {{ form_widget(login_form.email) }}
+                            {{ form_widget(login_form.password) }}
+
+                            {{ form_widget(login_form.submit, { 'label': 'front.login.button.signin', 'translation_domain': 'front_login' }) }}
+
+                            <div class="loader-container">
+                                <div class="loader-pulse">
+                                    {{ 'front.login.loader.loading'|trans }}
+                                </div>
+                            </div>
+
+                        {{ form_end(login_form) }}
+
+                        <p class="text-center margin-top">
+                            {{ 'front.login.link.forgotten_pwd'|trans( {'%link_start%': '<a href="#" title="Mot de passe oublié" class="go-to-forgotten-password">', '%link_end%': '</a>'} )|raw }}
+                        </p>
+                    {% else %}
+                        <p class="text-center">
+                            {{ login_message|raw }}
+                        </p>
+                    {% endif %}
+
+                    <div id="login-result" class="alert"></div>
+
+                    <hr>
+
+                    <div>
+                        <div id="google-signin"></div>
+                        <div class="fb-login-button" data-width="240" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email" data-height="50px" onlogin="checkLoginState();"></div>
+                        <div class="clear"></div>
+                    </div>
+                </div><!-- ./Login block -->
+
+                <!-- Forgotten password block -->
+                <div id="forgotten-password-block">
+
+                    {{ form_start(forgotten_password_form, {'action': path('ajax_forgotten_password'), 'attr': {'id': 'forgotten-password-form', 'novalidate': true} }) }}
+
+                        {{ form_widget(forgotten_password_form.email) }}
+
+                        {{ form_widget(forgotten_password_form.submit, { 'label': 'front.login.button.regenerate_password', 'translation_domain': 'front_login' }) }}
+
+                        <div class="loader-container">
+                            <div class="loader-pulse">
+                                {{ 'front.login.loader.loading'|trans }}
+                            </div>
+                        </div>
+
+                    {{ form_end(forgotten_password_form) }}
+
+                    <p class="text-center margin-top">
+                        <a href="#" title="{{ 'front.login.link.signin'|trans }}" class="back-to-login">
+                            {{ 'front.login.link.signin'|trans }}
+                        </a>
+                    </p>
+
+                    <div id="forgotten-password-result" class="alert"></div>
+
+                </div><!-- ./Login block -->
+
+            </div>
+        </div><!-- /.modal-content -->
+
+        <div class="text-center modal-subaction" id="go-to-signup">
+            {{ 'front.login.link.no_account'|trans }}
+            <a href="#" title="{{ 'front.login.link.signup'|trans }}">
+                {{ 'front.login.link.signup'|trans }}
+            </a>
+        </div>
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

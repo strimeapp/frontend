@@ -1,0 +1,76 @@
+{% trans_default_domain 'email_share_url' %}
+{% extends 'emails/email_base.html.twig' %}
+
+
+
+{% block email_title %}
+	<title>{% if type == 'video' %}{{ 'email.share_url.meta.title_video'|trans({'%first_name%': first_name}, 'email_share_url', locale) }}{% elseif type == 'image' %}{{ 'email.share_url.meta.title_image'|trans({'%first_name%': first_name}, 'email_share_url', locale) }}{% else %}{{ 'email.share_url.meta.title_project'|trans({'%first_name%': first_name}, 'email_share_url', locale) }}{% endif %}</title>
+{% endblock %}
+
+
+
+{% block email_header_title %}
+	{% if type == 'video' %}
+		<h1 style="margin: 0px;">{{ 'email.share_url.title.comment_video'|trans({'%content_name%': content_name}, 'email_share_url', locale) }}</h1>
+	{% elseif type == 'image' %}
+		<h1 style="margin: 0px;">{{ 'email.share_url.title.comment_image'|trans({'%content_name%': content_name}, 'email_share_url', locale) }}</h1>
+	{% else %}
+		<h1 style="margin: 0px;">{{ 'email.share_url.title.comment_project'|trans({'%content_name%': content_name}, 'email_share_url', locale) }}</h1>
+	{% endif %}
+{% endblock %}
+
+
+
+{% block email_content %}
+	<p>{{ 'email.share_url.text.hi'|trans({}, 'email_share_url', locale) }},</p>
+
+	<p>
+		{% if type == 'video' %}
+			{{ 'email.share_url.text.share_video'|trans({'%first_name%': first_name, '%content_name%': content_name}, 'email_share_url', locale)|raw }}
+		{% elseif type == 'image' %}
+			{{ 'email.share_url.text.share_image'|trans({'%first_name%': first_name, '%content_name%': content_name}, 'email_share_url', locale)|raw }}
+		{% elseif type == 'audio' %}
+			{{ 'email.share_url.text.share_audio'|trans({'%first_name%': first_name, '%content_name%': content_name}, 'email_share_url', locale)|raw }}
+		{% else %}
+			{{ 'email.share_url.text.share_project'|trans({'%first_name%': first_name, '%content_name%': content_name}, 'email_share_url', locale)|raw }}
+		{% endif %}
+	</p>
+
+	{% if message is not null %}
+		<p>{{ 'email.share_url.text.here_is_his_message'|trans({}, 'email_share_url', locale) }}</p>
+		<blockquote style="border-left: solid 3px #DFDFDF; padding-left: 10px;">
+			{{ message|nl2br }}
+		</blockquote>
+	{% endif %}
+
+	{% if type == 'video' %}
+		<a href="{{ url }}" title="{{ 'email.share_url.button.go_to_video'|trans({}, 'email_share_url', locale) }}" style="text-decoration: none;">
+			<button style="display: block; background-color: #0CAC9A; border: none; border-radius: 5px; width: auto;  padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; margin-left: auto; margin-right: auto; text-transform: uppercase; color: #FFF; font-size: 18px; cursor: pointer; margin-top: 20px; margin-bottom: 20px;">
+				{{ 'email.share_url.button.go_to_video'|trans({}, 'email_share_url', locale) }}
+			</button>
+		</a>
+	{% elseif type == 'image' %}
+		<a href="{{ url }}" title="{{ 'email.share_url.button.go_to_image'|trans({}, 'email_share_url', locale) }}" style="text-decoration: none;">
+			<button style="display: block; background-color: #0CAC9A; border: none; border-radius: 5px; width: auto;  padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; margin-left: auto; margin-right: auto; text-transform: uppercase; color: #FFF; font-size: 18px; cursor: pointer; margin-top: 20px; margin-bottom: 20px;">
+				{{ 'email.share_url.button.go_to_image'|trans({}, 'email_share_url', locale) }}
+			</button>
+		</a>
+	{% elseif type == 'audio' %}
+		<a href="{{ url }}" title="{{ 'email.share_url.button.go_to_audio'|trans({}, 'email_share_url', locale) }}" style="text-decoration: none;">
+			<button style="display: block; background-color: #0CAC9A; border: none; border-radius: 5px; width: auto;  padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; margin-left: auto; margin-right: auto; text-transform: uppercase; color: #FFF; font-size: 18px; cursor: pointer; margin-top: 20px; margin-bottom: 20px;">
+				{{ 'email.share_url.button.go_to_audio'|trans({}, 'email_share_url', locale) }}
+			</button>
+		</a>
+	{% else %}
+		<a href="{{ url }}" title="{{ 'email.share_url.button.go_to_project'|trans({}, 'email_share_url', locale) }}" style="text-decoration: none;">
+			<button style="display: block; background-color: #0CAC9A; border: none; border-radius: 5px; width: auto;  padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; margin-left: auto; margin-right: auto; text-transform: uppercase; color: #FFF; font-size: 18px; cursor: pointer; margin-top: 20px; margin-bottom: 20px;">
+				{{ 'email.share_url.button.go_to_project'|trans({}, 'email_share_url', locale) }}
+			</button>
+		</a>
+	{% endif %}
+
+	<p>
+		{{ 'email.share_url.text.see_you_soon'|trans({}, 'email_share_url', locale) }},<br />
+		{{ 'email.share_url.text.strime_team'|trans({}, 'email_share_url', locale) }}
+	</p>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% trans_default_domain 'email_invoice' %}
+{% extends 'emails/email_base.html.twig' %}
+
+
+
+{% block email_title %}
+	<title>{{ 'email.invoice.meta.title'|trans({'%first_day%': first_day|date('d/m/Y'), '%last_day%': last_day|date('d/m/Y')}) }}</title>
+{% endblock %}
+
+
+
+{% block email_header_title %}																		                        
+	<h1 style="margin: 0px;">{{ 'email.invoice.meta.title'|trans({'%first_day%': first_day|date('d/m/Y'), '%last_day%': last_day|date('d/m/Y')}) }}</h1>
+{% endblock %}
+
+
+																						                        
+{% block email_content %}													                            
+	<p>{{ 'email.invoice.text.hi_first_name'|trans({'%first_name%': first_name}) }},</p>
+
+	<p>
+		{{ 'email.invoice.text.please_find_attached'|trans({'%strime%': '<a href="' ~ absolute_url( '/' ) ~ '" title="Strime" target="_blank" style="color: #1DAC9A; text-decoration: none;">Strime</a>', '%first_day%': first_day|date('d/m/Y'), '%last_day%': last_day|date('d/m/Y')})|raw }}
+	</p>
+	<p>
+		{{ 'email.invoice.text.thanks_for_your_confidence'|trans }}
+	</p>
+
+	<p>
+		{{ 'email.invoice.text.see_you_soon'|trans }},<br />
+		{{ 'email.invoice.text.strime_team'|trans }}
+	</p>
+{% endblock %}

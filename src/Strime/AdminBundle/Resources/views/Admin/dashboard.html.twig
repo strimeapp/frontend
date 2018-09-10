@@ -1,0 +1,446 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_dashboard') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord">
+{% endblock %}
+
+{% block title %}Admin | Dashboard | Strime{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+    {% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="admin-content">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-users fa-2x"></i>
+                    <div class="data">{{ nb_users }}</div>
+                    <div class="description">utilisateurs</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-envelope-o fa-2x"></i>
+                    <div class="data">{{ nb_contacts }}</div>
+                    <div class="description">contacts</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-top">
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-play-circle-o fa-2x"></i>
+                    <div class="data">{{ nb_videos }}</div>
+                    <div class="description">vidéos</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-film fa-2x"></i>
+                    <div class="data">{{ average_number_of_videos_per_user }}</div>
+                    <div class="description">vidéos par util.</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-balance-scale fa-2x"></i>
+                    <div class="data">{{ average_video_size }} Mo</div>
+                    <div class="description">Poids moyen</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-commenting fa-2x"></i>
+                    <div class="data">{{ nb_comments }}</div>
+                    <div class="description">commentaires</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-top">
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-picture-o fa-2x"></i>
+                    <div class="data">{{ nb_images }}</div>
+                    <div class="description">images</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-picture-o fa-2x"></i>
+                    <div class="data">{{ average_number_of_images_per_user }}</div>
+                    <div class="description">images par util.</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-balance-scale fa-2x"></i>
+                    <div class="data">{{ average_image_size }} Mo</div>
+                    <div class="description">Poids moyen</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-commenting fa-2x"></i>
+                    <div class="data">{{ nb_image_comments }}</div>
+                    <div class="description">commentaires</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-top">
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-volume-up fa-2x"></i>
+                    <div class="data">{{ nb_audios }}</div>
+                    <div class="description">fichiers audio</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-volume-up fa-2x"></i>
+                    <div class="data">{{ average_number_of_audios_per_user }}</div>
+                    <div class="description">fichiers par util.</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-balance-scale fa-2x"></i>
+                    <div class="data">{{ average_audio_size }} Mo</div>
+                    <div class="description">Poids moyen</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-commenting fa-2x"></i>
+                    <div class="data">{{ nb_audio_comments }}</div>
+                    <div class="description">commentaires</div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="chart-nb-users-per-day" class="data-elt">
+            <h2>Évolution du nombre d'utilisateurs</h2>
+            <div id="chart-nb-users-per-day-inner"></div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div id="chart-nb-users-per-offer" class="data-elt">
+                    <h2>Nombre d'utilisateurs par offre</h2>
+                    <div id="chart-nb-users-per-offer-inner"></div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div id="chart-nb-users-per-locale" class="data-elt">
+                    <h2>Nombre d'utilisateurs par langue</h2>
+                    <div id="chart-nb-users-per-locale-inner"></div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="chart-percentage-active-users-per-day" class="data-elt">
+            <h2>Évolution du nombre d'utilisateurs actifs</h2>
+            <div id="chart-percentage-active-users-per-day-inner"></div>
+        </div>
+
+        <hr>
+
+        <div id="chart-nb-projects-per-day" class="data-elt">
+            <h2>Évolution du nombre de projets</h2>
+            <div id="chart-nb-projects-per-day-inner"></div>
+        </div>
+
+        <hr>
+
+        <div id="chart-nb-videos-per-day" class="data-elt">
+            <h2>Évolution du nombre de vidéos</h2>
+            <div id="chart-nb-videos-per-day-inner"></div>
+        </div>
+
+        <hr>
+
+        <div id="chart-nb-images-per-day" class="data-elt">
+            <h2>Évolution du nombre d'images</h2>
+            <div id="chart-nb-images-per-day-inner"></div>
+        </div>
+
+        <hr>
+
+        <div id="chart-nb-audios-per-day" class="data-elt">
+            <h2>Évolution du nombre de fichiers audio</h2>
+            <div id="chart-nb-audios-per-day-inner"></div>
+        </div>
+
+        <hr>
+
+        <div id="chart-nb-comments-per-day" class="data-elt">
+            <h2>Évolution du nombre de commentaires (videos)</h2>
+            <div id="chart-nb-comments-per-day-inner"></div>
+        </div>
+
+        <hr>
+
+        <div id="chart-nb-image-comments-per-day" class="data-elt">
+            <h2>Évolution du nombre de commentaires (images)</h2>
+            <div id="chart-nb-image-comments-per-day-inner"></div>
+        </div>
+
+        <hr>
+
+        <div id="chart-nb-audio-comments-per-day" class="data-elt">
+            <h2>Évolution du nombre de commentaires (fichiers audio)</h2>
+            <div id="chart-nb-audio-comments-per-day-inner"></div>
+        </div>
+
+        <hr>
+
+        <div id="chart-nb-contacts-per-day" class="data-elt">
+            <h2>Évolution du nombre de contacts</h2>
+            <div id="chart-nb-contacts-per-day-inner"></div>
+        </div>
+    </div><!-- ./Admin content -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    {% javascripts
+        '@StrimeAdminBundle/Resources/public/js/amcharts_3.20.3.free/amcharts/amcharts.js' filter='?uglifyjs2'
+        '@StrimeAdminBundle/Resources/public/js/amcharts_3.20.3.free/amcharts/serial.js' filter='?uglifyjs2'
+        '@StrimeAdminBundle/Resources/public/js/amcharts_3.20.3.free/amcharts/pie.js' filter='?uglifyjs2'
+        '@StrimeAdminBundle/Resources/public/js/amcharts_3.20.3.free/amcharts/themes/light.js' filter='?uglifyjs2'
+        '@StrimeAdminBundle/Resources/public/js/dashboard-generate-charts.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script type="text/javascript">
+
+        // Generate the data for chart with the number of users per day
+        function generateChartDataNbUsersPerDay() {
+            var chartData = [];
+
+            {% for stat in nb_users_per_day  %}
+                chartData.push({
+                    date: "{{ stat.date }}",
+                    nbUsers: {{ stat.nb_users }},
+                    totalNbUsers: {{ stat.total_nb_users }}
+                });
+            {% endfor %}
+
+            return chartData;
+        }
+
+
+
+        // Generate the data for chart with the number of users per day
+        function generateChartDataPercentageActiveUsersPerDay() {
+            var chartData = [];
+
+            {% for stat in percentage_active_users_per_day  %}
+                chartData.push({
+                    date: "{{ stat.date }}",
+                    percentageActiveUsers: {{ stat.percentage_active_users }}
+                });
+            {% endfor %}
+
+            return chartData;
+        }
+
+
+
+        // Generate the data for chart with the number of users per offer
+        function generateChartDataNbUsersPerOffer() {
+            var chartData = [];
+
+            {% for stat in nb_users_per_offer  %}
+                chartData.push({
+                    "offer": "{{ stat.offer }}",
+                    "nb_users": {{ stat.nb_users }}
+                });
+            {% endfor %}
+
+            return chartData;
+        }
+
+
+
+        // Generate the data for chart with the number of users per locale
+        function generateChartDataNbUsersPerLocale() {
+            var chartData = [];
+
+            {% for stat in nb_users_per_locale  %}
+                chartData.push({
+                    "locale": "{{ stat.locale }}",
+                    "nb_users": {{ stat.nb_users }}
+                });
+            {% endfor %}
+
+            return chartData;
+        }
+
+
+
+        // Generate the data for chart with the number of projects per day
+        function generateChartDataNbProjectsPerDay() {
+            var chartData = [];
+
+            {% for stat in nb_projects_per_day  %}
+                chartData.push({
+                    date: "{{ stat.date }}",
+                    nbProjects: {{ stat.nb_projects }},
+                    totalNbProjects: {{ stat.total_nb_projects }}
+                });
+            {% endfor %}
+
+            return chartData;
+        }
+
+
+
+
+        // Generate the data for chart with the number of videos per day
+        function generateChartDataNbVideosPerDay() {
+            var chartData = [];
+
+            {% for stat in nb_videos_per_day  %}
+                chartData.push({
+                    date: "{{ stat.date }}",
+                    nbVideos: {{ stat.nb_videos }},
+                    totalNbVideos: {{ stat.total_nb_videos }}
+                });
+            {% endfor %}
+
+            return chartData;
+        }
+
+
+
+
+        // Generate the data for chart with the number of images per day
+        function generateChartDataNbImagesPerDay() {
+            var chartData = [];
+
+            {% for stat in nb_images_per_day  %}
+                chartData.push({
+                    date: "{{ stat.date }}",
+                    nbImages: {{ stat.nb_images }},
+                    totalNbImages: {{ stat.total_nb_images }}
+                });
+            {% endfor %}
+
+            return chartData;
+        }
+
+
+
+
+        // Generate the data for chart with the number of audios per day
+        function generateChartDataNbAudiosPerDay() {
+            var chartData = [];
+
+            {% for stat in nb_audios_per_day  %}
+                chartData.push({
+                    date: "{{ stat.date }}",
+                    nbAudios: {{ stat.nb_audios }},
+                    totalNbAudios: {{ stat.total_nb_audios }}
+                });
+            {% endfor %}
+
+            return chartData;
+        }
+
+
+
+
+        // Generate the data for chart with the number of comments posted on videos per day
+        function generateChartDataNbCommentsPerDay() {
+            var chartData = [];
+
+            {% for stat in nb_comments_per_day  %}
+                chartData.push({
+                    date: "{{ stat.date }}",
+                    nbComments: {{ stat.nb_comments }},
+                    totalNbComments: {{ stat.total_nb_comments }}
+                });
+            {% endfor %}
+
+            return chartData;
+        }
+
+
+
+
+        // Generate the data for chart with the number of comments posted on images per day
+        function generateChartDataNbImageCommentsPerDay() {
+            var chartData = [];
+
+            {% for stat in nb_image_comments_per_day  %}
+                chartData.push({
+                    date: "{{ stat.date }}",
+                    nbComments: {{ stat.nb_comments }},
+                    totalNbComments: {{ stat.total_nb_comments }}
+                });
+            {% endfor %}
+
+            return chartData;
+        }
+
+
+
+
+        // Generate the data for chart with the number of comments posted on audio files per day
+        function generateChartDataNbAudioCommentsPerDay() {
+            var chartData = [];
+
+            {% for stat in nb_audio_comments_per_day  %}
+                chartData.push({
+                    date: "{{ stat.date }}",
+                    nbComments: {{ stat.nb_comments }},
+                    totalNbComments: {{ stat.total_nb_comments }}
+                });
+            {% endfor %}
+
+            return chartData;
+        }
+
+
+
+
+        // Generate the data for chart with the number of comments per day
+        function generateChartDataNbContactsPerDay() {
+            var chartData = [];
+
+            {% for stat in nb_contacts_per_day  %}
+                chartData.push({
+                    date: "{{ stat.date }}",
+                    nbContacts: {{ stat.nb_contacts }},
+                    totalNbContacts: {{ stat.total_nb_contacts }}
+                });
+            {% endfor %}
+
+            return chartData;
+        }
+
+    </script>
+{% endblock %}

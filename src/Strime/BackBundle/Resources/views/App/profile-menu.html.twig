@@ -1,0 +1,34 @@
+{% trans_default_domain 'back_profile_menu' %}
+
+<!-- Submenu -->
+<div id="sub-menu">
+    <div class="wrapper">
+        <ul>
+            <li {% if profile_section == "profile" %}class="active"{% endif %}>
+                <a href="{{ url('app_profile') }}" title="{{ 'back.profile_menu.alt.my_account'|trans }}">
+                    {{ 'back.profile_menu.link.profile'|trans }}
+                </a>
+            </li>
+            <li {% if profile_section == "profile_password" %}class="active"{% endif %}>
+                <a href="{{ url('app_profile_password') }}" title="{{ 'back.profile_menu.alt.my_account'|trans }}">
+                    {{ 'back.profile_menu.link.password'|trans }}
+                </a>
+            </li>
+            <li {% if profile_section == "profile_billing" %}class="active"{% endif %}>
+                <a href="{{ url('app_profile_billing') }}" title="{{ 'back.profile_menu.link.invoicing'|trans }}">
+                    {{ 'back.profile_menu.link.invoicing'|trans }}
+                </a>
+            </li>
+            <li {% if profile_section == "profile_notifications" %}class="active"{% endif %}>
+                <a href="{{ url('app_profile_notifications') }}" title="{{ 'back.profile_menu.link.email_notifications'|trans }}">
+                    {{ 'back.profile_menu.link.email_notifications'|trans }}
+                </a>
+            </li>
+            <li {% if profile_section == "profile_integrations" %}class="active"{% endif %}>
+                <a href="{{ url('app_profile_integrations') }}" title="{{ 'back.profile_menu.link.integrations'|trans }}">
+                    {{ 'back.profile_menu.link.integrations'|trans }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div><!-- ./Submenu -->

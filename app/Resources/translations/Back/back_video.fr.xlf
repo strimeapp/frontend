@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_video_meta_keywords">
+                <source>back.video.meta.keywords</source>
+                <target>strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord</target>
+            </trans-unit>
+            <trans-unit id="back_video_meta_title">
+                <source>back.video.meta.title</source>
+                <target>Commentez la vidéo %video_name%</target>
+            </trans-unit>
+            <trans-unit id="back_video_alt_back_to_project">
+                <source>back.video.alt.back_to_project</source>
+                <target>Retour au projet</target>
+            </trans-unit>
+            <trans-unit id="back_video_button_share_video">
+                <source>back.video.button.share_video</source>
+                <target><![CDATA[Partager<span class="hide-text-on-tablet"> la vidéo</span>]]></target>
+            </trans-unit>
+            <trans-unit id="back_video_alt_export_video">
+                <source>back.video.alt.export_video</source>
+                <target>Exporter la vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_video_alt_shared_youtube">
+                <source>back.video.alt.shared_youtube</source>
+                <target>Vidéo partagée sur Youtube</target>
+            </trans-unit>
+            <trans-unit id="back_video_title_export_to">
+                <source>back.video.title.export_to</source>
+                <target>Exporter vers</target>
+            </trans-unit>
+            <trans-unit id="back_video_placeholder_type_in_comment">
+                <source>back.video.placeholder.type_in_comment</source>
+                <target>Saisissez votre commentaire</target>
+            </trans-unit>
+            <trans-unit id="back_video_button_send">
+                <source>back.video.button.send</source>
+                <target>Envoyer</target>
+            </trans-unit>
+            <trans-unit id="back_video_loader_loading">
+                <source>back.video.loader.loading</source>
+                <target>Chargement</target>
+            </trans-unit>
+            <trans-unit id="back_video_player_fallback">
+                <source>back.video.player.fallback</source>
+                <target><![CDATA[To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>]]></target>
+            </trans-unit>
+            <trans-unit id="back_video_text_nb_comments">
+                <source>back.video.text.nb_comments</source>
+                <target>%nb_comments% commentaire|%nb_comments% commentaires</target>
+            </trans-unit>
+            <trans-unit id="back_video_text_mark_as_solved">
+                <source>back.video.text.hide_solved</source>
+                <target>Masquer les résolus</target>
+            </trans-unit>
+            <trans-unit id="back_video_text_error_while_saving_comment">
+                <source>back.video.text.error_while_saving_comment</source>
+                <target>Une erreur est survenue lors de l'enregistrement de ce commentaire.</target>
+            </trans-unit>
+            <trans-unit id="back_video_text_try_again_or_contact">
+                <source>back.video.text.try_again_or_contact</source>
+                <target>Veuillez réessayer ou nous contacter.</target>
+            </trans-unit>
+            <trans-unit id="back_video_text_error_while_deleting_comment">
+                <source>back.video.text.error_while_deleting_comment</source>
+                <target>Une erreur est survenue lors de la suppression de ce commentaire.</target>
+            </trans-unit>
+            <trans-unit id="back_video_text_error_while_editing_comment">
+                <source>back.video.text.error_while_editing_comment</source>
+                <target>Une erreur est survenue lors de la modification de ce commentaire.</target>
+            </trans-unit>
+            <trans-unit id="back_video_text_resolved">
+                <source>back.video.text.resolved</source>
+                <target>Résolu</target>
+            </trans-unit>
+            <trans-unit id="back_video_link_answer">
+                <source>back.video.link.answer</source>
+                <target>Répondre</target>
+            </trans-unit>
+            <trans-unit id="back_video_placeholder_type_in_answer">
+                <source>back.video.placeholder.type_in_answer</source>
+                <target>Saisissez votre réponse</target>
+            </trans-unit>
+            <trans-unit id="back_video_alt_close_window">
+                <source>back.video.alt.close_window</source>
+                <target>Fermer la fenêtre</target>
+            </trans-unit>
+            <trans-unit id="back_video_title_edit_comment">
+                <source>back.video.title.edit_comment</source>
+                <target>Modifier un commentaire</target>
+            </trans-unit>
+            <trans-unit id="back_video_button_cancel">
+                <source>back.video.button.cancel</source>
+                <target>Annuler</target>
+            </trans-unit>
+            <trans-unit id="back_video_button_validate">
+                <source>back.video.button.validate</source>
+                <target>Valider</target>
+            </trans-unit>
+            <trans-unit id="back_video_title_delete_comment">
+                <source>back.video.title.delete_comment</source>
+                <target>Supprimer un commentaire</target>
+            </trans-unit>
+            <trans-unit id="back_video_text_about_to_delete_comment">
+                <source>back.video.text.about_to_delete_comment</source>
+                <target><![CDATA[Vous êtes sur le point de supprimer un commentaire,<br />celui-ci, ainsi que ses réponses, seront effacés définitivement.]]></target>
+            </trans-unit>
+            <trans-unit id="back_video_title_hello">
+                <source>back.video.title.hello</source>
+                <target>Bonjour !</target>
+            </trans-unit>
+            <trans-unit id="back_video_title_thanks_for_introducing">
+                <source>back.video.title.thanks_for_introducing</source>
+                <target>merci de bien vouloir vous annoncer</target>
+            </trans-unit>
+            <trans-unit id="back_video_alt_choose_this_profile">
+                <source>back.video.alt.choose_this_profile</source>
+                <target>Choisir ce profil</target>
+            </trans-unit>
+            <trans-unit id="back_video_title_not_in_the_list">
+                <source>back.video.title.not_in_the_list</source>
+                <target>Vous n'êtes pas dans la liste ?</target>
+            </trans-unit>
+            <trans-unit id="back_video_text_there_was_x_ago">
+                <source>back.video.text.there_was_x_ago</source>
+                <target>Il y a %time%</target>
+            </trans-unit>
+            <trans-unit id="back_video_text_language">
+                <source>back.video.text.language</source>
+                <target>Langue :</target>
+            </trans-unit>
+            <trans-unit id="back_video_text_order">
+                <source>back.video.text.order</source>
+                <target>Classer</target>
+            </trans-unit>
+            <trans-unit id="back_video_tooltip_ordered_by_publication_date">
+                <source>back.video.tooltip.ordered_by_publication_date</source>
+                <target><![CDATA[Classés par<br />date de publication]]></target>
+            </trans-unit>
+            <trans-unit id="back_video_tooltip_ordered_by_timecode">
+                <source>back.video.tooltip.ordered_by_timecode</source>
+                <target><![CDATA[Classés par<br />timecode]]></target>
+            </trans-unit>
+            <trans-unit id="back_video_alt_display_comments">
+                <source>back.video.alt.display_comments</source>
+                <target>Montrer les commentaires</target>
+            </trans-unit>
+            <trans-unit id="back_video_alt_hide_comments">
+                <source>back.video.alt.hide_comments</source>
+                <target>Masquer les commentaires</target>
+            </trans-unit>
+            <trans-unit id="back_video_title_you_can_access_the_video">
+                <source>back.video.title.you_can_access_the_video</source>
+                <target>vous pouvez accéder à la vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_video_title_glad_to_see_you_again">
+                <source>back.video.title.glad_to_see_you_again</source>
+                <target>Ravi de vous recevoir</target>
+            </trans-unit>
+            <trans-unit id="back_video_title_export_video_to_youtube">
+                <source>back.video.title.export_video_to_youtube</source>
+                <target>Exporter votre vidéo vers Youtube</target>
+            </trans-unit>
+            <trans-unit id="back_video_input_name">
+                <source>back.video.input.name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="back_video_input_tags_separated_by_comas">
+                <source>back.video.input.tags_separated_by_comas</source>
+                <target>Tags séparés par des virgules</target>
+            </trans-unit>
+            <trans-unit id="back_video_input_description">
+                <source>back.video.input.description</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="back_video_input_status_public">
+                <source>back.video.input.status_public</source>
+                <target>Publique</target>
+            </trans-unit>
+            <trans-unit id="back_video_input_status_private">
+                <source>back.video.input.status_private</source>
+                <target>Privée</target>
+            </trans-unit>
+            <trans-unit id="back_video_input_status_unlisted">
+                <source>back.video.input.status_unlisted</source>
+                <target>Non-référencée</target>
+            </trans-unit>
+            <trans-unit id="back_video_textarea_add_description">
+                <source>back.video.textarea.add_description</source>
+                <target>Ajouter une description...</target>
+            </trans-unit>
+            <trans-unit id="back_video_button_save">
+                <source>back.video.button.save</source>
+                <target>Enregistrer</target>
+            </trans-unit>
+            <trans-unit id="back_video_button_export">
+                <source>back.video.button.export</source>
+                <target>Exporter</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_anonymous">
+                <source>back.video.js.anonymous</source>
+                <target>Anonyme</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_change_id">
+                <source>back.video.js.change_id</source>
+                <target>Changer d'identifiant</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_email_address_not_valid">
+                <source>back.video.js.email_address_not_valid</source>
+                <target>Cette adresse email n'est pas valide.</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_error_sending_data">
+                <source>back.video.js.error_sending_data</source>
+                <target>Erreur dans l'envoi des données.</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_error_saving_email_address">
+                <source>back.video.js.error_saving_email_address</source>
+                <target>Erreur dans l'enregistrement de votre adresse email.</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_error_occured_during_identification">
+                <source>back.video.js.error_occured_during_identification</source>
+                <target>Une erreur s'est produite lors de votre identification.</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_thanks_can_begin_commenting">
+                <source>back.video.js.thanks_can_begin_commenting</source>
+                <target>Merci ! Vous allez pouvoir commenter la vidéo.</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_choose_this_profile">
+                <source>back.video.js.choose_this_profile</source>
+                <target>Choisir ce profil</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_see_the_comment">
+                <source>back.video.js.see_the_comment</source>
+                <target>Voir le commentaire</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_there_was_one_minute">
+                <source>back.video.js.there_was_one_minute</source>
+                <target>Il y a 1 minute</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_answer">
+                <source>back.video.js.answer</source>
+                <target>Répondre</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_type_in_answer">
+                <source>back.video.js.type_in_answer</source>
+                <target>Saisissez votre réponse</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_send">
+                <source>back.video.js.send</source>
+                <target>Envoyer</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_loading">
+                <source>back.video.js.loading</source>
+                <target>Chargement</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_comments">
+                <source>back.video.js.comments</source>
+                <target>commentaires</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_comment">
+                <source>back.video.js.comment</source>
+                <target>commentaire</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_resolved">
+                <source>back.video.js.resolved</source>
+                <target>Résolu</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_rewind">
+                <source>back.video.js.rewind</source>
+                <target>Revenir au début</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_hide_markers">
+                <source>back.video.js.hide_markers</source>
+                <target>Masquer les marqueurs</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_back_from_10s">
+                <source>back.video.js.back_from_10s</source>
+                <target>Reculer de 10s</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_go_to_next_comment">
+                <source>back.video.js.go_to_next_comment</source>
+                <target>Aller au prochain commentaire</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_go_to_previous_comment">
+                <source>back.video.js.go_to_previous_comment</source>
+                <target>Aller au commentaire précédent</target>
+            </trans-unit>
+            <trans-unit id="back_video_js_title">
+                <source>back.video.js.title</source>
+                <target>Commentez la vidéo *|VIDEO_NAME|*</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

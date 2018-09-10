@@ -1,0 +1,22 @@
+#assets .asset .asset-name {
+	cursor: pointer;
+}
+#assets .asset .asset-name:hover {
+	background: url(../img/icon-pen-round.svg) no-repeat;
+    background-position: right center;
+    background-size: 15px 15px;
+}
+#assets .asset .asset-name input {
+	background-color: #FFF;
+	color: #303031;
+	border-color: #898B8E;
+	font-size: 14px;
+	text-align: center;
+	padding: 1px 5px;
+	margin: -2px 0;
+}
+#assets .asset .asset-name.saved {
+	background: url(../img/icon-check-green.svg) no-repeat;
+	background-position: right center;
+	background-size: 15px 15px;
+}

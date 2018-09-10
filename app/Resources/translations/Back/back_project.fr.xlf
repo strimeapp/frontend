@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_project_meta_description">
+                <source>back.project.meta.description</source>
+                <target>Vos projets</target>
+            </trans-unit>
+            <trans-unit id="back_project_meta_keywords">
+                <source>back.project.meta.keywords</source>
+                <target>strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord</target>
+            </trans-unit>
+            <trans-unit id="back_project_meta_title">
+                <source>back.project.meta.title</source>
+                <target>Projet</target>
+            </trans-unit>
+            <trans-unit id="back_project_link_back_to_home">
+                <source>back.project.link.back_to_home</source>
+                <target>Retour à l'accueil</target>
+            </trans-unit>
+            <trans-unit id="back_project_alt_close_window">
+                <source>back.project.alt.close_window</source>
+                <target>Fermer la fenêtre</target>
+            </trans-unit>
+            <trans-unit id="back_project_title_add_video">
+                <source>back.project.title.add_video</source>
+                <target>Ajouter une vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_project_title_add_image">
+                <source>back.project.title.add_image</source>
+                <target>Ajouter une image</target>
+            </trans-unit>
+            <trans-unit id="back_project_title_add_audio">
+                <source>back.project.title.add_audio</source>
+                <target>Ajouter un fichier audio</target>
+            </trans-unit>
+            <trans-unit id="back_project_text_type_in_addresses_to_share_with">
+                <source>back.project.text.type_in_addresses_to_share_with</source>
+                <target>Vous pouvez dès à présent saisir les adresses des personnes avec qui vous souhaitez partager cette vidéo.</target>
+            </trans-unit>
+            <trans-unit id="back_project_text_type_in_addresses_to_share_image_with">
+                <source>back.project.text.type_in_addresses_to_share_image_with</source>
+                <target>Vous pouvez dès à présent saisir les adresses des personnes avec qui vous souhaitez partager cette image.</target>
+            </trans-unit>
+            <trans-unit id="back_project_text_type_in_addresses_to_share_audio_with">
+                <source>back.project.text.type_in_addresses_to_share_audio_with</source>
+                <target>Vous pouvez dès à présent saisir les adresses des personnes avec qui vous souhaitez partager ce fichier audio.</target>
+            </trans-unit>
+            <trans-unit id="back_project_text_will_be_notified">
+                <source>back.project.text.will_be_notified</source>
+                <target>Elles seront alertées par email à la fin de l'encodage.</target>
+            </trans-unit>
+            <trans-unit id="back_project_button_add">
+                <source>back.project.button.add</source>
+                <target>Ajouter</target>
+            </trans-unit>
+            <trans-unit id="back_project_loader_loading">
+                <source>back.project.loader.loading</source>
+                <target>Chargement</target>
+            </trans-unit>
+            <trans-unit id="back_project_loader_copying_files">
+                <source>back.project.loader.copying_files</source>
+                <target>Copie des fichiers</target>
+            </trans-unit>
+            <trans-unit id="back_project_loader_preparing_encoding">
+                <source>back.project.loader.preparing_encoding</source>
+                <target>Nous programmons actuellement l'encodage de votre vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_project_title_delete_this_video">
+                <source>back.project.title.delete_this_video</source>
+                <target>Supprimer cette vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_project_text_sure_you_wanna_delete">
+                <source>back.project.text.sure_you_wanna_delete</source>
+                <target><![CDATA[Voulez-vous réellement supprimer la vidéo nommée <strong><span class="asset-name"></span></strong> et tous les commentaires associés ?]]></target>
+            </trans-unit>
+            <trans-unit id="back_project_text_will_free_space">
+                <source>back.project.text.will_free_space</source>
+                <target>Supprimer cette vidéo libèrera également de l'espace dans votre compte.</target>
+            </trans-unit>
+            <trans-unit id="back_project_text_cannot_be_undone">
+                <source>back.project.text.cannot_be_undone</source>
+                <target>Cette opération est irréversible.</target>
+            </trans-unit>
+            <trans-unit id="back_project_alt_delete_this_video">
+                <source>back.project.alt.delete_this_video</source>
+                <target>Supprimer cette vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_project_button_yes_delete_video">
+                <source>back.project.button.yes_delete_video</source>
+                <target>Oui, supprimer cette vidéo.</target>
+            </trans-unit>
+            <trans-unit id="back_project_button_no_get_me_out_of_here">
+                <source>back.project.button.no_get_me_out_of_here</source>
+                <target>Non, sortez-moi de là !</target>
+            </trans-unit>
+            <trans-unit id="back_project_text_language">
+                <source>back.project.text.language</source>
+                <target>Langue :</target>
+            </trans-unit>
+            <trans-unit id="back_project_text_drag_drop_video_to_take_it_off_project">
+                <source>back.project.text.drag_drop_video_to_take_it_off_project</source>
+                <target>Glissez une vidéo dans cette zone pour la sortir du projet.</target>
+            </trans-unit>
+            <trans-unit id="back_project_text_drag_drop_file_to_take_it_off_project">
+                <source>back.project.text.drag_drop_file_to_take_it_off_project</source>
+                <target>Glissez un fichier dans cette zone pour le sortir du projet.</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_error_sending">
+                <source>back.project.js.error_sending</source>
+                <target>Erreur lors de l'envoi...</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_mail_sent">
+                <source>back.project.js.mail_sent</source>
+                <target>Email envoyé !</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_resend_confirmation_email">
+                <source>back.project.js.resend_confirmation_email</source>
+                <target>Renvoyer l'email de confirmation</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_you_must_be_logged_in">
+                <source>back.project.js.you_must_be_logged_in</source>
+                <target>Vous devez être connecté.</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_couldnt_find_information_for_this_encoding">
+                <source>back.project.js.couldnt_find_information_for_this_encoding</source>
+                <target>Nous n'avons pas pu trouver les informations relatives à cet encodage.</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_see_the_video">
+                <source>back.project.js.see_the_video</source>
+                <target>Voir la vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_see_the_image">
+                <source>back.project.js.see_the_image</source>
+                <target>Voir l'image</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_see_the_audio">
+                <source>back.project.js.see_the_audio</source>
+                <target>Voir le fichier audio</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_see_the_file">
+                <source>back.project.js.see_the_file</source>
+                <target>Voir le fichier</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_see_the_project">
+                <source>back.project.js.see_the_project</source>
+                <target>Voir la projet</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_error_occured_while_collecting_information_from_this_encoding">
+                <source>back.project.js.error_occured_while_collecting_information_from_this_encoding</source>
+                <target>Une erreur s'est produite lors de la récupération des informations de cet encodage.</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_video">
+                <source>back.project.js.video</source>
+                <target>vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_videos">
+                <source>back.project.js.videos</source>
+                <target>vidéos</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_loading">
+                <source>back.project.js.loading</source>
+                <target>Chargement</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_extension_not_authorized">
+                <source>back.project.js.extension_not_authorized</source>
+                <target>Cette extension n'est pas autorisée.</target>
+            </trans-unit>
+            <trans-unit id="back_project_js_file_must_have_extension">
+                <source>back.project.js.file_must_have_extension</source>
+                <target>Votre fichier doit avoir une extension.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

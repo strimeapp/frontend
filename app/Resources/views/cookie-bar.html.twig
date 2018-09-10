@@ -1,0 +1,17 @@
+{% trans_default_domain 'XsolveCookieAcknowledgementBundle' %}
+{% extends "XsolveCookieAcknowledgementBundle::cookie_acknowledgement_bar.html.twig" %}
+
+{% block xsolve_cookie_message %}
+    <div id="cookie-law-info-bar">
+        <p>
+            {{ 'cookie.message'|trans({'%link_start%': '<a href="' ~ path('tos') ~ '" title="' ~ 'cookie.tos'|trans ~ '">', '%link_end%': '</a>'})|raw }}
+            <a href="#" id="cookie-law-close-button">
+                {{ 'cookie.message.accept'|trans({}, 'XsolveCookieAcknowledgementBundle') }}
+            </a>
+        </p>
+    </div>
+{% endblock %}
+
+{% block xsolve_cookie_message_js %}
+    {{ parent() }}
+{% endblock %}

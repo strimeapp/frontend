@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_confirmation_meta_title">
+                <source>email.confirmation.meta.title</source>
+                <target>Confirmation d'inscription</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_title_welcome">
+                <source>email.confirmation.title.welcome</source>
+                <target>Bienvenue sur Strime !</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_hi_first_name">
+                <source>email.confirmation.text.hi_first_name</source>
+                <target>Bonjour %first_name%</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_for_security_reasons_confirm_email">
+                <source>email.confirmation.text.for_security_reasons_confirm_email</source>
+                <target>Pour des raisons de sécurité, vous devez confirmer votre adresse email en cliquant sur le bouton ci-dessous.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_button_confirm_email">
+                <source>email.confirmation.button.confirm_email</source>
+                <target>Confirmer mon adresse email</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_button_confirm_your_email">
+                <source>email.confirmation.button.confirm_your_email</source>
+                <target>Confirmer votre adresse email</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_copy_link_in_browser">
+                <source>email.confirmation.text.copy_link_in_browser</source>
+                <target>Ou en copiant-collant le lien ci-dessous dans votre navigateur :</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_see_you_soon">
+                <source>email.confirmation.text.see_you_soon</source>
+                <target>À bientôt</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_strime_team">
+                <source>email.confirmation.text.strime_team</source>
+                <target>L'équipe Strime</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_you_still_have_not_confirmed_email">
+                <source>email.confirmation.text.you_still_have_not_confirmed_email</source>
+                <target>Sauf erreur de notre part, vous n'avez toujours pas confirmé votre adresse email.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_mandatory_action">
+                <source>email.confirmation.text.mandatory_action</source>
+                <target>La confirmation de votre adresse email est une action indispensable pour garantir le bon fonctionnement de Strime.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_still_possible_to_do_it">
+                <source>email.confirmation.text.still_possible_to_do_it</source>
+                <target>Il vous est encore possible de confirmer celle-ci en cliquant dès maintenant sur le bouton ci-dessous.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_will_have_to_deactivate_account">
+                <source>email.confirmation.text.will_have_to_deactivate_account</source>
+                <target>Sans action de votre part, votre compte Strime sera désactivé dans un délai de %days% jour.|Sans action de votre part, votre compte Strime sera désactivé dans un délai de %days% jours.</target>
+            </trans-unit>
+            <trans-unit id="email_confirmation_text_will_keep_data">
+                <source>email.confirmation.text.will_keep_data</source>
+                <target>Nous conserverons cependant vos données, afin de vous permettre de réactiver celui-ci si vous le souhaitez.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

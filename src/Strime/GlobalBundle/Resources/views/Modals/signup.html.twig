@@ -1,0 +1,70 @@
+{% trans_default_domain 'front_base' %}
+
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-loading-overlay">
+                <div class="modal-loading-overlay-inner">
+                    <div class="loader-container">
+                        <div class="loader-pulse">
+                            {{ 'front.base.loader.loading'|trans }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimefront/img/icon-close-modal.svg') }}" alt="{{ 'front.base.button.close_window'|trans }}" title="{{ 'front.base.button.close_window'|trans }}"></span></button>
+                <h4 class="modal-title">{{ 'front.base.modal.free_signup'|trans }}</h4>
+            </div>
+            <div class="modal-body">
+
+                {% if signup_form.first_name is defined %}
+                    {{ form_start(signup_form, {'action': path('ajax_signup'), 'attr': {'id': 'signup-form', 'novalidate': true} }) }}
+
+                        {{ form_widget(signup_form.first_name) }}
+                        {{ form_widget(signup_form.last_name) }}
+                        {{ form_widget(signup_form.email) }}
+                        {{ form_widget(signup_form.password) }}
+                        {{ form_widget(signup_form.opt_in) }}
+
+                        <p class="text-center">
+                            {{ 'front.base.modal.accept_tos'|trans( {'%link_start%': '<a href="' ~ path('tos') ~ '" title="TOS">', '%link_end%': '</a>'} )|raw }}
+                        </p>
+
+                        {{ form_widget(signup_form.submit, { 'label': 'front.base.button.signup', 'translation_domain': 'front_base' }) }}
+
+                        <div class="loader-container">
+                            <div class="loader-pulse">
+                                {{ 'front.base.loader.loading'|trans }}
+                            </div>
+                        </div>
+
+                    {{ form_end(signup_form) }}
+                {% else %}
+                    <p class="text-center">
+                        {{ signup_message|raw }}
+                    </p>
+                {% endif %}
+
+                <div id="signup-result" class="alert"></div>
+
+                <hr>
+
+                <div>
+                    <div id="google-signup"></div>
+                    <div class="fb-login-button" data-width="240" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email" data-height="50px" onlogin="checkLoginState();"></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+
+        <div class="text-center modal-subaction" id="go-to-login">
+            {{ 'front.base.modal.already_have_account'|trans }}
+            <a href="#" title="{{ 'front.base.modal.signin'|trans }}">
+                {{ 'front.base.modal.signin'|trans }}
+            </a>
+        </div>
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

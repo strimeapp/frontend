@@ -1,0 +1,95 @@
+body.asset #header .wrapper-full {
+	padding-left: 10px;
+}
+body.asset #logo-container {
+	float: left;
+}
+body.asset #header-submenu {
+	float: right;
+}
+body.asset #logo-container {
+	display: block;
+}
+body.asset #logo-container #logo {
+	height: 40px;
+	width: 40px;
+	margin-top: 10px;
+	color: #FFF;
+}
+body.asset #logo-container #logo svg {
+	height: 40px;
+	width: 40px;
+}
+body.asset #logo-container #logo svg path {
+	fill: #FFF;
+}
+body.asset #logo-container #logo svg:hover path {
+	fill: #0CAC9A;
+}
+#header #header-submenu ul#header-user-submenu {
+	top: 60px;
+	right: 40px;
+}
+
+body.asset #header #breadcrumb {
+	float: left;
+	margin-left: 20px;
+	margin-top: 10px;
+	height: 40px;
+	font-size: 16px;
+	color: #898B8E;
+}
+body.asset #header #breadcrumb #breadcrumb-inner {
+	display: table;
+	height: 100%;
+}
+body.asset #header #breadcrumb #breadcrumb-inner #breadcrumb-links {
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
+}
+body.asset #header #breadcrumb #breadcrumb-inner #breadcrumb-links .breadcrumb-elt {
+	display: inline-block;
+	margin-right: 5px;
+}
+body.asset #header #breadcrumb #breadcrumb-inner #breadcrumb-links img {
+	height: 15px;
+	margin-top: -5px;
+}
+body.asset #header #breadcrumb #breadcrumb-inner #breadcrumb-links a,
+body.asset #header #breadcrumb #breadcrumb-inner #breadcrumb-links a:visited {
+	font-family: 'UbuntuLight', sans-serif;
+	color: #898B8E;
+}
+body.asset #header #breadcrumb #breadcrumb-inner #breadcrumb-links a:hover {
+	color: #FFF;
+}
+
+body.asset #asset-meta {
+	background-color: #39393A;
+	padding: 6px 10px;
+}
+body.asset #asset-meta h1,
+body.asset #asset-meta .project-name {
+	display: inline-block;
+	background: none;
+	font-family: 'UbuntuLight', sans-serif;
+	text-align: left;
+	font-size: 20px;
+	color: #898B8E;
+	padding-right: 40px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	margin: 0 20px 0 0;
+	border-right: solid 2px #303031;
+}
+body.asset #asset-meta .project-name a,
+body.asset #asset-meta .project-name a:visited {
+	color: #898B8E;
+}
+body.asset #asset-meta .project-name a:hover {
+	color: #42B190;
+}
+body.asset #asset-meta h1.editing {
+	padding: 0 40px 0 0;
+}

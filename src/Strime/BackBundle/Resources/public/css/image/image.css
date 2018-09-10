@@ -1,0 +1,421 @@
+/* Image styles
+-------------------------------------------------- */
+
+body.image {
+	background-color: #303031;
+	overflow: hidden;
+}
+body.image .alert-success {
+	background-color: transparent;
+}
+
+body.image .image-show-comments-sidebar {
+	float: right;
+	opacity: 1;
+	cursor: pointer;
+	margin-left: 20px;
+	width: 30px;
+	height: 30px;
+	-webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+body.image .image-show-comments-sidebar.visible {
+	opacity: 0;
+}
+body.image .image-show-comments-sidebar svg {
+	width: 20px;
+	height: 20px;
+	margin-top: 7px;
+}
+body.image .image-show-comments-sidebar svg path {
+	fill: #898B8E;
+}
+body.image .image-show-comments-sidebar.visible {
+	display: none;
+}
+body.image .image-show-comments-sidebar svg:hover path {
+	fill: #B7C6C2;
+}
+
+body.image .modal#changeIdentityModal .modal-header {
+	padding-top: 60px;
+}
+body.image .modal#changeIdentityModal button.close {
+	display: none;
+}
+body.image .modal#changeIdentityModal h5 {
+	font-family: 'UbuntuLight', sans-serif;
+	text-align: center;
+	font-size: 28px;
+	color: #303031;
+}
+body.image .modal#changeIdentityModal .contact {
+	border: solid 1px #C4C5C6;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	padding: 5px 10px;
+	font-size: 17px;
+	color: #898B8E;
+	vertical-align: middle;
+	cursor: pointer;
+}
+body.image .modal#changeIdentityModal .contact img.avatar {
+	border-radius: 20px;
+}
+body.image .modal#changeIdentityModal .contact .email {
+	margin-top: 7px;
+}
+body.image .modal#changeIdentityModal .contact .choose-identity {
+	float: right;
+	display: block;
+	margin-top: 5px;
+}
+body.image .modal#changeIdentityModal .contact:hover {
+	background-color: #0CAC9A;
+	color: #FFF;
+	border-color: transparent;
+}
+body.image .modal#changeIdentityModal .contact:hover svg.choose-identity path {
+	fill: #FFF;
+}
+body.image .modal#changeIdentityModal form#add-image-contact-form {
+	margin-top: 20px;
+}
+body.image .modal#changeIdentityModal form#add-image-contact-form input {
+	float: left;
+	width: 60%;
+	-webkit-border-top-right-radius: 0px;
+	-webkit-border-bottom-right-radius: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+body.image .modal#changeIdentityModal form#add-image-contact-form button[type=submit] {
+	float: left;
+	width: 40%;
+	text-transform: uppercase;
+	margin: 0;
+	border: solid 1px #0CAC9A;
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+body.image .modal#changeIdentityConfirmationMessageModal .modal-body {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+body.image .modal#changeIdentityConfirmationMessageModal h4,
+body.image .modal#changeIdentityConfirmationMessageModal h5 {
+	text-align: center;
+	color: #0CAC9A;
+}
+body.image .modal#changeIdentityConfirmationMessageModal h4 {
+	font-size: 30px;
+}
+body.image .modal#changeIdentityConfirmationMessageModal h5 {
+	font-family: 'UbuntuLight', sans-serif;
+	font-size: 24px;
+}
+body.image #header #header-change-id .contact-profile,
+body.image #header #header-change-id .contact-avatar,
+body.image #header #header-change-id .contact-info {
+	float: right;
+}
+body.image #header #header-change-id .contact-info {
+	margin-left: 10px;
+}
+body.image #header #header-change-id img.avatar {
+	float: right;
+	border-radius: 20px;
+	border: solid 1px #898B8E;
+}
+body.image #header #header-change-id .contact-email {
+	font-family: 'UbuntuLight', sans-serif;
+	line-height: 16px;
+	font-size: 14px;
+	color: #898B8E;
+}
+body.image #header #header-change-id a#change-id {
+	font-family: 'UbuntuLight', sans-serif;
+	text-decoration: underline;
+	font-size: 12px;
+	line-height: 14px;
+}
+body.image .modal#changeIdentityModal #add-image-contact-result {
+	display: none;
+}
+
+#content {
+	position: relative;
+	background-color: #282829;
+	width: 100%;
+	height: auto;
+	padding: 0px 0px 20px 0px;
+	overflow: auto;
+}
+#content #image {
+	position: relative;
+	float: left;
+	width: 100%;
+    -webkit-transition: width 0.6s ease-in-out;
+    -moz-transition: width 0.6s ease-in-out;
+    -o-transition: width 0.6s ease-in-out;
+    transition: width 0.6s ease-in-out;
+}
+#content #image.comments-visible {
+	width: 60%;
+}
+#content #image #image-container {
+	overflow-y: scroll;
+}
+#content #image #image-inner {
+	position: relative;
+	padding: 10px;
+}
+
+#image #comments-layer img.marker {
+	display: block;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	opacity: 1;
+	-webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+#image #comments-layer img.marker.active {
+	opacity: 1;
+}
+#image #comments-layer img.marker.inactive {
+	opacity: 0.4;
+}
+#image #comments-layer img.marker.draggable-marker {
+	width: 23px;
+	height: 23px;
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+
+#content #image #image-content {
+	width: 100%;
+}
+
+
+#content #image #image-comments-controls {
+	display: flex;
+	flex-direction: row;
+	background-color: #434344;
+	width: 100%;
+}
+#content #image #image-comments-controls button {
+	display: inline-block;
+	background: none;
+	margin: 0;
+	border-radius: 0;
+	padding: 0;
+	text-align: center;
+}
+#content #image #image-comments-controls .image-go-to-previous-comment {
+	order: 1;
+}
+#content #image #image-comments-controls .image-go-to-next-comment {
+	order: 2;
+}
+#content #image #image-comments-controls .image-go-to-next-comment,
+#content #image #image-comments-controls .image-go-to-previous-comment {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+#content #image #image-comments-controls .image-go-to-next-comment:before {
+	display: block;
+	background: url(../../img/player/icon-next-comment.svg) no-repeat;
+    background-position: center center;
+    background-size: 11px 13px;
+    width: 100%;
+    height: 100%;
+    content:"";
+}
+#content #image #image-comments-controls .image-go-to-previous-comment:before {
+	display: block;
+	background: url(../../img/player/icon-previous-comment.svg) no-repeat;
+    background-position: center center;
+    background-size: 11px 13px;
+    width: 100%;
+    height: 100%;
+    content:"";
+}
+#content #image #image-comments-controls .image-hide-markers-on-image {
+	order: 3;
+    cursor: pointer;
+    width: 50px;
+    height: 30px;
+}
+#content #image #image-comments-controls .image-hide-markers-on-image:before {
+	display: block;
+	background: url(../../img/player/icon-markers-visible.svg) no-repeat;
+    background-position: center center;
+    background-size: 18px 13px;
+    width: 100%;
+    height: 100%;
+    content:"";
+}
+#content #image #image-comments-controls .image-hide-markers-on-image.markers-hidden:before {
+	background: url(../../img/player/icon-markers-hidden.svg) no-repeat;
+    background-position: center center;
+    background-size: 24px 13px;
+    content:"";
+}
+
+
+#content #image #image-description {
+	margin-top: 10px;
+	padding: 0 10px;
+}
+#content #image #image-description textarea {
+	display: block;
+	background-color: #434344;
+	width: 100%;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 16px;
+	color: #898B8E;
+	border: none;
+	padding: 7px 10px;
+	border-radius: 5px;
+}
+#content #image #image-description button,
+#content #image #image-description .loader-container {
+	float: right;
+	width: 40%;
+	margin-top: 10px;
+}
+#content #image #image-description .description-content {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 16px;
+	color: #898B8E;
+	padding: 7px 10px;
+}
+#content #image #image-description.editable .description-content {
+	background: url(../../img/icon-pen-round.svg) no-repeat;
+    background-position: 95% 5%;
+    background-size: 15px 15px;
+	cursor: pointer;
+}
+#content #image #image-description.saved .description-content {
+	background: none;
+}
+#content #image #image-description.saved .description-content {
+	background: url(../../img/icon-check-green.svg) no-repeat;
+	background-position: 95% 5%;
+	background-size: 15px 15px;
+}
+
+
+
+/* Styles modals
+-------------------------------------------------------------- */
+
+.modal#editCommentModal .modal-header,
+.modal#deleteCommentModal .modal-header {
+	padding: 20px;
+	border-bottom: solid 1px #C4C5C6;
+}
+.modal#editCommentModal .modal-footer {
+	padding: 10px;
+	border-top: solid 1px #C4C5C6;
+}
+.modal#editCommentModal .modal-footer button,
+.modal#deleteCommentModal .modal-footer button {
+	float: left;
+	font-family: 'Cabin', sans-serif;
+	text-align: center;
+	font-size: 17px;
+	color: #FFF;
+	width: auto;
+	padding: 5px 40px;
+	margin-left: 10px;
+	margin-top: 0;
+	border-radius: 3px;
+}
+.modal#editCommentModal .modal-footer button.cancel,
+.modal#deleteCommentModal .modal-footer button.cancel {
+	background-color: #898B8E;
+}
+.modal#editCommentModal .modal-footer button.cancel:hover,
+.modal#deleteCommentModal .modal-footer button.cancel:hover {
+	background-color: #C4C5C6;
+}
+.modal#editCommentModal .modal-body {
+	padding: 20px 80px;
+}
+.modal#editCommentModal .modal-body .modal-body-inner {
+	width: 100%;
+}
+.modal#editCommentModal .modal-body .avatar-container {
+	float: left;
+	width: 40px;
+	margin-right: 10px;
+}
+.modal#editCommentModal .modal-body .comment-container {
+	float: left;
+	width: calc(100% - 51px);
+}
+.modal#editCommentModal .modal-body .comment-container textarea {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height: 200px;
+	height: auto;
+	border: none;
+	resize: none;
+}
+.modal#editCommentModal .modal-body .avatar img {
+	border-radius: 20px;
+	width: 40px;
+	height: 40px;
+}
+
+.modal#deleteCommentModal .modal-header {
+	padding: 40px;
+	border-bottom: none;
+}
+.modal#deleteCommentModal .modal-footer {
+	padding: 10px;
+	border-top: none;
+}
+.modal#deleteCommentModal .modal-footer .action-buttons {
+	text-align: center;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+.modal#editCommentModal .modal-footer button, .modal#deleteCommentModal .modal-footer button {
+	float: none;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.modal#exportYoutubeModal .modal-body #youtube-export-result {
+	display: none;
+	margin-bottom: 20px;
+}
+.modal#exportYoutubeModal .modal-body select {
+	margin-bottom: 10px;
+}
+.modal#exportYoutubeModal .modal-body textarea {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height: 200px;
+}

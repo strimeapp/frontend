@@ -1,0 +1,26 @@
+{% trans_default_domain 'back_modal_confirm_email' %}
+
+<div class="modal fade" id="confirmEmailModal" tabindex="-1" role="dialog" aria-labelledby="confirmEmailLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.modal_confirm_email.alt.close_window'|trans }}" title="{{ 'back.modal_confirm_email.alt.close_window'|trans }}"></span></button>
+                <h4 class="modal-title">{{ 'back.modal_confirm_email.title.email_unconfirmed'|trans }}</h4>
+            </div>
+            <div class="modal-body">
+                <p>{{ 'back.modal_confirm_email.text.please_confirm_email_address'|trans({'%user_email%': app.session.get('email')}) }}</p>
+                <p>{{ 'back.modal_confirm_email.text.account_will_be_suspended'|transchoice(user_days_before_deactivation, {'%user_days_before_deactivation%': user_days_before_deactivation}) }}</p>
+
+                <a href="#" title="{{ 'back.modal_confirm_email.button.resend_confirmation_email'|trans }}" id="resend-confirmation-email">
+                    <button>
+                        <div>{{ 'back.modal_confirm_email.button.resend_confirmation_email'|trans }}</div>
+                    </button>
+                </a>
+
+                <div class="text-center margin-top">
+                    {{ 'back.modal_confirm_email.link.change_my_email_address'|trans({'%link_start%': '<a href="' ~ path('app_profile') ~ '" title="' ~ 'back.modal_confirm_email.alt.edit_email_address'|trans ~ '">', '%link_end%': '</a>'})|raw }}
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

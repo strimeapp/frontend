@@ -1,0 +1,48 @@
+{% trans_default_domain 'email_encoding_killed' %}
+{% extends 'emails/email_base.html.twig' %}
+
+
+
+{% block email_title %}
+	<title>{{ 'email.comment.meta.title'|trans({}, 'email_encoding_killed', locale) }}</title>
+{% endblock %}
+
+
+
+{% block email_header_title %}
+	<h1 style="margin: 0px;">
+		{% if asset_type == "video" %}
+			{{ 'email.encoding_killed.title.video_encoded'|trans({}, 'email_encoding_killed', locale) }}
+		{% elseif asset_type == "audio" %}
+			{{ 'email.encoding_killed.title.audio_encoded'|trans({}, 'email_encoding_killed', locale) }}
+		{% else %}
+			{{ 'email.encoding_killed.title.file_encoded'|trans({}, 'email_encoding_killed', locale) }}
+		{% endif %}
+	</h1>
+{% endblock %}
+
+
+
+{% block email_content %}
+	<p>{{ 'email.encoding_killed.text.hi_first_name'|trans({'%first_name%': first_name}, 'email_encoding_killed', locale) }},</p>
+
+	<p>
+		{% if asset_type == "video" %}
+			{{ 'email.encoding_killed.text.video_encoding_killed'|trans({'%asset%': asset}, 'email_encoding_killed', locale)|raw }}<br />
+		{% elseif asset_type == "audio" %}
+			{{ 'email.encoding_killed.text.audio_encoding_killed'|trans({'%asset%': asset}, 'email_encoding_killed', locale)|raw }}<br />
+		{% else %}
+			{{ 'email.encoding_killed.text.file_encoding_killed'|trans({'%asset%': asset}, 'email_encoding_killed', locale)|raw }}<br />
+		{% endif %}
+		{{ 'email.encoding_killed.text.sorry_inconvenience'|trans({}, 'email_encoding_killed', locale) }}
+	</p>
+
+	<p>
+		{{ 'email.encoding_killed.text.invite_reupload_file_or_contact_us'|trans({}, 'email_encoding_killed', locale) }}
+	</p>
+
+	<p>
+		{{ 'email.encoding_killed.text.see_you_soon'|trans({}, 'email_encoding_killed', locale) }},<br />
+		{{ 'email.encoding_killed.text.strime_team'|trans({}, 'email_encoding_killed', locale) }}
+	</p>
+{% endblock %}

@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_faq_meta_description">
+                <source>front.faq.meta.description</source>
+                <target>Any question? We probably already have the answer...</target>
+            </trans-unit>
+            <trans-unit id="front_faq_meta_keywords">
+                <source>front.confirm_email.meta.keywords</source>
+                <target>strime, strime.io, video, videos, comment, comments, application, app, workflow, collaboration, client, video producer, producer, professional, professionals, faq, knowledge base, questions</target>
+            </trans-unit>
+            <trans-unit id="front_faq_meta_title">
+                <source>front.faq.meta.title</source>
+                <target>FAQ</target>
+            </trans-unit>
+            <trans-unit id="front_faq_title_frequent_asked_questions">
+                <source>front.faq.title.frequent_asked_questions</source>
+                <target>Frequent asked questions</target>
+            </trans-unit>
+            <trans-unit id="front_faq_excerpt_find_below_answers_to">
+                <source>front.faq.excerpt.find_below_answers_to</source>
+                <target>Please find below the answers to the frequently asked questions.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_title_first_steps">
+                <source>front.faq.title.first_steps</source>
+                <target>My first steps with Strime</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_change_language">
+                <source>front.faq.link.change_language</source>
+                <target>Can I change Strime's language?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_yes_language_selector">
+                <source>front.faq.text.yes_language_selector</source>
+                <target>Yes, a language selector is available on top of the page, or in the section "My Account".</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_languages_available">
+                <source>front.faq.text.languages_available</source>
+                <target>The available languages are french, english and spanish.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_how_can_i_have_a_profile_picture">
+                <source>front.faq.link.how_can_i_have_a_profile_picture</source>
+                <target>How can I set my profile picture?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_profile_picture_automatically_collected">
+                <source>front.faq.text.profile_picture_automatically_collected</source>
+                <target><![CDATA[Your profile picture is automatically collected if your email is linked to a Gravatar account. If not, you can create a Gravatar account at the following address: <a href="http://fr.gravatar.com/" title="Gravatar" target="_blank">en.gravatar.com</a>]]></target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_can_also_change_picture_in_my_account">
+                <source>front.faq.text.can_also_change_picture_in_my_account</source>
+                <target>You can also change your profile picture by clicking on your name, on the top right corner of the screen, in the application, and by accessing the section "My Account".</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_available_tablet_phone">
+                <source>front.faq.link.available_tablet_phone</source>
+                <target>Is Strime available on tablet or smartphone?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_screen_size_not_big_enough">
+                <source>front.faq.text.screen_size_not_big_enough</source>
+                <target>The size of screens on smartphones and tablets don't allow a sufficient visual comfort with our actual interface. However, we are considering the idea to create an interface dedicated to mobile devices. Keep posted to get the freshest news on Strime.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_can_i_import_images">
+                <source>front.faq.link.can_i_import_images</source>
+                <target>Can I import images or sound files?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_features_not_available_yet">
+                <source>front.faq.text.features_not_available_yet</source>
+                <target>This feature are not available yet, but we will include them in future developments.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_title_videos">
+                <source>front.faq.title.videos</source>
+                <target>Videos</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_which_format_can_i_import">
+                <source>front.faq.link.which_format_can_i_import</source>
+                <target>What format can I import into Strime?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_strime_wants_to_be_the_simplest">
+                <source>front.faq.text.strime_wants_to_be_the_simplest</source>
+                <target>Strime aims to be as easy to use as possible, that's why you can import a wide range of formats, from AVI, to Quicktime, H264, etc... Feel free to contact us if a format should be missing.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_max_resolution">
+                <source>front.faq.link.max_resolution</source>
+                <target>What is the max resolution of videos on Strime?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_you_can_use_any_resolution">
+                <source>front.faq.text.you_can_use_any_resolution</source>
+                <target>You can use any resolution, however, for fluidity reasons, we re-encode all the videos submitted in 720p. We will offer other resolutions later, but we will only do it once we are certain that this doesn't impact the quality of use of the application.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_why_conversion_phase">
+                <source>front.faq.link.why_conversion_phase</source>
+                <target>Why is there a conversion phase?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_ensure_compatibility">
+                <source>front.faq.text.ensure_compatibility</source>
+                <target>In order to ensure the maximum compatibility between all the browsers and to guarantee the necessary reading flexibility, Strime must reconvert the videos in specific formats.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_can_i_mount_videos">
+                <source>front.faq.link.can_i_mount_videos</source>
+                <target>Can I do video editing with Strime?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_platform_to_share_videos">
+                <source>front.faq.text.platform_to_share_videos</source>
+                <target>No, Strime is a platform to share videos and collect comments or corrections on them.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_what_if_i_stop_my_subscription">
+                <source>front.faq.link.what_if_i_stop_my_subscription</source>
+                <target>What happens to my videos if I stop my subscription?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_will_keep_your_videos_2_months">
+                <source>front.faq.text.will_keep_your_videos_2_months</source>
+                <target>Your videos will be archived. If you have reached your quota of videos or if you are using all the storage available in the free offer, you will not be able to add new ones unless you remove some of them.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_can_i_share_videos_on_social_network">
+                <source>front.faq.link.can_i_share_videos_on_social_network</source>
+                <target>Can I share my videos on social networks?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_no_validation_platform">
+                <source>front.faq.text.no_validation_platform</source>
+                <target>No, Strime is a platform meant to validate and correct videos, not a streaming platform.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_can_i_replace_a_file_by_another">
+                <source>front.faq.link.can_i_replace_a_file_by_another</source>
+                <target>Can I change a file with another after making corrections?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_no_corrections_implies_radical_changes">
+                <source>front.faq.text.no_corrections_implies_radical_changes</source>
+                <target>No, corrections often involve a modification of the plans or time of the latter, so the corrections will no longer be synchronized with the new video. We advise you to create a project on behalf of the video and to upload each version of this video to keep the different versions and the associated comments.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_can_we_download_a_video_from_strime_interface">
+                <source>front.faq.link.can_we_download_a_video_from_strime_interface</source>
+                <target>Can I, or can my clients, dowload the video from Strime's interface?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_not_yet_this_will_come_later">
+                <source>front.faq.text.not_yet_this_will_come_later</source>
+                <target><![CDATA[Not yet, we plan to add this feature later to download the video in different formats. You can %link_start%sign up for the newsletter%link_end% now to be notified as soon as possible of the new features.]]></target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_contact_us">
+                <source>front.faq.text.contact_us</source>
+                <target>Contact us</target>
+            </trans-unit>
+            <trans-unit id="front_faq_title_comments">
+                <source>front.faq.title.comments</source>
+                <target>Comments</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_why_are_some_comments_anonymous">
+                <source>front.faq.link.why_are_some_comments_anonymous</source>
+                <target>Why are some comments identified as « anonymous »?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_people_not_connected">
+                <source>front.faq.text.people_not_connected</source>
+                <target>People leaving comments without being connected to Strime, and without having been invited from the application are identified as « anonymous ».</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_since_2016_mandatory_to_identify_yourself">
+                <source>front.faq.text.since_2016_mandatory_to_identify_yourself</source>
+                <target>Since mid-2016, we force people collaborating on a project to identify themself with their email address in order for you to know who is commenting.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_do_my_clients_have_to_create_an_account">
+                <source>front.faq.link.do_my_clients_have_to_create_an_account</source>
+                <target>Do my clients have to create an account to leave comments?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_your_clients_will_have_to_provide_email">
+                <source>front.faq.text.your_clients_will_have_to_provide_email</source>
+                <target>No, your clients will be invited to give their email to be identified on the comments. That's it.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_how_can_i_know_how_much_available_storage_i_have">
+                <source>front.faq.link.how_can_i_know_how_much_available_storage_i_have</source>
+                <target>How do I know how much storage space I have left?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_just_have_to_click_on_your_name">
+                <source>front.faq.text.just_have_to_click_on_your_name</source>
+                <target>You just have to click on your name on the top-right corner to visualize the storage space available.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_title_users_accounts">
+                <source>front.faq.title.users_accounts</source>
+                <target>User accounts</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_many_people_of_my_company_want_to_use_strime">
+                <source>front.faq.link.many_people_of_my_company_want_to_use_strime</source>
+                <target>Multiple people of my company want to use Strime, can I create an account per user?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_multi_account_feature_not_available">
+                <source>front.faq.text.multi_account_feature_not_available</source>
+                <target>For now, the "multi-account" feature is not yet available; follow Strime news in order to know when it will be integrated.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_can_i_share_with_someone_who_doesnt_have_account">
+                <source>front.faq.link.can_i_share_with_someone_who_doesnt_have_account</source>
+                <target>Can I share my video with someone who doesn't have a Strime account?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_of_course_this_is_the_point">
+                <source>front.faq.text.of_course_this_is_the_point</source>
+                <target>Of course, this is Strime's point. You can share your video with whoever you want.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_can_i_connect_myself_with_webservice">
+                <source>front.faq.link.can_i_connect_myself_with_webservice</source>
+                <target>Can I sign into Strime or create an account using another webservice ?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_yes_you_can_use_google_or_facebook">
+                <source>front.faq.text.yes_you_can_use_google_or_facebook</source>
+                <target>Yes, absolutely. If you have a Google or Facebook account, you can use this one to sign in or to create a Strime account.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_how_to_revoke_access">
+                <source>front.faq.link.how_to_revoke_access</source>
+                <target>How can I manage the Strime's connection to these webservices?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_use_integrations_tab">
+                <source>front.faq.text.use_integrations_tab</source>
+                <target>You can at anytime, from your account, in the integrations tab, revoke the access to any webservice to which Strime is connected.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_google_apps_manager">
+                <source>front.faq.text.google_apps_manager</source>
+                <target>To check that Strime can't access anymore to this information, Google provides %link_start%a page%link_end% that allows you to manage these rights.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_access_this_page">
+                <source>front.faq.text.access_this_page</source>
+                <target>Access to this page</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_how_to_change_locale">
+                <source>front.faq.link.how_to_change_locale</source>
+                <target>How can I change the language of my account?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_in_your_account_you_can_change_locale">
+                <source>front.faq.text.in_your_account_you_can_change_locale</source>
+                <target>In the section My Account, you can set the language you prefer.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_alt_more_details">
+                <source>front.faq.alt.more_details</source>
+                <target>More details</target>
+            </trans-unit>
+            <trans-unit id="front_faq_title_payments_billing">
+                <source>front.faq.title.payments_billing</source>
+                <target>Payment and billing</target>
+            </trans-unit>
+            <trans-unit id="front_faq_title_data_security">
+                <source>front.faq.title.data_security</source>
+                <target>Data security</target>
+            </trans-unit>
+            <trans-unit id="front_faq_link_what_guarantees_the_security_of_my_data">
+                <source>front.faq.link.what_guarantees_the_security_of_my_data</source>
+                <target>What guarantees the security of my data?</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_strime_deploys_important_means">
+                <source>front.faq.text.strime_deploys_important_means</source>
+                <target>Strime deploys important means to protect your personal data.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_for_safety_of_transactions">
+                <source>front.faq.text.for_safety_of_transactions</source>
+                <target>For the security of transactions, we use the TLS protocol (formerly SSL), which encrypts all the data exchanges between your browser and Strime's platform.</target>
+            </trans-unit>
+            <trans-unit id="front_faq_alt_contact_us">
+                <source>front.faq.alt.contact_us</source>
+                <target>Contact us</target>
+            </trans-unit>
+            <trans-unit id="front_faq_text_cant_find_answer">
+                <source>front.faq.text.cant_find_answer</source>
+                <target>You can't find the answer to your question? %link_start%Contact us%link_end%.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

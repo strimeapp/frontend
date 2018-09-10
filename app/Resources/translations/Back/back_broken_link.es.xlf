@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_broken_link_meta_title">
+                <source>back.broken_link.meta.title</source>
+                <target>No hay videos a esta dirección</target>
+            </trans-unit>
+            <trans-unit id="back_broken_link_meta_keywords">
+                <source>back.broken_link.meta.keywords</source>
+                <target>strime, strime.io, video, video, videos, comentario, comentarios, aplicación, app, apps, workflow, intercambiar, cliente, videasta, profesional, profesional, error, enlace roto</target>
+            </trans-unit>
+            <trans-unit id="back_broken_link_title_invalid_link">
+                <source>back.broken_link.title.invalid_link</source>
+                <target>Oh! Este enlace ya no es válido.</target>
+            </trans-unit>
+            <trans-unit id="back_broken_link_text_project_deleted_or_not_active">
+                <source>back.broken_link.text.project_deleted_or_not_active</source>
+                <target>El proyecto que está intentando acceder ha sido eliminado o ya no está activo.</target>
+            </trans-unit>
+            <trans-unit id="back_broken_link_text_contact_the_owner">
+                <source>back.broken_link.text.contact_the_owner</source>
+                <target>Contactar con el dueño del proyecto</target>
+            </trans-unit>
+            <trans-unit id="back_broken_link_text_back_to_dashboard">
+                <source>back.broken_link.text.back_to_dashboard</source>
+                <target>Volver al dashboard</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

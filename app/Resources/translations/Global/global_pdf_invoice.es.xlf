@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="global_pdf_invoice_text_vat">
+                <source>global.pdf_invoice.text.vat</source>
+                <target>IVA</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_invoice">
+                <source>global.pdf_invoice.text.invoice</source>
+                <target>Factura</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_date">
+                <source>global.pdf_invoice.text.date</source>
+                <target>Fecha</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_contact">
+                <source>global.pdf_invoice.text.contact</source>
+                <target>Contacto</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_payment_mode">
+                <source>global.pdf_invoice.text.payment_mode</source>
+                <target>Forma de pago</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_credit_card">
+                <source>global.pdf_invoice.text.credit_card</source>
+                <target>Tarjeta bancaria</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_client_vat">
+                <source>global.pdf_invoice.text.client_vat</source>
+                <target>IVA del cliente</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_invoicing_address">
+                <source>global.pdf_invoice.text.invoicing_address</source>
+                <target>Dirección de facturación</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_description">
+                <source>global.pdf_invoice.text.description</source>
+                <target>Descripción</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_quantity">
+                <source>global.pdf_invoice.text.quantity</source>
+                <target>Cantidad</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_unit_price">
+                <source>global.pdf_invoice.text.unit_price</source>
+                <target>Precio por unidad</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_total_price">
+                <source>global.pdf_invoice.text.total_price</source>
+                <target>Precio total</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_discount">
+                <source>global.pdf_invoice.text.discount</source>
+                <target>Reducción</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_wo_taxes">
+                <source>global.pdf_invoice.text.wo_taxes</source>
+                <target>Sin IVA</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_total_wo_taxes">
+                <source>global.pdf_invoice.text.total_wo_taxes</source>
+                <target>Total sin IVA</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_autoliquidation_vat">
+                <source>global.pdf_invoice.text.autoliquidation_vat</source>
+                <target>IVA</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_amount_with_taxes">
+                <source>global.pdf_invoice.text.amount_with_taxes</source>
+                <target>Monto con IVA incluida</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_amount_payed">
+                <source>global.pdf_invoice.text.amount_payed</source>
+                <target>Monto pagado</target>
+            </trans-unit>
+            <trans-unit id="global_pdf_invoice_text_made_with_love">
+                <source>global.pdf_invoice.text.made_with_love</source>
+                <target><![CDATA[Hecho con amor a Sainté y Valparaíso!]]></target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

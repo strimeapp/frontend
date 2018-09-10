@@ -1,0 +1,152 @@
+{% trans_default_domain 'asset_header' %}
+{% if app.session.get('first_name') is defined and app.session.get('first_name') is not null %}
+
+    <!-- Header -->
+    <div id="header">
+    	<div class="wrapper-full">
+            <a href="{{ url('app_dashboard') }}" title="Strime" id="logo-container">
+                <div id="logo">
+                    <img src="{{ asset('bundles/strimeback/img/logo-strime-white-play.svg') }}" class="svg" alt="{{ 'asset.header.alt.dashboard'|trans }}" title="{{ 'asset.header.alt.dashboard'|trans }}">
+                </div>
+            </a>
+            <div id="breadcrumb">
+                <div id="breadcrumb-inner">
+                    <div id="breadcrumb-links">
+                        <div class="breadcrumb-elt">
+                            <img src="{{ asset('bundles/strimeback/img/breadcrumb-icon-home.svg') }}" alt="{{ 'asset.header.alt.dashboard'|trans }}" title="{{ 'asset.header.alt.dashboard'|trans }}">
+                        </div>
+                        <div class="breadcrumb-elt">
+                            <a href="{{ url('app_dashboard') }}" title="{{ 'asset.header.link.projects'|trans }}">
+                                {{ 'asset.header.link.projects'|trans }}
+                            </a>
+                        </div>
+                        {% if (video.project.project_id is defined and video.project.project_id is not null) or (image.project.project_id is defined and image.project.project_id is not null) %}
+                            {% if video is defined %}
+                                {% set project_id = video.project.project_id %}
+                                {% set project_name = video.project.name %}
+                            {% elseif image is defined %}
+                                {% set project_id = image.project.project_id %}
+                                {% set project_name = image.project.name %}
+                            {% endif %}
+                            <div class="breadcrumb-elt">
+                                >
+                            </div>
+                            <div class="breadcrumb-elt">
+                                <img src="{{ asset('bundles/strimeback/img/breadcrumb-icon-folder.svg') }}" alt="{{ 'asset.header.alt.project'|trans }}" title="{{ 'asset.header.alt.project'|trans }}">
+                            </div>
+                            <div class="breadcrumb-elt">
+                                <a href="{{ path('app_project', {'project_id' : project_id}) }}" title="{{ 'asset.header.alt.back_to_project'|trans }}">
+                                    {{ project_name }}
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="text-right" id="header-submenu">
+                <ul id="header-user">
+                    <li>
+                        <img class="avatar" src="{% if 'gravatar' in app.session.get('avatar') or 'googleusercontent' in app.session.get('avatar') or 'scontent.xx.fbcdn.net' in app.session.get('avatar') %}{{ app.session.get('avatar') }}{% else %}{{ app.session.get('avatar')|imagine_filter('profile_pic') }}{% endif %}" alt="{{ app.session.get('first_name') ~ " " ~ app.session.get('last_name')|escape }}" title="{{ app.session.get('first_name') ~ " " ~ app.session.get('last_name')|escape }}">
+                        {{ app.session.get('first_name') ~ " " ~ app.session.get('last_name') }}
+                        <ul id="header-user-submenu">
+                            <li class="storage">
+                                {{ 'asset.header.item.storage'|trans({'%storage_used%': app.session.get('storage_used'), '%storage_allowed%': app.session.get('storage_allowed') / 1000, '%storage_used_in_percent%': app.session.get('storage_used_in_percent')}) }}
+                            </li>
+                            <li>
+                                <a href="{{ url('app_profile') }}" title="{{ 'asset.header.link.my_account'|trans }}">
+                                    {{ 'asset.header.link.my_account'|trans }}
+                                </a>
+                            </li>
+                            <li>
+                                {% if app.session.get('google_signin') is defined and app.session.get('google_signin') == true %}
+                                    <a href="#" class="signout" title="{{ 'asset.header.link.signout'|trans }}" data-signout-url="{{ url('signout') }}" onclick="googleSignOut();">
+                                        {{ 'asset.header.link.signout'|trans }}
+                                    </a>
+                                {% else %}
+                                    <a href="{{ url('signout') }}" class="signout" title="{{ 'asset.header.link.signout'|trans }}">
+                                        {{ 'asset.header.link.signout'|trans }}
+                                    </a>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+            <div class="clear"></div>
+    	</div>
+    </div><!-- ./Header -->
+
+{% else %}
+
+    <!-- Header -->
+    <div id="header">
+        <div class="wrapper-full">
+            <div class="row">
+                <div class="col-sm-2">
+                    <a href="{{ url('app_dashboard') }}" title="Strime">
+                        <img src="{{ asset('bundles/strimeback/img/logo-strime-full-white.svg') }}" alt="Strime" title="Strime" id="logo">
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <ul id="main-menu">
+                        <li>
+                            <a href="#" class="login" title="{{ 'asset.header.title.signin'|trans }}" data-toggle="modal" data-target="#loginModal" data-backdrop="false" data-keyboard="false">
+                                {{ 'asset.header.link.signin'|trans }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="signup" title="{{ 'asset.header.title.create_an_account'|trans }}" data-toggle="modal" data-target="#signupModal" data-backdrop="false" data-keyboard="false">
+                                {{ 'asset.header.link.signup'|trans }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('faq') }}" title="{{ 'asset.header.link.faq'|trans }}">
+                                {{ 'asset.header.link.faq'|trans }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 text-right" id="header-change-id">
+                    {% if invited_contact is not null %}
+                        <div class="contact-profile">
+            		        <div class="contact-info">
+            		            <div class="contact-email">{{ invited_contact.email }}</div>
+            		            <a href="#" id="change-id" title="{{ 'asset.header.link.change_id'|trans }}">{{ 'asset.header.link.change_id'|trans }}</a>
+            		        </div>
+        		            <div class="contact-avatar">
+        		                <img src="{{ invited_contact.avatar }}" class="avatar">
+        		            </div>
+        		            <div class="clear"></div>
+        		        </div>
+        		        <div class="clear"></div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div><!-- ./Header -->
+
+{% endif %}
+
+
+{% if new_feature_disclaimer is defined and new_feature_disclaimer is not null %}
+    <div id="new-feature-disclaimer">
+        <span class="title">{{ 'asset.header.disclaimer.news'|trans }}</span>
+        {% if app.request.locale == 'fr' %}
+            {{ new_feature_disclaimer.descriptionFr }}
+            <a href="{{ new_feature_disclaimer.blogUrlFr }}" title="{{ 'asset.header.link.learn_more'|trans }}" target="_blank">
+                {{ 'asset.header.link.learn_more'|trans }}
+            </a>
+        {% elseif app.request.locale == 'es' %}
+            {{ new_feature_disclaimer.descriptionEs }}
+            <a href="{{ new_feature_disclaimer.blogUrlEs }}" title="{{ 'asset.header.link.learn_more'|trans }}" target="_blank">
+                {{ 'asset.header.link.learn_more'|trans }}
+            </a>
+        {% else %}
+            {{ new_feature_disclaimer.descriptionEn }}
+            <a href="{{ new_feature_disclaimer.blogUrlEn }}" title="{{ 'asset.header.link.learn_more'|trans }}" target="_blank">
+                {{ 'asset.header.link.learn_more'|trans }}
+            </a>
+        {% endif %}
+        <div id="close-new-feature-disclaimer" data-new-feature-id="{{ new_feature_disclaimer.secretId }}"></div>
+    </div>
+{% endif %}

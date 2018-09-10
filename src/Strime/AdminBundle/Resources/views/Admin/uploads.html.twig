@@ -1,0 +1,119 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_uploads') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin - Uploads">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord">
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        'bundles/strimeglobal/css/sub-menu.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}Admin | Uploads | Strime{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+    {% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="sub-menu">
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="{{ path('admin_videos') }}" title="Vidéos">Vidéos</a>
+                </li>
+                <li class="active">
+                    <a href="{{ path('admin_uploads') }}" title="Uploads">Uploads</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_encoding_jobs') }}" title="Encodages">Encodages</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="admin-content">
+    	<h1>Gestion des uploads en cours</h1>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-cloud-upload fa-2x"></i>
+                    <div class="data">{{ nb_uploads }}</div>
+                    <div class="description">uploads</div>
+                </div>
+            </div>
+        </div>
+
+        {% for flash_message in app.session.flashbag.get('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% for flash_message in app.session.flashbag.get('error') %}
+            <div class="alert alert-danger" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% if nb_uploads > 0 %}
+        <div class="table-responsive margin-top">
+	        <table class="table table-bordered table-hover table-condensed">
+	        	<thead>
+					<tr>
+						<td></td>
+						<td>
+							Client
+						</td>
+						<td>
+							Début de l'upload
+						</td>
+						<td></td>
+					</tr>
+				</thead>
+
+				<tbody>
+					{% for upload in uploads %}
+						<tr>
+							<td>
+								{{ loop.index }}
+							</td>
+							<td>
+								{{ upload.user_name }}
+							</td>
+							<td>
+								{{ upload.createdAt.date|date("d M Y", upload.createdAt.timezone) }}
+							</td>
+							<td>
+								<a href="{{ path('admin_uploads', {'action': 'delete', 'content_id': upload.id}) }}" title="Annuler cet upload">
+	                                Annuler cet upload
+	                            </a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% endif %}
+    </div><!-- ./Admin content -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}

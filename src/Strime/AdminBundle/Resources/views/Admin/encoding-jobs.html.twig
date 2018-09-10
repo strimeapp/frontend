@@ -1,0 +1,198 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_users') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin - Encodages">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord">
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        'bundles/strimeglobal/css/sub-menu.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}Admin | Encodages | Strime{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+	{% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="sub-menu">
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="{{ path('admin_videos') }}" title="Vidéos">Vidéos</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_uploads') }}" title="Uploads">Uploads</a>
+                </li>
+                <li class="active">
+                    <a href="{{ path('admin_encoding_jobs') }}" title="Encodages">Encodages</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="admin-content">
+    	<h1>Gestion des encodages</h1>
+
+        {% for flash_message in app.session.flashbag.get('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% for flash_message in app.session.flashbag.get('error') %}
+            <div class="alert alert-danger" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        <div id="chart-stats-encoding-jobs-time" class="data-elt">
+            <h2>Durée d'encodage en fonction de la durée de la vidéo, et de son poids</h2>
+            <div id="chart-stats-encoding-jobs-time-inner"></div>
+        </div>
+
+        <hr>
+
+        {% if encoding_jobs is defined %}
+        <div class="white-box encoding-jobs-list">
+	        <h2>Les encodages en cours</h2>
+
+	        <div class="table-responsive margin-top">
+		        <table class="table table-hover table-condensed">
+		        	<thead>
+						<tr>
+							<td></td>
+							<td>
+								Vidéo
+							</td>
+							<td>
+								Projet
+							</td>
+							<td>
+								Utilisateur
+							</td>
+							<td>
+								En cours de traitement
+							</td>
+							<td>
+								Avancement
+							</td>
+							<td>
+								Serveur
+							</td>
+							<td>
+								Date de création
+							</td>
+							<td>
+								Mise à jour
+							</td>
+							<td></td>
+						</tr>
+					</thead>
+
+					<tbody>
+						{% for encoding_job in encoding_jobs %}
+							<tr {% if encoding_job.started == 1 %}class="danger"{% endif %}>
+								<td>
+									{{ loop.index }}
+								</td>
+								<td>
+									{{ encoding_job.video.name }}
+								</td>
+								<td>
+									<a href="#" title="Voir le dossier du projet">
+										{{ encoding_job.video.project }}
+									</a>
+								</td>
+								<td>
+									{{ encoding_job.user.first_name ~ " " ~ encoding_job.user.last_name }}
+								</td>
+								<td>
+									{% if encoding_job.started == 1 %}
+										oui
+									{% else %}
+										non
+									{% endif %}
+								</td>
+								<td>
+									{{ encoding_job.status }} %
+								</td>
+								<td>
+									{{ encoding_job.encoding_server }}
+								</td>
+								<td>
+									{{ encoding_job.created_at.date|date("d M Y", encoding_job.created_at.timezone)|localizeddate('medium', 'none', 'fr_FR') }} - {{ encoding_job.created_at.date|date("H:i:s", encoding_job.created_at.timezone) }}
+								</td>
+								<td>
+									{{ encoding_job.updated_at.date|date("d M Y", encoding_job.updated_at.timezone)|localizeddate('medium', 'none', 'fr_FR') }} - {{ encoding_job.updated_at.date|date("H:i:s", encoding_job.updated_at.timezone) }}
+								</td>
+								<td>
+									<a href="{{ path('admin_encoding_jobs', {"action": "relaunch", "encoding_job_id": encoding_job.encoding_job_id}) }}" title="Relancer le job">
+										<button>
+											Relancer
+										</button>
+									</a>
+									<a href="{{ path('admin_encoding_jobs', {"action": "kill", "encoding_job_id": encoding_job.encoding_job_id}) }}" title="Tuer le job">
+										<button>
+											Tuer
+										</button>
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div><!-- ./White box -->
+		{% endif %}
+    </div><!-- ./Admin content -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    {% javascripts
+        '@StrimeAdminBundle/Resources/public/js/amcharts_3.20.3.free/amcharts/amcharts.js' filter='?uglifyjs2'
+        '@StrimeAdminBundle/Resources/public/js/amcharts_3.20.3.free/amcharts/serial.js' filter='?uglifyjs2'
+        '@StrimeAdminBundle/Resources/public/js/amcharts_3.20.3.free/amcharts/themes/light.js' filter='?uglifyjs2'
+        '@StrimeAdminBundle/Resources/public/js/encoding-jobs-generate-charts.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script type="text/javascript">
+
+        // Generate the data for chart with the number of users per day
+        function generateChartDataStatsEncodingJobsTime() {
+            var chartData = [];
+
+            {% for stat in stats_encoding_jobs_time  %}
+                chartData.push({
+                    id: "{{ loop.index }}",
+                    totalTime: {{ stat.total_time }},
+                    videoSize: {{ stat.size }},
+                    videoDuration: {{ stat.duration }}
+                });
+            {% endfor %}
+
+            return chartData;
+        }
+
+    </script>
+{% endblock %}

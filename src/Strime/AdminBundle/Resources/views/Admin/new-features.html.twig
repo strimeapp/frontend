@@ -1,0 +1,128 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_users') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin - Nouvelles fonctionnalités">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord">
+{% endblock %}
+
+{% block title %}Admin | Nouvelles fonctionnalités | Strime{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+	{% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="admin-content" class="new-features">
+    	<h1>Gestion des nouvelles fonctionnalités</h1>
+
+        {% for flash_message in app.session.flashbag.get('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% for flash_message in app.session.flashbag.get('error') %}
+            <div class="alert alert-danger" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% if new_features is defined %}
+        <div class="white-box encoding-jobs-list">
+	        <h2 class="pull-left">Nouvelles fonctionnalités</h2>
+
+	        <div class="pull-right">
+	        	<a href="{{ path('admin_add_new_feature') }}" title="Publier un message">
+		        	<button id="add-new-feature">
+		        		Publier une nouvelle fonctionnalité
+		        	</button>
+		        </a>
+	        </div>
+	        <div class="clear"></div>
+
+	        <div class="table-responsive margin-top">
+		        <table class="table table-hover table-condensed">
+		        	<thead>
+						<tr>
+							<td></td>
+							<td>
+								Titre
+							</td>
+							<td>
+								Description
+							</td>
+							<td>
+								URL de l'article sur le blog
+							</td>
+							<td>
+								Ajoutée le
+							</td>
+							<td></td>
+						</tr>
+					</thead>
+
+					<tbody>
+						{% for new_feature in new_features %}
+							<tr>
+								<td>
+									{{ loop.index }}
+								</td>
+								<td>
+									{{ new_feature.titleFr }}<br />
+                                    {{ new_feature.titleEn }}<br />
+                                    {{ new_feature.titleEs }}
+								</td>
+								<td>
+									{{ new_feature.descriptionFr }}<br />
+                                    {{ new_feature.descriptionEn }}<br />
+                                    {{ new_feature.descriptionEs }}
+								</td>
+								<td>
+									<a href="{{ new_feature.blogUrlFr }}" title="Lire l'article sur le blog" target="_blank">
+										{{ new_feature.blogUrlFr }}
+									</a>
+                                    {% if new_feature.blogUrlEn is not null %}
+                                        <br />
+                                        <a href="{{ new_feature.blogUrlEn }}" title="Read the article on the blog" target="_blank">
+    										{{ new_feature.blogUrlEn }}
+    									</a>
+                                    {% endif %}
+                                    {% if new_feature.blogUrlEs is not null %}
+                                        <br />
+                                        <a href="{{ new_feature.blogUrlEs }}" title="Leer el articulo sobre el blog" target="_blank">
+    										{{ new_feature.blogUrlEs }}
+    									</a>
+                                    {% endif %}
+								</td>
+								<td>
+									{{ new_feature.createdAt.date|date("d M Y", new_feature.createdAt.timezone)|localizeddate('medium', 'none', 'fr_FR') }} - {{ new_feature.createdAt.date|date("H:i:s", new_feature.createdAt.timezone) }}
+								</td>
+								<td>
+									<a href="{{ path('admin_new_features', {"action": "delete", "new_feature_id": new_feature.secretId}) }}" title="Supprimer le message">
+										<button>
+											Supprimer
+										</button>
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div><!-- ./White box -->
+		{% endif %}
+    </div><!-- ./Admin content -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}

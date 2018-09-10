@@ -1,0 +1,43 @@
+{% extends 'emails/email_base.html.twig' %}
+
+
+
+{% block email_title %}
+	<title>Stripe error</title>
+{% endblock %}
+
+
+
+{% block email_header_title %}																		                        
+	<h1 style="margin: 0px;">[Stripe] - {{ subject }}</h1>
+{% endblock %}
+
+
+																						                        
+{% block email_content %}													                            
+	<p>Salut,</p>
+
+	<p>
+		Une erreur est survenue sur un paiement.
+	</p>
+
+	<p>
+		Voici les détails :<br />
+		- Nom : {{ name }},<br />
+		- Email : {{ email }},<br />
+		- Stripe ID : {{ stripe_id }},<br />
+		- Type d'erreur : {{ error_type }},<br />
+		- Action à entreprendre : {{ todo }},<br />
+		- Période de facturation : {{ time_period }},<br />
+		- Montant : {{ amount }} €,
+		{% if curl_status is not null %}
+			<br />
+			- cURL Status : {{ curl_status }}
+		{% endif %}
+	</p>
+
+	<p>
+		À bientôt,<br />
+		Votre robot préféré !
+	</p>
+{% endblock %}

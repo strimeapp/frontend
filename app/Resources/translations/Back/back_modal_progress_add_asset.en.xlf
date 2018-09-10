@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_modal_progress_add_asset_title_please_do_not_leave">
+                <source>back.modal_progress_add_asset.title.please_do_not_leave</source>
+                <target>Please do not leave</target>
+            </trans-unit>
+            <trans-unit id="back_modal_progress_add_asset_text_upload_in_progress">
+                <source>back.modal_progress_add_asset.text.upload_in_progress</source>
+                <target>Your file is uploading...</target>
+            </trans-unit>
+            <trans-unit id="back_modal_progress_add_asset_text_encoding_will_automatically_start">
+                <source>back.modal_progress_add_asset.text.encoding_will_automatically_start</source>
+                <target>The conversion will automatically start right after.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

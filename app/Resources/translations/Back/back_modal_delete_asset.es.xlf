@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_modal_delete_asset_alt_close_window">
+                <source>back.modal_delete_asset.alt.close_window</source>
+                <target>Cerrar la ventana</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_title_delete_video">
+                <source>back.modal_delete_asset.title.delete_video</source>
+                <target>Suprimir este video</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_title_delete_image">
+                <source>back.modal_delete_asset.title.delete_image</source>
+                <target>Suprimir esta imagen</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_sure_wanna_delete_video">
+                <source>back.modal_delete_asset.text.sure_wanna_delete_video</source>
+                <target><![CDATA[¿Usted desea realmente suprimir el video llamado <strong><span class='asset-name'></span></strong> y todos los comentarios asociados a este video?]]></target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_sure_wanna_delete_image">
+                <source>back.modal_delete_asset.text.sure_wanna_delete_image</source>
+                <target><![CDATA[¿Usted desea realmente suprimir la imagen llamada <strong><span class='asset-name'></span></strong> y todos los comentarios asociados a esta imagen?]]></target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_sure_wanna_delete_file">
+                <source>back.modal_delete_asset.text.sure_wanna_delete_file</source>
+                <target><![CDATA[¿Usted desea realmente suprimir el archivo llamado <strong><span class='asset-name'></span></strong> y todos los comentarios asociados a este archivo?]]></target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_will_free_space_video">
+                <source>back.modal_delete_asset.text.will_free_space_video</source>
+                <target>Al suprimir este video liberara espacio en su cuenta.</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_will_free_space_image">
+                <source>back.modal_delete_asset.text.will_free_space_image</source>
+                <target>Al suprimir esta imagen liberara espacio en su cuenta.</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_will_free_space_file">
+                <source>back.modal_delete_asset.text.will_free_space_file</source>
+                <target>Al suprimir este archivo liberara espacio en su cuenta.</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_cannot_be_canceled">
+                <source>back.modal_delete_asset.text.cannot_be_canceled</source>
+                <target>Esta operación es irreversible.</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_alt_delete_this_video">
+                <source>back.modal_delete_asset.alt.delete_this_video</source>
+                <target>Suprimir este video</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_alt_delete_this_image">
+                <source>back.modal_delete_asset.alt.delete_this_image</source>
+                <target>Suprimir esta imagen</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_alt_delete_this_file">
+                <source>back.modal_delete_asset.alt.delete_this_file</source>
+                <target>Suprimir este archivo</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_button_yes_delete_video">
+                <source>back.modal_delete_asset.button.yes_delete_video</source>
+                <target>Si, suprimir este video</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_button_yes_delete_image">
+                <source>back.modal_delete_asset.button.yes_delete_image</source>
+                <target>Si, suprimir esta imagen</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_button_no_get_me_out">
+                <source>back.modal_delete_asset.button.no_get_me_out</source>
+                <target>No, sáqueme de aquí!</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

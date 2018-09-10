@@ -1,0 +1,287 @@
+{% trans_default_domain 'back_base' %}
+
+{% if app.session.get('rights') != "" %}
+    {% set rights = app.session.get('rights')|split(',') %}
+{% else %}
+    {% set rights = null %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <!-- Charset definition -->
+        <meta charset="UTF-8" />
+
+        <!-- Mobile properties -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block link_canonical %}
+            <link rel="canonical" href="https://www.strime.io/" />
+        {% endblock %}
+
+        <title>
+            {% block title %}Strime.io | {{ 'back.base.title.video_projects_validation'|trans }}{% endblock %}
+        </title>
+
+        <!-- Meta tags -->
+        {% block meta_tags %}
+            <meta name="description" content="{{ 'back.base.meta.description'|trans }}">
+            <meta name="author" content="Strime">
+            <meta name="keywords" content="{{ 'back.base.meta.keywords'|trans }}">
+            <meta name="google-signin-client_id" content="59471169232-igm9oedpkpc0f1spqmrj2nffqd1hj93f.apps.googleusercontent.com">
+        {% endblock %}
+
+        <!-- OG tags -->
+        {% block og_tags %}
+            {% if app.request.locale == 'fr' %}
+                <meta property="og:locale" content="fr_FR" />
+            {% elseif app.request.locale == 'es' %}
+                <meta property="og:locale" content="es_ES" />
+            {% else %}
+                <meta property="og:locale" content="en_US" />
+            {% endif %}
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Strime - {{ 'back.base.meta.description'|trans }}" />
+            <meta property="og:url" content="{{ url('home') }}" />
+            <meta property="og:site_name" content="Strime" />
+            <meta property="og:image" content="{{ asset('bundles/strimeback/img/main.jpg') }}" />
+            <meta name="twitter:card" content="summary"/>
+            <meta name="twitter:title" content="Strime - {{ 'back.base.meta.description'|trans }}"/>
+            <meta name="twitter:domain" content="{{ url('home') }}"/>
+            <meta name="twitter:image:src" content="{{ asset('bundles/strimeback/img/main.jpg') }}"/>
+        {% endblock %}
+
+        {% block stylesheets %}
+            <!-- Bootstrap -->
+
+            {% stylesheets
+                'bundles/strimeback/css/bootstrap.min.css' filter='cssrewrite'
+                'bundles/strimeback/css/loader-pulse.css' filter='cssrewrite'
+                'bundles/strimeglobal/css/pace.css' filter='cssrewrite'
+                'bundles/strimefront/css/global.css' filter='cssrewrite'
+                'bundles/strimeglobal/css/modal.css' filter='cssrewrite'
+                'bundles/strimeback/css/main.css' filter='cssrewrite'
+                'bundles/strimeback/css/responsive.css' filter='cssrewrite'
+            %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+
+            <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
+        {% endblock %}
+
+        <!-- Favicon -->
+        <link rel="icon shortcut" type="image/x-icon" href="{{ asset('bundles/strimeback/img/favicon.ico') }}" />
+
+        {% if app.environment == "prod" %}
+            <!-- Facebook Pixel Code -->
+            {% if app.session.get('email') is defined and app.session.get('email') is not null %}
+                <script>
+                    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+                    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+                    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+                    fbq('init', '258547327887541', {
+                        em: '{{ app.session.get('email') }}'
+                    });
+                    fbq('track', 'PageView');
+                </script>
+            {% else %}
+                <script>
+                    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+                    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+                    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+                    fbq('init', '258547327887541', {});
+                    fbq('track', 'PageView');
+                </script>
+            {% endif %}
+            <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=258547327887541&ev=PageView&noscript=1" /></noscript>
+            <!-- DO NOT MODIFY -->
+            <!-- End Facebook Pixel Code -->
+
+
+            <!-- Start of HubSpot Embed Code -->
+            <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3022819.js"></script>
+            <!-- End of HubSpot Embed Code -->
+        {% endif %}
+
+        {% block header_js %}{% endblock %}
+    </head>
+    <body class="{{ body_classes }}">
+        {% block body %}
+            {% include 'StrimeGlobalBundle:JS:facebook-login.html.twig' %}
+        {% endblock %}
+
+        {% block footer %}
+            <footer>
+                <div class="wrapper-full">
+                    {% if feedback_form is not null %}
+                        {{ 'back.base.text.help_us_improve_strime'|trans }}
+                        <a href="#" title="{{ 'back.base.alt.suggest_improvement'|trans }}" class="feedback" data-feedback="improvement">
+                            {{ 'back.base.text.suggest_improvement'|trans }}
+                        </a>
+                        {{ 'back.base.text.or'|trans }}
+                        <a href="#" title="{{ 'back.base.alt.signal_issue'|trans }}" class="feedback" data-feedback="bug">
+                            {{ 'back.base.text.signal_issue'|trans }}
+                        </a>
+                    {% endif %}
+
+                    <div class="trust-badge">
+                        <a href="{{ path('trust_badge') }}" title="{{ 'back.base.alt.trust_badge'|trans }}" target="_blank">
+                            <img src="{{ asset('bundles/strimefront/img/icon-trust-badge-white.svg') }}" class="svg" alt="{{ 'back.base.alt.trust_badge'|trans }}" title="{{ 'back.base.alt.trust_badge'|trans }}">
+                        </a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </footer>
+
+            {% if feedback_form is not null %}
+                <div id="feedback-box">
+                    <div class="header">
+                        <div class="title"></div>
+                        <div class="close"></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="content">
+                        <h4>{{ 'back.base.title.feedback_is_important'|trans }}</h4>
+
+                        <div id="send-feedback-result" class="alert" role="alert"></div>
+
+                        <form action="{{ path('app_ajax_send_feedback') }}" id="feedback-form">
+
+                            {{ form_widget(feedback_form.email, {'translation_domain': 'back_helpers_form'}) }}
+                            {{ form_widget(feedback_form.message, {'translation_domain': 'back_helpers_form'}) }}
+
+                            {{ form_widget(feedback_form.submit, { 'label': 'back.base.button.send', 'translation_domain': 'back_base' }) }}
+                            <div class="clear"></div>
+
+                            <div class="loader-container">
+                                <div class="loader-pulse">
+                                    {{ 'back.base.loader.loading'|trans }}...
+                                </div>
+                            </div>
+
+                        {{ form_end(feedback_form) }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endblock %}
+
+        {% block login_popup %}
+
+            {% include 'StrimeGlobalBundle:Modals:login.html.twig' %}
+
+        {% endblock %}
+
+        {% block signup_popup %}
+
+            {% include 'StrimeGlobalBundle:Modals:signup.html.twig' %}
+
+        {% endblock %}
+
+        {% block javascripts %}
+            <script type="text/javascript">
+                // Define the text variables
+                const backJsTextFeedbackSuggestImprovement = "{{ 'back.base.js.feedback_suggest_improvement'|trans|raw }}";
+                const backJsTextFeedbackSignalIssue = "{{ 'back.base.js.feedback_signal_issue'|trans|raw }}";
+                const backJsTextShareProject = "{{ 'back.base.js.share_project'|trans|raw }}";
+                const backJsTextShareVideo = "{{ 'back.base.js.share_video'|trans|raw }}";
+                const backJsTextShareImage = "{{ 'back.base.js.share_image'|trans|raw }}";
+                const backJsTextShareFile = "{{ 'back.base.js.share_file'|trans|raw }}";
+                const backJsTextShareCopied = "{{ 'back.base.js.share_copied'|trans|raw }}";
+                const backJsTextShareCopy = "{{ 'back.base.js.share_copy'|trans|raw }}";
+                const backJsTextShareAddAMessage = "{{ 'back.base.js.share_add_a_message'|trans|raw }}";
+                const backJsTextShareDoNotAddMessage = "{{ 'back.base.js.share_do_not_add_message'|trans|raw }}";
+                const backJsTextShareNoUserFoundForThisRequest = "{{ 'back.base.js.share_no_user_found_for_this_request'|trans|raw }}";
+                const backJsTextShareProjectWithThisNameAlreadyExists = "{{ 'back.base.js.share_project_with_this_name_already_exists'|trans|raw }}";
+                const backJsTextShareAllFieldsNotProvided = "{{ 'back.base.js.share_all_fields_not_provided'|trans|raw }}";
+                const backJsTextShareErrorOccuredWhileSendingFile = "{{ 'back.base.js.share_error_occured_while_sending_file'|trans|raw }}";
+                const backJsTextShareErrorOccuredWhileSendingUrl = "{{ 'back.base.js.share_error_occured_while_sending_url'|trans|raw }}";
+                const backJsTextShareMessageHasBeenSent = "{{ 'back.base.js.share_message_has_been_sent'|trans|raw }}";
+                const backJsTextUploadNotEnoughSpace = "{{ 'back.base.js.upload_not_enough_space'|trans|raw }}";
+                const backJsTextUploadDropOrImportFile = "{{ 'back.base.js.upload_drop_or_import_file'|trans|raw }}";
+                const backJsTextUploadInProgress = "{{ 'back.base.js.upload_in_progress'|trans|raw }}";
+                const backJsTextUploadCancelUpload = "{{ 'back.base.js.upload_cancel_upload'|trans|raw }}";
+                const backJsTextUploadNoUserFoundForThisRequest = "{{ 'back.base.js.upload_no_user_found_for_this_request'|trans|raw }}";
+                const backJsTextUploadProjectWithThisNameAlreadyExists = "{{ 'back.base.js.upload_project_with_this_name_already_exists'|trans|raw }}";
+                const backJsTextUploadAllFieldsNotProvided = "{{ 'back.base.js.upload_all_fields_not_provided'|trans|raw }}";
+                const backJsTextUploadReachedMaxNumberOfFiles = "{{ 'back.base.js.upload_reached_max_number_of_videos'|trans|raw }}";
+                const backJsTextUploadReachedMaxSpaceAvailable = "{{ 'back.base.js.upload_reached_max_space_available'|trans|raw }}";
+                const backJsTextUploadErrorOccuredWhileSendingFile = "{{ 'back.base.js.upload_error_occured_while_sending_file'|trans|raw }}";
+                const backJsTextUploadErrorOccuredWhileEncodingVideo = "{{ 'back.base.js.upload_error_occured_while_encoding_video'|trans|raw }}";
+                const backJsTextUploadErrorOccuredWhileUploadingImage = "{{ 'back.base.js.upload_error_occured_while_uploading_image'|trans|raw }}";
+                const backJsTextUploadErrorOccuredWhileUploadingAudio = "{{ 'back.base.js.upload_error_occured_while_uploading_audio'|trans|raw }}";
+                const backJsTextUploadErrorOccuredWhileUploadingAsset = "{{ 'back.base.js.upload_error_occured_while_uploading_asset'|trans|raw }}";
+                const backJsTextUploadEncodingScheduledWillBeNotified = "{{ 'back.base.js.upload_encoding_scheduled_will_be_notified'|trans|raw }}";
+                const backJsTextUploadImageSuccess = "{{ 'back.base.js.upload_image_success'|trans|raw }}";
+                const backJsTextUploadAssetSuccess = "{{ 'back.base.js.upload_asset_success'|trans|raw }}";
+                const backJsTextUploadEncodingInProgress = "{{ 'back.base.js.upload_encoding_in_progress'|trans|raw }}";
+                const backJsTextUploadVideoEncodingInProgress = "{{ 'back.base.js.upload_video_encoding_in_progress'|trans|raw }}";
+                const backJsTextUploadAudioEncodingInProgress = "{{ 'back.base.js.upload_audio_encoding_in_progress'|trans|raw }}";
+                const ajaxSocialSigninURL = "{{ path('ajax_social_signin') }}";
+
+                {% if app.session.get('first_name') is defined and app.session.get('first_name') is not null %}
+                    var userLoggedIn = true;
+                {% else %}
+                    var userLoggedIn = false;
+                {% endif %}
+            </script>
+
+            {% include 'StrimeGlobalBundle:JS:signup-constants.html.twig' %}
+
+            {% javascripts
+                '@jquery_and_bootstrap'
+                '@StrimeGlobalBundle/Resources/public/js/main.js' filter='?uglifyjs2'
+                '@StrimeGlobalBundle/Resources/public/js/login.js' filter='?uglifyjs2'
+                '@StrimeBackBundle/Resources/public/js/functions.js' filter='?uglifyjs2'
+                '@StrimeBackBundle/Resources/public/js/main.js' filter='?uglifyjs2'
+                '@StrimeBackBundle/Resources/public/js/feedback.js' filter='?uglifyjs2'
+                '@StrimeBackBundle/Resources/public/js/display-submenu.js' filter='?uglifyjs2'
+                '@StrimeGlobalBundle/Resources/public/js/pace-1.0.0.min.js' filter='?uglifyjs2'
+                '@StrimeGlobalBundle/Resources/public/js/google-sign-in.js' filter='?uglifyjs2'
+                '@StrimeGlobalBundle/Resources/public/js/google-sign-out.js' filter='?uglifyjs2'
+            %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+
+            <script src="https://apis.google.com/js/platform.js?onload=renderGoogleButton" async defer></script>
+
+            {% if new_feature_disclaimer is defined and new_feature_disclaimer is not null %}
+                {% javascripts
+                    '@StrimeBackBundle/Resources/public/js/hide-new-feature-disclaimer.js' filter='?uglifyjs2'
+                %}
+                    <script src="{{ asset_url }}"></script>
+                {% endjavascripts %}
+
+                <script type="text/javascript">
+                    var ajaxMarkNewFeatureDisclaimerAsReadURL = "{{ path('app_ajax_mark_new_feature_disclaimer_as_read') }}";
+                </script>
+            {% endif %}
+        {% endblock %}
+
+        {% if app.environment == "prod" %}
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-64615405-1', 'auto');
+                ga('send', 'pageview');
+
+                const environmentIsProd = true;
+            </script>
+        {% else %}
+            <script type="text/javascript">
+                const environmentIsProd = false;
+            </script>
+        {% endif %}
+    </body>
+</html>

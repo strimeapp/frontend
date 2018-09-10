@@ -1,0 +1,92 @@
+{% trans_default_domain 'back_project_element' %}
+
+{% if asset.asset_type == "video" %}
+
+    {% if invited_contact is defined and invited_contact is not null %}
+        {% set asset_page_url = path('app_video', {'video_id' : asset.asset_id, 'action': 'contact', 'contact_id': invited_contact.contact_id}) %}
+    {% else %}
+        {% set asset_page_url = path('app_video', {'video_id' : asset.asset_id}) %}
+    {% endif %}
+
+    {% set asset_share_url = url('app_video', {'video_id' : asset.asset_id}) %}
+
+{% elseif asset.asset_type == "image" %}
+
+    {% if invited_contact is defined and invited_contact is not null %}
+        {% set asset_page_url = path('app_image', {'image_id' : asset.asset_id, 'action': 'contact', 'contact_id': invited_contact.contact_id}) %}
+    {% else %}
+        {% set asset_page_url = path('app_image', {'image_id' : asset.asset_id}) %}
+    {% endif %}
+
+    {% set asset_share_url = url('app_image', {'image_id' : asset.asset_id}) %}
+
+{% elseif asset.asset_type == "audio" %}
+
+    {% if invited_contact is defined and invited_contact is not null %}
+        {% set asset_page_url = path('app_audio', {'audio_id' : asset.asset_id, 'action': 'contact', 'contact_id': invited_contact.contact_id}) %}
+    {% else %}
+        {% set asset_page_url = path('app_audio', {'audio_id' : asset.asset_id}) %}
+    {% endif %}
+
+    {% set asset_share_url = url('app_audio', {'audio_id' : asset.asset_id}) %}
+
+{% endif %}
+
+<div id="asset-{{ asset.asset_id }}" class="asset {{ asset.asset_type }} {% if nb_assets_per_line is divisible by(4) %}last-elt{% endif %}" style="background: url({{ asset.thumbnail }}) no-repeat; background-size: cover; background-position: center center;" data-elt-id="{{ asset.asset_id }}" data-asset-type="{{ asset.asset_type }}">
+    <a href="{{ asset_page_url }}" {% if is_owner is defined and is_owner == true %}ondragstart="dragAsset(event)" draggable="true" ondragend="dragEndAsset(event)"{% endif %}>
+
+        {# If the user is logged in, display the action buttons #}
+        {% if app.session.get('first_name') is defined and app.session.get('first_name') is not null and is_owner is defined and is_owner == true %}
+            <div class="asset-actions">
+                <div class="asset-delete" data-target="{{ path('app_dashboard', {'action': 'delete', 'content_type': asset.asset_type, 'content_id' : asset.asset_id}) }}" data-asset-name="{{ asset.name }}" data-asset-type="{{ asset.asset_type }}">
+                </div>
+                <div class="asset-share" data-asset-id="{{ asset.asset_id }}" data-asset-url="{{ asset_share_url }}" data-content-type="{{ asset.asset_type }}" data-content-id="{{ asset.asset_id }}" data-content-name="{{ asset.name }}">
+                </div>
+                <div class="clear"></div>
+            </div>
+        {% endif %}
+
+        <div class="see-asset">
+            <div class="see-asset-inner">
+                <button>
+                    {% if asset.asset_type == "video" %}
+                        {{ 'back.project_element.button.see_video'|trans }}
+                    {% elseif asset.asset_type == "image" %}
+                        {{ 'back.project_element.button.see_image'|trans }}
+                    {% elseif asset.asset_type == "audio" %}
+                        {{ 'back.project_element.button.see_audio'|trans }}
+                    {% else %}
+                        {{ 'back.project_element.button.see_file'|trans }}
+                    {% endif %}
+                </button>
+            </div>
+        </div>
+
+        <div class="asset-details">
+            <div class="asset-details-inner">
+                <div class="asset-name" data-elt-id="{{ asset.asset_id }}">
+                    {{ asset.name }}
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="asset-date">
+                            {% if app.request.locale == 'fr' %}
+                                {{ asset.created_at.date|date("d M Y", asset.created_at.timezone)|localizeddate('medium', 'none', 'fr_FR') }}
+                            {% elseif app.request.locale == 'es' %}
+                                {{ asset.created_at.date|date("d M Y", asset.created_at.timezone)|localizeddate('medium', 'none', 'es_ES') }}
+                            {% else %}
+                                {{ asset.created_at.date|date("d M Y", asset.created_at.timezone)|localizeddate('medium', 'none', 'en_US') }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="asset-nb-comments">
+                            {{ asset.nb_comments }}
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div><!-- ./Asset details inner -->
+        </div><!-- ./Asset details -->
+    </a>
+</div>

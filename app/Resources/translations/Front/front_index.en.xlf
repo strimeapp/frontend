@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_index_button_access_app">
+                <source>front.index.button.access_app</source>
+                <target>Go to the application</target>
+            </trans-unit>
+            <trans-unit id="front_index_link_blog">
+                <source>front.index.link.blog</source>
+                <target>Blog</target>
+            </trans-unit>
+            <trans-unit id="front_index_link_strime_the_blog">
+                <source>front.index.title.strime_the_blog</source>
+                <target>Strime - the blog</target>
+            </trans-unit>
+            <trans-unit id="front_index_link_login">
+                <source>front.index.link.login</source>
+                <target>Sign in</target>
+            </trans-unit>
+            <trans-unit id="front_index_title_login">
+                <source>front.index.title.login</source>
+                <target>Sign in</target>
+            </trans-unit>
+            <trans-unit id="front_index_link_signup">
+                <source>front.index.button.signup</source>
+                <target>Sign up</target>
+            </trans-unit>
+            <trans-unit id="front_index_baseline_simplify_video_feedback">
+                <source>front.index.baseline.simplify_video_feedback</source>
+                <target>Simplify video project management</target>
+            </trans-unit>
+            <trans-unit id="front_index_baseline_get_precise_feedback">
+                <source>front.index.baseline.get_precise_feedback</source>
+                <target>Collect precise feedback, save time, earn money</target>
+            </trans-unit>
+            <trans-unit id="front_index_free_strime_is_free">
+                <source>front.index.free.strime_is_free</source>
+                <target>Strime is free. No kiddin'!</target>
+            </trans-unit>
+            <trans-unit id="front_index_free_button_create_account">
+                <source>front.index.free.button.create_account</source>
+                <target>Create an account</target>
+            </trans-unit>
+            <trans-unit id="front_index_what_we_do_make_feedback_not_easy">
+                <source>front.index.what_we_do.make_feedback_not_easy</source>
+                <target>Making clear and precise feedback on a video is not obvious.</target>
+            </trans-unit>
+            <trans-unit id="front_index_what_we_do_simple_tool">
+                <source>front.index.what_we_do.simple_tool</source>
+                <target>Strime is a simple tool designed to improve the tracking of corrections of a video project</target>
+            </trans-unit>
+            <trans-unit id="front_index_what_we_do_simplify_communication">
+                <source>front.index.what_we_do.simplify_communication</source>
+                <target>and facilitate exchanges with your customers and colleagues.</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_up_to_10go">
+                <source>front.index.app_description.up_to_10go</source>
+                <target>Post and store your videos up to 10Gb</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_download_videos">
+                <source>front.index.app_description.download_videos</source>
+                <target>Upload your videos to your dashboard in any format (mov, avi, mp4, wmv, flv...).</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_organize_them">
+                <source>front.index.app_description.organize_them</source>
+                <target>Organize them in projects and control in real time the corrections suggested.</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_collect_annotations">
+                <source>front.index.app_description.collect_annotations</source>
+                <target>Collect customers annotations</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_write_directly_on_images">
+                <source>front.index.app_description.write_directly_on_images</source>
+                <target>Post your feedback and comments directly on videos.</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_answer_to_client">
+                <source>front.index.app_description.answer_to_client</source>
+                <target>Answer to the client's comments and make him validate your work.</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_share_in_one_clic">
+                <source>front.index.app_description.share_in_one_clic</source>
+                <target>Share your videos in one click</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_private_access">
+                <source>front.index.app_description.private_access</source>
+                <target>Show your work remotely via a private access and automatically receive notifications for every comment posted.</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_keep_the_comments">
+                <source>front.index.app_description.keep_the_comments</source>
+                <target>Keep all the comments of a project</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_collect_feedback_in_one_place">
+                <source>front.index.app_description.collect_feedback_in_one_place</source>
+                <target>Gather all the feedback and corrections of your clients in one place, and save time in the management of your projects.</target>
+            </trans-unit>
+            <trans-unit id="front_index_partners_they_support_strime">
+                <source>front.index.partners.they_support_strime</source>
+                <target>They support Strime</target>
+            </trans-unit>
+            <trans-unit id="front_index_stay_connected_create_account">
+                <source>front.index.stay_connected.create_account</source>
+                <target><![CDATA[Create an account, Strime is <u>free</u>, no time limit.]]></target>
+            </trans-unit>
+            <trans-unit id="front_index_stay_connected_lets_go">
+                <source>front.index.stay_connected.lets_go</source>
+                <target>Let's go!</target>
+            </trans-unit>
+            <trans-unit id="front_index_stay_connected_accept_tos">
+                <source>front.index.stay_connected.accept_tos</source>
+                <target>By creating an account, you agree to Strime's %link_start%terms of services%link_end%</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_first_name">
+                <source>front.index.form.first_name</source>
+                <target>First name</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_name">
+                <source>front.index.form.name</source>
+                <target>Last name</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_email">
+                <source>front.index.form.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_password">
+                <source>front.index.form.password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_optin_newsletter">
+                <source>front.index.form.optin_newsletter</source>
+                <target>I subscribe to the newsletter</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_message_already_logged_in">
+                <source>front.index.form_message.already_logged_in</source>
+                <target>You are already logged in.</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_message_no_network">
+                <source>front.index.form_message.no_network</source>
+                <target><![CDATA[You don't seem to be connected to the internet.<br />You cannot sign up without an active connection.]]></target>
+            </trans-unit>
+            <trans-unit id="front_index_loader_loading">
+                <source>front.index.loader.loading</source>
+                <target>Loading...</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

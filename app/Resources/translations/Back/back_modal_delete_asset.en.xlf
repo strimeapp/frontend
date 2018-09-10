@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_modal_delete_asset_alt_close_window">
+                <source>back.modal_delete_asset.alt.close_window</source>
+                <target>Close the window</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_title_delete_video">
+                <source>back.modal_delete_asset.title.delete_video</source>
+                <target>Delete this video</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_title_delete_image">
+                <source>back.modal_delete_asset.title.delete_image</source>
+                <target>Delete this image</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_title_delete_file">
+                <source>back.modal_delete_asset.title.delete_file</source>
+                <target>Delete this file</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_sure_wanna_delete_video">
+                <source>back.modal_delete_asset.text.sure_wanna_delete_video</source>
+                <target><![CDATA[Do you really want to delete the video named <strong><span class='asset-name'></span></strong> and the related comments?]]></target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_sure_wanna_delete_image">
+                <source>back.modal_delete_asset.text.sure_wanna_delete_image</source>
+                <target><![CDATA[Do you really want to delete the image named <strong><span class='asset-name'></span></strong> and the related comments?]]></target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_sure_wanna_delete_file">
+                <source>back.modal_delete_asset.text.sure_wanna_delete_file</source>
+                <target><![CDATA[Do you really want to delete the file named <strong><span class='asset-name'></span></strong> and the related comments?]]></target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_will_free_space_video">
+                <source>back.modal_delete_asset.text.will_free_space</source>
+                <target>Deleting this video will free up storage space in your account.</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_will_free_space_image">
+                <source>back.modal_delete_asset.text.will_free_space_image</source>
+                <target>Deleting this image will free up storage space in your account.</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_will_free_space_file">
+                <source>back.modal_delete_asset.text.will_free_space_file</source>
+                <target>Deleting this file will free up storage space in your account.</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_text_cannot_be_canceled">
+                <source>back.modal_delete_asset.text.cannot_be_canceled</source>
+                <target>This operation is irreversible.</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_alt_delete_this_video">
+                <source>back.modal_delete_asset.alt.delete_this_video</source>
+                <target>Delete this video</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_alt_delete_this_image">
+                <source>back.modal_delete_asset.alt.delete_this_image</source>
+                <target>Delete this image</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_alt_delete_this_file">
+                <source>back.modal_delete_asset.alt.delete_this_file</source>
+                <target>Delete this file</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_button_yes_delete_video">
+                <source>back.modal_delete_asset.button.yes_delete_video</source>
+                <target>Yes, delete this video</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_button_yes_delete_image">
+                <source>back.modal_delete_asset.button.yes_delete_image</source>
+                <target>Yes, delete this image</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_button_yes_delete_file">
+                <source>back.modal_delete_asset.button.yes_delete_file</source>
+                <target>Yes, delete this file</target>
+            </trans-unit>
+            <trans-unit id="back_modal_delete_asset_button_no_get_me_out">
+                <source>back.modal_delete_asset.button.no_get_me_out</source>
+                <target>No, get me out of here!</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,163 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_dashboard') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord">
+{% endblock %}
+
+{% block title %}Admin | Users map | Strime{% endblock %}
+
+{% block header_js %}
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.17.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.17.0/mapbox-gl.css' rel='stylesheet' />
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        'bundles/strimeglobal/css/sub-menu.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+    {% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="sub-menu">
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="{{ path('admin_users') }}" title="Utilisateurs">Utilisateurs</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_integrations') }}" title="Intégrations">Intégrations</a>
+                </li>
+                <li class="active">
+                    <a href="{{ path('admin_users_map') }}" title="Carte">Carte</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="admin-users-map">
+
+    </div><!-- ./Admin content -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+
+            // Get the height of the menu
+            var menuHeight = $("#admin-menu").height();
+
+            // Apply it to the map
+            $("#admin-users-map").css("height", menuHeight+"px");
+            // $("#admin-users-map canvas").css("height", menuHeight+"px");
+
+        });
+
+        // Create the map
+        setTimeout(function() {
+
+            var usersJson = {
+                "type": "FeatureCollection",
+                "features": [
+                    {% for address in addresses %}
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [ {{ address.longitude }}, {{ address.latitude }} ]
+                            }
+                        }{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                ]
+            };
+
+            mapboxgl.accessToken = 'pk.eyJ1Ijoic3RyaW1lIiwiYSI6ImNpbmtjeGw3cjAwN3J2eG0ydWFnNHQ4Y3IifQ.gAkPDwUrb41HR51yO1O83w';
+            var map = new mapboxgl.Map({
+                container: 'admin-users-map', // container id
+                style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
+                center: [4.3872, 45.4397], // starting position
+                zoom: 2 // starting zoom
+            });
+
+            // Add zoom and rotation controls to the map.
+            map.addControl(new mapboxgl.Navigation());
+
+            map.on('load', function(){
+
+                // Add a new source from our GeoJSON data and set the
+                // 'cluster' option to true.
+                map.addSource("users", {
+                    type: "geojson",
+                    // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
+                    // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
+                    data: usersJson,
+                    cluster: true,
+                    clusterMaxZoom: 15, // Max zoom to cluster points on
+                    clusterRadius: 20 // Use small cluster radius for the heatmap look
+                });
+
+                // Use the addresses source to create four layers:
+                // three for each cluster category, and one for non-clustered markers
+
+                // Each point range gets a different fill color.
+                var layers = [
+                    [0, 'green'],
+                    [20, 'orange'],
+                    [200, 'red']
+                ];
+
+                layers.forEach(function (layer, i) {
+                    map.addLayer({
+                        "id": "cluster-" + i,
+                        "type": "circle",
+                        "source": "users",
+                        "paint": {
+                            "circle-color": layer[1],
+                            "circle-radius": 70,
+                            "circle-blur": 1 // blur the circles to get a heatmap look
+                        },
+                        "filter": i === layers.length - 1 ?
+                            [">=", "point_count", layer[0]] :
+                            ["all",
+                                [">=", "point_count", layer[0]],
+                                ["<", "point_count", layers[i + 1][0]]]
+                    }, 'waterway-label');
+                });
+
+                map.addLayer({
+                    "id": "non-cluster-markers",
+                    "type": "circle",
+                    "source": "users",
+                    "paint": {
+                        "circle-color": 'rgba(0,255,0,0.5)',
+                        "circle-radius": 20,
+                        "circle-blur": 1
+                    },
+                    "filter": ["!=", "cluster", true]
+                }, 'waterway-label');
+
+            });
+
+        }, 1500);
+    </script>
+{% endblock %}

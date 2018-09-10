@@ -1,0 +1,722 @@
+{% trans_default_domain 'back_image' %}
+{% extends '::back_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('app_image', {'image_id': image_id}, TRUE) }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - {{ image.name }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'back.image.meta.keywords'|trans }}">
+    <meta name="robots" content="noindex" />
+    <meta name="google-signin-client_id" content="59471169232-igm9oedpkpc0f1spqmrj2nffqd1hj93f.apps.googleusercontent.com">
+{% endblock %}
+
+{% block title %}
+    {% if image is not null %}
+        {{ 'back.image.meta.title'|trans({'%image_name%': image.name}) }} | Strime
+    {% endif %}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets
+        'bundles/strimeglobal/css/language-bar.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/switch.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/tooltip.css' filter='cssrewrite'
+        'bundles/strimeback/js/emojionearea-3.1.6/dist/emojionearea.min.css' filter='cssrewrite'
+        'bundles/strimeback/css/image/image.css' filter='cssrewrite'
+        'bundles/strimeback/css/image/animista.css' filter='cssrewrite'
+        'bundles/strimeback/css/image/animista-classes.css' filter='cssrewrite'
+        'bundles/strimeback/css/assets/comments-emoji.css' filter='cssrewrite'
+        'bundles/strimeback/css/assets/header.css' filter='cssrewrite'
+        'bundles/strimeback/css/assets/share.css' filter='cssrewrite'
+        'bundles/strimeback/css/assets/comments.css' filter='cssrewrite'
+        'bundles/strimeback/css/assets/comments-layer.css' filter='cssrewrite'
+        'bundles/strimeback/css/assets/scrollbars.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {% if is_owner is defined and is_owner == true %}
+        {% stylesheets
+            'bundles/strimeback/css/editable-title.css' filter='cssrewrite'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+    {% if app.session.get('first_name') is not defined or app.session.get('first_name') is null %}
+        <div id="languages-bar">
+            <div class="wrapper-full">
+                {{ 'back.image.text.language'|trans }}
+
+                {% if app.request.locale == 'fr' %}
+                    <span class="current">
+                {% else %}
+                    <span>
+                        {% if invited_contact is null %}
+                            {% set change_locale_url = path('change_locale', {'back_path': current_path, 'locale': 'fr', 'back_path_parameter_name': 'image_id', 'back_path_parameter': image.asset_id }) %}
+                        {% else %}
+                            {% set change_locale_url = path('change_locale', {'back_path': current_path, 'locale': 'fr', 'back_path_parameter_name': 'image_id', 'back_path_parameter': image.asset_id, 'action': 'contact', 'url_data': invited_contact.contact_id }) %}
+                        {% endif %}
+                        <a href="{{ change_locale_url }}" title="FR">
+                {% endif %}
+                    FR
+                {% if app.request.locale == 'fr' %}
+                    </span>
+                {% else %}
+                        </a>
+                    </span>
+                {% endif %}
+
+                {% if app.request.locale == 'en' %}
+                    <span class="current">
+                {% else %}
+                    <span>
+                        {% if invited_contact is null %}
+                            {% set change_locale_url = path('change_locale', {'back_path': current_path, 'locale': 'en', 'back_path_parameter_name': 'image_id', 'back_path_parameter': image.asset_id }) %}
+                        {% else %}
+                            {% set change_locale_url = path('change_locale', {'back_path': current_path, 'locale': 'en', 'back_path_parameter_name': 'image_id', 'back_path_parameter': image.asset_id, 'action': 'contact', 'url_data': invited_contact.contact_id }) %}
+                        {% endif %}
+                        <a href="{{ change_locale_url }}" title="EN">
+                {% endif %}
+                    EN
+                {% if app.request.locale == 'en' %}
+                    </span>
+                {% else %}
+                        </a>
+                    </span>
+                {% endif %}
+
+                {% if app.request.locale == 'es' %}
+                    <span class="current">
+                {% else %}
+                    <span>
+                        {% if invited_contact is null %}
+                            {% set change_locale_url = path('change_locale', {'back_path': current_path, 'locale': 'es', 'back_path_parameter_name': 'image_id', 'back_path_parameter': image.asset_id }) %}
+                        {% else %}
+                            {% set change_locale_url = path('change_locale', {'back_path': current_path, 'locale': 'es', 'back_path_parameter_name': 'image_id', 'back_path_parameter': image.asset_id, 'action': 'contact', 'url_data': invited_contact.contact_id }) %}
+                        {% endif %}
+                        <a href="{{ change_locale_url }}" title="ES">
+                {% endif %}
+                    ES
+                {% if app.request.locale == 'es' %}
+                    </span>
+                {% else %}
+                        </a>
+                    </span>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+	{% include 'asset_header.html.twig' %}
+
+
+    {% if image is not null %}
+        <div id="content">
+
+            <!-- Image -->
+            <div id="image" class="comments-visible">
+
+                <!-- Image meta -->
+                <div id="asset-meta">
+                    <div class="row">
+                        <div class="col-sm-7 col-xs-12">
+                            <h1 {% if is_owner is defined and is_owner == true %}class="editable"{%endif%}>
+                                {{ image.name }}
+                            </h1>
+                        </div>
+
+                        <div class="col-sm-5 col-xs-12 text-right">
+
+                            <div>
+                                <!-- Display comments -->
+                                <div class="image-show-comments-sidebar visible">
+                                    <img src="{{ asset('bundles/strimeback/img/icon-open-comments-pane.svg') }}" class="svg" alt="{{ 'back.image.alt.display_comments'|trans }}" title="{{ 'back.image.alt.display_comments'|trans }}">
+                                </div>
+
+                                {% if is_owner is defined and is_owner == true %}
+                                    <!-- Sharing button -->
+                                    <div class="asset-share" data-asset-id="{{ image.asset_id }}" data-asset-url="{{ url('app_image', {'image_id' : image.asset_id}) }}" data-content-type="image" data-content-id="{{ image.asset_id }}" data-content-name="{{ image.name }}">
+                                        {{ 'back.image.button.share_image'|trans|raw }}
+                                    </div>
+                                {% endif %}
+
+                                <div class="clear"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Image meta -->
+
+                <!-- Image container -->
+                <div id="image-container">
+
+                    <!-- Image inner -->
+                    <div id="image-inner" class="comments-visible">
+                        <div id="image-content" style="background: url({{ image.s3_url }}) no-repeat #000; background-position: center center; background-size: contain;"></div>
+                        <div id="comments-layer" ondrop="dropMarker(event)" ondragover="allowDropMarker(event)" ondragenter="dragEnterZoneMarker(event)" ondragleave="dragEnterZoneMarker(event)">
+                            <div class="comment-box">
+                                <div class="comment-box-inner">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="pencil"></div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="trash"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-field">
+                                        <textarea placeholder="{{ 'back.image.placeholder.type_in_comment'|trans }}..."></textarea>
+                                        <button class="post-comment-answer" data-target="comment-1">{{ 'back.image.button.send'|trans }}</button>
+                                        <div class="loader-container">
+                                            <div class="loader-pulse">
+                                                {{ 'back.image.loader.loading'|trans }}...
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="image-comments-controls">
+                            <button class="image-go-to-previous-comment image-control" type="button" aria-live="polite" title="{{ 'back.image.title.go_to_previous_comment'|trans|raw }}"></button>
+                            <button class="image-go-to-next-comment image-control" type="button" aria-live="polite" title="{{ 'back.image.title.go_to_next_comment'|trans|raw }}"></button>
+                            <button class="image-hide-markers-on-image image-control" type="button" aria-live="polite" title="{{ 'back.image.title.hide_markers'|trans|raw }}"></button>
+                        </div>
+                        <div class="clear"></div>
+                    </div><!-- ./Image inner -->
+
+                    <div id="image-description" {% if is_owner is defined and is_owner == true %}class="editable"{% endif %}>
+                        {% if image.description is not null %}
+                            <div class="description-content">{{ image.description|raw }}</div>
+                        {% else %}
+                            {% if is_owner is defined and is_owner == true %}
+                                <textarea name="description" id="edit-image-description" placeholder="{{ 'back.image.textarea.add_description'|trans }}"></textarea>
+                                <div>
+                                    <button type="submit" name="save-description">{{ 'back.image.button.save'|trans }}</button>
+                                    <div class="loader-container">
+                                        <div class="loader-pulse">
+                                            {{ 'back.image.loader.loading'|trans }}...
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+
+                </div><!-- ./Image container -->
+            </div>
+            <!-- ./Image -->
+
+            <div id="comments" class="visible">
+
+                <div class="header">
+                    <span id="nb-comments">
+                        {{ 'back.image.text.nb_comments'|transchoice(nb_comments, {'%nb_comments%': nb_comments}) }}
+                    </span>
+                    <div id="close-comments-pane">
+                        <img src="{{ asset('bundles/strimeback/img/icon-close-comments-pane.svg') }}" class="svg" alt="{{ 'back.image.alt.hide_comments'|trans }}" title="{{ 'back.image.alt.hide_comments'|trans }}">
+                    </div>
+                    <div class="clear"></div>
+                </div><!-- ./Header -->
+
+                <div id="comments-filters">
+                    <div class="filter-elt" id="order-comments">
+                        <div class="filter-elt-inner">
+                            <div class="adjust-position">
+                                <div class="order-option-description">
+                                    {{ 'back.image.text.order'|trans }}
+                                </div>
+                                <div class="order-option hourglass down active" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ 'back.image.tooltip.ordered_by_publication_date'|trans|raw }}"></div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-elt" id="resolved-comments-toggle">
+                        <div class="filter-elt-inner">
+                            <div class="adjust-position">
+                                {{ 'back.image.text.hide_solved'|trans }}
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <div class="slider round"></div>
+                                </label>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- ./Comments filters -->
+
+                <!-- Comments Container -->
+                <div id="comments-container">
+                    <div class="comment-error-message" id="new-comment-error-message">
+                        {{ 'back.image.text.error_while_saving_comment'|trans }}<br />
+                        {{ 'back.image.text.try_again_or_contact'|trans }}
+                    </div>
+                    <div class="comment-error-message" id="delete-comment-error-message">
+                        {{ 'back.image.text.error_while_deleting_comment'|trans }}<br />
+                        {{ 'back.image.text.try_again_or_contact'|trans }}
+                    </div>
+                    <div class="comment-error-message" id="edit-comment-error-message">
+                        {{ 'back.image.text.error_while_editing_comment'|trans }}<br />
+                        {{ 'back.image.text.try_again_or_contact'|trans }}
+                    </div>
+
+                    {% if nb_comments > 0 %}
+                        {% for comment in comments %}
+                            {% if comment.answer_to is null %}
+
+                                <div class="comment {% if comment.done == 1 %}done{% endif %}" id="comment-{{ comment.comment_id }}" data-comment-id="{{ loop.index }}" data-api-comment-id="{{ comment.comment_id }}" {% if comment.author is defined and comment.author is not null %}data-comment-author-type="{{ comment.author.author_type }}" data-comment-author-id="{{ comment.author.author_id }}"{% endif %}>
+
+                                    {% if is_owner is defined and is_owner == true %}
+                                        <div class="mark-as-done">
+                                            {{ 'back.image.text.resolved'|trans }}
+                                            {% if is_owner is defined and is_owner == true %}
+                                                <div class="mark-as-done-checkbox {% if comment.done == 1 %}checked{% endif %}"></div>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+
+                                    <div class="row">
+                                        <div class="col-avatar">
+                                            <div class="avatar {% if comment.author.avatar is defined and comment.author.avatar is not null %}no-background{% endif %}">
+                                                {% if comment.author.avatar is defined and comment.author.avatar is not null %}
+                                                    <img src="{% if 'gravatar' in comment.author.avatar or 'googleusercontent' in app.session.get('avatar') or 'scontent.xx.fbcdn.net' in app.session.get('avatar') %}{{ comment.author.avatar }}{% else %}{{ comment.author.avatar|imagine_filter('profile_pic') }}{% endif %}" alt="{{ comment.author.name }}" title="{{ comment.author.name }}">
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="col-content">
+                                            <div class="name"><span class="comment-author">{{ comment.author.name }}</span></div>
+                                            <div class="text">
+                                                <div class="text-inner">
+                                                    {{ comment.comment|raw|nl2br }}
+                                                </div>
+
+                                                {% if user_id is defined and user_id == comment.author.author_id %}
+                                                    <div class="comment-edition-tools">
+                                                        <div class="comment-delete" data-toggle="modal" data-target="#deleteCommentModal"></div>
+                                                        <div class="comment-edit" data-toggle="modal" data-target="#editCommentModal"></div>
+                                                        <div class="clear"></div>
+                                                    </div>
+                                                {% elseif invited_contact is defined and invited_contact is not null and invited_contact.contact_id == comment.author.author_id %}
+                                                    <div class="comment-edition-tools">
+                                                        <div class="comment-delete" data-toggle="modal" data-target="#deleteCommentModal"></div>
+                                                        <div class="comment-edit" data-toggle="modal" data-target="#editCommentModal"></div>
+                                                        <div class="clear"></div>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                            <div class="details">
+                                                {{ 'back.image.text.there_was_x_ago'|trans({'%time%': comment.when}) }}
+                                                <div class="separator">•</div>
+                                                <a href="#" class="answer-to-comment" data-target="comment-{{ comment.comment_id }}">
+                                                    {{ 'back.image.link.answer'|trans }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="answers-container">
+                                        {% for answer in comments %}
+                                            {% if answer.answer_to is not null and answer.answer_to == comment.comment_id %}
+                                                <div class="comment-answer" id="comment-{{ answer.comment_id }}">
+                                                    <div class="col-left">
+                                                        <div class="icon-answer"></div>
+                                                        <div class="clear"></div>
+                                                    </div>
+                                                    <div class="col-avatar">
+                                                        <div class="avatar {% if answer.author.avatar is defined and answer.author.avatar is not null %}no-background{% endif %}">
+                                                            {% if answer.author.avatar is defined and answer.author.avatar is not null %}
+                                                                <img src="{% if 'gravatar' in answer.author.avatar or 'googleusercontent' in app.session.get('avatar') or 'scontent.xx.fbcdn.net' in app.session.get('avatar') %}{{ answer.author.avatar }}{% else %}{{ answer.author.avatar|imagine_filter('profile_pic') }}{% endif %}" alt="{{ answer.author.name }}" title="{{ answer.author.name }}">
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-content">
+                                                        <div class="name">{{ answer.author.name }}</div>
+                                                        <div class="text">
+                                                            {{ answer.comment|raw|nl2br }}
+                                                        </div>
+                                                        <div class="details">
+                                                            Il y a {{ answer.when }}
+                                                            <div class="separator">•</div>
+                                                            <a href="#" class="answer-to-comment is-child" data-target="comment-{{ answer.comment_id }}" data-target-parent="comment-{{ comment.comment_id }}">
+                                                                {{ 'back.image.link.answer'|trans }}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="comment-answer-field">
+                                        <textarea placeholder="{{ 'back.image.placeholder.type_in_answer'|trans }}..."></textarea>
+                                        <button class="post-comment-answer" data-target="comment-{{ comment.comment_id }}">{{ 'back.image.button.send'|trans }}</button>
+
+                                        <div class="loader-container">
+                                            <div class="loader-pulse">
+                                                {{ 'back.image.loader.loading'|trans }}...
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div><!-- ./Comment -->
+
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div><!-- ./Comments Container -->
+
+            </div>
+            <!-- ./Comments -->
+
+            <div class="clear"></div>
+        </div>
+        <!-- ./Content -->
+
+
+        <div class="modal fade" id="editCommentModal" tabindex="-1" role="dialog" aria-labelledby="editCommentLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.image.alt.close_window'|trans }}" title="{{ 'back.image.alt.close_window'|trans }}"></span></button>
+                        <h4 class="modal-title">{{ 'back.image.title.edit_comment'|trans }}</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="modal-body-inner">
+                            <div class="avatar-container">
+                                <div class="avatar {% if comment.author.avatar is defined and comment.author.avatar is not null %}no-background{% endif %}">
+                                    <img src="" alt="" title="">
+                                </div>
+                            </div>
+                            <div class="comment-container">
+                                <textarea></textarea>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="pull-right">
+                            <button class="cancel" data-dismiss="modal">
+                                {{ 'back.image.button.cancel'|trans }}
+                            </button>
+                            <button class="validate" data-comment-id="">
+                                {{ 'back.image.button.validate'|trans }}
+                            </button>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        <div class="modal fade" id="deleteCommentModal" tabindex="-1" role="dialog" aria-labelledby="deleteCommentLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.image.alt.close_window'|trans }}" title="{{ 'back.image.alt.close_window'|trans }}"></span></button>
+                        <h4 class="modal-title">{{ 'back.image.title.delete_comment'|trans }}</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        {{ 'back.image.text.about_to_delete_comment'|trans|raw }}
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="action-buttons">
+                            <button class="cancel" data-dismiss="modal">
+                                {{ 'back.image.button.cancel'|trans }}
+                            </button>
+                            <button class="validate" data-comment-id="">
+                                {{ 'back.image.button.validate'|trans }}
+                            </button>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        {% if app.session.get('first_name') is not defined or app.session.get('first_name') is null %}
+            <div class="modal fade" id="changeIdentityModal" tabindex="-1" role="dialog" aria-labelledby="changeIdentityLabel">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.image.alt.close_window'|trans }}" title="{{ 'back.image.alt.close_window'|trans }}"></span></button>
+                            <h4 class="modal-title">{{ 'back.image.title.hello'|trans }}</h4>
+                            <h5>{{ 'back.image.title.thanks_for_introducing'|trans }}</h5>
+                        </div>
+                        <div class="modal-body">
+
+                            <div id="contacts-list">
+                            {% for contact in contacts %}
+                                <div class="contact" data-contact-id="{{ contact.contact_id|escape }}" data-contact-email="{{ contact.email|escape }}" data-contact-avatar="{{ contact.avatar|escape }}">
+                                    <div class="row">
+                                        <div class="col-xs-2">
+                                            <img src="{{ contact.avatar }}" class="avatar">
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="email">{{ contact.email }}</div>
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <img src="{{ asset('bundles/strimeback/img/icon-check.svg') }}" title="{{ 'back.image.alt.choose_this_profile'|trans }}" class="choose-identity">
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+
+                            <h5>{{ 'back.image.title.not_in_the_list'|trans }}</h5>
+
+                            <div>
+                                {% if add_image_contact_form is not null %}
+                                    {{ form_start(add_image_contact_form, {'action': path('app_ajax_add_asset_contact'), 'attr': {'id': 'add-image-contact-form', 'novalidate': true} }) }}
+
+                                        {{ form_widget(add_image_contact_form.email, {'translation_domain': 'back_helpers_form'}) }}
+
+                                        {{ form_widget(add_image_contact_form.submit, { 'label': 'back.image.button.validate', 'translation_domain': 'back_image' }) }}
+
+                                        <div class="clear"></div>
+
+                                    {{ form_end(add_image_contact_form) }}
+                                {% endif %}
+                            </div>
+
+                            <div id="add-image-contact-result"></div>
+
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <div class="modal fade" id="changeIdentityConfirmationMessageModal" tabindex="-1" role="dialog" aria-labelledby="changeIdentityConfirmationMessageLabel">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+
+                            <h4>{{ 'back.image.title.glad_to_see_you_again'|trans }}</h4>
+
+                            <h5>{{ 'back.image.title.you_can_access_the_image'|trans }}</h5>
+
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        {% endif %}
+
+
+        {% if is_owner is defined and is_owner == true %}
+            {% include 'StrimeBackBundle:Modal:modal-share-asset.html.twig' %}
+        {% endif %}
+
+    {% endif %}
+
+{% endblock %}
+
+
+{% block footer %}
+	{{ parent() }}
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    <script type="text/javascript">
+        // Define the text variables
+        const backImageJsTextChangeId = "{{ 'back.image.js.change_id'|trans|raw }}";
+        const backImageJsTextEmailAddressNotValid = "{{ 'back.image.js.email_address_not_valid'|trans|raw }}";
+        const backImageJsTextErrorSendingData = "{{ 'back.image.js.error_sending_data'|trans|raw }}";
+        const backImageJsTextErrorSavingEmailAddress = "{{ 'back.image.js.error_saving_email_address'|trans|raw }}";
+        const backImageJsTextErrorOccuredDuringIdentification = "{{ 'back.image.js.error_occured_during_identification'|trans|raw }}";
+        const backImageJsTextThanksCanBeginCommenting = "{{ 'back.image.js.thanks_can_begin_commenting'|trans|raw }}";
+        const backImageJsTextChooseThisProfile = "{{ 'back.image.js.choose_this_profile'|trans|raw }}";
+        const backImageJsTextSeeTheComment = "{{ 'back.image.js.see_the_comment'|trans|raw }}";
+        const backImageJsTextThereWasOneMinute = "{{ 'back.image.js.there_was_one_minute'|trans|raw }}";
+        const backImageJsTextAnswer = "{{ 'back.image.js.answer'|trans|raw }}";
+        const backImageJsTextTypeInAnswer = "{{ 'back.image.js.type_in_answer'|trans|raw }}";
+        const backImageJsTextSend = "{{ 'back.image.js.send'|trans|raw }}";
+        const backImageJsTextLoading = "{{ 'back.image.js.loading'|trans|raw }}";
+        const backImageJsTextComments = "{{ 'back.image.js.comments'|trans|raw }}";
+        const backImageJsTextComment = "{{ 'back.image.js.comment'|trans|raw }}";
+        const backImageJsTextAnonymous = "{{ 'back.image.js.anonymous'|trans|raw }}";
+        const backImageJsTextResolved = "{{ 'back.image.js.resolved'|trans|raw }}";
+        const backImageJsTextHideMarkers = "{{ 'back.image.js.hide_markers'|trans|raw }}";
+        const backImageJsTextAddDescription = "{{ 'back.image.textarea.add_description'|trans }}";
+        const backImageJsTextSave = "{{ 'back.image.button.save'|trans }}";
+        var backImageJsTextTitle = "{{ 'back.image.js.title'|trans|raw }}";
+    </script>
+
+    {% javascripts
+        '@StrimeBackBundle/Resources/public/js/zeroclipboard-2.2.0/dist/ZeroClipboard.min.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/functions.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/image.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/linkifyjs-2.1.3/linkify.min.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/linkifyjs-2.1.3/linkify-jquery.min.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/emojionearea-3.1.6/dist/emojionearea.min.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/add-links-to-comments.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/answer-to-comment.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/comments-emoji.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/edit-comment.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/hide-resolved-comments.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/reorder-comments.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/set-comment-as-active.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/assets/set-comment-as-done.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/activate-additional-buttons.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/close-comment-box.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/delete-comment.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/display-markers.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/drag-and-drop.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/populate-edit-comment.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/edit-image-description.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/edit-image-name.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/go-to-comment.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/hash-url.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/post-answer.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/post-comment.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/resize-containers.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/resize-image.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/image/show-comments-sidebar.js' filter='?uglifyjs2'
+        '@StrimeGlobalBundle/Resources/public/js/svg.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {% if is_owner is defined and is_owner == true %}
+
+        {% javascripts
+            '@StrimeBackBundle/Resources/public/js/typeahead.js-0.11.1/dist/typeahead.jquery.min.js' filter='?uglifyjs2'
+            '@StrimeBackBundle/Resources/public/js/share.js' filter='?uglifyjs2'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+        <script type="text/javascript">
+            // Define the variables
+            var contactsList = {{ contacts_list|raw }};
+        </script>
+
+    {% else %}
+
+        {% javascripts
+            '@StrimeBackBundle/Resources/public/js/image/contacts.js' filter='?uglifyjs2'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+    {% endif %}
+
+    <script type="text/javascript">
+        {% if app.session.get('first_name') is defined and app.session.get('first_name') is not null %}
+            var author = "{{ app.session.get('first_name') ~ " " ~ app.session.get('last_name') }}";
+        {% elseif invited_contact is defined and invited_contact is not null %}
+            var author = "{{ invited_contact.email }}";
+        {% else %}
+            var author = backImageJsTextAnonymous;
+        {% endif %}
+
+        {% if app.session.get('avatar') is defined and app.session.get('avatar') is not null %}
+            var userAvatar = "{% if 'gravatar' in app.session.get('avatar') or 'googleusercontent' in app.session.get('avatar') or 'scontent.xx.fbcdn.net' in app.session.get('avatar') %}{{ app.session.get('avatar') }}{% else %}{{ app.session.get('avatar')|imagine_filter('profile_pic') }}{% endif %}";
+        {% elseif invited_contact is defined and invited_contact is not null %}
+            var userAvatar = "{{ invited_contact.avatar }}";
+        {% else %}
+            var userAvatar = null;
+        {% endif %}
+
+        {% if user_id is defined and user_id is not null %}
+            var userID = "{{ user_id }}";
+            var contactID = null;
+            var authorType = "user";
+        {% elseif invited_contact is defined and invited_contact is not null %}
+            var userID = null;
+            var contactID = "{{ invited_contact.contact_id }}";
+            var authorType = "contact";
+        {% else %}
+            var userID = null;
+            var contactID = null;
+            var authorType = null;
+        {% endif %}
+
+        {% if is_owner is defined and is_owner == true %}
+            var isOwner = true;
+        {% else %}
+            var isOwner = false;
+        {% endif %}
+
+        const iconMarker = "{{ asset('bundles/strimeback/img/player/icon-point.png') }}";
+        const iconCheck = "{{ asset('bundles/strimeback/img/icon-check.svg') }}";
+        const goldNumber = {{ video_default_gold_number }};
+        const assetType = "image";
+        var imageDefaultWidth = {{ image_default_width }};
+        var imageDefaultHeight = {{ image_default_height }};
+        var imageActualWidth = {{ image_default_width }};
+        var imageActualHeight = {{ image_default_height }};
+        const ajaxAddCommentURL = "{{ path('app_ajax_add_comment') }}";
+        const ajaxEditCommentURL = "{{ path('app_ajax_edit_comment') }}";
+        const ajaxDeleteCommentURL = "{{ path('app_ajax_delete_comment') }}";
+        const ajaxEditAssetURL = "{{ path('app_ajax_edit_asset') }}";
+        const ajaxSaveContactInSessionURL = "{{ path('app_ajax_save_contact_in_session') }}";
+        const ajaxGetCommentsParentsIdsURL = "{{ path('app_ajax_comments_get_parents_ids') }}";
+        const imageID = "{{ image_id }}";
+        var nbComments = {{ nb_comments}};
+        var answerToAuthorID;
+        var answerToAuthorType;
+        var isDraggingMarker = false;
+        const exportMarkerImage = "{{ asset('bundles/strimeback/img/icon-check-green.svg') }}";
+        var globallyHideMarkersOnImage = false;
+        var commentsList = [{%for comment in comments_list_for_buttons%}"{{ comment.comment_id }}"{% if loop.last == false %},{%endif%}{%endfor%}];
+        var nextCommentForButton = commentsList[0];
+        var previousCommentForButton = commentsList[commentsList.length-1];
+        var lastChangePreviousNextButtons = 0;
+
+        {% if is_mobile() %}
+            var isMobile = true;
+        {% else %}
+            var isMobile = false;
+        {% endif %}
+
+
+
+
+        function displayImageMarkers() {
+
+            $(document).ready(function() {
+
+                // 1. Get the image width
+                var imageWidth = $("#image-inner image-asset").width();
+
+                {% if nb_comments > 0 %}
+                    {% for comment in comments %}
+                        {% if comment.answer_to is null %}
+
+                                // 2. Add the marker to the image
+                                var marker{{ loop.index }} = '<img src="'+iconMarker+'" class="marker" id="marker-{{ loop.index }}" alt="{{ 'back.image.js.see_the_comment'|trans|raw }}" title="{{ 'back.image.js.see_the_comment'|trans|raw }}" data-comment-id="{{ loop.index }}" data-api-comment-id="{{ comment.comment_id }}" style="top: {{ comment.marker_top }}%; left: {{ comment.marker_left }}%;" {% if (user_id is defined and user_id == comment.author.author_id) or (invited_contact is defined and invited_contact is not null and invited_contact.contact_id == comment.author.author_id) %}draggable="true" ondragstart="dragMarker(event)" ondragend="dragEndMarker(event)"{% endif %}>';
+                                $("#comments-layer").append(marker{{ loop.index }});
+
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+            });
+        }
+
+    </script>
+{% endblock %}

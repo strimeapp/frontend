@@ -1,0 +1,47 @@
+imports:
+    - { resource: config.yml }
+
+framework:
+    translator:
+        logging: false
+
+assetic:
+    filters:
+        uglifyjs2:
+            bin: /usr/bin/uglifyjs
+        cssrewrite: ~
+
+monolog:
+    handlers:
+        main:
+            type:         fingers_crossed
+            action_level: error
+            handler:      nested
+        nested:
+            type:  rotating_file
+            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            level: info
+            max_files: 10
+        console:
+            type:  console
+        mail:
+            type:         fingers_crossed
+            action_level: critical
+            handler:      buffered
+        buffered:
+            type:    buffer
+            handler: swift
+        swift:
+            type:       swift_mailer
+            from_email: support@company.com
+            to_email:   your@email.com
+            subject:    A critical error occured
+            level:      warning
+
+# KNP Snappy Bundle
+# Deals with PDF generation
+knp_snappy:
+    pdf:
+        enabled: true
+        binary: /usr/bin/wkhtmltopdf.sh
+        options: []

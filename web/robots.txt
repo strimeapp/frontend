@@ -1,0 +1,15 @@
+User-agent: Twitterbot
+Disallow:
+
+User-agent: *
+Disallow: /app/
+Allow: /web/bundles/strimefront/img/
+Allow: /web/bundles/strimefront/css/
+Allow: /web/bundles/strimefront/js/
+Allow: /web/bundles/strimeback/img/
+Allow: /web/bundles/strimeback/css/
+Allow: /web/bundles/strimeback/js/
+Disallow: /web/
+Disallow: /app/
+
+Sitemap: https://www.strime.io/sitemap.xml

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_header_item_who_are_we">
+                <source>front.header.item.who_are_we</source>
+                <target>Who are we?</target>
+            </trans-unit>
+            <trans-unit id="front_header_item_prices">
+                <source>front.header.item.prices</source>
+                <target>Pricing</target>
+            </trans-unit>
+            <trans-unit id="front_header_item_blog">
+                <source>front.header.item.blog</source>
+                <target>Blog</target>
+            </trans-unit>
+            <trans-unit id="front_header_item_contact">
+                <source>front.header.item.contact</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="front_header_title_strime_the_blog">
+                <source>front.header.title.strime_the_blog</source>
+                <target>Strime - the blog</target>
+            </trans-unit>
+            <trans-unit id="front_header_link_login">
+                <source>front.header.link.login</source>
+                <target>Sign in</target>
+            </trans-unit>
+            <trans-unit id="front_header_title_login">
+                <source>front.header.title.login</source>
+                <target>Sign in</target>
+            </trans-unit>
+            <trans-unit id="front_header_button_signup">
+                <source>front.header.button.signup</source>
+                <target>Sign up</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

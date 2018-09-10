@@ -1,0 +1,391 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_users') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin - Utilisateurs">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord">
+{% endblock %}
+
+{% block title %}Admin | Utilisateurs | Strime{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+	{% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="admin-content">
+
+        {% for flash_message in app.session.flashbag.get('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        {% for flash_message in app.session.flashbag.get('error') %}
+            <div class="alert alert-danger" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        <!-- User Identity -->
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="data-elt">
+
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <img src="{% if 'gravatar' in user.avatar or 'googleusercontent' in user.avatar or 'scontent.xx.fbcdn.net' in user.avatar %}{{ user.avatar }}{% else %}{{ user.avatar|imagine_filter('profile_pic') }}{% endif %}" class="avatar" alt="{{ user.first_name ~ " " ~ user.last_name|escape }}" title="{{ user.first_name ~ " " ~ user.last_name|escape }}">
+                        </div>
+                        <div class="col-xs-10">
+                            <h1>{{ user.first_name ~ " " ~ user.last_name }}</h1>
+                            <div id="signup-date">
+                                Inscrit depuis le {{ user.created_at.date|date("d F Y", user.created_at.timezone)|localizeddate('long', 'none', 'fr_FR') }}<br />
+                                Dernière connexion :
+                                {% if user.last_login is not null and user.last_login != 0 %}
+                                    {{ user.last_login|date("d F Y")|localizeddate('long', 'none', 'fr_FR') }} - {{ user.last_login|date("H:i:s") }}
+                                {% else %}
+                                    -
+                                {% endif %}
+                                <br />
+                                Statut : <span {% if user.status != "active" %}class="text-danger"{% endif %}>{{ user.status }}</span>
+                                {% if user.needs_to_confirm_email == true %}
+                                    <br />
+                                    <i class="fa fa-envelope-open-o" aria-hidden="true"></i> <em>Email non confirmé</em>
+                                {% endif %}
+                                <br />
+                                <i class="fa fa-headphones" aria-hidden="true"></i> Langue : {{ user.locale }}
+
+                            </div>
+                            <div class="margin-top">
+
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <span class="grey">Mail</span> {{ user.email }}
+                                        <div class="margin-top">
+                                            <div class="grey">Stockage en cours</div>
+                                            <div class="row">
+                                                <div class="col-sm-8">
+                                                    <span class="storage">{{ user.storage_used }} Mo <span class="storage-allowed">/ {{ user.storage_allowed / 1000 }} Go</span></span>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <span class="storage">{{ user.storage_used_in_percent }} %</span>
+                                                </div>
+                                            </div>
+
+                                            <div id="storage-bar">
+                                                <div id="storage-used-bar"></div>
+                                                <div id="over-quota-storage-used-bar"></div>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="title">Facturation</div>
+                                        <div>
+                                            {% if user.company is not null %}
+                                                {{ user.company }}<br />
+                                            {% endif %}
+                                            {% if user.vat_number is not null %}
+                                                {{ user.vat_number }}<br />
+                                            {% endif %}
+                                            {% if user.address is not null %}
+                                                {{ user.address }}<br />
+                                            {% endif %}
+                                            {% if user.address_more is not null %}
+                                                {{ user.address_more }}<br />
+                                            {% endif %}
+                                            {% if user.zip is not null %}
+                                                {{ user.zip }}
+                                            {% endif %}
+                                            {% if user.city is not null %}
+                                                {{ user.city }}<br />
+                                            {% endif %}
+                                            {% if user.country is not null %}
+                                                {{ user.country }}<br />
+                                            {% endif %}
+
+                                            {% if user.country is not null and user.stripe_id is not null %}
+                                                <hr>
+                                            {% endif %}
+
+                                            {% if user.stripe_id is not null %}
+                                                {% if user.credit_card_brand %}
+                                                    {{ user.credit_card_brand }}<br />
+                                                {% endif %}
+
+                                                {% if user.credit_card_last_digits %}
+                                                    **** **** **** {{ user.credit_card_last_digits }}
+                                                {% endif %}
+                                            {% endif %}
+                                        </div>
+                                        <div class="title margin-top">Offre</div>
+                                        <div class="offer-details">
+                                            {% if user.offer.name is not null %}
+                                                {{ user.offer.name }}
+                                                <a href="#" title="Changer l'offre de l'utilisateur" class="user-change-offer"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button class="user-delete" data-target="{{ path('admin_users', {'action': 'delete', 'client_id': user.user_id}) }}">Supprimer cet utilisateur</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="data-elt">
+                    <h2>Stripe details</h2>
+                    <small>
+                        Stripe ID: {% if user.stripe_id is not null %}{{ user.stripe_id }}{% endif %}<br />
+                        Stripe subscription ID: {% if user.stripe_sub_id is not null %}{{ user.stripe_sub_id }}{% endif %}
+                    </small>
+                </div>
+
+                <div class="data-elt margin-top">
+                    <h2>Integrations</h2>
+                    {% if user.user_google_details is not null %}
+                        <img src="{{ asset('bundles/strimeback/img/integrations-icon-google.png') }}" class="integration" alt="Google" title="Google">
+                    {% endif %}
+                    {% if user.user_facebook_details is not null %}
+                        <img src="{{ asset('bundles/strimeback/img/integrations-icon-facebook.png') }}" class="integration" alt="Facebook" title="Facebook">
+                    {% endif %}
+                    {% if user.user_slack_details is not null %}
+                        <img src="{{ asset('bundles/strimeback/img/integrations-icon-slack.svg') }}" class="integration" alt="Slack" title="Slack">
+                    {% endif %}
+                </div>
+            </div>
+        </div><!-- ./User Identity -->
+
+
+        {% if assets is defined and assets is not null %}
+
+            <!-- Videos -->
+            <div class="white-box margin-top">
+                <h2>Ses fichiers</h2>
+
+                <div class="table-responsive margin-top">
+                    <table class="table table-hover table-condensed">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    Nom
+                                </td>
+                                <td>
+                                    Projet
+                                </td>
+                                <td>
+                                    Type
+                                </td>
+                                <td>
+                                    Date d'upload
+                                </td>
+                                <td>
+                                    Nombre de commentaires
+                                </td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for asset in assets %}
+                                <tr>
+                                    <td>
+                                        {{ loop.index }}
+                                    </td>
+                                    <td>
+                                        <img src="{{ asset.thumbnail }}" class="thumbnail" alt="{{ asset.name|escape }}" title="{{ asset.name|escape }}">
+                                    </td>
+                                    <td>
+                                        <a href="{{ path('app_video', {'video_id': asset.asset_id}) }}" title="Voir le fichier">
+                                            {{ asset.name }}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        {% if asset.project is defined and asset.project is not null %}
+                                            <a href="{{ path('app_project', {'project_id': asset.project.project_id}) }}" title="Voir le project">
+                                                {{ asset.project.name }}
+                                            </a>
+                                        {% else %}
+                                        -
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {{ asset.asset_type }}
+                                    </td>
+                                    <td>
+                                        {{ asset.created_at.date|date("d M Y", asset.created_at.timezone)|localizeddate('medium', 'none', 'fr_FR') }}
+                                    </td>
+                                    <td>
+                                        {{ asset.nb_comments }}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div><!-- ./Videos -->
+
+            <!-- Invoices -->
+            <div class="white-box margin-top">
+                <h2>Ses factures</h2>
+
+                <div class="table-responsive margin-top">
+                    {% if invoices is defined and invoices is not null %}
+                        <table class="table table-hover table-condensed">
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        Numéro de facture
+                                    </td>
+                                    <td>
+                                        Date
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for invoice in invoices %}
+                                    <tr>
+                                        <td>
+                                            {{ loop.index }}
+                                        </td>
+                                        <td>
+                                            <a href="{{ path('app_download_invoice', {'user_id': user.user_id, 'invoice_id': invoice.invoice_id}) }}">
+                                                {{ invoice.invoice_id }}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            {{ invoice.day ~ "/" ~ invoice.month ~ "/" ~ invoice.year }}
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endif %}
+
+                </div>
+            </div><!-- ./Invoices -->
+
+        {% endif %}
+    </div><!-- ./Admin content -->
+
+
+    <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="deleteUserLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="Fermer la fenêtre" title="Fermer la fenêtre"></span></button>
+                    <h4 class="modal-title">Supprimer cet utilisateur</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Yo mec ! T'es sûr de vouloir supprimer cet utilisateur ?</p>
+                    <p>Son compte sera intégralement supprimé avec toutes ses données, à savoir ses vidéos, ses commentaires, ses contacts, etc...</p>
+                    <p>Supprimer cet utilisateur libèrera également de l'espace dans Amazon.</p>
+                    <p><strong>Cette opération est irréversible.</strong></p>
+
+                    <hr>
+
+                    <p>Pour confirmer ton souhait de supprimer le compte de cet utilisateur, veuillez saisir SUPPRIMER dans le champ ci-dessous :</p>
+
+                    <input type="text" id="deletion-confirmation">
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <a href="" title="Supprimer cet utilisateur" id="confirm-user-deletion">
+                                <button>
+                                    Oui, le supprimer
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <button data-dismiss="modal">
+                                Non, sortez-moi de là !
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <div class="modal fade" id="changeOfferModal" tabindex="-1" role="dialog" aria-labelledby="changeOfferLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="Fermer la fenêtre" title="Fermer la fenêtre"></span></button>
+                    <h4 class="modal-title">Changer l'offre de cet utilisateur</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Yo mec ! T'es sûr de vouloir changer l'offre de cet utilisateur ?</p>
+                    <p>cela ne changera rien à sa facturation, mais cela changera ce qu'il pourra faire avec Strime.</p>
+
+                    <hr>
+
+                    <p>Pour confirmer ton souhait de changer son offre, clique sur l'offre appropriée ci-dessous :</p>
+
+                    <ul>
+                        {% for offer in offers %}
+                            <li data-target="{{ path('admin_user', {'client_id': user.user_id, 'action': 'change-offer', 'parameter': offer.offer_id}) }}">{{ offer.name }}</li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <a href="" title="Changer son offre" id="confirm-offer-change">
+                                <button disabled="disabled">
+                                    Oui, changer son offre
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <button data-dismiss="modal">
+                                Non, sortez-moi de là !
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    <script type="text/javascript">
+
+        // Set variable
+        var storageUsedInPercent = Math.round({{ user.storage_used_in_percent }} * 100) / 100;
+
+    </script>
+
+    {% javascripts
+        '@StrimeBackBundle/Resources/public/js/storage-bar.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

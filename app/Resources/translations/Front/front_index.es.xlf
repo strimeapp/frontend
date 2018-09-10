@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_index_button_access_app">
+                <source>front.index.button.access_app</source>
+                <target>Acceder a la aplicación</target>
+            </trans-unit>
+            <trans-unit id="front_index_link_blog">
+                <source>front.index.link.blog</source>
+                <target>Blog</target>
+            </trans-unit>
+            <trans-unit id="front_index_link_strime_the_blog">
+                <source>front.index.title.strime_the_blog</source>
+                <target>Strime - el blog</target>
+            </trans-unit>
+            <trans-unit id="front_index_link_login">
+                <source>front.index.link.login</source>
+                <target>Iniciar sesión</target>
+            </trans-unit>
+            <trans-unit id="front_index_title_login">
+                <source>front.index.title.login</source>
+                <target>Conectarse</target>
+            </trans-unit>
+            <trans-unit id="front_index_link_signup">
+                <source>front.index.button.signup</source>
+                <target>Inscripción</target>
+            </trans-unit>
+            <trans-unit id="front_index_baseline_simplify_video_feedback">
+                <source>front.index.baseline.simplify_video_feedback</source>
+                <target>Simplifique el seguimiento de los proyectos audiovisuales</target>
+            </trans-unit>
+            <trans-unit id="front_index_baseline_get_precise_feedback">
+                <source>front.index.baseline.get_precise_feedback</source>
+                <target>Recoja información precisa, ahorre tiempo y gane dinero</target>
+            </trans-unit>
+            <trans-unit id="front_index_free_strime_is_free">
+                <source>front.index.free.strime_is_free</source>
+                <target>Strime es completamente gratis !</target>
+            </trans-unit>
+            <trans-unit id="front_index_free_button_create_account">
+                <source>front.index.free.button.create_account</source>
+                <target>Crea una cuenta</target>
+            </trans-unit>
+            <trans-unit id="front_index_what_we_do_make_feedback_not_easy">
+                <source>front.index.what_we_do.make_feedback_not_easy</source>
+                <target>Entregar una respuesta clara y específica en un video no es obvio.</target>
+            </trans-unit>
+            <trans-unit id="front_index_what_we_do_simple_tool">
+                <source>front.index.what_we_do.simple_tool</source>
+                <target>Strime es una sencilla herramienta diseñada para mejorar&lt;br /&gt;el seguimiento de las correcciones en un proyecto audiovisual</target>
+            </trans-unit>
+            <trans-unit id="front_index_what_we_do_simplify_communication">
+                <source>front.index.what_we_do.simplify_communication</source>
+                <target>y facilitar los intercambios con sus clientes y sus compañeros de trabajo.</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_up_to_10go">
+                <source>front.index.app_description.up_to_10go</source>
+                <target>Publique y almacene sus vídeos hasta 10 Gb</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_download_videos">
+                <source>front.index.app_description.download_videos</source>
+                <target>Descargue sus vídeos en su dashboard, en cualquier formato (mov, avi, mp4, wmv, flv...).</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_organize_them">
+                <source>front.index.app_description.organize_them</source>
+                <target>Puede reagrupar sus proyectos audiovisuales y hacer un seguimiento en tiempo real de las correcciones.</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_collect_annotations">
+                <source>front.index.app_description.collect_annotations</source>
+                <target>Recupere las anotaciones de sus clientes</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_write_directly_on_images">
+                <source>front.index.app_description.write_directly_on_images</source>
+                <target>Escriba directamente sus observaciones y comentarios sobre las imágenes.</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_answer_to_client">
+                <source>front.index.app_description.answer_to_client</source>
+                <target>Responda a los feedbacks de sus clientes y haga que sea validado.</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_share_in_one_clic">
+                <source>front.index.app_description.share_in_one_clic</source>
+                <target>Comparte tus vídeos con un solo clic</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_private_access">
+                <source>front.index.app_description.private_access</source>
+                <target>Muestre su avance desde su hogar u oficina a través de un acceso privado y reciba notificaciones de forma automática por cada comentario publicado.</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_keep_the_comments">
+                <source>front.index.app_description.keep_the_comments</source>
+                <target>Mantenga todos los comentarios de un proyecto</target>
+            </trans-unit>
+            <trans-unit id="front_index_app_description_collect_feedback_in_one_place">
+                <source>front.index.app_description.collect_feedback_in_one_place</source>
+                <target>Lea las notas y correcciones de sus clientes en un solo lugar, y ahorre tiempo en el seguimiento de sus proyectos.</target>
+            </trans-unit>
+            <trans-unit id="front_index_partners_they_support_strime">
+                <source>front.index.partners.they_support_strime</source>
+                <target>Los que apoyan a Strime</target>
+            </trans-unit>
+            <trans-unit id="front_index_stay_connected_create_account">
+                <source>front.index.stay_connected.create_account</source>
+                <target><![CDATA[Crea una cuenta, Strime es <u>gratuito</u>, sin límite de tiempo.]]></target>
+            </trans-unit>
+            <trans-unit id="front_index_stay_connected_lets_go">
+                <source>front.index.stay_connected.lets_go</source>
+                <target>Aquí vamos!</target>
+            </trans-unit>
+            <trans-unit id="front_index_stay_connected_accept_tos">
+                <source>front.index.stay_connected.accept_tos</source>
+                <target>Al crear una cuenta, usted acepta las %link_start%condiciones generales de uso%link_end% de Strime</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_first_name">
+                <source>front.index.form.first_name</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_name">
+                <source>front.index.form.name</source>
+                <target>Apellido</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_email">
+                <source>front.index.form.email</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_password">
+                <source>front.index.form.password</source>
+                <target>Contraseña</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_optin_newsletter">
+                <source>front.index.form.optin_newsletter</source>
+                <target>Me suscribo al newsletter</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_message_already_logged_in">
+                <source>front.index.form_message.already_logged_in</source>
+                <target>Usted ya se encuentra conectado.</target>
+            </trans-unit>
+            <trans-unit id="front_index_form_message_no_network">
+                <source>front.index.form_message.no_network</source>
+                <target><![CDATA[Usted no está conectado a internet.<br />No es posible conectarse sin una conexión.]]></target>
+            </trans-unit>
+            <trans-unit id="front_index_loader_loading">
+                <source>front.index.loader.loading</source>
+                <target>Cargando...</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

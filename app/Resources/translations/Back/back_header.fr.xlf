@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_header_link_projects">
+                <source>back.header.link.projects</source>
+                <target>Projets</target>
+            </trans-unit>
+            <trans-unit id="back_header_link_faq">
+                <source>back.header.link.faq</source>
+                <target>FAQ</target>
+            </trans-unit>
+            <trans-unit id="back_header_item_storage">
+                <source>back.header.item.storage</source>
+                <target>%storage_used% Mo utilisé sur %storage_allowed% Go (%storage_used_in_percent%%)</target>
+            </trans-unit>
+            <trans-unit id="back_header_link_my_account">
+                <source>back.header.link.my_account</source>
+                <target>Mon compte</target>
+            </trans-unit>
+            <trans-unit id="back_header_link_signout">
+                <source>back.header.link.signout</source>
+                <target>Se déconnecter</target>
+            </trans-unit>
+            <trans-unit id="back_header_link_signin">
+                <source>back.header.link.signin</source>
+                <target>Connexion</target>
+            </trans-unit>
+            <trans-unit id="back_header_title_signin">
+                <source>back.header.title.signin</source>
+                <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="back_header_link_signup">
+                <source>back.header.link.signup</source>
+                <target>Inscription</target>
+            </trans-unit>
+            <trans-unit id="back_header_title_create_an_account">
+                <source>back.header.title.create_an_account</source>
+                <target>Se créer un compte</target>
+            </trans-unit>
+            <trans-unit id="back_header_disclaimer_news">
+                <source>back.header.disclaimer.news</source>
+                <target>Nouveautés :</target>
+            </trans-unit>
+            <trans-unit id="back_header_link_learn_more">
+                <source>back.header.link.learn_more</source>
+                <target>En savoir plus</target>
+            </trans-unit>
+            <trans-unit id="back_header_link_change_id">
+                <source>back.header.link.change_id</source>
+                <target>Changer d'identifiant</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

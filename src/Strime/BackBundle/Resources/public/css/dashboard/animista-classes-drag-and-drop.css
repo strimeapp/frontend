@@ -1,0 +1,15 @@
+.jello-horizontal {
+	-webkit-animation: jello-horizontal 0.9s both;
+	-moz-animation: jello-horizontal 0.9s both;
+	animation: jello-horizontal 0.9s both;
+}
+.pulsate-bck {
+	-webkit-animation: pulsate-bck 0.8s ease-in-out infinite both;
+	-moz-animation: pulsate-bck 0.8s ease-in-out infinite both;
+	animation: pulsate-bck 0.8s ease-in-out infinite both;
+}
+.slide-out-bck-center {
+	-webkit-animation: slide-out-bck-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	-moz-animation: slide-out-bck-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	animation: slide-out-bck-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}

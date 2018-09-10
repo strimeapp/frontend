@@ -1,0 +1,62 @@
+{% trans_default_domain 'back_modal_share_video' %}
+
+<div class="modal fade" id="shareAssetModal" tabindex="-1" role="dialog" aria-labelledby="shareAssetLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.modal_share_video.alt.close_window'|trans }}" title="{{ 'back.modal_share_video.alt.close_window'|trans }}"></span></button>
+                <h4 class="modal-title">{{ 'back.modal_share_video.title.share_video'|trans }}</h4>
+            </div>
+            <div class="modal-body">
+                <h5>{{ 'back.modal_share_video.title.private_url'|trans }}</h5>
+                <div class="private-url">
+                    <div class="private-url-inner"></div>
+                    <div class="copy-button"><span>{{ 'back.modal_share_video.button.copy'|trans }}</span></div>
+                    <div class="clear"></div>
+                </div>
+
+                <h5>{{ 'back.modal_share_video.title.send_url_to'|trans }}</h5>
+
+                {{ form_start(share_by_email_form, {'action': path('app_ajax_share_by_email'), 'attr': {'id': 'share-by-email-form', 'novalidate': true} }) }}
+
+                    {{ form_widget(share_by_email_form.email, {'translation_domain': 'back_helpers_form'}) }}
+
+                    <div class="share-emails-list">
+                        <div class="clear"></div>
+                    </div>
+
+                    {{ form_widget(share_by_email_form.message, {'translation_domain': 'back_helpers_form'}) }}
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <a href="#" title="{{ 'back.modal_share_video.link.add_message'|trans }}" class="share-add-message">
+                                {{ 'back.modal_share_video.link.add_message'|trans }}
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form_widget(share_by_email_form.submit, { 'label': 'back.modal_share_video.button.send', 'translation_domain': 'back_modal_share_video' }) }}
+
+                            <div class="loader-container">
+                                <div class="loader-pulse">
+                                    {{ 'back.modal_share_video.loader.sending'|trans }}...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {{ form_end(share_by_email_form) }}
+
+                <div id="share-by-email-result" class="alert"></div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script type="text/javascript">
+
+    // Set the constants for the modal
+    const modalShareAssetImage = "{{ 'back.modal_share_video.title.share_image'|trans|raw }}";
+    const modalShareAssetVideo = "{{ 'back.modal_share_video.title.share_video'|trans|raw }}";
+    const modalShareAssetFile = "{{ 'back.modal_share_video.title.share_file'|trans|raw }}";
+</script>

@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_image_meta_keywords">
+                <source>back.image.meta.keywords</source>
+                <target>strime, strime.io, video, video, videos, comentario, comentarios, aplicación, app, apps, workflow, intercambiar, cliente, videasta, profesional, profesional, dashboard</target>
+            </trans-unit>
+            <trans-unit id="back_image_meta_title">
+                <source>back.image.meta.title</source>
+                <target>Comente la imagen %image_name%</target>
+            </trans-unit>
+            <trans-unit id="back_image_alt_back_to_project">
+                <source>back.image.alt.back_to_project</source>
+                <target>Volver al proyecto</target>
+            </trans-unit>
+            <trans-unit id="back_image_button_share_image">
+                <source>back.image.button.share_image</source>
+                <target><![CDATA[Compartir<span class="hide-text-on-tablet"> esta imagen</span>]]></target>
+            </trans-unit>
+            <trans-unit id="back_image_placeholder_type_in_comment">
+                <source>back.image.placeholder.type_in_comment</source>
+                <target>Escriba su comentario</target>
+            </trans-unit>
+            <trans-unit id="back_image_button_send">
+                <source>back.image.button.send</source>
+                <target>Enviar</target>
+            </trans-unit>
+            <trans-unit id="back_image_loader_loading">
+                <source>back.image.loader.loading</source>
+                <target>Cargando</target>
+            </trans-unit>
+            <trans-unit id="back_image_text_nb_comments">
+                <source>back.image.text.nb_comments</source>
+                <target>%nb_comments% comentario|%nb_comments% comentarios</target>
+            </trans-unit>
+            <trans-unit id="back_image_text_mark_as_solved">
+                <source>back.image.text.hide_solved</source>
+                <target>Ocultar las resueltas</target>
+            </trans-unit>
+            <trans-unit id="back_image_text_error_while_saving_comment">
+                <source>back.image.text.error_while_saving_comment</source>
+                <target>Se produjo un error al guardar ese comentario.</target>
+            </trans-unit>
+            <trans-unit id="back_image_text_try_again_or_contact">
+                <source>back.image.text.try_again_or_contact</source>
+                <target>Inténtelo de nuevo o póngase en contacto con nosotros.</target>
+            </trans-unit>
+            <trans-unit id="back_image_text_error_while_deleting_comment">
+                <source>back.image.text.error_while_deleting_comment</source>
+                <target>Se produjo un error al eliminar un comentario.</target>
+            </trans-unit>
+            <trans-unit id="back_image_text_error_while_editing_comment">
+                <source>back.image.text.error_while_editing_comment</source>
+                <target>Se produjo un error al modificar un comentario.</target>
+            </trans-unit>
+            <trans-unit id="back_image_text_resolved">
+                <source>back.image.text.resolved</source>
+                <target>Resuelto</target>
+            </trans-unit>
+            <trans-unit id="back_image_link_answer">
+                <source>back.image.link.answer</source>
+                <target>Responder</target>
+            </trans-unit>
+            <trans-unit id="back_image_placeholder_type_in_answer">
+                <source>back.image.placeholder.type_in_answer</source>
+                <target>Escriba su respuesta</target>
+            </trans-unit>
+            <trans-unit id="back_image_alt_close_window">
+                <source>back.image.alt.close_window</source>
+                <target>Cierre la ventana</target>
+            </trans-unit>
+            <trans-unit id="back_image_title_edit_comment">
+                <source>back.image.title.edit_comment</source>
+                <target>Modificar un comentario</target>
+            </trans-unit>
+            <trans-unit id="back_image_button_cancel">
+                <source>back.image.button.cancel</source>
+                <target>Anular</target>
+            </trans-unit>
+            <trans-unit id="back_image_button_validate">
+                <source>back.image.button.validate</source>
+                <target>Validar</target>
+            </trans-unit>
+            <trans-unit id="back_image_title_delete_comment">
+                <source>back.image.title.delete_comment</source>
+                <target>Suprimir un comentario</target>
+            </trans-unit>
+            <trans-unit id="back_image_text_about_to_delete_comment">
+                <source>back.image.text.about_to_delete_comment</source>
+                <target><![CDATA[Usted está a punto de suprimir un comentario,<br />este, incluyendo sus respuestas serán borradas de forma definitiva.]]></target>
+            </trans-unit>
+            <trans-unit id="back_image_title_hello">
+                <source>back.image.title.hello</source>
+                <target>Hola!</target>
+            </trans-unit>
+            <trans-unit id="back_image_title_thanks_for_introducing">
+                <source>back.image.title.thanks_for_introducing</source>
+                <target>Por favor le pedimos que se presente</target>
+            </trans-unit>
+            <trans-unit id="back_image_alt_choose_this_profile">
+                <source>back.image.alt.choose_this_profile</source>
+                <target>Escoger este perfil</target>
+            </trans-unit>
+            <trans-unit id="back_image_title_not_in_the_list">
+                <source>back.image.title.not_in_the_list</source>
+                <target>¿Usted no se encuentra en la lista?</target>
+            </trans-unit>
+            <trans-unit id="back_image_text_there_was_x_ago">
+                <source>back.image.text.there_was_x_ago</source>
+                <target>Hay %time%</target>
+            </trans-unit>
+            <trans-unit id="back_image_text_language">
+                <source>back.image.text.language</source>
+                <target>Lengua:</target>
+            </trans-unit>
+            <trans-unit id="back_image_text_order">
+                <source>back.image.text.order</source>
+                <target>Ordenar</target>
+            </trans-unit>
+            <trans-unit id="back_image_tooltip_ordered_by_publication_date">
+                <source>back.image.tooltip.ordered_by_publication_date</source>
+                <target>Ordenar por fecha de publicación</target>
+            </trans-unit>
+            <trans-unit id="back_image_alt_display_comments">
+                <source>back.image.alt.display_comments</source>
+                <target>Mostrar los comentarios</target>
+            </trans-unit>
+            <trans-unit id="back_image_alt_hide_comments">
+                <source>back.image.alt.hide_comments</source>
+                <target>Tapar los comentarios</target>
+            </trans-unit>
+            <trans-unit id="back_image_title_go_to_next_comment">
+                <source>back.image.title.go_to_next_comment</source>
+                <target>Vaya al próximo comentario</target>
+            </trans-unit>
+            <trans-unit id="back_image_title_go_to_previous_comment">
+                <source>back.image.title.go_to_previous_comment</source>
+                <target>Vaya al comentario anterior</target>
+            </trans-unit>
+            <trans-unit id="back_image_title_hide_markers">
+                <source>back.image.title.hide_markers</source>
+                <target>Ocultar los marcadores</target>
+            </trans-unit>
+            <trans-unit id="back_image_title_you_can_access_the_image">
+                <source>back.image.title.you_can_access_the_image</source>
+                <target>Usted puede acceder a la imagen</target>
+            </trans-unit>
+            <trans-unit id="back_image_title_glad_to_see_you_again">
+                <source>back.image.title.glad_to_see_you_again</source>
+                <target>Encantado de recibirlo</target>
+            </trans-unit>
+            <trans-unit id="back_image_textarea_add_description">
+                <source>back.image.textarea.add_description</source>
+                <target>Agregar una descripción...</target>
+            </trans-unit>
+            <trans-unit id="back_image_button_save">
+                <source>back.image.button.save</source>
+                <target>Grabar</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_anonymous">
+                <source>back.image.js.anonymous</source>
+                <target>Anónimo</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_change_id">
+                <source>back.image.js.change_id</source>
+                <target>Cambiar de ID</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_email_address_not_valid">
+                <source>back.image.js.email_address_not_valid</source>
+                <target>El correo electrónico entregado no es válido</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_error_sending_data">
+                <source>back.image.js.error_sending_data</source>
+                <target>Error durante el envío de los datos.</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_error_saving_email_address">
+                <source>back.image.js.error_saving_email_address</source>
+                <target>Error al guardar su dirección de correo electrónico.</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_error_occured_during_identification">
+                <source>back.image.js.error_occured_during_identification</source>
+                <target>Se ha producido un error al momento de identificarlo.</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_thanks_can_begin_commenting">
+                <source>back.image.js.thanks_can_begin_commenting</source>
+                <target>Gracias! Va a poder comentar el video.</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_choose_this_profile">
+                <source>back.image.js.choose_this_profile</source>
+                <target>Escoger este perfil</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_see_the_comment">
+                <source>back.image.js.see_the_comment</source>
+                <target>Ver el comentario</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_there_was_one_minute">
+                <source>back.image.js.there_was_one_minute</source>
+                <target>Hay 1 minuto</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_answer">
+                <source>back.image.js.answer</source>
+                <target>Responder</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_type_in_answer">
+                <source>back.image.js.type_in_answer</source>
+                <target>Escriba su respuesta</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_send">
+                <source>back.image.js.send</source>
+                <target>Enviar</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_loading">
+                <source>back.image.js.loading</source>
+                <target>Cargando</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_comments">
+                <source>back.image.js.comments</source>
+                <target>Comentarios</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_comment">
+                <source>back.image.js.comment</source>
+                <target>comentario</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_resolved">
+                <source>back.image.js.resolved</source>
+                <target>Resuelto</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_rewind">
+                <source>back.image.js.rewind</source>
+                <target>Volver al principio</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_hide_markers">
+                <source>back.image.js.hide_markers</source>
+                <target>Ocultar los marcadores</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_back_from_10s">
+                <source>back.image.js.back_from_10s</source>
+                <target>Retroceder de 10s</target>
+            </trans-unit>
+            <trans-unit id="back_image_js_title">
+                <source>back.image.js.title</source>
+                <target>Comente la imagen *|IMAGE_NAME|*</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

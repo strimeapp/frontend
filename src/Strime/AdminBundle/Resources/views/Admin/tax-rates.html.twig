@@ -1,0 +1,151 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_uploads') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin - Uploads">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord">
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        'bundles/strimeglobal/css/sub-menu.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}Admin | Taux de TVA | Strime{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+    {% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="sub-menu">
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="{{ path('admin_offers') }}" title="Offres">Offres</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_discounts') }}" title="Réductions">Réductions</a>
+                </li>
+                <li class="active">
+                    <a href="{{ path('admin_tax_rates') }}" title="TVA">Taux de TVA</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="admin-content">
+    	<div class="data-elt">
+	    	<h1>Gestion des taux de TVA</h1>
+
+	        {% for flash_message in app.session.flashbag.get('success') %}
+	            <div class="alert alert-success" role="alert">
+	                {{ flash_message }}
+	            </div>
+	        {% endfor %}
+
+	        {% for flash_message in app.session.flashbag.get('error') %}
+	            <div class="alert alert-danger" role="alert">
+	                {{ flash_message }}
+	            </div>
+	        {% endfor %}
+
+	        <div class="table-responsive margin-top">
+		        <table class="table table-hover table-condensed">
+		        	<thead>
+						<tr>
+							<td></td>
+							<td>
+								Pays
+							</td>
+							<td>
+								Code pays
+							</td>
+							<td>
+								Taux applicable
+							</td>
+							<td></td>
+						</tr>
+					</thead>
+
+					<tbody>
+						{{ form_start(add_tax_rate_form, {'action': path('admin_tax_rates'), 'attr': {'id': 'add-tax-rate-form', 'novalidate': true} }) }}
+							<tr>
+								<td></td>
+								<td>
+									{{ form_widget(add_tax_rate_form.country_code) }}
+								</td>
+								<td>
+									{{ form_widget(add_tax_rate_form.country) }}
+									<span id="add-tax-rate-country"></span>
+								</td>
+								<td>
+									{{ form_widget(add_tax_rate_form.tax_rate) }}
+								</td>
+								<td>
+									<button type="submit" />Ajouter</button>
+								</td>
+							</tr>
+						{{ form_end(add_tax_rate_form) }}
+
+						{% if tax_rates is not null %}
+						{% for tax_rate in tax_rates %}
+							<tr>
+								<td>
+									{{ loop.index }}
+								</td>
+								<td>
+									{{ tax_rate.country }}
+								</td>
+								<td>
+									{{ tax_rate.countryCode }}
+								</td>
+								<td>
+									{{ tax_rate.taxRate }}
+								</td>
+								<td>
+									<a href="{{ path('admin_tax_rates', {'action': 'delete', 'tax_rate_id': tax_rate.id}) }}" title="Supprimer ce taux">
+		                                Supprimer ce taux
+		                            </a>
+								</td>
+							</tr>
+						{% endfor %}
+						{% endif %}
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+    </div><!-- ./Admin content -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			// If the user chooses a country in the dropdown field
+			$("select#form_country_code").change(function() {
+				var countryCode = $(this).val();
+				var country = $("select#form_country_code option[value='"+countryCode+"']").text();
+				$("#add-tax-rate-country").empty().text(countryCode);
+				$("#form_country").val(country);
+			});
+
+		});
+	</script>
+{% endblock %}

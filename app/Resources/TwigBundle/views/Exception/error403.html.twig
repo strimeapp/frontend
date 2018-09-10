@@ -1,0 +1,66 @@
+{% extends '::error_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('app_broken') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Aucune vidéo à cette adresse">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord">
+{% endblock %}
+
+{% block title %}
+    Aucune vidéo à cette adresse | Strime.io
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <style type="text/css">
+        footer {
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+    <div id="broken-content">
+        <div id="broken-content-inner">
+            <h1>Oups ! Erreur 403.</h1>
+
+            <p>
+                Vous n'êtes pas autorisé(e) à accéder à cette page.
+            </p>
+
+            <div id="contact-owner">
+                Retentez votre chance...
+            </div>
+        </div><!-- ./Broken content inner -->
+    </div><!-- ./Broken content -->
+
+    <div id="logo-bottom">
+        <a href="{{ url('app_dashboard') }}" title="Retour au dashboard">
+            <img src="{{  asset('bundles/strimeback/img/logo-strime-white.svg') }}" alt="Strime" title="Strime">
+        </a>
+    </div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+
+        // Force the size of the HTML tag
+        $(document).ready(function() {
+
+            $("html").css("height", "100%");
+
+        });
+
+    </script>
+{% endblock %}

@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_controller_app_dashboard_video_properly_deleted">
+                <source>back.controller_app.dashboard.video_properly_deleted</source>
+                <target>This video and all the related comments have been deleted.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_image_properly_deleted">
+                <source>back.controller_app.dashboard.image_properly_deleted</source>
+                <target>This image and all the related comments have been deleted.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_audio_properly_deleted">
+                <source>back.controller_app.dashboard.audio_properly_deleted</source>
+                <target>This audio file and all the related comments have been deleted.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_file_properly_deleted">
+                <source>back.controller_app.dashboard.file_properly_deleted</source>
+                <target>This file and all the related comments have been deleted.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_project_properly_deleted">
+                <source>back.controller_app.dashboard.project_properly_deleted</source>
+                <target>This project has been properly deleted.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_video_doesnt_exist_cant_be_deleted">
+                <source>back.controller_app.dashboard.video_doesnt_exist_cant_be_deleted</source>
+                <target>This video doesn't exist. Therefore, it can't be deleted.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_image_doesnt_exist_cant_be_deleted">
+                <source>back.controller_app.dashboard.image_doesnt_exist_cant_be_deleted</source>
+                <target>This image doesn't exist. Therefore, it can't be deleted.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_audio_doesnt_exist_cant_be_deleted">
+                <source>back.controller_app.dashboard.audio_doesnt_exist_cant_be_deleted</source>
+                <target>This audio file doesn't exist. Therefore, it can't be deleted.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_file_doesnt_exist_cant_be_deleted">
+                <source>back.controller_app.dashboard.file_doesnt_exist_cant_be_deleted</source>
+                <target>This file doesn't exist. Therefore, it can't be deleted.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_project_doesnt_exist_cant_be_deleted">
+                <source>back.controller_app.dashboard.project_doesnt_exist_cant_be_deleted</source>
+                <target>This project doesn't exist. Therefore, it can't be deleted.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_project_project_doesnt_exist">
+                <source>back.controller_app.project.project_doesnt_exist</source>
+                <target>The project you're trying to access doesn't exist.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_error_occured_while_deleting_video">
+                <source>back.controller_app.dashboard.error_occured_while_deleting_video</source>
+                <target>An error occurred while deleting this video.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_error_occured_while_deleting_image">
+                <source>back.controller_app.dashboard.error_occured_while_deleting_image</source>
+                <target>An error occurred while deleting this image.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_error_occured_while_deleting_audio">
+                <source>back.controller_app.dashboard.error_occured_while_deleting_audio</source>
+                <target>An error occurred while deleting this audio file.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_error_occured_while_deleting_file">
+                <source>back.controller_app.dashboard.error_occured_while_deleting_file</source>
+                <target>An error occurred while deleting this file.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_error_occured_while_deleting_project">
+                <source>back.controller_app.dashboard.error_occured_while_deleting_project</source>
+                <target>An error occurred while deleting this project.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_folder_name_already_exists">
+                <source>back.controller_app.dashboard.folder_name_already_exists</source>
+                <target>It seems that a project with the same name already exists. Please rename it.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_dashboard_project_successfully_created">
+                <source>back.controller_app.dashboard.project_successfully_created</source>
+                <target>This project has been created.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_one_minute">
+                <source>back.controller_app.video.one_minute</source>
+                <target>1 minute</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_multiple_minutes">
+                <source>back.controller_app.video.multiple_minutes</source>
+                <target>%nb_minutes% minute|%nb_minutes% minutes</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_one_hour">
+                <source>back.controller_app.video.one_hour</source>
+                <target>1 hour</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_multiple_hours">
+                <source>back.controller_app.video.multiple_hours</source>
+                <target>%nb_hours% hour|%nb_hours% hours</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_one_day">
+                <source>back.controller_app.video.one_day</source>
+                <target>1 day</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_multiple_days">
+                <source>back.controller_app.video.multiple_days</source>
+                <target>%nb_days% day|%nb_days% days</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_anonymous">
+                <source>back.controller_app.video.anonymous</source>
+                <target>Anonymous</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_export_youtube_session_state_did_not_match">
+                <source>back.controller_app.video_export_youtube.session_state_did_not_match</source>
+                <target>A session issue occured while connecting to Youtube.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_export_youtube_no_video_found">
+                <source>back.controller_app.video_export_youtube.no_video_found</source>
+                <target>The video wasn't found.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_export_youtube_a_service_error_occured">
+                <source>back.controller_app.video_export_youtube.a_service_error_occured</source>
+                <target>Youtube encountered an error: %code%</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_export_youtube_a_client_error_occured">
+                <source>back.controller_app.video_export_youtube.a_client_error_occured</source>
+                <target>An error occured while sending the data to Youtube: %code%</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_export_youtube_video_exported">
+                <source>back.controller_app.video_export_youtube.video_exported</source>
+                <target>The video has been exported on Youtube.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_export_youtube_google_id_couldnt_be_saved">
+                <source>back.controller_app.video_export_youtube.google_id_couldnt_be_saved</source>
+                <target>Your Google ID couldn't be saved. You'll have to re-identify yourself next time.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_export_youtube_video_youtube_id_not_saved">
+                <source>back.controller_app.video_export_youtube.video_youtube_id_not_saved</source>
+                <target>The Youtube ID of your video couldn't be saved.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_export_youtube_error_copying_video">
+                <source>back.controller_app.video_export_youtube.error_copying_video</source>
+                <target>An error occured while copying the video.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_video_export_youtube_error_copying_thumbnail">
+                <source>back.controller_app.video_export_youtube.error_copying_thumbnail</source>
+                <target>An error occured while copying the thumbnail.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_image_one_minute">
+                <source>back.controller_app.image.one_minute</source>
+                <target>1 minute</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_image_multiple_minutes">
+                <source>back.controller_app.image.multiple_minutes</source>
+                <target>%nb_minutes% minute|%nb_minutes% minutes</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_image_one_hour">
+                <source>back.controller_app.image.one_hour</source>
+                <target>1 hour</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_image_multiple_hours">
+                <source>back.controller_app.image.multiple_hours</source>
+                <target>%nb_hours% hour|%nb_hours% hours</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_image_one_day">
+                <source>back.controller_app.image.one_day</source>
+                <target>1 day</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_image_multiple_days">
+                <source>back.controller_app.image.multiple_days</source>
+                <target>%nb_days% day|%nb_days% days</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_image_anonymous">
+                <source>back.controller_app.image.anonymous</source>
+                <target>Anonymous</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_pwd_current_pwd">
+                <source>back.controller_app.profile_pwd.current_pwd</source>
+                <target>Current password</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_pwd_new_pwd">
+                <source>back.controller_app.profile_pwd.new_pwd</source>
+                <target>New password</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_pwd_incorrect_pwd">
+                <source>back.controller_app.profile_pwd.incorrect_pwd</source>
+                <target>The password provided is incorrect.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_pwd_new_pwd_saved">
+                <source>back.controller_app.profile_pwd.new_pwd_saved</source>
+                <target>Your new password has been saved.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_pwd_error_occured_while_updating_pwd">
+                <source>back.controller_app.profile_pwd.error_occured_while_updating_pwd</source>
+                <target>An error occurred while updating your password.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_pwd_all_fields_not_provided">
+                <source>back.controller_app.profile_pwd.all_fields_not_provided</source>
+                <target>Fields are missing.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_billing_company">
+                <source>back.controller_app.profile_billing.company</source>
+                <target>Company</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_billing_vat_number">
+                <source>back.controller_app.profile_billing.vat_number</source>
+                <target>VAT number</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_billing_address">
+                <source>back.controller_app.profile_billing.address</source>
+                <target>Address</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_billing_address_more_details">
+                <source>back.controller_app.profile_billing.address_more_details</source>
+                <target>Address, more details</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_billing_postal_code">
+                <source>back.controller_app.profile_billing.postal_code</source>
+                <target>Postal code</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_billing_province">
+                <source>back.controller_app.profile_billing.province</source>
+                <target>Province</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_billing_city">
+                <source>back.controller_app.profile_billing.city</source>
+                <target>City</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_billing_country">
+                <source>back.controller_app.profile_billing.country</source>
+                <target>Country</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_billing_address_is_mandatory_for_invoices">
+                <source>back.controller_app.profile_billing.address_is_mandatory_for_invoices</source>
+                <target>You must provide a valid address for the invoices.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_billing_changes_have_been_saved">
+                <source>back.controller_app.profile_billing.changes_have_been_saved</source>
+                <target>The changes have been saved.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_billing_error_occured_while_updating_your_profile">
+                <source>back.controller_app.profile_billing.error_occured_while_updating_your_profile</source>
+                <target>An error occurred while updating your profile.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_change_avatar">
+                <source>back.controller_app.profile.change_avatar</source>
+                <target>Change the avatar</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_first_name">
+                <source>back.controller_app.profile.first_name</source>
+                <target>Firstname</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_name">
+                <source>back.controller_app.profile.name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_email">
+                <source>back.controller_app.profile.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_you_must_provide_firstname_lastname_email">
+                <source>back.controller_app.profile.you_must_provide_firstname_lastname_email</source>
+                <target>You must provide a firstname, a name and an email address.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_email_address_invalid">
+                <source>back.controller_app.profile.email_address_invalid</source>
+                <target>This email address is not valid.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_email_already_used">
+                <source>back.controller_app.profile.email_already_used</source>
+                <target>This email address is already used.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_confirm_email_address">
+                <source>back.controller_app.profile.confirm_email_address</source>
+                <target>Confirm your email address</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_changes_saved">
+                <source>back.controller_app.profile.changes_saved</source>
+                <target>Changes have been saved.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_error_while_updating_profile">
+                <source>back.controller_app.profile.error_while_updating_profile</source>
+                <target>An error occurred while updating your profile.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_all_fields_not_provided">
+                <source>back.controller_app.profile.all_fields_not_provided</source>
+                <target>Fields are missing.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_delete_profile_unrecognized_account_cannot_be_deleted">
+                <source>back.controller_app.delete_profile.unrecognized_account_cannot_be_deleted</source>
+                <target>Your account has not been identified. Therefore, it cannot be deleted.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_delete_profile_error_occured_while_deleting_account">
+                <source>back.controller_app.delete_profile.error_occured_while_deleting_account</source>
+                <target>An error occurred while deleting your account.</target>
+            </trans-unit>
+            <trans-unit id="back_controller_app_profile_notifications_error_occured_while_saving_settings">
+                <source>back.controller_app.profile_notifications.error_occured_while_saving_settings</source>
+                <target>An error occured while saving your settings.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

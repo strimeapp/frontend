@@ -1,0 +1,352 @@
+/* Big computer styles
+-------------------------------------------------- */
+
+@media (min-width: 1800px) {
+	#computer {
+		height: 773px;
+	}
+}
+
+@media (min-width: 1500px) {
+	#baseline {
+		height: 300px;
+	}
+	#computer {
+		height: 645px;
+	}
+}
+
+/* Small computer styles
+-------------------------------------------------- */
+
+@media (max-height: 650px) {
+	.modal#signupModal .modal-body {
+		margin-top: 30px;
+	}
+}
+
+/* Small computer styles
+-------------------------------------------------- */
+
+@media (max-width: 1000px) {
+	#computer #computer-clock {
+		position: absolute;
+		top: -10px;
+		right: -30px;
+		background: url(../img/home-computer-clock.svg) no-repeat;
+		background-size: contain;
+		background-position: center center;
+		width: 120px;
+		height: 120px;
+	}
+	#computer #computer-sticker-01 {
+		position: absolute;
+		top: 30%;
+		left: 1%;
+		background: url(../img/home-computer-sticker-01.svg) no-repeat;
+		background-size: contain;
+		background-position: center center;
+		width: 60px;
+		height: 70px;
+	}
+	#computer #computer-sticker-02 {
+		position: absolute;
+		top: 28%;
+		left: 5%;
+		background: url(../img/home-computer-sticker-02.svg) no-repeat;
+		background-size: contain;
+		background-position: center center;
+		width: 56px;
+		height: 59px;
+	}
+	#computer .computer-bubble#bubble-01 {
+		background: url(../img/home-bubble-01.svg) no-repeat;
+		background-size: contain;
+		background-position: center center;
+		width: 130px;
+		height: 68px;
+		top: 47%;
+		left: 16%;
+	}
+	#computer .computer-bubble#bubble-02 {
+		background: url(../img/home-bubble-02.svg) no-repeat;
+		background-size: contain;
+		background-position: center center;
+		width: 90px;
+		height: 51px;
+		top: 32%;
+		left: 42.9%;
+	}
+	#computer .computer-bubble#bubble-03 {
+		background: url(../img/home-bubble-03.svg) no-repeat;
+		background-size: contain;
+		background-position: center center;
+		top: 55%;
+		left: 40.4%;
+		width: 68px;
+		height: 59px;
+	}
+}
+
+/* Tablet styles
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
+	body {
+		margin-bottom: 200px; /* Set for the fixed footer */
+	}
+	footer {
+		height: 200px;
+	}
+	footer .footer-elt {
+		margin-top: 10px;
+	}
+	#baseline {
+		height: 300px;
+	}
+	#baseline h2 {
+		font-size: 40px;
+	}
+	#baseline p {
+		font-size: 24px;
+	}
+	#computer {
+		height: 350px;
+	}
+	#what-we-do .container-table .container-table-cell p {
+		font-size: 22px;
+		line-height: 40px;
+	}
+}
+
+
+
+/* Mobile styles
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+	html, body {
+		width: 100%;
+		max-width: 100%;
+	}
+	#home-app-description .description-elt .description-elt-img {
+		height: 250px;
+	}
+}
+
+@media (max-width: 375px) {
+	body {
+		margin-bottom: 350px;
+	}
+
+	body.home header h1 {
+		margin-top: 10px;
+	}
+
+	header h2 {
+		font-size: 40px;
+	}
+	header p {
+		font-size: 24px;
+	}
+	#header ul#main-menu li a,
+	#header ul#main-menu li a:visited {
+		font-size: 14px;
+	}
+
+	#fixed-header {
+		display: none !important;
+	}
+
+	header #top-links a,
+	#fixed-header #top-links-fixed a {
+		margin-left: 3px;
+	}
+
+	body.home header #top-links {
+		font-size: 14px;
+		margin-top: 10px;
+	}
+	body.home header h2 {
+		margin-top: 20px;
+		font-size: 30px;
+	}
+	body.home header p {
+		font-size: 18px;
+	}
+
+	footer {
+		height: 400px;
+	}
+	footer .row .col-sm-4:first-child {
+		text-align: center;
+	}
+	footer ul {
+		display: block;
+		width: 100%;
+		margin-top: 10px;
+	}
+	footer ul li {
+		display: block;
+		width: 100%;
+		padding: 0;
+		margin-bottom: 5px;
+		text-align: center;
+	}
+	footer .footer-elt,
+	footer .footer-elt.pull-right {
+		float: none !important;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	#baseline {
+		height: 250px;
+		padding: 0 10px;
+	}
+	#baseline .container-table {
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#baseline h2 {
+		font-size: 30px;
+	}
+	#baseline p {
+		font-size: 20px;
+	}
+
+	#computer {
+		height: 150px;
+	}
+	#computer #computer-clock {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		background: url(../img/home-computer-clock.svg) no-repeat;
+		background-size: contain;
+		background-position: center center;
+		width: 60px;
+		height: 60px;
+	}
+	#computer #computer-sticker-01 {
+		position: absolute;
+		top: 30%;
+		left: 3%;
+		background: url(../img/home-computer-sticker-01.svg) no-repeat;
+		background-size: contain;
+		background-position: center center;
+		width: 30px;
+		height: 35px;
+	}
+	#computer #computer-sticker-02 {
+		position: absolute;
+		top: 28%;
+		left: 10%;
+		background: url(../img/home-computer-sticker-02.svg) no-repeat;
+		background-size: contain;
+		background-position: center center;
+		width: 28px;
+		height: 30px;
+	}
+	#computer .computer-bubble#bubble-01 {
+		width: 100px;
+		height: 52px;
+		left: 9%;
+		top: 25%;
+	}
+	#computer .computer-bubble#bubble-02 {
+		width: 69px;
+		height: 39px;
+		left: 34%;
+		top: 17%;
+	}
+	#computer .computer-bubble#bubble-03 {
+		width: 52px;
+		height: 45px;
+		left: 35%;
+		top: 53%;
+	}
+
+	#strime-is-free button {
+		width: 300px;
+	}
+
+	#what-we-do .container-table .container-table-cell p {
+		font-size: 18px;
+		line-height: 34px;
+	}
+	#what-we-do .wrapper .row .icon-container {
+		height: 200px;
+	}
+	#what-we-do .wrapper .col-sm-4 {
+		height: 400px;
+	}
+	#what-we-do h3 {
+		margin-top: 0;
+	}
+
+	#home-app-description .description-elt .description-elt-table .description-elt-table-cell,
+	#home-app-description .description-elt .description-elt-details {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: top;
+	}
+	#home-app-description .description-elt .description-elt-img {
+		height: 300px;
+		width: 250px;
+		margin-left: auto;
+		margin-right: auto;
+		background-position: center center !important;
+	}
+
+	#stay-connected p.lead {
+		margin-bottom: 30px;
+	}
+	#stay-connected form input,
+	#stay-connected form button {
+		display: block;
+		width: 100%;
+	}
+
+	#offers #offers-list {
+		width: 90%;
+	}
+	#offers #offers-list .offer,
+	#offers #offers-list .offer:last-child {
+		float: none;
+		display: block;
+		margin: 0 auto 20px auto;
+	}
+
+	body.about #about-container .franck,
+	body.about #about-container .jp {
+		margin-bottom: 40px;
+	}
+
+	body.contact #contact-form-container .address {
+		margin-top: 40px;
+	}
+
+	.fb-login-button {
+		float: left !important;
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 320px) {
+
+	header #top-links #menu a,
+	#fixed-header #top-links-fixed #menu-fixed a {
+		margin-right: 5px;
+	}
+
+	#strime-is-free button {
+		font-size: 18px;
+		width: 250px;
+	}
+}

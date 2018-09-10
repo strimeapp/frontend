@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_profile_email_notifications_meta_description">
+                <source>back.profile_email_notifications.meta.description</source>
+                <target>Notificaciones de e-mails</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_meta_keywords">
+                <source>back.profile_email_notifications.meta.keywords</source>
+                <target>strime, strime.io, video, video, videos, comentario, comentarios, aplicación, app, apps, workflow, intercambiar, cliente, videasta, profesional, profesional, cuenta, notificaciones</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_meta_title">
+                <source>back.profile_email_notifications.meta.title</source>
+                <target>Notificaciones</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_title_comments_frequency">
+                <source>back.profile_email_notifications.title.comments_frequency</source>
+                <target>Frecuencia de envío de los comentarios</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_text_choose_the_frequency">
+                <source>back.profile_email_notifications.text.choose_the_frequency</source>
+                <target>Seleccione la frecuencia para enviar los comentarios a su correo electrónico.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_choice_each_time">
+                <source>back.profile_email_notifications.choice.each_time</source>
+                <target>Cada vez que un comentario es posteado</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_choice_once_a_day">
+                <source>back.profile_email_notifications.choice.once_a_day</source>
+                <target>Enviar lote (una vez al día a las 8:00 am, hora de París)</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_choice_never">
+                <source>back.profile_email_notifications.choice.never</source>
+                <target>Nunca</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_title_newsletter">
+                <source>back.profile_email_notifications.title.newsletter</source>
+                <target>Newsletter</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_text_keep_posted">
+                <source>back.profile_email_notifications.text.keep_posted</source>
+                <target>Manténgase informado de las nuevas funcionalidades de la aplicación (menos de una newsletter al mes).</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_text_activated">
+                <source>back.profile_email_notifications.text.activated</source>
+                <target>Activado</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_text_deactivated">
+                <source>back.profile_email_notifications.text.deactivated</source>
+                <target>Desactivado</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_title_slack_notifications">
+                <source>back.profile_email_notifications.title.slack_notifications</source>
+                <target>Slack</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_text_receive_comments_notifications_in_slack_channel">
+                <source>back.profile_email_notifications.text.receive_comments_notifications_in_slack_channel</source>
+                <target>Puede elegir recibir notificaciones de los comentarios por Slack.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_text_first_need_register_app">
+                <source>back.profile_email_notifications.text.first_need_register_app</source>
+                <target>Antes que nada, usted debe %link_start%crear una nueva aplicación en Slack%link_end%.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_text_register_app_in_slack">
+                <source>back.profile_email_notifications.text.register_app_in_slack</source>
+                <target>Crear una nueva aplicación en de Slack</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_text_then_create_webhook">
+                <source>back.profile_email_notifications.text.then_create_webhook</source>
+                <target>A continuación, haga clic en el cuadrodenominado "entrada de WebHooks" y active WebHooks haciendo clic en el botón de arriba a la derecha. En la parte inferior de la página, un botón le permitirá un nuevo web hook. Haga clic en él y seleccione el canal que desea utilizar.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_text_click_here_to_see_video_tutorial">
+                <source>back.profile_email_notifications.text.click_here_to_see_video_tutorial</source>
+                <target>Haga clic aqui para %link_start%ver una video%link_end% que muestra como hacer.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_text_click_here">
+                <source>back.profile_email_notifications.text.click_here</source>
+                <target>Haga clic</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_text_copy_webhook_url">
+                <source>back.profile_email_notifications.text.copy_webhook_url</source>
+                <target>No le queda nada más que copiar el URL del webhook y pagarlo aquí.</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_link_test_the_webhook">
+                <source>back.profile_email_notifications.link.test_the_webhook</source>
+                <target>Pruebe el webhook</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_loader_loading">
+                <source>back.back_profile_email_notification.loader.loading</source>
+                <target>Cargando</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_button_update_notifications">
+                <source>back.profile_email_notifications.button.update_notifications</source>
+                <target>Actualizar las notificaciones</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_js_notification_sent">
+                <source>back.profile_email_notifications.js.notification_sent</source>
+                <target>Notificación enviada</target>
+            </trans-unit>
+            <trans-unit id="back_profile_email_notifications_js_test_failed">
+                <source>back.profile_email_notifications.js.test_failed</source>
+                <target>Error del test</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

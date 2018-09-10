@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_dashboard_encoding_job_text_video_currently_encoding">
+                <source>back.dashboard_encoding_job.text.video_currently_encoding</source>
+                <target>Encodage d'une vidéo en cours</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_encoding_job_text_audio_currently_encoding">
+                <source>back.dashboard_encoding_job.text.audio_currently_encoding</source>
+                <target>Encodage d'un fichier audio en cours</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_encoding_job_text_file_currently_encoding">
+                <source>back.dashboard_encoding_job.text.file_currently_encoding</source>
+                <target>Encodage d'un fichier en cours</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

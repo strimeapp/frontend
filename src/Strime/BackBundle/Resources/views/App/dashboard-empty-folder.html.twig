@@ -1,0 +1,41 @@
+{% trans_default_domain 'back_dashboard_empty_folder' %}
+
+<div id="project-{{ project.project_id }}" class="asset project {% if nb_assets_per_line is divisible by(4) %}last-elt{% endif %}" data-nb-assets="0" data-elt-id="{{ project.project_id }}">
+
+    <a href="{{ path('app_project', {'project_id' : project.project_id}) }}" ondrop="dropAsset(event)" ondragover="allowDropAsset(event)" ondragenter="dragEnterZoneAsset(event)" ondragleave="dragLeaveZoneAsset(event)">
+
+        <div class="asset-actions">
+            <div class="project-delete" data-target="{{ path('app_dashboard', {'action': 'delete', 'content_type': 'project', 'content_id' : project.project_id}) }}" data-project-name="{{ project.name }}">
+            </div>
+            <div class="asset-share" data-asset-id="{{ project.project_id }}" data-asset-url="{{ url('app_project', {'project_id' : project.project_id}) }}" data-content-type="project" data-content-id="{{ project.project_id }}" data-content-name="{{ project.name }}">
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="see-asset">
+            <div class="see-asset-inner">
+                <button>
+                    {{ 'back.dashboard_empty_folder.button.see_project'|trans }}
+                </button>
+            </div>
+        </div>
+
+        <div class="asset-details">
+            <div class="asset-folder"></div>
+
+            <div class="asset-details-inner">
+                <div class="asset-name" data-elt-id="{{ project.project_id }}">
+                    {{project.name}}
+                </div>
+
+                <div class="project-nb-assets">
+                    {% if rights is not empty and rights is not null and ('image' in rights|keys or 'audio' in rights|keys) %}
+                        {{ 'back.dashboard_empty_folder.text.zero_file'|trans }}
+                    {% else %}
+                        {{ 'back.dashboard_empty_folder.text.zero_video'|trans }}
+                    {% endif %}
+                </div>
+            </div><!-- ./Asset details inner -->
+        </div><!-- ./Asset details -->
+    </a>
+</div>

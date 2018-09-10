@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_invoice_meta_title">
+                <source>email.invoice.meta.title</source>
+                <target>Votre facture pour la période du %first_day% au %last_day%</target>
+            </trans-unit>
+            <trans-unit id="email_invoice_title_video_encoded">
+                <source>email.encoding_done.title.video_encoded</source>
+                <target>Votre vidéo est encodée !</target>
+            </trans-unit>
+            <trans-unit id="email_invoice_text_hi_first_name">
+                <source>email.invoice.text.hi_first_name</source>
+                <target>Bonjour %first_name%</target>
+            </trans-unit>
+            <trans-unit id="email_invoice_text_please_find_attached">
+                <source>email.invoice.text.please_find_attached</source>
+                <target>Vous trouverez ci-joint votre facture %strime% correspondant à la période du %first_day% au %last_day%.</target>
+            </trans-unit>
+            <trans-unit id="email_invoice_text_thanks_for_your_confidence">
+                <source>email.invoice.text.thanks_for_your_confidence</source>
+                <target>Merci pour votre confiance !</target>
+            </trans-unit>
+            <trans-unit id="email_invoice_text_see_you_soon">
+                <source>email.invoice.text.see_you_soon</source>
+                <target>À bientôt</target>
+            </trans-unit>
+            <trans-unit id="email_invoice_text_strime_team">
+                <source>email.invoice.text.strime_team</source>
+                <target>L'équipe Strime</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,76 @@
+{% if app.request.locale == "fr" %}
+    {% set facebook_locale = "fr_FR" %}
+{% elseif app.request.locale == "es" %}
+    {% set facebook_locale = "es_LA" %}
+{% else %}
+    {% set facebook_locale = "en_US" %}
+{% endif %}
+
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId               : '{{ strime_facebook_app_id }}',
+            autoLogAppEvents    : true,
+            xfbml               : true,
+            version             : 'v2.9',
+            status              : true,
+            scope               : 'public_profile,email'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/{{ facebook_locale }}/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+    // This function is called when someone finishes with the Login
+    // Button.  See the onlogin handler attached to it in the sample
+    // code below.
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    }
+
+
+    // This is called with the results from from FB.getLoginStatus().
+    function statusChangeCallback(response) {
+
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+
+            // Logged into Facebook.
+            // Now log the user into Strime.
+            logUserIntoStrime();
+        }
+    }
+
+
+    // Here we run a very simple test of the Graph API after login is
+    // successful.  See statusChangeCallback() for when this call is made.
+    function logUserIntoStrime() {
+
+        // Get the ID of the user
+        FB.api('/me?fields=name,email,first_name,last_name,picture', function(response) {
+            // console.log(response);
+
+            // Get the details of the user
+            var userIdToken = response.id;
+            var userEmail = response.email;
+            var userImage = response.picture.data.url;
+            var userFirstName = response.first_name;
+            var userLastName = response.last_name;
+
+            sendAjaxSigninRequest(ajaxSocialSigninURL, userEmail, userImage, userFirstName, userLastName, userIdToken, 'facebook', 'Facebook', mainJsTextUserAccountSameEmail, mainJsTextMissingData, mainJsTextInvalidEmailAddress, mainJsTextAnErrorOccuredWhileLoggingYouIn);
+        });
+    }
+</script>

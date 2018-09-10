@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_dashboard_folder_button_see_project">
+                <source>back.dashboard_folder.button.see_project</source>
+                <target>Ver el proyecto</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_folder_button_see_video">
+                <source>back.dashboard_folder.button.see_video</source>
+                <target>Ver el video</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_folder_button_see_image">
+                <source>back.dashboard_folder.button.see_image</source>
+                <target>Ver la imagen</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_folder_button_see_audio">
+                <source>back.dashboard_folder.button.see_audio</source>
+                <target>Ver el archivo audio</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_folder_button_see_file">
+                <source>back.dashboard_folder.button.see_file</source>
+                <target>Ver el archivo</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_folder_text_nb_videos">
+                <source>back.dashboard_folder.text.nb_videos</source>
+                <target>%nb_videos% video|%nb_videos% videos</target>
+            </trans-unit>
+            <trans-unit id="back_dashboard_folder_text_nb_files">
+                <source>back.dashboard_folder.text.nb_files</source>
+                <target>%nb_files% archivo|%nb_files% archivos</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_broken_link_meta_title">
+                <source>back.broken_link.meta.title</source>
+                <target>Aucune vidéo à cette adresse</target>
+            </trans-unit>
+            <trans-unit id="back_broken_link_meta_keywords">
+                <source>back.broken_link.meta.keywords</source>
+                <target>strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, erreur, lien cassé</target>
+            </trans-unit>
+            <trans-unit id="back_broken_link_title_invalid_link">
+                <source>back.broken_link.title.invalid_link</source>
+                <target>Oups ! Ce lien n'est plus valide.</target>
+            </trans-unit>
+            <trans-unit id="back_broken_link_text_project_deleted_or_not_active">
+                <source>back.broken_link.text.project_deleted_or_not_active</source>
+                <target>Le projet auquel vous essayez d'accéder a été supprimé ou n'est plus actif.</target>
+            </trans-unit>
+            <trans-unit id="back_broken_link_text_contact_the_owner">
+                <source>back.broken_link.text.contact_the_owner</source>
+                <target>Contactez le propriétaire du projet</target>
+            </trans-unit>
+            <trans-unit id="back_broken_link_text_back_to_dashboard">
+                <source>back.broken_link.text.back_to_dashboard</source>
+                <target>Retour au tableau de bord</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

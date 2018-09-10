@@ -1,0 +1,65 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     symfony
+    database_user:     root
+    database_password: ~
+    # You should uncomment this if you want use pdo_sqlite
+    # database_path: "%kernel.root_dir%/data.db3"
+
+    mailer_transport:  smtp
+    mailer_host:       smtp.sendgrid.net
+    mailer_user:
+    mailer_password:
+
+    # A secret key that's used to generate certain security-related tokens
+    secret:             'tobechanged'
+
+    # Strime App parameters
+    strime_app_url: https://www.strime.io/
+    strime_app_token: tobechanged
+    strime_app_name: 'Strime.io'
+    strime_app_version: '1.0'
+    locale: fr
+
+    # API Parameters
+    strime_api_url: https://api.strime.io/
+    strime_api_token: tobechanged
+    strime_api_storage_multiplier: 1000000
+    strime_api_storage_allowed_multiplier: 1000
+    strime_api_default_video_names: "Démo 1,Démo 2,Demo 1,Demo 2,Demostración 1,Demostración 2"
+
+    # Global Parameters
+    strime_video_gold_number: 1.6180339887
+    strime_video_default_width: 647
+    strime_video_default_height: 400
+    strime_video_default_accepted_extensions: "avi,3gp,mp4,mpg,ogg,ogv,mov,flv,mp2t,m2v,wmv,mkv"
+    strime_image_default_accepted_extensions: "jpg,jpeg,png,gif"
+    strime_audio_default_accepted_extensions: "aif,aiff,mp2,mp3,mpga,ra,wav,webm"
+    strime_video_volume: 0.4
+
+    # Stripe parameters
+    stripe_secret_key:
+    stripe_publishable_key:
+
+    # Slack parameters
+    slack_strime_billing_channel:
+    slack_strime_monitoring_channel:
+
+    # User account parameters
+    user_days_to_confirm_email: 7
+    user_days_to_display_email_popup: 2
+
+    # Google API Console
+    strime_google_api_console_id:
+    strime_google_api_console_secret:
+    strime_google_api_client_secret_json:
+
+    # Facebook API
+    strime_facebook_app_id:
+
+    # Hubspot API parameters
+    hubspot_api_key: 

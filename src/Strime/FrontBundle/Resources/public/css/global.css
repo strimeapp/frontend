@@ -1,0 +1,421 @@
+/*!
+ * IE10 viewport hack for Surface/desktop Windows 8 bug
+ * Copyright 2014-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+/*
+ * See the Getting Started docs for more information:
+ * http://getbootstrap.com/getting-started/#support-ie10-width
+ */
+@-webkit-viewport { width: device-width; }
+@-moz-viewport    { width: device-width; }
+@-ms-viewport     { width: device-width; }
+@-o-viewport      { width: device-width; }
+@viewport         { width: device-width; }
+
+
+/* Body styles
+-------------------------------------------------- */
+
+html {
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+}
+
+body {
+	background-color: #E9E9E9;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	color: #ECEEF4;
+	margin-bottom: 65px; /* For the sticky footer */
+}
+
+
+/* Font styles
+-------------------------------------------------- */
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'UbuntuLight';
+  src: url('../fonts/Ubuntu/Ubuntu-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'UbuntuMedium';
+  src: url('../fonts/Ubuntu/Ubuntu-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'UbuntuBold';
+  src: url('../fonts/Ubuntu/Ubuntu-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Cabin';
+  src: url('../fonts/Cabin/Cabin-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CabinBold';
+  src: url('../fonts/Cabin/Cabin-Bold.ttf') format('truetype');
+}
+
+a,
+a:visited,
+a:hover,
+a:focus {
+	text-decoration: none;
+}
+
+a,
+a:visited {
+	color: #0CAC9A;
+}
+a:hover {
+	color: #0FD8C1;
+}
+
+strong {
+	font-family: 'UbuntuBold', sans-serif;
+}
+
+h1 {
+	font-family: 'UbuntuLight', sans-serif;
+	font-weight: normal;
+	text-align: center;
+	font-size: 38px;
+	margin: 60px 0 30px 0;
+}
+h2 {
+	font-family: 'UbuntuLight', sans-serif;
+	font-weight: normal;
+	font-size: 28px;
+	margin: 40px 0 20px 0;
+}
+
+.excerpt {
+	text-align: center;
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+
+.lead {
+	font-size: 20px;
+}
+
+
+/* Button styles
+-------------------------------------------------- */
+
+button {
+	background-color: #0CAC9A;
+}
+button:hover {
+	background-color: #0FD8C1;
+}
+button:disabled {
+	background-color: #E0E0E0;
+}
+button:disabled:hover {
+	background-color: #EEE;
+}
+
+
+
+/* Modal styles
+-------------------------------------------------- */
+
+.modal .modal-dialog {
+	margin-top: 100px;
+	color: #393837;
+}
+.modal .modal-header {
+	border: none;
+	padding: 80px 40px 20px 40px;
+}
+.modal .modal-header .close {
+	position: absolute;
+    top: -16px;
+    right: -16px;
+    opacity: .7;
+    text-align: right;
+}
+.modal .modal-header .close img {
+	width: 32px;
+    height: 32px;
+}
+.modal .modal-header h4 {
+	font-family: 'UbuntuLight', sans-serif;
+	text-align: center;
+	font-size: 38px;
+	color: #303031;
+}
+.modal .modal-header .close:hover {
+	background: none;
+	opacity: 1;
+}
+.modal .modal-body {
+	padding: 20px 40px 80px 40px;
+}
+.modal .modal-body h5 {
+	font-size: 20px;
+	color: #303031;
+	margin: 20px 0 10px 0;
+}
+
+
+
+/* Form styles
+-------------------------------------------------- */
+
+
+input {
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 10px;
+	color: #393837;
+	border: solid 1px #C4C5C6;
+	border-radius: 3px;
+}
+input[type=checkbox] {
+	display: inline-block;
+	width: auto;
+	margin-right: 10px;
+	border: solid 1px #C4C5C6;
+	border-radius: 3px;
+}
+select {
+	background-color: #FFF;
+	background: url(../img/icon-menu-arrow-down.svg) no-repeat;
+	background-position: 95% center;
+	background-size: 15px 10px;
+	padding: 10px 30px 10px 10px;
+	border: 1px solid #C4C5C6;
+	border-radius: 3px;
+	width: 100%;
+	text-align: center;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+textarea {
+	display: none;
+	width: 100%;
+	height: 100px;
+	border: solid 1px #C4C5C6;
+	border-radius: 3px;
+	padding: 10px;
+}
+button {
+	display: block;
+	width: 100%;
+	border: none;
+	color: #FFF;
+	border-radius: 3px;
+	padding: 10px;
+	margin-top: 20px;
+}
+input:focus,
+textarea:focus {
+	border-color: #898B8E;
+}
+
+
+
+/* Loader styles
+-------------------------------------------------- */
+
+
+.loader-container {
+	display: none;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	color: #303031;
+	margin-top: 20px;
+}
+.loader-container .loader-pulse {
+	width: 44px;
+	height: 44px;
+	text-align: center;
+}
+
+
+
+/* Alert styles
+-------------------------------------------------- */
+
+.alert-success {
+    background-color: #FFF;
+    font-family: 'UbuntuMedium', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: #0CAC9A;
+    border: none;
+}
+.alert-danger {
+    background-color: #FFF;
+    font-family: 'UbuntuMedium', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: #E69300;
+    border: none;
+}
+
+
+/* Form styles
+-------------------------------------------------- */
+
+form input:disabled,
+form select:disabled,
+form textarea:disabled {
+	background-color: #EEE !important;
+	border: solid 1px #EEE;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill, 
+select:-webkit-autofill {
+	background-color: #FFF;
+}
+
+
+/* Progress bars styles
+-------------------------------------------------- */
+
+.progress {
+	background-color: #434344;
+	border-radius: 0;
+	margin-bottom: 0;
+}
+.progress .progress-bar {
+	background-color: #0CAC9A;
+	min-width: 2em;
+}
+
+
+
+/* Cookie bar styles
+-------------------------------------------------- */
+
+#cookie-law-info-bar {
+	position: fixed; 
+	bottom: 0;
+	left: 0; 
+	background: #FFF;
+	width: 100%; 
+	padding: 10px;
+	z-index: 1000;
+}
+#cookie-law-info-bar p {
+	display: block;
+	text-align: center;
+	line-height: 20px;
+	font-size: 14px;
+	color: #434344;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+}
+
+
+
+/* General styles
+-------------------------------------------------- */
+
+.shadow {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 12px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 12px;
+	box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+.container-table {
+	display: table;
+	height: 100%;
+}
+.container-table-cell {
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.no-margin {
+  margin: 0;
+}
+.no-padding {
+  padding: 0;
+}
+
+.margin {
+  margin: 20px;
+}
+.margin-top-10 {
+  margin-top: 10px;
+}
+.margin-top {
+  margin-top: 20px;
+}
+.margin-bottom {
+  margin-bottom: 20px;
+}
+.margin-right {
+  margin-right: 20px;
+}
+.margin-left {
+  margin-left: 20px;
+}
+
+.padding {
+  padding: 20px;
+}
+
+.full {
+  width: 100%;
+}
+
+.relative {
+	position: relative;
+}
+
+.clear {
+  clear: both;
+}
+
+
+
+/* Main styles
+-------------------------------------------------- */
+
+.wrapper {
+	width: 90%;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wrapper-narrow {
+	width: 90%;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wrapper-full {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+*:focus {
+    outline: 0;
+}

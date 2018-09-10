@@ -1,0 +1,52 @@
+{% trans_default_domain 'back_dashboard_upload_box' %}
+
+{% if display_email_confirmation_popup == true %}
+    <div id="upload" data-toggle="modal" data-target="#confirmEmailModal">
+{% else %}
+   <div id="upload" {% if is_uploading == TRUE %}class="uploading"{% endif %}>
+{% endif %}
+
+    {% if display_email_confirmation_popup == false %}
+        {% if is_uploading == FALSE %}
+            <img src="{{ asset('bundles/strimeback/img/icon-add-file.svg') }}" alt="{{ 'back.dashboard_upload_box.alt.send_video'|trans }}" title="{{ 'back.dashboard_upload_box.alt.send_video'|trans }}">
+        {% else %}
+            <img src="{{ asset('bundles/strimeback/img/icon-loading.svg') }}" alt="{{ 'back.dashboard_upload_box.alt.upload_processing'|trans }}" title="{{ 'back.dashboard_upload_box.alt.upload_processing'|trans }}" class="rotate">
+        {% endif %}
+    {% endif %}
+
+    <div id="prevent-upload"></div>
+
+    {% if display_email_confirmation_popup == false %}
+        <form enctype="multipart/form-data" action="{{ path('app_ajax_upload') }}" {% if is_uploading == FALSE %}class="dropzone" id="upload-form"{% endif %}>
+			{% if is_uploading == FALSE %}
+
+                {% if rights is not empty and rights is not null and ('image' in rights|keys or 'audio' in rights|keys) %}
+                    <div class="dz-message">{{ 'back.dashboard_upload_box.text.drop_file'|trans }}</div>
+                {% else %}
+                    <div class="dz-message">{{ 'back.dashboard_upload_box.text.drop_video_file'|trans }}</div>
+                {% endif %}
+
+            {% else %}
+
+                <div class="dz-message">{{ 'back.dashboard_upload_box.text.already_have_upload'|trans }}</div>
+                <button class="stop-upload">
+                    <a href="{{ path('app_dashboard', {'action': 'delete', 'content_type': 'upload'}) }}" title="{{ 'back.dashboard_upload_box.alt.stop_upload'|trans }}">
+                        {{ 'back.dashboard_upload_box.button.cancel_upload'|trans }}
+                    </a>
+                </button>
+
+            {% endif %}
+
+            {{ form_widget(upload_form) }}
+		{{ form_end(upload_form) }}
+    {% else %}
+        <form>
+            <p class="margin-top">
+                {{ 'back.dashboard_upload_box.text.cannot_add_video'|trans }}
+            </p>
+            <p>
+                {{ 'back.dashboard_upload_box.text.click_for_more_details'|trans }}
+            </p>
+        </form>
+    {% endif %}
+</div>

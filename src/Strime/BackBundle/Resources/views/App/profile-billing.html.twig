@@ -1,0 +1,195 @@
+{% trans_default_domain 'back_profile_billing' %}
+{% extends '::back_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('app_profile_billing', {}, TRUE) }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="{{ 'back.profile_billing.meta.description'|trans }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'back.profile_billing.meta.keywords'|trans }}">
+    <meta name="google-signin-client_id" content="59471169232-igm9oedpkpc0f1spqmrj2nffqd1hj93f.apps.googleusercontent.com">
+{% endblock %}
+
+{% block title %}{{ 'back.profile_billing.meta.title'|trans }} | Strime{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets
+        'bundles/strimeback/css/profile.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/sub-menu.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+    {% include 'StrimeBackBundle:App:profile-menu.html.twig' %}
+
+
+    <!-- Wrapper full -->
+    <div class="wrapper-full">
+
+    	<!-- Profile container -->
+    	<div id="profile-container">
+
+    		<div id="profile-inner">
+
+                {% for flash_message in app.session.flashbag.get('success') %}
+                    <div class="alert alert-success" role="alert">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+
+                {% for flash_message in app.session.flashbag.get('error') %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ flash_message|raw }}
+                    </div>
+                {% endfor %}
+
+
+
+                <h2>{{ 'back.profile_billing.title.storage'|trans }}</h2>
+
+                <div class="billing-elt">
+                    {{ 'back.profile_billing.text.storage_used'|trans({'%storage_used%': app.session.get('storage_used'), '%storage_allowed%': app.session.get('storage_allowed') / 1000, '%storage_used_in_percent%': app.session.get('storage_used_in_percent')})|raw }}
+
+                    <div id="storage-bar">
+                        <div id="storage-used-bar"></div>
+                        <div id="over-quota-storage-used-bar"></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+
+
+                <h2>{{ 'back.profile_billing.title.address'|trans }}</h2>
+
+                {{ form_start(edit_billing_profile_form, {'action': path('app_profile_billing', {'action': 'edit-billing-profile'}), 'attr': {'id': 'edit-billing-profile-form', 'novalidate': true} }) }}
+
+                    <div class="profile-details">
+                        {{ form_widget(edit_billing_profile_form.company, {'translation_domain': 'back_controller_app'}) }}
+                    </div>
+                    <div class="profile-details">
+                        {{ form_widget(edit_billing_profile_form.vat_number, {'translation_domain': 'back_controller_app'}) }}
+                    </div>
+                    <div class="profile-details">
+                        {{ form_widget(edit_billing_profile_form.address, {'translation_domain': 'back_controller_app'}) }}
+                    </div>
+                    <div class="profile-details">
+                        {{ form_widget(edit_billing_profile_form.address_more, {'translation_domain': 'back_controller_app'}) }}
+                    </div>
+
+                    <div class="profile-details">
+                        <div class="profile-first-name">
+                            {{ form_widget(edit_billing_profile_form.zip, {'translation_domain': 'back_controller_app'}) }}
+                        </div>
+                        <div class="profile-last-name">
+                            {{ form_widget(edit_billing_profile_form.city, {'translation_domain': 'back_controller_app'}) }}
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="profile-details">
+                        {{ form_widget(edit_billing_profile_form.state, {'translation_domain': 'back_controller_app'}) }}
+                    </div>
+
+                    <div class="profile-details">
+                        {{ form_widget(edit_billing_profile_form.country, {'translation_domain': 'back_controller_app'}) }}
+                    </div>
+
+                    <div>
+                        {{ form_widget(edit_billing_profile_form.submit, { 'label': 'back.profile_billing.button.update_the_address', 'translation_domain': 'back_profile_billing' }) }}
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="loader-container">
+                        <div class="loader-pulse">
+                            {{ 'back.profile_billing.loader.loading'|trans }}...
+                        </div>
+                    </div>
+
+                {{ form_end(edit_billing_profile_form) }}
+
+
+
+                <h2>{{ 'back.profile_billing.title.your_invoices'|trans }}</h2>
+
+                <div class="table-responsive margin-top">
+                    {% if invoices is defined and invoices is not null %}
+                        <table class="table table-hover table-condensed">
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        {{ 'back.profile_billing.list_title.invoice_number'|trans }}
+                                    </td>
+                                    <td>
+                                        {{ 'back.profile_billing.list_title.date'|trans }}
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for invoice in invoices %}
+                                    <tr>
+                                        <td>
+                                            {{ loop.index }}
+                                        </td>
+                                        <td>
+                                            <a href="{{ path('app_download_invoice', {'user_id': user_id, 'invoice_id': invoice.invoice_id}) }}" title="{{ 'back.profile_billing.alt.download_the_invoice'|trans }}">
+                                                {{ invoice.invoice_id }}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            {{ invoice.day ~ "/" ~ invoice.month ~ "/" ~ invoice.year }}
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endif %}
+
+                </div>
+
+    		</div><!-- ./Profile inner -->
+
+    	</div><!-- ./Profile container -->
+
+    </div><!-- ./Wrapper full -->
+
+{% endblock %}
+
+
+{% block footer %}
+	{{ parent() }}
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    {% include 'StrimeBackBundle:App:profile-js-variables.html.twig' %}
+
+    <script type="text/javascript">
+        // Set variable
+        var storageUsedInPercent = Math.round({{ app.session.get('storage_used_in_percent') }} * 100) / 100;
+    </script>
+
+    {% javascripts
+        '@StrimeGlobalBundle/Resources/public/js/is-logged-in.js' filter='?uglifyjs2'
+        '@StrimeFrontBundle/Resources/public/js/main.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/profile/profile.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/storage-bar.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

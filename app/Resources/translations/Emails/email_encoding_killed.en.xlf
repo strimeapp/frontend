@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_encoding_killed_meta_title">
+                <source>email.encoding_killed.meta.title</source>
+                <target>The encoding of your file failed</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_title_video_encoded">
+                <source>email.encoding_killed.title.video_encoded</source>
+                <target>Your video has not been encoded...</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_title_audio_encoded">
+                <source>email.encoding_killed.title.audio_encoded</source>
+                <target>Your audio file has not been encoded...</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_title_file_encoded">
+                <source>email.encoding_killed.title.file_encoded</source>
+                <target>Your file has not been encoded...</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_hi_first_name">
+                <source>email.encoding_killed.text.hi_first_name</source>
+                <target>Hi %first_name%</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_video_encoding_killed">
+                <source>email.encoding_killed.text.video_encoding_killed</source>
+                <target><![CDATA[The conversion of your video named <strong>"%asset%"</strong> has been stopped. This file can not be encoded.]]></target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_audio_encoding_killed">
+                <source>email.encoding_killed.text.audio_encoding_killed</source>
+                <target><![CDATA[The conversion of your audio file named <strong>"%asset%"</strong> has been stopped. This file can not be encoded.]]></target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_file_encoding_killed">
+                <source>email.encoding_killed.text.file_encoding_killed</source>
+                <target><![CDATA[The conversion of your file named <strong>"%asset%"</strong> has been stopped. This file can not be encoded.]]></target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_sorry_inconvenience">
+                <source>email.encoding_killed.text.sorry_inconvenience</source>
+                <target>We are sorry for the inconvenience.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_invite_reupload_file_or_contact_us">
+                <source>email.encoding_killed.text.invite_reupload_file_or_contact_us</source>
+                <target>We invite you to try to upload this file again, or to contact us.</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_see_you_soon">
+                <source>email.encoding_killed.text.see_you_soon</source>
+                <target>See you soon</target>
+            </trans-unit>
+            <trans-unit id="email_encoding_killed_text_strime_team">
+                <source>email.encoding_killed.text.strime_team</source>
+                <target>Strime's team</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

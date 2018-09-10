@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="email_payment_meta_title">
+                <source>email.payment.meta.title</source>
+                <target>Termination of your subscription to Strime</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_hi_first_name">
+                <source>email.payment.text.hi_first_name</source>
+                <target>Hi %first_name%</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_downgrade_free_offer">
+                <source>email.payment.text.downgrade_free_offer</source>
+                <target>Following a payment error, we just moved you on the free offer.</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_regret_this">
+                <source>email.payment.text.regret_this</source>
+                <target>We're sorry we had to proceed to this change.</target>
+            </trans-unit>
+            <trans-unit id="email_payment_alt_signin">
+                <source>email.payment.alt.signin</source>
+                <target>Sign in to Strime</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_get_back_to_normal">
+                <source>email.payment.text.get_back_to_normal</source>
+                <target>To restore all of your features, please %link_start%sign in%link_end% to your account, update your credit card details, and change your offer back.</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_stay_available">
+                <source>email.payment.text.stay_available</source>
+                <target>We remain at your disposal if necessary.</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_thanks_trusting_us">
+                <source>email.payment.text.thanks_trusting_us</source>
+                <target>Thank you for your trust!</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_see_you_soon">
+                <source>email.payment.text.see_you_soon</source>
+                <target>See you soon</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_strime_team">
+                <source>email.payment.text.strime_team</source>
+                <target>Strime's team</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_we_noticed_you_wanted_to_go">
+                <source>email.payment.text.we_noticed_you_wanted_to_go</source>
+                <target>We have taken your request for cancellation of your subscription to Strime into account.</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_sorry_see_you_go">
+                <source>email.payment.text.sorry_see_you_go</source>
+                <target>We are sorry to see you go.</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_explain_us_why">
+                <source>email.payment.text.explain_us_why</source>
+                <target><![CDATA[Feel free to explain us <a href="https://strime.typeform.com/to/AnJRev" target="_blank">why you're leaving us </a>.]]></target>
+            </trans-unit>
+            <trans-unit id="email_payment_meta_title_error">
+                <source>email.payment.meta.title_error</source>
+                <target>Payment error for the period of %first_day% to %last_day%</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_downgraded_free_offer_2go">
+                <source>email.payment.text.downgraded_free_offer_2go</source>
+                <target>As a result, we have re-entered your account on the free offer restricted to 10Gb.</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_cannot_add_videos">
+                <source>email.payment.text.cannot_add_videos</source>
+                <target>Your data has been retained, but you will not be able to add any video until you change your offer in your account, unless you remove some of them to fall below 10Gb.</target>
+            </trans-unit>
+            <trans-unit id="email_payment_text_payment_didnt_occur">
+                <source>email.payment.text.payment_didnt_occur</source>
+                <target>The payment of your subscription to %strime% for the period from %first_day% to %last_day% could not occur.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

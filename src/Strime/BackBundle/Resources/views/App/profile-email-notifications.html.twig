@@ -1,0 +1,209 @@
+{% trans_default_domain 'back_profile_email_notification' %}
+{% extends '::back_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('app_profile_notifications', {}, TRUE) }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="{{ 'back.profile_email_notifications.meta.description'|trans }}">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="{{ 'back.profile_email_notifications.meta.keywords'|trans }}">
+    <meta name="google-signin-client_id" content="59471169232-igm9oedpkpc0f1spqmrj2nffqd1hj93f.apps.googleusercontent.com">
+{% endblock %}
+
+{% block title %}{{ 'back.profile_email_notifications.meta.title'|trans }} | Strime{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets
+        'bundles/strimeback/css/profile.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/sub-menu.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/switch.css' filter='cssrewrite'
+        'bundles/strimeglobal/css/radio-button.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+    {% include 'StrimeBackBundle:App:profile-menu.html.twig' %}
+
+
+    <!-- Wrapper full -->
+    <div class="wrapper-full">
+
+    	<!-- Profile container -->
+    	<div id="profile-container">
+
+    		<div id="profile-inner">
+
+                {% for flash_message in app.session.flashbag.get('success') %}
+                    <div class="alert alert-success" role="alert">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+
+                {% for flash_message in app.session.flashbag.get('error') %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+
+                {{ form_start(edit_notifications_form, {'action': path('app_profile_notifications'), 'attr': {'id': 'edit-mail-notification-settings-form', 'novalidate': true} }) }}
+
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <h3>{{ 'back.profile_email_notifications.title.comments_frequency'|trans }}</h3>
+                            <p class="description">{{ 'back.profile_email_notifications.text.choose_the_frequency'|trans }}</p>
+
+                            <div class="comment-notification" data-value="now">
+                                <label class="radio-button">
+                                    <input type="checkbox" {% if user.mail_notification == 'now' %}checked="checked"{% endif %}>
+                                    <div class="slider round"></div>
+                                </label>
+                                <div class="radio-button-description">
+                                    {{ 'back.profile_email_notifications.choice.each_time'|trans }}
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="comment-notification" data-value="once_a_day">
+                                <label class="radio-button">
+                                    <input type="checkbox" {% if user.mail_notification == 'once_a_day' %}checked="checked"{% endif %}>
+                                    <div class="slider round"></div>
+                                </label>
+                                <div class="radio-button-description">
+                                    {{ 'back.profile_email_notifications.choice.once_a_day'|trans }}
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="comment-notification" data-value="never">
+                                <label class="radio-button">
+                                    <input type="checkbox" {% if user.mail_notification == 'never' %}checked="checked"{% endif %}>
+                                    <div class="slider round"></div>
+                                </label>
+                                <div class="radio-button-description">
+                                    {{ 'back.profile_email_notifications.choice.never'|trans }}
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-5 col-sm-offset-1">
+                            <h3>{{ 'back.profile_email_notifications.title.newsletter'|trans }}</h3>
+                            <p class="description">{{ 'back.profile_email_notifications.text.keep_posted'|trans }}</p>
+
+                            <div class="newsletter">
+                                <label class="switch">
+                                    <input type="checkbox" {% if user.opt_in == 1 %}checked="checked"{% endif %}>
+                                    <div class="slider round"></div>
+                                </label>
+                                <div class="switch-description">
+                                    {% if user.opt_in == 1 %}
+                                        {{ 'back.profile_email_notifications.text.activated'|trans }}
+                                    {% else %}
+                                        {{ 'back.profile_email_notifications.text.deactivated'|trans }}
+                                    {% endif %}
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div>
+                        <h3>{{ 'back.profile_email_notifications.title.slack_notifications'|trans }}</h3>
+                        <p class="description">{{ 'back.profile_email_notifications.text.receive_comments_notifications_in_slack_channel'|trans }}</p>
+                        <p class="description">
+                            {{ 'back.profile_email_notifications.text.first_need_register_app'|trans({'%link_start%': '<a href="https://api.slack.com/apps" title="' ~ 'back.profile_email_notifications.text.register_app_in_slack'|trans ~ '" target="_blank">', '%link_end%': '</a>'})|raw }}<br />
+                            {{ 'back.profile_email_notifications.text.then_create_webhook'|trans }}<br />
+                            {{ 'back.profile_email_notifications.text.copy_webhook_url'|trans }}
+                        </p>
+                        <p class="description">
+                            {{ 'back.profile_email_notifications.text.click_here_to_see_video_tutorial'|trans({'%link_start%': '<a href="#" title="' ~ 'back.profile_email_notifications.text.click_here'|trans ~ '" class="see-slack-video-tutorial">', '%link_end%': '</a>'})|raw }}<br />
+                        </p>
+
+                        <div class="row">
+                            <div class="col-sm-8">
+                                {{ form_widget(edit_notifications_form.slack_webhook_url, {'translation_domain': 'back_controller_app'}) }}
+                            </div>
+                            <div class="col-sm-4">
+                                {% if user.user_slack_details is not null and user.user_slack_details.webhook_url is not null %}
+                                    <a class="btn btn-default btn-lg" id="slack-test-webhook" href="#" role="button">
+                                        <span>{{ 'back.profile_email_notifications.link.test_the_webhook'|trans }}</span>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    {{ form_widget(edit_notifications_form.submit, { 'label': 'back.profile_email_notifications.button.update_notifications', 'translation_domain': 'back_profile_email_notification' }) }}
+
+                    <div class="loader-container">
+                        <div class="loader-pulse">
+                            {{ 'back.back_profile_email_notification.loader.loading'|trans }}...
+                        </div>
+                    </div>
+
+                {{ form_end(edit_notifications_form) }}
+
+    		</div><!-- ./Profile inner -->
+
+    	</div><!-- ./Profile container -->
+
+    </div><!-- ./Wrapper full -->
+
+    <div class="modal fade" id="slackVideoTutorialModal" tabindex="-1" role="dialog" aria-labelledby="slackVideoTutorialLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{ asset('bundles/strimeback/img/icon-close-modal.svg') }}" alt="{{ 'back.profile_email_notifications.alt.close_window'|trans }}" title="{{ 'back.profile_email_notifications.alt.close_window'|trans }}"></span></button>
+                </div>
+                <div class="modal-body">
+                    <div id="youtube-player"></div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% endblock %}
+
+
+{% block footer %}
+	{{ parent() }}
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+
+    <script type="text/javascript">
+        const backJsTextNewsletterActivated = "{{ 'back.profile_email_notifications.text.activated'|trans|raw }}";
+        const backJsTextNewsletterDeactivated = "{{ 'back.profile_email_notifications.text.deactivated'|trans|raw }}";
+        const backJsTextNotificationSent = "{{ 'back.profile_email_notifications.js.notification_sent'|trans|raw }}";
+        const backJsTextTestFailed = "{{ 'back.profile_email_notifications.js.test_failed'|trans|raw }}";
+        const backJsTextTestTheWebhook = "{{ 'back.profile_email_notifications.link.test_the_webhook'|trans|raw }}";
+    </script>
+
+    <script type="text/javascript">
+        const ajaxIsLoggedInURL = "{{ url('app_ajax_is_logged_in', {}, TRUE) }}";
+        const ajaxEditProjectURL = "{{ url('app_ajax_slack_send_test_notification', {}, TRUE) }}";
+    </script>
+
+    {% javascripts
+        '@StrimeGlobalBundle/Resources/public/js/is-logged-in.js' filter='?uglifyjs2'
+        '@StrimeFrontBundle/Resources/public/js/main.js' filter='?uglifyjs2'
+        '@StrimeBackBundle/Resources/public/js/profile/profile_notifications.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

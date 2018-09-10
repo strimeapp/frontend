@@ -1,0 +1,388 @@
+/* Admin global styles
+-------------------------------------------------- */
+
+body {
+	color: #2C2C2D;
+}
+
+h1 {
+	margin: 30px 0;
+	color: #2C2C2D;
+}
+
+table {
+	color: #2C2C2D;
+}
+table thead {
+	font-family: 'UbuntuBold', sans-serif;
+}
+
+.alert-danger {
+	background: transparent;
+}
+
+.white-box {
+	background-color: #FFF;
+	border-radius: 10px;
+	padding: 10px;
+}
+.white-box h2 {
+	margin-top: 0;
+}
+
+.thumbnail {
+	max-width: 150px;
+}
+
+#beta-disclaimer {
+	display: none !important;
+}
+
+
+
+/* Footer styles
+-------------------------------------------------- */
+
+footer .baseline {
+	display: block;
+	width: 200px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+footer .trust-badge {
+	margin-top: -25px;
+}
+
+
+/* Admin menu styles
+-------------------------------------------------- */
+
+#admin-menu {
+	position: absolute;
+	background-color: #898B8E;
+	width: 260px;
+	top: 100px;
+	left: 0;
+	bottom: 50px;
+	z-index: 100;
+}
+#admin-menu ul {
+	position: fixed;
+	padding: 0;
+	margin: 0;
+	top: 100px;
+	left: 0;
+	bottom: 50px;
+	width: 260px;
+}
+#admin-menu ul li {
+	list-style: none;
+	border-top: solid 1px #AAA;
+}
+#admin-menu ul li a,
+#admin-menu ul li a:visited,
+#admin-menu ul li a:focus {
+	display: block;
+	font-size: 16px;
+	color: #FFF;
+	padding: 5px 10px;
+	width: 100%;
+	height: 100%;
+}
+#admin-menu ul li a:hover {
+	background-color: #AAA;
+}
+
+#fixed-header,
+#beta-disclaimer {
+	display: none !important;
+}
+
+
+
+/* Admin sub-menu styles
+-------------------------------------------------- */
+
+#sub-menu {
+	margin-left: 260px;
+	width: calc( 100% - 260px);
+}
+
+
+
+/* Admin content styles
+-------------------------------------------------- */
+
+#admin-content {
+	margin-left: 280px;
+	width: calc( 100% - 300px);
+	color: #898B8E;
+	padding: 20px 0;
+}
+#admin-content .data-elt {
+	background-color: #FFF;
+	border-radius: 10px;
+	padding: 10px;
+}
+#admin-content .data-elt i {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+body.user #admin-content .data-elt i {
+	float: none;
+	margin: 0;
+}
+#admin-content .data-elt .data {
+	font-size: 24px;
+}
+#admin-content .data-elt .description {
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+#admin-content .data-elt h2 {
+	margin: 10px 0 10px 10px;
+}
+
+#admin-content #chart-nb-users-per-day,
+#admin-content #chart-nb-users-per-offer,
+#admin-content #chart-nb-users-per-locale,
+#admin-content #chart-percentage-active-users-per-day,
+#admin-content #chart-nb-projects-per-day,
+#admin-content #chart-nb-videos-per-day,
+#admin-content #chart-nb-images-per-day,
+#admin-content #chart-nb-audios-per-day,
+#admin-content #chart-nb-comments-per-day,
+#admin-content #chart-nb-image-comments-per-day,
+#admin-content #chart-nb-audio-comments-per-day,
+#admin-content #chart-nb-contacts-per-day,
+#admin-content #chart-nb-users-using-social-signin,
+#admin-content #chart-nb-users-using-slack,
+#admin-content #chart-stats-encoding-jobs-time, {
+	width: 100%;
+	margin-top: 20px;
+}
+#admin-content #chart-nb-users-per-day #chart-nb-users-per-day-inner,
+#admin-content #chart-percentage-active-users-per-day #chart-percentage-active-users-per-day-inner,
+#admin-content #chart-nb-projects-per-day #chart-nb-projects-per-day-inner,
+#admin-content #chart-nb-videos-per-day #chart-nb-videos-per-day-inner,
+#admin-content #chart-nb-images-per-day #chart-nb-images-per-day-inner,
+#admin-content #chart-nb-audios-per-day #chart-nb-audios-per-day-inner,
+#admin-content #chart-nb-comments-per-day #chart-nb-comments-per-day-inner,
+#admin-content #chart-nb-image-comments-per-day #chart-nb-image-comments-per-day-inner,
+#admin-content #chart-nb-audio-comments-per-day #chart-nb-audio-comments-per-day-inner,
+#admin-content #chart-nb-contacts-per-day #chart-nb-contacts-per-day-inner,
+#admin-content #chart-nb-users-using-social-signin .amcharts-main-div,
+#admin-content #chart-nb-users-using-slack .amcharts-main-div,
+#admin-content #chart-stats-encoding-jobs-time #chart-stats-encoding-jobs-time-inner {
+	width: 100%;
+	height: 400px;
+}
+#admin-content #chart-nb-users-per-offer #chart-nb-users-per-offer-inner,
+#admin-content #chart-nb-users-per-locale #chart-nb-users-per-locale-inner {
+	width: 100%;
+	height: 300px;
+}
+
+
+
+/* Users styles
+-------------------------------------------------- */
+
+#admin-content img.avatar {
+	border-radius: 15px;
+	border: solid 1px #898B8E;
+	margin-right: 10px;
+	width: 30px;
+	height: auto;
+}
+
+body.users table img.integration {
+	display: inline-block;
+	width: 20px;
+	height: auto;
+	margin-right: 5px;
+}
+body.user img.integration {
+	display: inline-block;
+	width: 40px;
+	height: auto;
+	margin-right: 10px;
+}
+
+body.user #admin-content {
+	color: #2C2C2D;
+}
+body.user #admin-content h1 {
+	text-align: left;
+	margin: 0 0 10px 0;
+}
+body.user #admin-content img.avatar {
+	display: block;
+	border-radius: 30px;
+	width: 60px;
+	margin-left: auto;
+	margin-right: auto;
+}
+body.user #admin-content #signup-date {
+	font-size: 14px;
+	color: #898B8E;
+}
+body.user #admin-content .grey {
+	color: #898B8E;
+}
+body.user #admin-content .title {
+	width: 100%;
+	color: #898B8E;
+	border-bottom: solid 1px #898B8E;
+}
+
+#admin-users-map {
+	padding-left: 260px;
+	width: 100%;
+	height: 100%;
+}
+#admin-users-map .mapboxgl-ctrl button {
+	margin: 0;
+}
+
+body.user #admin-content #storage-bar {
+	width: 100%;
+}
+body.user #admin-content .storage {
+	font-size: 14px;
+}
+#admin-content .data-elt .offer-details i {
+	float: none;
+	margin-right: 0;
+	margin-left: 10px;
+}
+#admin-content .data-elt small {
+	font-size: 12px;
+}
+
+body.user #changeOfferModal ul {
+	list-style: none;
+}
+body.user #changeOfferModal ul li {
+	cursor: pointer;
+	padding-left: 10px;
+}
+body.user #changeOfferModal ul li.selected {
+	background-color: #0CAC9A;
+	color: #FFF;
+}
+
+
+
+/* Discounts styles
+-------------------------------------------------- */
+
+#discounts table {
+	font-size: 14px;
+}
+#discounts label {
+	font-size: 12px;
+}
+#discounts input[type=checkbox] {
+	margin-right: 5px;
+}
+#discounts select {
+	margin-bottom: 5px;
+}
+
+
+
+/* Tax rates styles
+-------------------------------------------------- */
+
+table button {
+	margin-top: 0;
+}
+
+
+
+/* Invoices styles
+-------------------------------------------------- */
+
+#filter-invoices-form {
+	margin: 40px;
+}
+#filter-invoices-form button {
+	margin-top: 0;
+}
+#filter-invoices-form select {
+	font-size: 14px;
+	width: auto;
+	margin: 0 5px;
+}
+#filter-invoices-form select:first-child {
+	margin-left: 0;
+}
+#filter-invoices-form #form_start,
+#filter-invoices-form #form_stop {
+	display: inline-block;
+}
+button.regenerate-invoice {
+	font-size: 12px;
+	padding: 5px 10px;
+}
+
+
+
+/* Encoding Jobs styles
+-------------------------------------------------- */
+
+.encoding-jobs-list table button {
+	margin-top: 5px;
+}
+
+
+/* New features styles
+-------------------------------------------------- */
+
+.new-features button#add-new-feature {
+	margin: 0;
+}
+.new-features textarea {
+	display: block;
+}
+.new-features tbody {
+	font-size: 14px;
+}
+
+
+/* dataTables styles
+-------------------------------------------------- */
+
+.dataTables_wrapper .dataTables_filter input {
+	margin-left: 0;
+}
+table.dataTable tbody td,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table-condensed>tbody>tr>td {
+	font-size: 14px;
+	padding: 3px 10px;
+}
+div.dataTables_wrapper div.dataTables_length select {
+	padding: 0px 10px;
+}
+div.dataTables_wrapper .html5buttons {
+	float: right;
+}
+div.dataTables_wrapper div.dataTables_filter {
+	margin-top: 10px;
+}
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+	background-color: #F4B34E;
+    border-color: #F4B34E;
+}

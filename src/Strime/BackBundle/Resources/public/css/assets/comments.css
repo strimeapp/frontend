@@ -1,0 +1,390 @@
+#comments {
+	float: right;
+	width: 0%;
+	opacity: 0;
+	background-color: #434344;
+	overflow: hidden;
+    -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+#comments.visible {
+	width: 40%;
+	opacity: 1;
+}
+#comments #comments-container {
+	position: relative;
+	overflow-y: scroll;
+}
+#comments .header {
+	padding: 8px 20px;
+	border-bottom: solid 1px #303031;
+}
+#comments .header #nb-comments {
+	text-transform: uppercase;
+	font-size: 15px;
+	color: #FFF;
+}
+#comments .header #close-comments-pane {
+	float: right;
+	width: 30px;
+	height: 30px;
+}
+#comments .header #close-comments-pane svg {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	margin-top: 7px;
+}
+#comments .header #close-comments-pane svg path {
+	fill: #898B8E;
+}
+#comments .header #close-comments-pane svg:hover path {
+	fill: #B7C6C2;
+}
+
+
+
+/* Styles for the comments filters
+-------------------------------------------------------------- */
+
+#comments #comments-filters {
+	position: relative;
+	width: 100%;
+	border-bottom: solid 1px #303031;
+	box-shadow: 0px 5px 6px 2px rgba(0,0,0,0.3);
+	z-index: 100;
+}
+#comments #comments-filters .filter-elt {
+	float: left;
+	display: table;
+	width: auto;
+	height: 38px;
+	font-family: 'UbuntuLight', sans-serif;
+	text-align: right;
+	font-size: 14px;
+	color: #898B8E;
+	padding: 5px 10px;
+	border-right: solid 1px #303031;
+}
+#comments #comments-filters .filter-elt .filter-elt-inner {
+	display: table-cell;
+	vertical-align: middle;
+}
+#comments #comments-filters #order-comments .adjust-position {
+	margin-top: -3px;
+}
+
+
+
+/* Styles for the buttons to order comments
+-------------------------------------------------- */
+
+#comments #comments-filters #order-comments .order-option-description {
+	float: left;
+	margin-right: 8px;
+}
+#comments #comments-filters #order-comments .order-option {
+	float: left;
+	width: 15px;
+	height: 15px;
+	margin-left: 5px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+#comments #comments-filters #order-comments .order-option.hourglass.top {
+	background: url(../../img/icon-hourglass-top.svg) no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+#comments #comments-filters #order-comments .order-option.hourglass.top.active {
+	background: url(../../img/icon-hourglass-top-white.svg) no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+#comments #comments-filters #order-comments .order-option.hourglass.down {
+	background: url(../../img/icon-hourglass-down.svg) no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+#comments #comments-filters #order-comments .order-option.hourglass.down.active {
+	background: url(../../img/icon-hourglass-down-white.svg) no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+#comments #comments-filters #order-comments .order-option.timer.top {
+	background: url(../../img/icon-timer-top.svg) no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+#comments #comments-filters #order-comments .order-option.timer.top.active {
+	background: url(../../img/icon-timer-top-white.svg) no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+#comments #comments-filters #order-comments .order-option.timer.down {
+	background: url(../../img/icon-timer-down.svg) no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+#comments #comments-filters #order-comments .order-option.timer.down.active {
+	background: url(../../img/icon-timer-down-white.svg) no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+#comments #comments-filters #order-comments .order-option.timer {
+	width: 18px;
+	height: 18px;
+	margin-top: 4px;
+}
+
+
+
+/* Styles for the toggle button to hide the resolved comments
+-------------------------------------------------------------- */
+
+#comments #comments-filters #resolved-comments-toggle label {
+	float: right;
+	margin-left: 5px;
+	margin-top: 3px;
+}
+#comments #comments-filters #resolved-comments-toggle .switch .slider {
+	border: solid 1px #898B8E;
+}
+#comments #comments-filters #resolved-comments-toggle .switch input:checked + .slider {
+	border-color: #FFF;
+}
+
+
+
+/* Styles for one single comment
+-------------------------------------------------------------- */
+
+#comments .comment {
+	position: relative;
+	background-color: #434344;
+	border-top: solid 1px #303031;
+	border-right: solid 3px #434344;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+#comments .comment:first-child {
+	border-top: none;
+}
+#comments .comment:nth-child(odd) {
+	background-color: #4B4B4C;
+	border-right: #4B4B4C;
+}
+#comments .comment:hover,
+#comments .comment.active {
+	background-color: #5F5F60;
+	border-right: solid 3px #E69300;
+	opacity: 0.8;
+}
+#comments .comment.done {
+	background-color: #5F5F60;
+	border-right: solid 3px #5F5F60;
+}
+#comments .comment.done .col-avatar,
+#comments .comment.done .col-content {
+	filter: alpha(opacity=40);
+	opacity: 0.4;
+}
+#comments .comment.done .col-content .timestamp,
+#comments .comment.done .col-content .comment-author,
+#comments .comment.done .col-content .text,
+#comments .comment.done .col-content .details {
+	text-decoration: line-through;
+}
+#comments .comment .mark-as-done {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	font-family: 'UbuntuLight', sans-serif;
+	text-decoration: none;
+	text-align: right;
+	font-size: 14px;
+	color: #898B8E;
+	z-index: 100;
+}
+#comments .comment .mark-as-done .mark-as-done-checkbox {
+	display: inline-block;
+	background: url(../../img/icon-checkbox.svg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	vertical-align: middle;
+	margin-left: 5px;
+}
+#comments .comment .mark-as-done .mark-as-done-checkbox.checked {
+	background: url(../../img/icon-checkbox-checked.svg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+#comments .comment .col-avatar {
+	float: left;
+	width: 10%;
+	text-align: center;
+}
+#comments .comment .col-content {
+	float: left;
+	width: 90%;
+	font-size: 14px;
+}
+#comments .comment .col-avatar .avatar {
+	display: block;
+	background: url(../../img/player/icon-avatar.png) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 30px;
+	height: 30px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#comments .comment .col-avatar .avatar.no-background {
+	background: none;
+}
+#comments .comment .col-avatar .avatar img {
+	border-radius: 15px;
+	width: 30px;
+	height: 30px;
+}
+#comments .comment .col-content .name {
+	color: #0CAC9A;
+	margin-bottom: 5px;
+}
+#comments .comment .col-content .name .timestamp {
+	color: #FFF;
+}
+#comments .comment .col-content .name .pipe {
+	color: #898B8E;
+	font-size: 16px;
+}
+#comments .comment .col-content .text {
+	position: relative;
+	color: #B7C6C2;
+	margin-bottom: 5px;
+	padding-right: 50px;
+}
+#comments .comment .col-content .text .comment-edition-tools {
+	position: absolute;
+	top: 0;
+	right: 10px;
+}
+#comments .comment .col-content .text .comment-edition-tools .comment-delete {
+	float: right;
+	background: url(../../img/icon-delete.svg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+#comments .comment .col-content .text .comment-edition-tools .comment-delete:hover {
+	background: url(../../img/icon-delete-white.svg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+#comments .comment .col-content .text .comment-edition-tools .comment-edit {
+	float: right;
+	background: url(../../img/icon-pen.svg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	margin-right: 5px;
+}
+#comments .comment .col-content .text .comment-edition-tools .comment-edit:hover {
+	background: url(../../img/icon-pen-white.svg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+#comments .comment .col-content .details,
+#comments .comment .col-content .details a,
+#comments .comment .col-content .details a:visited {
+	color: #898B8E;
+}
+#comments .comment .col-content .details .separator {
+	display: inline-block;
+	color: #FFF;
+	margin: 0 5px;
+}
+
+#comments .comment .answers-container {
+	margin-top: 20px;
+}
+#comments .comment .comment-answer {
+	padding: 10px 0;
+}
+#comments .comment .comment-answer .col-left {
+	float: left;
+	width: 6%;
+	text-align: center;
+}
+#comments .comment .comment-answer .col-avatar {
+	width: 10%;
+}
+#comments .comment .comment-answer .col-content {
+	width: 84%;
+}
+#comments .comment .comment-answer .col-left .icon-answer {
+	float: right;
+	display: block;
+	background: url(../../img/player/icon-answer.png) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 22px;
+	height: 18px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#comments .comment .comment-answer-field {
+	display: none;
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+}
+#comments .comment .comment-answer-field textarea {
+	display: block;
+	background-color: #303031;
+	border: solid 1px #434344;
+	width: 100%;
+	height: 100px;
+	font-size: 14px;
+	color: #B7C6C2;
+	padding: 10px;
+}
+#comments .comment .comment-answer-field textarea::-webkit-input-placeholder,
+#comments .comment .comment-answer-field textarea:-moz-placeholder,
+#comments .comment .comment-answer-field textarea::-moz-placeholder,
+#comments .comment .comment-answer-field textarea:-ms-input-placeholder  {
+	color: #898B8E;
+}
+#comments .comment .comment-answer-field button {
+	float: right;
+	background-color: #50D8B0;
+	border: none;
+	text-transform: uppercase;
+	font-size: 14px;
+	padding: 5px 10px;
+	margin-top: 10px;
+}
+
+#comments #comments-container .comment-error-message {
+	display: none;
+	background: none;
+    border: solid 1px #50D8B0;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    color: #50D8B0;
+    padding: 3px 15px;
+	margin: 5px 20px 10px 20px;
+}

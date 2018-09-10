@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_project_element_button_see_video">
+                <source>back.project_element.button.see_video</source>
+                <target>Voir la vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_project_element_button_see_image">
+                <source>back.project_element.button.see_image</source>
+                <target>Voir l'image</target>
+            </trans-unit>
+            <trans-unit id="back_project_element_button_see_audio">
+                <source>back.project_element.button.see_audio</source>
+                <target>Voir le fichier audio</target>
+            </trans-unit>
+            <trans-unit id="back_project_element_button_see_file">
+                <source>back.project_element.button.see_file</source>
+                <target>Voir le fichier</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

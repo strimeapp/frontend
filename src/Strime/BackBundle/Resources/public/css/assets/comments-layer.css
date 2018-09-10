@@ -1,0 +1,133 @@
+#comments-layer {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	bottom: 0;
+	left: 10px;
+	width: calc(100% - 20px);
+	height: calc(100% - 50px);
+	z-index: 1000;
+	cursor: url(../../img/player/video-cursor.svg), auto;
+	overflow: visible;
+}
+#comments-layer .comment-box {
+	display: none;
+	position: absolute;
+	background: url(../../img/player/video-comment-point.png) no-repeat;
+	background-position: top left;
+	background-size: 27px 31px;
+	width: 300px;
+	height: auto;
+	padding: 19px 0 0 18px;
+	z-index: 500;
+}
+#comments-layer .comment-box.bottom {
+	background: url(../../img/player/video-comment-point-bottom-left.png) no-repeat;
+	background-position: bottom left;
+	background-size: 31px 27px;
+	padding: 0px 0 18px 19px;
+}
+#comments-layer .comment-box.right {
+	background: url(../../img/player/video-comment-point-top-right.png) no-repeat;
+	background-position: top right;
+	background-size: 31px 27px;
+	padding: 18px 19px 0 0;
+}
+#comments-layer .comment-box.bottom.right {
+	background: url(../../img/player/video-comment-point-bottom-right.png) no-repeat;
+	background-position: bottom right;
+	background-size: 27px 31px;
+	padding: 0px 18px 19px 0;
+}
+#comments-layer .comment-box .comment-box-inner {
+	background-color: #FFF;
+	border-radius: 10px;
+	width: 100%;
+	height: 100%;
+	padding: 10px 10px 10px 20px;
+}
+#comments-layer .comment-box .comment-box-inner .pencil {
+	display: none;
+	background: url(../../img/player/icon-pencil.png) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 36px;
+	height: 36px;
+}
+#comments-layer .comment-box .comment-box-inner .trash {
+	float: right;
+	background: url(../../img/player/icon-trash.png) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 17px;
+	height: 20px;
+	cursor: pointer;
+}
+#comments-layer .comment-box .comment-box-inner .comment-field {
+	width: 100%;
+	height: auto;
+	margin-top: 10px;
+}
+#comments-layer .comment-box .comment-box-inner .comment-field textarea {
+	display: block;
+	background-color: #FFF;
+	border: solid 1px transparent;
+	width: 100%;
+	max-width: 100%;
+	height: 60px;
+	font-size: 14px;
+	color: #303031;
+	padding: 0;
+	margin-bottom: 20px;
+	resize: none;
+}
+#comments-layer .comment-box .comment-box-inner .comment-field textarea::-webkit-input-placeholder,
+#comments-layer .comment-box .comment-box-inner .comment-field textarea:-moz-placeholder,
+#comments-layer .comment-box .comment-box-inner .comment-field textarea::-moz-placeholder,
+#comments-layer .comment-box .comment-box-inner .comment-field textarea:-ms-input-placeholder  {
+	color: #898B8E;
+}
+#comments-layer .comment-box .comment-box-inner .comment-field button {
+	float: right;
+	border: none;
+	text-transform: uppercase;
+	font-size: 14px;
+	padding: 5px 10px;
+	margin-top: 10px;
+}
+
+
+#comments-layer .comment-box .comment-box-inner .comment-field .loader-container {
+	margin-top: 20px;
+}
+#comments-layer .comment-box .comment-box-inner .comment-field .loader-container .loader-pulse {
+	width: 34px;
+	height: 34px;
+}
+
+#comments-layer img.marker {
+	display: none;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	opacity: 1;
+	-webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+#comments-layer img.marker.active {
+	opacity: 1;
+}
+#comments-layer img.marker.inactive {
+	opacity: 0.4;
+}
+#comments-layer img.marker.draggable-marker {
+	width: 23px;
+	height: 23px;
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}

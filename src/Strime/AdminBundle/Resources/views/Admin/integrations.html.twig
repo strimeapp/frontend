@@ -1,0 +1,145 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block link_canonical %}
+    <link rel="canonical" href="{{ url('admin_dashboard') }}" />
+{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="Strime - Admin">
+    <meta name="author" content="Strime">
+    <meta name="keywords" content="strime, strime.io, vidéo, video, vidéos, videos, commentaire, commentaires, application, appli, app, workflow, échange, client, vidéaste, professionnel, professionnelle, tableau de bord, intégrations">
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        'bundles/strimeglobal/css/sub-menu.css' filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}Admin | Intégrations | Strime{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+
+	{% include 'back_header.html.twig' %}
+
+    {% include 'StrimeAdminBundle:Admin:menu.html.twig' %}
+
+    <div id="sub-menu">
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="{{ path('admin_users') }}" title="Utilisateurs">Utilisateurs</a>
+                </li>
+                <li class="active">
+                    <a href="{{ path('admin_integrations') }}" title="Intégrations">Intégrations</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_users_map') }}" title="Carte">Carte</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="admin-content">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-google fa-2x"></i>
+                    <div class="data">{{ nb_users_google_signin }}</div>
+                    <div class="description">utilisant Google Signin</div>
+                </div>
+            </div>
+                <div class="col-sm-3">
+                    <div class="data-elt">
+                        <i class="fa fa-facebook fa-2x"></i>
+                        <div class="data">{{ nb_users_facebook_signin }}</div>
+                        <div class="description">utilisant Facebook Signin</div>
+                    </div>
+                </div>
+            <div class="col-sm-3">
+                <div class="data-elt">
+                    <i class="fa fa-slack fa-2x"></i>
+                    <div class="data">{{ nb_users_slack }}</div>
+                    <div class="description">utilisant Slack</div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="chart-nb-users-using-social-signin" class="data-elt">
+            <h2>Nombre d'utilisateurs utilisant Google ou Facebook Signin</h2>
+            <div id="chart-nb-users-using-social-signin-inner"></div>
+        </div>
+
+        <div id="chart-nb-users-using-slack" class="data-elt">
+            <h2>Nombre d'utilisateurs utilisant Slack</h2>
+            <div id="chart-nb-users-using-slack-inner"></div>
+        </div>
+    </div><!-- ./Admin content -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+
+    {% javascripts
+        '@StrimeAdminBundle/Resources/public/js/amcharts_3.20.3.free/amcharts/amcharts.js' filter='?uglifyjs2'
+        '@StrimeAdminBundle/Resources/public/js/amcharts_3.20.3.free/amcharts/serial.js' filter='?uglifyjs2'
+        '@StrimeAdminBundle/Resources/public/js/amcharts_3.20.3.free/amcharts/pie.js' filter='?uglifyjs2'
+        '@StrimeAdminBundle/Resources/public/js/amcharts_3.20.3.free/amcharts/themes/light.js' filter='?uglifyjs2'
+        '@StrimeAdminBundle/Resources/public/js/integrations-generate-charts.js' filter='?uglifyjs2'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script type="text/javascript">
+
+        // Generate the data for chart with the number of users using Google Signin
+        function generateChartDataNbUsersUsingSocialSignin() {
+            var chartData = [];
+            var nb_users_wo_social_signin = {{ nb_users }} - {{ nb_users_google_signin }} - {{ nb_users_facebook_signin }};
+
+            chartData.push({
+                "social_signin": "Google Signin",
+                "nb_users": {{ nb_users_google_signin }}
+            });
+            chartData.push({
+                "social_signin": "Facebook Signin",
+                "nb_users": {{ nb_users_facebook_signin }}
+            });
+            chartData.push({
+                "social_signin": "Autres",
+                "nb_users": nb_users_wo_social_signin
+            });
+
+            return chartData;
+        }
+
+
+
+        // Generate the data for chart with the number of users using Slack
+        function generateChartDataNbUsersUsingSlack() {
+            var chartData = [];
+            var nb_users_wo_slack = {{ nb_users }} - {{ nb_users_slack }};
+
+            chartData.push({
+                "slack": "Slack",
+                "nb_users": {{ nb_users_slack }}
+            });
+            chartData.push({
+                "slack": "Autres",
+                "nb_users": nb_users_wo_slack
+            });
+
+            return chartData;
+        }
+
+    </script>
+{% endblock %}

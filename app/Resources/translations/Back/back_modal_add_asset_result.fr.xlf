@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_modal_add_asset_result_alt_close_window">
+                <source>back.modal_add_asset_result.alt.close_window</source>
+                <target>Fermer la fenêtre</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

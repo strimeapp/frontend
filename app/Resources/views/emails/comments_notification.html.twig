@@ -1,0 +1,146 @@
+{% trans_default_domain 'email_comments_notification' %}
+{% extends 'emails/email_multiple_blocks_base.html.twig' %}
+
+
+
+{% block email_title %}
+	<title>{{ 'email.comments_notification.meta.title'|trans({}, 'email_comments_notification', locale) }}</title>
+{% endblock %}
+
+
+
+{% block email_header_title %}
+	<h1 style="margin: 0px;">{{ 'email.comments_notification.title.your_files_have_been_commented'|trans({}, 'email_comments_notification', locale) }}</h1>
+{% endblock %}
+
+{% block email_header_description %}
+	<p>{{ 'email.comments_notification.text.hi_first_name'|trans({'%first_name%': first_name}, 'email_comments_notification', locale) }},</p>
+	<p>{{ 'email.comments_notification.text.will_find_below_notifications'|trans({}, 'email_comments_notification', locale) }}</p>
+{% endblock %}
+
+
+
+{% block email_content %}
+
+	{% for comment in comments %}
+
+		<!-- Template container -->
+		<table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" style="background-color: #FFF; margin-top: 40px;">
+			<tr>
+				<td valign="top" class="bodyContainer" style="padding-top:20px; padding-bottom:20px;">
+
+					<!-- mcnTextBlock -->
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+						<tbody class="mcnTextBlockOuter">
+							<tr>
+								<td valign="top" class="mcnTextBlockInner">
+
+									<!-- mcnTextContentContainer -->
+									<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;" class="mcnTextContentContainer">
+										<tbody>
+											<tr>
+												<td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 20px; padding-bottom: 9px; padding-left: 20px; color: #121212;">
+
+													<p>
+														{% if comment.asset_type == "video" %}
+															{{ 'email.comments_notification.text.new_comment_on_video_autologin'|trans({'%link_start%': '<a href="' ~ url('app_video', {'video_id': comment.video.video_id, 'action': 'user', 'url_data': comment.auto_login_token}) ~ '#comment-' ~ comment.comment_id ~ '" title="' ~ comment.video.name ~ '" target="_blank">', '%link_end%': '</a>', '%video_name%': comment.video.name}, 'email_comments_notification', locale)|raw }}
+														{% elseif comment.asset_type == "image" %}
+															{{ 'email.comments_notification.text.new_comment_on_image_autologin'|trans({'%link_start%': '<a href="' ~ url('app_image', {'image_id': comment.image.image_id, 'action': 'user', 'url_data': comment.auto_login_token}) ~ '#comment-' ~ comment.comment_id ~ '" title="' ~ comment.image.name ~ '" target="_blank">', '%link_end%': '</a>', '%image_name%': comment.image.name}, 'email_comments_notification', locale)|raw }}
+														{% endif %}
+														<br />
+														{{ 'email.comments_notification.text.here_is_the_message'|trans({}, 'email_comments_notification', locale) }}
+													</p>
+
+													<p>
+														<blockquote style="border-left: solid 3px #DFDFDF; padding-left: 10px;">
+															{{ comment.comment|nl2br }}
+														</blockquote>
+													</p>
+
+													{% if comment.s3_url is defined and comment.s3_url is not null %}
+														<p>
+															{% if comment.asset_type == "video" %}
+																<a href="{{ url('app_video', {'video_id': comment.video.video_id, 'action': 'user', 'url_data': comment.auto_login_token}) }}" title="{{ comment.video.name }}" target="_blank">
+																	<img src="{{ comment.s3_url }}" title="{{ comment.video.name }}" alt="{{ comment.video.name }}" style="display: block; width: 60%; margin-left: auto; margin-right: auto;">
+																</a>
+															{% elseif comment.asset_type == "image" %}
+																<a href="{{ url('app_image', {'image_id': comment.image.image_id, 'action': 'user', 'url_data': comment.auto_login_token}) }}" title="{{ comment.image.name }}" target="_blank">
+																	<img src="{{ comment.image.thumbnail }}" title="{{ comment.image.name }}" alt="{{ comment.image.name }}" style="display: block; width: 60%; margin-left: auto; margin-right: auto;">
+																</a>
+															{% endif %}
+														</p>
+													{% endif %}
+
+													<p>
+														{{ 'email.comments_notification.text.details_about_comment'|trans({}, 'email_comments_notification', locale) }}
+														<br />
+														{% if comment.asset_type == "video" %}
+															{% if comment.answer_to == FALSE %}
+																- {{ 'email.comments_notification.text.at_what_time'|trans({}, 'email_comments_notification', locale) }} {{ comment.time }},<br />
+															{% endif %}
+														{% endif %}
+														- {{ 'email.comments_notification.text.answer_to_comment'|trans({}, 'email_comments_notification', locale) }} {% if comment.answer_to == FALSE %}{{ 'email.comments_notification.text.no'|trans({}, 'email_comments_notification', locale) }}{% else %}{{ 'email.comments_notification.text.yes'|trans({}, 'email_comments_notification', locale) }}{% endif %},<br />
+														- {{ 'email.comments_notification.text.author_of_the_comment'|trans({}, 'email_comments_notification', locale) }} {{ comment.author.name }}
+													</p>
+
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- ./mcnTextContentContainer -->
+
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- ./mcnTextBlock -->
+
+				</td>
+			</tr>
+		</table>
+		<!-- ./Template container -->
+
+	{% endfor %}
+
+
+	<!-- Template container -->
+	<table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" style="background-color: #FFF; margin-top: 40px;">
+		<tr>
+			<td valign="top" class="bodyContainer" style="padding-top:20px; padding-bottom:20px;">
+
+				<!-- mcnTextBlock -->
+				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+					<tbody class="mcnTextBlockOuter">
+						<tr>
+							<td valign="top" class="mcnTextBlockInner">
+
+								<!-- mcnTextContentContainer -->
+								<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;" class="mcnTextContentContainer">
+									<tbody>
+										<tr>
+											<td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 20px; padding-bottom: 9px; padding-left: 20px; color: #121212;">
+
+												<p>
+													{{ 'email.comments_notification.text.see_you_soon'|trans({}, 'email_comments_notification', locale) }},<br />
+													{{ 'email.comments_notification.text.strime_team'|trans({}, 'email_comments_notification', locale) }}
+												</p>
+
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<!-- ./mcnTextContentContainer -->
+
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- ./mcnTextBlock -->
+
+			</td>
+		</tr>
+	</table>
+	<!-- ./Template container -->
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="cookie_message">
+                <source>cookie.message</source>
+                <target><![CDATA[Este sitio utiliza cookies para funcionar. Puede ajustar su configuración desde su navegador.<br />Para obtener más información, consulte nuestros %link_start%Términos y Condiciones%link_end%]]>.</target>
+            </trans-unit>
+            <trans-unit id="cookie_message_accept">
+                <source>cookie.message.accept</source>
+                <target>Aceptar cookies</target>
+            </trans-unit>
+            <trans-unit id="cookie_tos">
+                <source>cookie.tos</source>
+                <target>Términos y condiciones de uso</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

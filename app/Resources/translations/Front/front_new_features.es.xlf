@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="front_new_features_meta_description">
+                <source>front.new_features.meta.description</source>
+                <target>Tiene una pregunta?  Nosotros ya tenemos su respuesta...</target>
+            </trans-unit>
+            <trans-unit id="front_new_features_meta_keywords">
+                <source>front.new_features.meta.keywords</source>
+                <target>strime, strime.io, video, video, videos, comentario, comentarios, aplicación, app, apps, workflow, intercambiar, cliente, videasta, profesional, profesional, nuevas funcionalidades</target>
+            </trans-unit>
+            <trans-unit id="front_new_features_title_new_features">
+                <source>front.new_features.title.new_features</source>
+                <target>Nuevas funcionalidades</target>
+            </trans-unit>
+            <trans-unit id="front_new_features_text_since_october_2016">
+                <source>front.new_features.text.since_october_2016</source>
+                <target>Desde octubre de 2016, hemos puesto en marcha un banner de notificación, lo que nos permite informarles de las nuevas funcionalidades que agregamos a Strime, directamente desde la aplicación.</target>
+            </trans-unit>
+            <trans-unit id="front_new_features_text_find_below_the_list">
+                <source>front.new_features.text.find_below_the_list</source>
+                <target>Encontrará a continuación la lista de las funcionalidades anunciadas desde este banner.</target>
+            </trans-unit>
+            <trans-unit id="front_new_features_link_learn_more">
+                <source>front.new_features.link.learn_more</source>
+                <target>Saber más</target>
+            </trans-unit>
+            <trans-unit id="front_new_features_text_more_information">
+                <source>front.new_features.text.more_information</source>
+                <target>¿Usted desea tener más información sobre una funcionalidad? %link_start%Contáctenos%link_end%.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="back_modal_share_video_alt_close_window">
+                <source>back.modal_share_video.alt.close_window</source>
+                <target>Fermer la fenêtre</target>
+            </trans-unit>
+            <trans-unit id="back_modal_share_video_title_share_video">
+                <source>back.modal_share_video.title.share_video</source>
+                <target>Partager cette vidéo</target>
+            </trans-unit>
+            <trans-unit id="back_modal_share_video_title_share_image">
+                <source>back.modal_share_video.title.share_image</source>
+                <target>Partager cette image</target>
+            </trans-unit>
+            <trans-unit id="back_modal_share_video_title_share_file">
+                <source>back.modal_share_video.title.share_file</source>
+                <target>Partager ce fichier</target>
+            </trans-unit>
+            <trans-unit id="back_modal_share_video_title_private_url">
+                <source>back.modal_share_video.title.private_url</source>
+                <target>URL privée</target>
+            </trans-unit>
+            <trans-unit id="back_modal_share_video_button_copy">
+                <source>back.modal_share_video.button.copy</source>
+                <target>Copier</target>
+            </trans-unit>
+            <trans-unit id="back_modal_share_video_title_send_url_to">
+                <source>back.modal_share_video.title.send_url_to</source>
+                <target>Envoyer cette URL privée à :</target>
+            </trans-unit>
+            <trans-unit id="back_modal_share_video_link_add_message">
+                <source>back.modal_share_video.link.add_message</source>
+                <target>Ajouter un message</target>
+            </trans-unit>
+            <trans-unit id="back_modal_share_video_button_send">
+                <source>back.modal_share_video.button.send</source>
+                <target>Envoyer</target>
+            </trans-unit>
+            <trans-unit id="back_modal_share_video_loader_sending">
+                <source>back.modal_share_video.loader.sending</source>
+                <target>Envoi</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
