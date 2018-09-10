@@ -11,10 +11,10 @@ parameters:
     mailer_password:
 
     # A secret key that's used to generate certain security-related tokens
-    secret: '&y{R7c@X4@xZ0{ckNÃ‚Ã¢$]X69ZP2$xU'
+    secret: 'tobechanged'
 
     # Strime App parameters
-    strime_app_url: #https://www.strime.io/
+    strime_app_url: https://www.company.com/
     strime_app_token:
     strime_app_name: 'Strime.io'
     strime_app_version: '1.0'
@@ -57,4 +57,4 @@ parameters:
     strime_facebook_app_id:
 
     # Hubspot API parameters
-    hubspot_api_key: 
+    hubspot_api_key:

@@ -80,7 +80,7 @@ knp_snappy:
 nelmio_cors:
     paths:
         '^/':
-            allow_origin: ['^https://your.domain.com', '^https://an-other.domain.com']
+            allow_origin: ['^https://encoding.company.com', '^https://encoding1.company.com', '^https://encoding2.company.com']
             allow_headers: ['Authorization', 'X-Requested-With', 'Content-Type', 'Accept', 'Origin', 'X-Custom-Auth']
             allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
             max_age: 3600
